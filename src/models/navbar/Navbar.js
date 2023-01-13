@@ -3,13 +3,22 @@ import "./navbar.css";
 import logo from "../../assets/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
 	const [sidenav, setSidenav] = useState(false);
 
+	const navigate = useNavigate();
+
 	return (
 		<nav className="navbar">
-			<img src={logo} alt="" />
+			<img
+				src={logo}
+				alt=""
+				onClick={() => {
+					navigate("/");
+				}}
+			/>
 			<div
 				className="opmock"
 				onClick={() => {
@@ -32,7 +41,14 @@ export const Navbar = () => {
 					<span>Testimonials</span>
 					<span>About Us</span>
 					<span>Contact Us</span>
-					<span className="spanpadding">Login</span>
+					<span
+						className="spanpadding"
+						onClick={() => {
+							navigate("/login");
+						}}
+					>
+						Login
+					</span>
 					<span>Sign Up</span>
 				</div>
 			</div>
