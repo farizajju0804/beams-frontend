@@ -40,6 +40,12 @@ export const Signup = () => {
 			toast.error("Invalid email address");
 			return;
 		}
+
+		if (!password) {
+			setPasswordborder(true);
+			toast.error("Check Password");
+			return;
+		}
 	};
 
 	const checkpass = (e) => {

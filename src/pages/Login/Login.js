@@ -15,7 +15,7 @@ export const Login = () => {
 	const [password, setPassword] = useState("");
 	// const [errors, setErrors] = useState("");
 	const [emailborder, setEmailborder] = useState(false);
-	// const [passwordborder, setPasswordborder] = useState(false);
+	const [passwordborder, setPasswordborder] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -30,6 +30,12 @@ export const Login = () => {
 			// setErrors("Invalid email address");
 			setEmailborder(true);
 			toast.error("Invalid email address");
+			return;
+		}
+
+		if (!password) {
+			setPasswordborder(true);
+			toast.error("Check Password");
 			return;
 		}
 	};
@@ -57,10 +63,10 @@ export const Login = () => {
 				<div className="loginitem">
 					<label htmlFor="email">Enter Your Secure Password</label>
 					<input
-						// className={
-						// 	passwordborder ? "inputborderred logininput" : "logininput"
-						// }
-						className="logininput"
+						className={
+							passwordborder ? "inputborderred logininput" : "logininput"
+						}
+						// className="logininput"
 						value={password}
 						type={ispassvis ? "text" : "password"}
 						id="email"

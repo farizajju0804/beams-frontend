@@ -1,4 +1,6 @@
 import "./App.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import { Navbar } from "./models/navbar/Navbar";
 import landingvideo from "./assets/videoBg.mp4";
 import data from "./data/landingdata.json";
@@ -10,6 +12,11 @@ import sec6card1 from "./assets/sec6card1.png";
 import sec6card2 from "./assets/sec6card2.png";
 import sec6card3 from "./assets/sec6card3.png";
 import { Footer } from "./models/footer/Footer";
+import testi from "./assets/testi.png";
+import {
+	BsFillArrowLeftCircleFill,
+	BsFillArrowRightCircleFill
+} from "react-icons/bs";
 
 function App() {
 	return (
@@ -87,7 +94,79 @@ function App() {
 					</div>
 				</section>
 				<section className="five landingsection">
-					<h1>Testimonials</h1>
+					<div className="sec2label">
+						<span>{data.landingpage.sec5title}</span>
+					</div>
+					<div className="carodiv">
+						<Carousel
+							showThumbs={false}
+							autoPlay
+							showArrows
+							showStatus={false}
+							dynamicHeight
+							className="carosel"
+							// width={"100%"}
+						>
+							<div className="caroitem">
+								<img src={testi} alt="" className="caroimg" />
+								<p>
+									Lorem ipsum dolor sit amet consectetur. Turpis porta
+									adipiscing non arcu ac nulla. Justo sit et felis parturient
+									ut. Elit commodo nunc venenatis eu ultrices gravida
+									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
+									Pellentesque quam dictum quisque sit sit. Lorem ipsum dolor
+									sit amet consectetur. Turpis porta adipiscing non arcu ac
+									nulla. Justo sit et felis parturient ut. Elit commodo nunc
+									venenatis eu ultrices gravida adipiscing. Ut mauris at purus
+									phasellus pellentesque id diam. Pellentesque quam dictum
+									quisque sit sit. Lorem ipsum dolor sit amet consectetur.
+									Turpis porta adipiscing non arcu ac nulla. Justo sit et felis
+									parturient ut. Elit commodo nunc venenatis eu ultrices gravida
+									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
+									Pellentesque quam dictum quisque sit sit.
+								</p>
+							</div>
+							<div className="caroitem">
+								<img src={testi} alt="" className="caroimg" />
+
+								<p>
+									Lorem ipsum dolor sit amet consectetur. Turpis porta
+									adipiscing non arcu ac nulla. Justo sit et felis parturient
+									ut. Elit commodo nunc venenatis eu ultrices gravida
+									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
+									Pellentesque quam dictum quisque sit sit. Lorem ipsum dolor
+									sit amet consectetur. Turpis porta adipiscing non arcu ac
+									nulla. Justo sit et felis parturient ut. Elit commodo nunc
+									venenatis eu ultrices gravida adipiscing. Ut mauris at purus
+									phasellus pellentesque id diam. Pellentesque quam dictum
+									quisque sit sit.Lorem ipsum dolor sit amet consectetur. Turpis
+									porta adipiscing non arcu ac nulla. Justo sit et felis
+									parturient ut. Elit commodo nunc venenatis eu ultrices gravida
+									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
+									Pellentesque quam dictum quisque sit sit.
+								</p>
+							</div>
+							<div className="caroitem">
+								<img src={testi} alt="" className="caroimg" />
+								<p>
+									Lorem ipsum dolor sit amet consectetur. Turpis porta
+									adipiscing non arcu ac nulla. Justo sit et felis parturient
+									ut. Elit commodo nunc venenatis eu ultrices gravida
+									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
+									Pellentesque quam dictum quisque sit sit. Lorem ipsum dolor
+									sit amet consectetur. Turpis porta adipiscing non arcu ac
+									nulla. Justo sit et felis parturient ut. Elit commodo nunc
+									venenatis eu ultrices gravida adipiscing. Ut mauris at purus
+									phasellus pellentesque id diam. Pellentesque quam dictum
+									quisque sit sit.Lorem ipsum dolor sit amet consectetur. Turpis
+									porta adipiscing non arcu ac nulla. Justo sit et felis
+									parturient ut. Elit commodo nunc venenatis eu ultrices gravida
+									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
+									Pellentesque quam dictum quisque sit sit.
+								</p>
+							</div>
+						</Carousel>
+					</div>
 				</section>
 				<section className="six landingsection">
 					<div className="sec2label">
@@ -123,7 +202,25 @@ function App() {
 					</div>
 				</section>
 				<section className="seven landingsection">
-					<div style={{ height: "60%", width: "100%" }}></div>
+					<div className="newletter">
+						<div className="outnews1">
+							<div className="newsoutbod"></div>
+							<div className="outnewsinner">
+								<div className="outnewsleft">
+									<h3>Newsletter</h3>
+									<p>Everybody deserves to know about unique global trends.</p>
+								</div>
+								<div className="outinner2">
+									<div className="subsnow">
+										<input type="text" placeholder="Enter your email address" />
+										<div className="subsbtnnews">
+											<span>Subscribe Now</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<Footer />
 				</section>
 			</div>
