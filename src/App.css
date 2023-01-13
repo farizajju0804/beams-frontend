@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,500;1,700&display=swap');
 
+
+.alcenter{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 100%;
+  width: 100%;
+}
+
 *{
   margin: 0px;
   padding: 0;
@@ -107,7 +116,6 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* background-color: aqua; */
   padding-top: 50px;
   padding-left: 100px;
   padding-right: 100px;
@@ -149,19 +157,23 @@
  }
 
  .sec2contdiv{
+  min-height: 230px;
   margin-top: 40px;
   height: 40%;
   background-color: #435CFF;
   width: 100%;
   max-width: 700px;
   border-radius: 20px;
-  padding: 40px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
  }
 
  .sec2contdiv h1{
   text-align: left;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
  }
 
  .sec2contdiv span{
@@ -173,17 +185,58 @@
  /* End of Sec 2 */
 
  .three{
-  background-image: url('./assets/landingsec3bg.svg');
+  background-image: url('./assets/landingsec3bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  padding-top: 100px;
+  flex-direction: column;
+ }
+
+ .sec3innerdiv{
+  display: flex;
+  flex-direction: column;
+
+ }
+
+ .sec3innerdiv{
+  font-size: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+ }
+
+ .sec3innerdiv span{
+  margin: 10px;
+  text-align: center;
+ }
+
+ .sec3innerdiv button{
+  border: none;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 45px;
+  background: #435CFF;
+  border-radius: 100px;
+  font-size: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+
+
  }
 
   /* End of Sec 3 */
 
   .four{
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     width: 100%;
     flex-direction: column;
     background-color: #FAFAFA;
@@ -196,7 +249,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   .sec4spltitle{
@@ -208,7 +261,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 100px;
     /* justify-content: center; */
   }
 

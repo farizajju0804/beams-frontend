@@ -42,7 +42,16 @@ function App() {
 					</div>
 				</section>
 				<section className="three landingsection">
-					<h1>Thrid Page</h1>
+					<div className="sec2label">
+						<span>{data.landingpage.sec3title}</span>
+					</div>
+					<div className="alcenter">
+						<div className="sec3innerdiv">
+							<span>{data.landingpage.sec3content}</span>
+							<span>{data.landingpage.sec3content1}</span>
+							<button>{data.landingpage.sec3btncontent}</button>
+						</div>
+					</div>
 				</section>
 				<section className="four landingsection">
 					<div className="sec2label">
