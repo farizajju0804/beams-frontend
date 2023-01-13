@@ -23,11 +23,11 @@
   width: 100%;
 }
 
- .landingpage{
+ /* .landingpage{
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
- }
+ } */
  
  .bgvideo{
   width: 100%;

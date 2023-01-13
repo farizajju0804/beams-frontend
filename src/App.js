@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -13,12 +14,17 @@ import sec6card2 from "./assets/sec6card2.png";
 import sec6card3 from "./assets/sec6card3.png";
 import { Footer } from "./models/footer/Footer";
 import testi from "./assets/testi.png";
-import {
-	BsFillArrowLeftCircleFill,
-	BsFillArrowRightCircleFill
-} from "react-icons/bs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+	useEffect(() => {
+		AOS.init({
+			duration: 900,
+			once: true
+		});
+	}, []);
+
 	return (
 		<div className="App">
 			<div className="landingpage">
@@ -27,36 +33,40 @@ function App() {
 					<div className="bgvideo">
 						<video src={landingvideo} autoPlay loop muted></video>
 						<div className="sec1data">
-							<h2>{data.landingpage.herotext}</h2>
-							<span>{data.landingpage.subhero}</span>
-							<button>{data.landingpage.button}</button>
+							<h2 data-aos="zoom-in">{data.landingpage.herotext}</h2>
+							<span data-aos="fade-up">{data.landingpage.subhero}</span>
+							<button data-aos="fade-up">{data.landingpage.button}</button>
 						</div>
 					</div>
 				</section>
 				<section className="two landingsection">
-					<div className="sec2label">
+					<div className="sec2label" data-aos="fade-right">
 						<span>{data.landingpage.sec2title}</span>
 					</div>
 					<div className="sec2data">
 						<img src={landingsec2img} alt="" className="object" />
 						<div className="sec2idiv">
-							<h1>{data.landingpage.sec2quote}</h1>
+							<h1 data-aos="fade-left">{data.landingpage.sec2quote}</h1>
 							<div className="sec2contdiv">
-								<h1>{data.landingpage.sec2contheader}</h1>
-								<span>{data.landingpage.sec2contdata}</span>
+								<h1 data-aos="fade-left">{data.landingpage.sec2contheader}</h1>
+								<span data-aos="fade-left">
+									{data.landingpage.sec2contdata}
+								</span>
 							</div>
 						</div>
 					</div>
 				</section>
 				<section className="three landingsection">
-					<div className="sec2label">
+					<div className="sec2label" data-aos="fade-right">
 						<span>{data.landingpage.sec3title}</span>
 					</div>
 					<div className="alcenter">
 						<div className="sec3innerdiv">
-							<span>{data.landingpage.sec3content}</span>
-							<span>{data.landingpage.sec3content1}</span>
-							<button>{data.landingpage.sec3btncontent}</button>
+							<span data-aos="fade-right">{data.landingpage.sec3content}</span>
+							<span data-aos="fade-right">{data.landingpage.sec3content1}</span>
+							<button data-aos="fade-up">
+								{data.landingpage.sec3btncontent}
+							</button>
 						</div>
 					</div>
 				</section>
@@ -65,26 +75,26 @@ function App() {
 						<span>{data.landingpage.sec4title}</span>
 					</div>
 					<div className="sec4datadiv">
-						<div className="sec4spltitle">
+						<div className="sec4spltitle" data-aos="zoom-in-up">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								{data.landingpage.sec4innertitle}
 							</h1>
 						</div>
 						<div className="sec4cardsdiv">
-							<div className="sec4carddiv">
+							<div className="sec4carddiv" data-aos="fade-up">
 								<div className="sec4cardimgcont">
 									<img src={sec4card1} alt="" />
 								</div>
 								<span>{data.landingpage.sec4card1}</span>
 							</div>
-							<div className="sec4carddiv">
+							<div className="sec4carddiv" data-aos="fade-up">
 								<div className="sec4cardimgcont">
 									<img src={sec4card2} alt="" />
 								</div>
 								<span>{data.landingpage.sec4card2}</span>
 							</div>
-							<div className="sec4carddiv">
+							<div className="sec4carddiv" data-aos="fade-up">
 								<div className="sec4cardimgcont">
 									<img src={sec4card3} alt="" />
 								</div>
@@ -173,26 +183,26 @@ function App() {
 						<span>{data.landingpage.sec6title}</span>
 					</div>
 					<div className="sec4datadiv">
-						<div className="sec4spltitle">
+						<div className="sec4spltitle" data-aos="zoom-in-up">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								{data.landingpage.sec6innertitle}
 							</h1>
 						</div>
 						<div className="sec4cardsdiv">
-							<div className="sec4carddiv">
+							<div className="sec4carddiv" data-aos="fade-up">
 								<div className="sec4cardimgcont">
 									<img src={sec6card1} alt="" />
 								</div>
 								<span>{data.landingpage.sec6card1}</span>
 							</div>
-							<div className="sec4carddiv">
+							<div className="sec4carddiv" data-aos="fade-up">
 								<div className="sec4cardimgcont">
 									<img src={sec6card2} alt="" />
 								</div>
 								<span>{data.landingpage.sec6card2}</span>
 							</div>
-							<div className="sec4carddiv">
+							<div className="sec4carddiv" data-aos="fade-up">
 								<div className="sec4cardimgcont">
 									<img src={sec6card3} alt="" />
 								</div>
@@ -204,13 +214,15 @@ function App() {
 				<section className="seven landingsection">
 					<div className="newletter">
 						<div className="outnews1">
-							<div className="newsoutbod"></div>
+							<div className="newsoutbod" data-aos="flip-left"></div>
 							<div className="outnewsinner">
 								<div className="outnewsleft">
-									<h3>Newsletter</h3>
-									<p>Everybody deserves to know about unique global trends.</p>
+									<h3 data-aos="fade-up"> Newsletter</h3>
+									<p data-aos="fade-up">
+										Everybody deserves to know about unique global trends.
+									</p>
 								</div>
-								<div className="outinner2">
+								<div className="outinner2" data-aos="flip-left">
 									<div className="subsnow">
 										<input type="text" placeholder="Enter your email address" />
 										<div className="subsbtnnews">
