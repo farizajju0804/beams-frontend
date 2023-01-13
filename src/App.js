@@ -214,7 +214,7 @@ function App() {
 									<div className="subsnow">
 										<input type="text" placeholder="Enter your email address" />
 										<div className="subsbtnnews">
-											<span>Subscribe Now</span>
+											<span>Subscribe</span>
 										</div>
 									</div>
 								</div>

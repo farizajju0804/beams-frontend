@@ -255,12 +255,14 @@
   .sec4spltitle{
     width: 450px;
     /* background-color: #435CFF; */
-    height: 180px;
+    height: 170px;
     /* padding: 30px; */
     border-radius: 100px 0px 0px 0px;
     position: relative;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
+
     /* justify-content: center; */
   }
 
@@ -389,7 +391,7 @@
 
   .newletter
   {
-    height: 1000px;
+    height: 60%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -402,7 +404,7 @@
   .outnews1{
     position: relative;
     width: 80%;
-    height: 350px;
+    height: 300px;
     border-radius: 100px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: white;
@@ -480,6 +482,7 @@
 
   .subsbtnnews > span{
     font-size: 18px;
+    text-align: center;
     color: white;
     font-weight: 500;
   }
