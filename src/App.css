@@ -255,13 +255,13 @@
   .sec4spltitle{
     width: 450px;
     /* background-color: #435CFF; */
-    height: 170px;
+    height: 150px;
     /* padding: 30px; */
     border-radius: 100px 0px 0px 0px;
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     /* justify-content: center; */
   }
