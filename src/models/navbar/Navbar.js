@@ -18,6 +18,7 @@ export const Navbar = () => {
 				onClick={() => {
 					navigate("/");
 				}}
+				style={{ cursor: "pointer" }}
 			/>
 			<div
 				className="opmock"
@@ -44,12 +45,20 @@ export const Navbar = () => {
 					<span
 						className="spanpadding"
 						onClick={() => {
+							setSidenav(false);
 							navigate("/login");
 						}}
 					>
 						Login
 					</span>
-					<span>Sign Up</span>
+					<span
+						onClick={() => {
+							setSidenav(false);
+							navigate("/signup");
+						}}
+					>
+						Sign Up
+					</span>
 				</div>
 			</div>
 		</nav>
