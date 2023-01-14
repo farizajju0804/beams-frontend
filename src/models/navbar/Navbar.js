@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./navbar.css";
 import logo from "../../assets/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { HiOutlineXMark } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
@@ -35,7 +35,7 @@ export const Navbar = () => {
 						setSidenav(!sidenav);
 					}}
 				>
-					<AiOutlineArrowRight color="white" size={20} />
+					<HiOutlineXMark color="white" size={20} />
 				</div>
 				<div className="sidenavlinks">
 					<span>Product</span>

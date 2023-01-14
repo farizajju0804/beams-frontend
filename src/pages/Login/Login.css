@@ -147,7 +147,7 @@
 }
 
 .passerr > span{
-    margin-left: 10px;
+    margin-left: 3px;
 }
 
 .passcloud{
@@ -181,6 +181,10 @@
 }
 
 .passerr:hover ~ .passcloud{
+    display: flex;
+}
+
+.passwordsignupinput:focus ~ .passcloud{
     display: flex;
 }
 

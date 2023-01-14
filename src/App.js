@@ -21,17 +21,24 @@ function App() {
 	useEffect(() => {
 		AOS.init({
 			duration: 900,
-			once: true
+			once: true,
+			offset: 20
 		});
 	}, []);
 
 	return (
 		<div className="App">
 			<div className="landingpage">
-				<section className="one landingsection">
+				<section className="one">
 					<Navbar></Navbar>
 					<div className="bgvideo">
-						<video src={landingvideo} autoPlay loop muted></video>
+						<video
+							src={landingvideo}
+							autoPlay
+							loop
+							playsInline={true}
+							muted
+						></video>
 						<div className="sec1data">
 							<h2 data-aos="zoom-in">{data.landingpage.herotext}</h2>
 							<span data-aos="fade-up">{data.landingpage.subhero}</span>
@@ -44,7 +51,17 @@ function App() {
 						<span>{data.landingpage.sec2title}</span>
 					</div>
 					<div className="sec2data">
-						<img src={landingsec2img} alt="" className="object" />
+						<div
+							style={{
+								height: " 380px",
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center"
+							}}
+						>
+							<img src={landingsec2img} alt="" className="object" />
+						</div>
+
 						<div className="sec2idiv">
 							<h1 data-aos="fade-left">{data.landingpage.sec2quote}</h1>
 							<div className="sec2contdiv">
@@ -75,7 +92,7 @@ function App() {
 						<span>{data.landingpage.sec4title}</span>
 					</div>
 					<div className="sec4datadiv">
-						<div className="sec4spltitle" data-aos="zoom-in-up">
+						<div className="sec4spltitle">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								{data.landingpage.sec4innertitle}
@@ -103,7 +120,7 @@ function App() {
 						</div>
 					</div>
 				</section>
-				<section className="five landingsection">
+				{/* <section className="five landingsection">
 					<div className="sec2label">
 						<span>{data.landingpage.sec5title}</span>
 					</div>
@@ -177,7 +194,7 @@ function App() {
 							</div>
 						</Carousel>
 					</div>
-				</section>
+				</section> */}
 				<section className="six landingsection">
 					<div className="sec2label">
 						<span>{data.landingpage.sec6title}</span>
@@ -214,7 +231,7 @@ function App() {
 				<section className="seven landingsection">
 					<div className="newletter">
 						<div className="outnews1">
-							<div className="newsoutbod" data-aos="flip-left"></div>
+							<div className="newsoutbod"></div>
 							<div className="outnewsinner">
 								<div className="outnewsleft">
 									<h3 data-aos="fade-up"> Newsletter</h3>
@@ -222,7 +239,7 @@ function App() {
 										Everybody deserves to know about unique global trends.
 									</p>
 								</div>
-								<div className="outinner2" data-aos="flip-left">
+								<div className="outinner2">
 									<div className="subsnow">
 										<input type="text" placeholder="Enter your email address" />
 										<div className="subsbtnnews">

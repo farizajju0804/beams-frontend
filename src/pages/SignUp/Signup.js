@@ -52,6 +52,14 @@ export const Signup = () => {
 		setPassword(e.target.value);
 		var error = false;
 		var pass = e.target.value.toString();
+		if (pass === "") {
+			setpasslen(false);
+			setPassnum(false);
+			setPasslower(false);
+			setPassupper(false);
+			error = true;
+			return;
+		}
 		if (pass.length < 8) {
 			setpasslen(false);
 			error = true;
@@ -66,7 +74,7 @@ export const Signup = () => {
 			setPassnum(true);
 		}
 
-		if (pass === pass.toUpperCase) {
+		if (pass === pass.toUpperCase()) {
 			setPasslower(false);
 			error = true;
 		} else {
@@ -92,7 +100,12 @@ export const Signup = () => {
 	return (
 		<div className="loginpage">
 			<div>
-				<Toaster />
+				<Toaster
+					containerStyle={{
+						position: "absolute",
+						top: "90px"
+					}}
+				/>
 			</div>
 			<div className="logincont">
 				<h2>Sign Up</h2>
@@ -113,7 +126,9 @@ export const Signup = () => {
 					<label htmlFor="password">Enter Your Secure Password</label>
 					<input
 						className={
-							passwordborder ? "inputborderred logininput" : "logininput"
+							passwordborder
+								? "inputborderred logininput passwordsignupinput"
+								: "logininput passwordsignupinput"
 						}
 						// className="logininput"
 						value={password}
@@ -146,7 +161,7 @@ export const Signup = () => {
 							className="passerr"
 							style={{ display: "flex", alignItems: "center" }}
 						>
-							<HiOutlineInformationCircle color="red" />
+							<HiOutlineInformationCircle color="red" size={20} />
 							<span>The password does not meet the requirements</span>
 						</div>
 					)}

@@ -17,6 +17,13 @@
 }
 
 .landingsection{
+  /* height: 900px; */
+  display: flex;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+.one{
   height: 100vh;
   display: flex;
   scroll-snap-align: start;
@@ -89,11 +96,58 @@
   cursor:pointer;
  }
 
+
+ @media only screen and (max-width:800px) {
+  .sec1data h2{
+    font-size: 50px;
+  }
+
+  .sec1data span
+  {
+    font-size: 16px;
+  }
+
+  .sec1data button{
+    height: 60px;
+    width: 170px;
+    padding: 10px 20px;
+
+  }
+
+ }
+
+ @media only screen and (max-width:540px) {
+  .sec1data{
+  height: 400px;
+  width: 90%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  }
+  .sec1data h2{
+    font-size: 40px;
+  }
+
+  .sec1data span
+  {
+    font-size: 18px;
+  }
+
+  .sec1data button{
+    height: 60px;
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+
+  }
+
+ }
+
  /* End of Sec 1 */
 
  .two
  {
-  padding-top: 100px;
+  padding-top: 140px;
   padding-bottom: 20px;
   flex-direction: column;
  }
@@ -108,6 +162,7 @@
   align-items: center;
   justify-content: center;
   font-size: 30px;
+  /* margin-bottom: 30px; */
  }
 
  .sec2data{
@@ -124,7 +179,7 @@
  }
 
  .sec2data img{
-    width: 30%;
+    width: 100%;
     height: auto;
  }
 
@@ -146,14 +201,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: 550px;
   /* background-color: aliceblue; */
   align-items: center;
+  margin-bottom: 50px;
  }
 
  .sec2idiv h1{
   text-align: center;
-  font-size: 40px;
+  font-size: 32px;
  }
 
  .sec2contdiv{
@@ -181,6 +237,60 @@
   line-height: 30px;
  }
 
+ @media only screen and (max-width:1050px)
+ {
+  .sec2data img{
+    width: 90%;
+ }
+ }
+
+ @media only screen and (max-width:900px)
+ {
+  .sec2label
+  {
+    min-width: 308px
+  }
+
+  .two
+  {
+   padding-top: 100px;
+   padding-bottom: 20px;
+   flex-direction: column;
+  }
+  .sec2idiv{
+    width: 80%;
+
+   }
+
+  .sec2contdiv{
+    min-height: 350px;
+    margin-top: 40px;
+    height: 50%;
+    width: 100%;
+    
+   }
+
+   .sec2idiv > h1
+   {
+    margin-top: 100px;
+    margin-bottom: 20px;
+   }
+   
+ }
+
+ @media only screen and (max-width:800px)
+ {
+  .sec2idiv{
+    width: 95%;
+
+   }
+  .sec2data{
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+ }
+
  
  /* End of Sec 2 */
 
@@ -190,8 +300,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  padding-top: 100px;
+  padding-top: 140px;
   flex-direction: column;
+  height: 800px;
  }
 
  .sec3innerdiv{
@@ -232,10 +343,28 @@
 
  }
 
+ @media only screen and (max-width:800px){
+  .three{
+    padding-top: 100px;
+    height: 750px;
+   }
+
+   .sec3innerdiv{
+    width: 100%;
+    margin-left: 0px;
+   }
+
+   
+   .sec3innerdiv span{
+    font-size: 30px;
+    font-weight: 500;
+   }
+ }
+
   /* End of Sec 3 */
 
   .four{
-    padding-top: 100px;
+    padding-top: 140px;
     padding-bottom: 80px;
     width: 100%;
     flex-direction: column;
@@ -261,9 +390,11 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
+    margin-top: 90px;
+    margin-bottom: 90px;
 
-    /* justify-content: center; */
   }
 
   .sec4innertitle{
@@ -278,10 +409,11 @@
   .sec4splbg{
     background-color: #F7CD61;
     height: 100%;
-    width: 32%;
+    width: 176px;
     position: absolute;
     border-radius: 100px 0px 0px 0px;
     z-index: 0;
+    left: 0;
   }
 
   .sec4cardsdiv
@@ -289,6 +421,7 @@
     display: flex;
     width: 85%;
     justify-content: space-evenly;
+    margin-bottom: 60px;
   }
 
   .sec4carddiv{
@@ -315,6 +448,37 @@
     width: 230px;
 
   }
+
+  @media only screen and (max-width:1080px) {
+    .sec4cardsdiv{
+      flex-direction: column;
+    }
+
+    .sec4carddiv{
+      margin: 20px;
+    }
+
+    .sec4innertitle{
+      font-size: 24px;
+    }
+
+    .sec4spltitle{
+      width: 350px;
+      height: 70%;
+      border-radius: 10px 0px 0px 0px;
+    }
+
+    .sec4splbg{
+      width: 116px;
+      height: 100px;
+    }
+
+    .four{
+      padding-bottom: 0px;
+    }
+  }
+
+  
 
     /* End of Sec 4 */
 
@@ -383,6 +547,12 @@
     background-color: #FAFAFA;
   }
 
+  @media only screen and (max-width:800px) {
+    .six{
+      padding-bottom: 0px;
+    }
+  }
+
   /* End of Sec 6 */
 
   .seven{
@@ -391,14 +561,14 @@
 
   .newletter
   {
-    height: 60%;
+    /* height: 60%; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
-    padding-top: 100px;
-
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .outnews1{
@@ -459,6 +629,7 @@
     height: 80px;
     border-radius: 100px;
     width: 95%;
+    min-width: 331px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     top: 50%;
@@ -491,4 +662,93 @@
     border: none;
     font-size: 16px;
     outline: none;
+  }
+
+  @media only screen and (max-width:1320px) {
+    .subsnow{
+      right: -40%;
+    }
+  }
+
+  @media only screen and (max-width:1218px) {
+    .subsnow{
+      right: -50%;
+    }
+
+    .outnewsleft > p{
+      width: 250px;
+    }
+  }
+
+  @media only screen and (max-width:1000px) {
+    .outnewsinner
+    {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .subsnow{
+      position: relative;
+      min-width: 270px;
+    }
+
+    .outnews1{
+      width: 100%;
+      border-radius: 50px;
+      height: 320px;
+    }
+
+    .newletter
+    {
+      padding: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .newsoutbod
+  {
+   
+    left: -10px;
+    bottom: -10px;
+    border-radius: 0px 0px 0px 50px;
+  }
+
+  .outinner2{
+    width: 70%;
+    margin-top: 30px;
+  }
+
+  .subsbtnnews{
+    height: 100%;
+    width: 40%;
+  }
+
+  .subsbtnnews > span{
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+  }
+
+  .subsnow > input{
+    border: none;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .outnewsleft{
+    align-items: center;
+    margin-left: 0px;
+  }
+
+  .outnewsleft > h3{
+    font-size: 33px;
+
+  }
+
+  
+  .outnewsleft > p{
+    text-align: center;
+
+  }
   }

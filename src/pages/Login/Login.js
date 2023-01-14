@@ -43,7 +43,10 @@ export const Login = () => {
 	return (
 		<div className="loginpage">
 			<div>
-				<Toaster />
+				<Toaster containerStyle={{
+						position: "absolute",
+						top: "90px"
+					}} />
 			</div>
 			<div className="logincont">
 				<h2>Login</h2>
