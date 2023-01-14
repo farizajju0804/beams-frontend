@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+    margin-bottom: 60px;
 }
 
 .logincont h2{
@@ -97,6 +97,7 @@
 
 .signupremember label{
     font-size: 12px;
+    margin-left: 5px;
 }
 
 
@@ -200,5 +201,27 @@
 {
     .loginimgpos{
         display: none;
+    }
+}
+
+@media only screen and (max-width:460px) {
+    .logincont{
+        padding: 30px 30px 30px 30px;
+        width: 90%;
+    }
+
+    .loginitem label {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .loginoptions{
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .signupremember label{
+        font-size: 12px;
+        margin-left: 5px;
     }
 }
