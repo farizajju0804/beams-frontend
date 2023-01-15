@@ -110,12 +110,12 @@ export const Signup = () => {
 			<div className="logincont">
 				<h2>Sign Up</h2>
 				<div className="loginitem">
-					<label htmlFor="email">Enter Your Email Address</label>
+					{/* <label htmlFor="email">Enter Your Email Address</label> */}
 					<input
 						className={emailborder ? "inputborderred logininput" : "logininput"}
 						type="text"
 						id="email"
-						placeholder="Email Address"
+						placeholder="Enter Your Email Address"
 						onChange={(e) => {
 							setEmail(e.target.value);
 						}}
@@ -123,7 +123,7 @@ export const Signup = () => {
 					/>
 				</div>
 				<div className="loginitem">
-					<label htmlFor="password">Enter Your Secure Password</label>
+					{/* <label htmlFor="password">Enter Your Secure Password</label> */}
 					<input
 						className={
 							passwordborder
@@ -134,7 +134,7 @@ export const Signup = () => {
 						value={password}
 						type={ispassvis ? "text" : "password"}
 						id="password"
-						placeholder="Password"
+						placeholder="Enter a Secure Password"
 						onChange={(e) => {
 							checkpass(e);
 						}}
@@ -154,6 +154,8 @@ export const Signup = () => {
 							onClick={() => {
 								setIspassvis(!ispassvis);
 							}}
+							color={"#435CFF"}
+
 						/>
 					)}
 					{passwordborder && (
@@ -237,7 +239,7 @@ export const Signup = () => {
 					<div className="signupremember">
 						<input type="checkbox" id="logincheck" defaultChecked />
 						<label htmlFor="logincheck">
-							By creating an account you agree to our Terms and Privacy Policy
+							You agree to our Terms and Privacy Policy
 						</label>
 					</div>
 				</div>
@@ -247,10 +249,10 @@ export const Signup = () => {
 						Signup();
 					}}
 				>
-					Sign In
+					Sign Up
 				</button>
 				<p className="noaccout">
-					No account?{" "}
+					Have an account?{" "}
 					<strong
 						style={{ cursor: "pointer" }}
 						onClick={() => {

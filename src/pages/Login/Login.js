@@ -43,20 +43,22 @@ export const Login = () => {
 	return (
 		<div className="loginpage">
 			<div>
-				<Toaster containerStyle={{
+				<Toaster
+					containerStyle={{
 						position: "absolute",
 						top: "90px"
-					}} />
+					}}
+				/>
 			</div>
 			<div className="logincont">
 				<h2>Login</h2>
 				<div className="loginitem">
-					<label htmlFor="email">Enter Your Email Address</label>
+					{/* <label htmlFor="email">Enter Your Email Address</label> */}
 					<input
 						className={emailborder ? "inputborderred logininput" : "logininput"}
 						type="text"
 						id="email"
-						placeholder="Email Address"
+						placeholder="Enter Your Email Address"
 						onChange={(e) => {
 							setEmail(e.target.value);
 						}}
@@ -64,7 +66,7 @@ export const Login = () => {
 					/>
 				</div>
 				<div className="loginitem">
-					<label htmlFor="email">Enter Your Secure Password</label>
+					{/* <label htmlFor="email">Enter Your Secure Password</label> */}
 					<input
 						className={
 							passwordborder ? "inputborderred logininput" : "logininput"
@@ -73,7 +75,7 @@ export const Login = () => {
 						value={password}
 						type={ispassvis ? "text" : "password"}
 						id="email"
-						placeholder="Password"
+						placeholder="Enter Password"
 						onChange={(e) => {
 							setPassword(e.target.value);
 						}}
@@ -93,6 +95,7 @@ export const Login = () => {
 							onClick={() => {
 								setIspassvis(!ispassvis);
 							}}
+							color={"#435CFF"}
 						/>
 					)}
 				</div>
@@ -106,7 +109,7 @@ export const Login = () => {
 							navigate("/resetpassword");
 						}}
 					>
-						Forgot Password ?
+						Forgot Password?
 					</span>
 				</div>
 				<button

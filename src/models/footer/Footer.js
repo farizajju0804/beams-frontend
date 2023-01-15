@@ -36,16 +36,16 @@ export const Footer = () => {
 				<div className="footitem">
 					<h3>Support</h3>
 					<p>FAQ</p>
-					<p>Private Policy</p>
-					<p>terms of Service</p>
+					<p>Privacy Policy</p>
+					<p>Terms of Service</p>
 				</div>
 				<div className="footitem">
 					<h3>Contact</h3>
-					<p>info@innbreiff.com</p>
+					<p>info@innbrieff.com</p>
 				</div>
 			</div>
 			<div className="fdivder"></div>
-			<p>© 2023 Pixelmatters. All rights reserved.</p>
+			<p>© 2023 Innbrieff. All Rights Reserved.</p>
 		</div>
 	);
 };

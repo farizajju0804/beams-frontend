@@ -37,7 +37,7 @@ export const Resetpass = () => {
 			<div className="logincont">
 				<h2>Reset Password</h2>
 				<div className="loginitem">
-					<label htmlFor="email">Enter Your Email Address</label>
+					{/* <label htmlFor="email">Enter Your Email Address</label> */}
 					<input
 						className={emailborder ? "inputborderred logininput" : "logininput"}
 						type="text"

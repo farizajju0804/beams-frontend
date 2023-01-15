@@ -65,7 +65,9 @@ function App() {
 						<div className="sec2idiv">
 							<h1 data-aos="fade-left">{data.landingpage.sec2quote}</h1>
 							<div className="sec2contdiv">
-								<h1 data-aos="fade-left">{data.landingpage.sec2contheader}</h1>
+								<h1 style={{ color: "#F7CD61" }} data-aos="fade-left">
+									{data.landingpage.sec2contheader}
+								</h1>
 								<span data-aos="fade-left">
 									{data.landingpage.sec2contdata}
 								</span>

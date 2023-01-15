@@ -32,6 +32,7 @@
 .logincont h2{
     font-size: 38px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .loginitem{
@@ -53,6 +54,7 @@
     border-radius: 8px;
     border-color: rgb(205, 205, 205);
     border-style: solid;
+    margin-top: 10px;
 }
 
 .inputborderred{
@@ -92,7 +94,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    /* width: ; */
 }
 
 .signupremember label{
@@ -126,9 +128,10 @@
 
 .oauths{
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: space-evenly;
+    align-self: center;
 }
 
 .oauths > img{
