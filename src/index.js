@@ -7,6 +7,9 @@ import { Login } from "./pages/Login/Login";
 import { Navbar } from "./models/navbar/Navbar";
 import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
+import { Beams } from "./pages/Beams/Beams";
+import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
+import { Footer } from "./models/footer/Footer";
 
 const router = createBrowserRouter([
 	{
@@ -37,6 +40,16 @@ const router = createBrowserRouter([
 			<div>
 				<Navbar />
 				<Resetpass />
+			</div>
+		)
+	},
+	{
+		path: "/beams",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Beams />
+				<Footer />
 			</div>
 		)
 	}
