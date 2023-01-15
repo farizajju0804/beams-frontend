@@ -3,8 +3,11 @@ import beamshero from "../../assets/beamshero.png";
 import "./Beams.css";
 import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
+import { useNavigate } from "react-router-dom";
 
 export const Beams = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="beamspage">
 			<section className="trendingbeamshero">
@@ -25,7 +28,7 @@ export const Beams = () => {
 					<Minibeamscard />
 					<Minibeamscard />
 				</div>
-				<a href="/beams">See more...</a>
+				<a href="/minibeams">See more...</a>
 			</section>
 			<section className="minibeams">
 				<div className="sec2label">
@@ -35,7 +38,7 @@ export const Beams = () => {
 					<Maxbeamscard />
 					<Maxbeamscard />
 				</div>
-				<a href="/beams">See more...</a>
+				<a href="/maxbeams">See more...</a>
 			</section>
 		</div>
 	);

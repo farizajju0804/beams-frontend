@@ -44,6 +44,12 @@
     cursor: pointer;
 }
 
+.loggedinnav > h1
+{
+ 
+    cursor: pointer;
+}
+
 .navaccoutholder{
     height: 40px;
     /* width: 230px; */

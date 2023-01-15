@@ -1,11 +1,21 @@
 import React from "react";
 import "./LoggedinNav.css";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export const LoggedinNav = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="loggedinnav">
-			<h1 style={{ color: "#435CFF" }}>Innbrieff.</h1>
+			<h1
+				style={{ color: "#435CFF" }}
+				onClick={() => {
+					navigate("/beams");
+				}}
+			>
+				Innbrieff.
+			</h1>
 			<div className="searchbar">
 				<input type="text" placeholder="Search" />
 				<AiOutlineSearch className="searchicon" size={20}></AiOutlineSearch>

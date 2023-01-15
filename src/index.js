@@ -10,6 +10,8 @@ import { Signup } from "./pages/SignUp/Signup";
 import { Beams } from "./pages/Beams/Beams";
 import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
 import { Footer } from "./models/footer/Footer";
+import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
+import { Minibeams } from "./pages/Minibeams/Minibeams";
 
 const router = createBrowserRouter([
 	{
@@ -49,6 +51,26 @@ const router = createBrowserRouter([
 			<div>
 				<LoggedinNav />
 				<Beams />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/maxbeams",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Maxbeams />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/minibeams",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Minibeams />
 				<Footer />
 			</div>
 		)
