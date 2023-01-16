@@ -2,8 +2,10 @@ import React from "react";
 import maxbeamimg from "../../assets/maxbeampagemock.png";
 import "./Maxbeampage.css";
 import { FaBook } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export const Maxbeampage = () => {
+	const navigate = useNavigate();
 	return (
 		<div className="maxbeampage">
 			<div className="maxbeaminner">
@@ -22,7 +24,12 @@ export const Maxbeampage = () => {
 							<FaBook />
 							<span>Read</span>
 						</div>
-						<div className="maxbeamsbtn">
+						<div
+							className="maxbeamsbtn"
+							onClick={() => {
+								navigate("/maxbeamsong/123");
+							}}
+						>
 							<FaBook />
 							<span>Listen</span>
 						</div>

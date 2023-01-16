@@ -42,6 +42,7 @@
     background-color: #F7CD61;
     padding: 10px 30px;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .maxbeamsbtn > span{
