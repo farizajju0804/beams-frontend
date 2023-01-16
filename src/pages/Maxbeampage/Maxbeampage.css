@@ -1,0 +1,49 @@
+.maxbeampage{
+    /* background-image: url("../../assets/maxbeampagebg.png"); */
+    width: 100%;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.maxbeaminner{
+    display: flex;
+    width: 70%;
+}
+
+.maxbeaminner > img{
+    width: 30%;
+    height: auto;
+    margin-right: 60px;
+}
+
+.maxbeampagedata > span{
+    font-size: 40px;
+    
+}
+
+.maxbeampagedata > p{
+    margin-top: 50px;
+    width: 90%;
+    line-height: 25px;
+}
+
+.maxbeamspagebtns{
+    margin-top: 40px;
+    display: flex;
+    width: 95%;
+    justify-content: space-evenly;
+}
+
+.maxbeamsbtn{
+    display: flex;
+    background-color: #F7CD61;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+.maxbeamsbtn > span{
+    margin-left: 10px;
+}

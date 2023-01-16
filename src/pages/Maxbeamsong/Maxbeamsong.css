@@ -1,0 +1,40 @@
+.Maxbeamsong{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background-color: #FAFAFA;
+}
+
+.songcard{
+    width: 450px;
+    height: 600px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.songcard span{
+    margin: 20px;
+    font-size: 30px;
+}
+
+.scardbanner{
+    height: 50%;
+    width: auto;
+}
+
+.scardcontrol{
+    width: 70%;
+    height: auto;
+}
+
+.scardtracker{
+    width: 70%;
+    height: auto;
+}

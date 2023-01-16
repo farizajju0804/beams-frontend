@@ -4,6 +4,7 @@
     background-color: #FAFAFA;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .trendingbeamshero{
@@ -62,4 +63,79 @@
     color: black;
     font-weight: 500;
     font-size: 18px;    
+}
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(120, 120, 120, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.popupcloser{
+    height: 5%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+.popup{
+    width: clamp(60%,1000px,90%);
+    height: min(85%,900px);
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+
+}
+
+.popupdata{
+    background-image: url('../../assets//Popupbg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95%;
+    width: 100%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0px 0px 20px 20px;
+    
+}
+
+.popdatainner{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.popupdata > h2{
+    color: #F7CD61;
+    font-size: 55px;
+}
+
+.popdatainner > span{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.popdatainner > img{
+    width: 35%;
+    height: auto;
 }

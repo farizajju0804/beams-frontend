@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import beamshero from "../../assets/beamshero.png";
 import "./Beams.css";
 import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { Popup } from "../../models/Popup/Popup";
 
 export const Beams = () => {
-	const navigate = useNavigate();
+	const [modelopen, setModelopen] = useState(false);
+	const close = () => setModelopen(false);
+	const open = () => setModelopen(true);
+	// const navigate = useNavigate();
 
 	return (
 		<div className="beamspage">
+			{modelopen && <Popup handleClose={close}></Popup>}
 			<section className="trendingbeamshero">
 				<div className="beamsherotexts">
 					<h3>TRENDING BEAMS</h3>
@@ -24,7 +29,7 @@ export const Beams = () => {
 					<span>Mini Beams</span>
 				</div>
 				<div className="minicardssection">
-					<Minibeamscard />
+					<Minibeamscard open={open} />
 					<Minibeamscard />
 					<Minibeamscard />
 				</div>

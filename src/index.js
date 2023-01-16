@@ -12,6 +12,8 @@ import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
 import { Footer } from "./models/footer/Footer";
 import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
 import { Minibeams } from "./pages/Minibeams/Minibeams";
+import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
+import { Maxbeamsong } from "./pages/Maxbeamsong/Maxbeamsong";
 
 const router = createBrowserRouter([
 	{
@@ -71,6 +73,26 @@ const router = createBrowserRouter([
 			<div>
 				<LoggedinNav />
 				<Minibeams />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/maxbeampage/:id",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Maxbeampage />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/maxbeamsong/:id",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Maxbeamsong />
 				<Footer />
 			</div>
 		)
