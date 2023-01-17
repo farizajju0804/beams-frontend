@@ -1,0 +1,88 @@
+.LibraryPage{
+    background-color: #FAFAFA;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.libraryoption{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #FAFAFA;
+    align-items: center;
+    /* margin-top: 40px; */
+}
+
+.libraryopitem{
+    cursor: pointer;
+}
+
+.libraryopitem span{
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #9F9F9F;
+
+}
+
+.lbopic{
+    color: #9F9F9F;
+}
+
+.filteroption{
+    
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 30px;
+}
+
+.filteroption select{
+    margin-right: 30px;
+}
+
+.hightlightitem{
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 60px;
+}
+
+.hightlightitemheading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.highlightitemicon{
+    font-size: 20px;
+    margin-left: 50px;
+    cursor: pointer;
+
+   
+}
+
+.hightlightitemoptions > input{
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+}
+
+.hightlightitemheading > span{
+    font-size: 32px;
+}
+
+.highlightdata{
+    padding-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #FAFAFA;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.highlightdata > img{
+    margin-top: 30px;
+}

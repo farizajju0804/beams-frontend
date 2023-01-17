@@ -14,6 +14,11 @@ import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
 import { Minibeams } from "./pages/Minibeams/Minibeams";
 import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
 import { Maxbeamsong } from "./pages/Maxbeamsong/Maxbeamsong";
+import { Aboutus } from "./pages/Aboutus/Aboutus";
+import { Library } from "./pages/Library/Library";
+import { Favourites } from "./pages/Library/Favourites";
+import { Completed } from "./pages/Library/Completed";
+import { Notes } from "./pages/Library/Notes";
 
 const router = createBrowserRouter([
 	{
@@ -93,6 +98,56 @@ const router = createBrowserRouter([
 			<div>
 				<LoggedinNav />
 				<Maxbeamsong />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/aboutus",
+		element: (
+			<div>
+				<Navbar />
+				<Aboutus />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/hightlight",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Library />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/favourites",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Favourites />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/completed",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Completed />
+				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/notes",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Notes />
 				<Footer />
 			</div>
 		)

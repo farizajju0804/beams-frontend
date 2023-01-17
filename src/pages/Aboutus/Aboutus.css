@@ -1,0 +1,164 @@
+.aboutuspage{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+
+}
+
+.abtus1{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../assets/Aboutusbg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* padding: 70px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.abt1bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/aboutusimg.png");
+    width: 80%;
+    height: 80%;
+    margin-top: 100px;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.abtush1{
+    position: absolute;
+    top: 0;
+    padding: 20px 40px;
+    background-color: #F7CD61;
+    font-size: 30px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.abt1bg > h1{
+    font-size: 70px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.abtus2{
+    height: 800px;
+    width: 100%;
+    background-image: url("../../assets/aboutussec2bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px;
+    margin-top: 50px;
+}
+
+.abtus2inner1{
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.abtus2inner1 span{
+    color: white;
+    font-weight: 500;
+    font-size: 40px
+}
+
+.abtusdivider{
+    background-color: white;
+    height: 3px;
+    width: 150px;
+    margin-top: 30px;
+}
+
+.abtus2inner2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.abtus2inner2 > div{
+   margin-left: 60px;
+}
+
+.abtus2inner2 >div > p{
+    color: white;
+    margin: 20px;
+    font-size: 24px;
+    width: 550px;
+}
+
+.abtus3{
+    background-color: #ffffff;
+    height: 900px;
+    padding-top: 100px;
+}
+
+.abtus3data{
+    display: flex;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 100px;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.abtus3data ul{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.abtus3data li{
+    font-size: 20px;
+}
+
+.abtus3data > img{
+    width: 400px;
+    height: 450px;
+    align-self: center;
+}
+
+.abtus4{
+    height: 900px;
+    width: 100%;
+    background-image: url("../../assets/aboutusteam1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+  position: relative;
+
+}
+
+.abtus4info{
+    color: white;
+    position: absolute;
+    font-size: 40px;
+    bottom: 100px;
+    left: 200px;
+}
+
+.abtus4info h1{
+    margin: 20px;
+}
+
+.abtus4info h3{
+    margin: 20px;
+}
+
+.abtus4info div{
+    margin: 20px;
+}
