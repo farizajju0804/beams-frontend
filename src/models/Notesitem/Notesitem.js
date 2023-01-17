@@ -4,8 +4,8 @@ import { IoIosArrowUp } from "react-icons/io";
 import { ImBin } from "react-icons/im";
 import notesItemMock from "../../assets/notesitemmock.png";
 
-export const Notesitem = () => {
-	const [closearrow, setClosearrow] = useState(false);
+export const Notesitem = ({ open }) => {
+	const [closearrow, setClosearrow] = useState(!open ? false : true);
 
 	return (
 		<div className="hightlightitem">

@@ -4,8 +4,8 @@ import { IoIosArrowUp } from "react-icons/io";
 import { ImBin } from "react-icons/im";
 import highlightlibrary from "../../assets/highlightsmock.png";
 
-export const Hightlightitem = () => {
-	const [closearrow, setClosearrow] = useState(false);
+export const Hightlightitem = ({ open }) => {
+	const [closearrow, setClosearrow] = useState(!open ? false : true);
 
 	return (
 		<div className="hightlightitem">

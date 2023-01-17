@@ -113,7 +113,7 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/hightlight",
+		path: "/hightlights",
 		element: (
 			<div>
 				<LoggedinNav />

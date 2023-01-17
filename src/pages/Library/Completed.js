@@ -5,24 +5,47 @@ import { MdEditNote } from "react-icons/md";
 import { BsPenFill } from "react-icons/bs";
 import { FavouritesCard } from "../../models/FavouritesCard/FavouritesCard";
 import "./Library.css";
+import { useNavigate } from "react-router-dom";
 
 export const Completed = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="LibraryPage">
 			<div className="libraryoption">
-				<div className="libraryopitem">
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/completed");
+					}}
+				>
 					<IoIosCheckmarkCircle className="lbopic" size={20} color="#435CFF" />
 					<span style={{ color: "#435CFF" }}>Completed</span>
 				</div>
-				<div className="libraryopitem">
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/favourites");
+					}}
+				>
 					<AiFillHeart className="lbopic" />
 					<span>Favourites</span>
 				</div>
-				<div className="libraryopitem">
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/notes");
+					}}
+				>
 					<MdEditNote className="lbopic" size={20} />
 					<span>Notes </span>
 				</div>
-				<div className="libraryopitem">
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/hightlights");
+					}}
+				>
 					<BsPenFill className="lbopic" />
 					<span>Highlights</span>
 				</div>

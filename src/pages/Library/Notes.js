@@ -4,27 +4,50 @@ import { AiFillHeart } from "react-icons/ai";
 import { MdEditNote } from "react-icons/md";
 import { BsPenFill } from "react-icons/bs";
 import { Notesitem } from "../../models/Notesitem/Notesitem";
+import { useNavigate } from "react-router-dom";
 import "./Library.css";
 
 export const Notes = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="LibraryPage">
 			<div className="libraryoption">
-				<div className="libraryopitem">
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/completed");
+					}}
+				>
 					<IoIosCheckmarkCircle className="lbopic" size={20} />
 					<span>Completed</span>
 				</div>
-				<div className="libraryopitem">
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/favourites");
+					}}
+				>
 					<AiFillHeart className="lbopic" size={20} />
 					<span>Favourites</span>
 				</div>
-				<div className="libraryopitem">
-					<MdEditNote className="lbopic" size={20} />
-					<span>Notes </span>
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/notes");
+					}}
+				>
+					<MdEditNote className="lbopic" color="#435CFF" size={20} />
+					<span style={{ color: "#435CFF" }}>Notes </span>
 				</div>
-				<div className="libraryopitem">
-					<BsPenFill className="lbopic" color="#435CFF" size={20} />
-					<span style={{ color: "#435CFF" }}>Highlights</span>
+				<div
+					className="libraryopitem"
+					onClick={() => {
+						navigate("/hightlights");
+					}}
+				>
+					<BsPenFill className="lbopic" size={20} />
+					<span>Highlights</span>
 				</div>
 				<div className="libraryopitem">
 					<span style={{ color: "black" }}>Sort By</span>
@@ -47,8 +70,8 @@ export const Notes = () => {
 					<option value="">abc</option>
 				</select>
 			</div>
-			<Notesitem></Notesitem>
-			<Notesitem></Notesitem>
+			<Notesitem open={true}></Notesitem>
+			<Notesitem open={false}></Notesitem>
 		</div>
 	);
 };

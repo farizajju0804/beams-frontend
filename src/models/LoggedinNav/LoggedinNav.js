@@ -21,7 +21,13 @@ export const LoggedinNav = () => {
 				<AiOutlineSearch className="searchicon" size={20}></AiOutlineSearch>
 			</div>
 			<span>Beams</span>
-			<span>Library</span>
+			<span
+				onClick={() => {
+					navigate("/completed");
+				}}
+			>
+				Library
+			</span>
 			<div className="navaccoutholder">
 				<img
 					src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=2000"
