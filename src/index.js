@@ -19,6 +19,8 @@ import { Library } from "./pages/Library/Library";
 import { Favourites } from "./pages/Library/Favourites";
 import { Completed } from "./pages/Library/Completed";
 import { Notes } from "./pages/Library/Notes";
+import AuthProvider from "./AuthProvider/AuthProvider";
+import { Products } from "./pages/Products/Products";
 
 const router = createBrowserRouter([
 	{
@@ -151,6 +153,16 @@ const router = createBrowserRouter([
 				<Footer />
 			</div>
 		)
+	},
+	{
+		path: "/products",
+		element: (
+			<div>
+				<Navbar />
+				<Products />
+				<Footer />
+			</div>
+		)
 	}
 ]);
 
@@ -158,6 +170,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<AuthProvider>
+			<RouterProvider router={router} />
+		</AuthProvider>
 	</React.StrictMode>
 );

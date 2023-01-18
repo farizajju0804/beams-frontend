@@ -13,22 +13,73 @@ import googlelogo from "../../assets/Google.png";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import loginimg from "../../assets/loginimg.png";
+import { API } from "../../constants";
+import { useAuthContext } from "../../context/AuthContext";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const Signup = () => {
 	const [ispassvis, setIspassvis] = useState(false);
 	const [email, setEmail] = useState("");
+	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
+	const [nameborder, setNameborder] = useState(false);
 	const [emailborder, setEmailborder] = useState(false);
 	const [passwordborder, setPasswordborder] = useState(false);
 	const [passlen, setpasslen] = useState(false);
 	const [passnum, setPassnum] = useState(false);
 	const [passupper, setPassupper] = useState(false);
 	const [passlower, setPasslower] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState("");
 
 	const navigate = useNavigate();
 
+	const { setUser } = useAuthContext();
+
+	const signUpcall = async () => {
+		setIsLoading(true);
+		try {
+			const response = await fetch(`${API}/auth/local/register`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					name: name,
+					username: email,
+					email: email,
+					password: password
+				})
+			});
+
+			const data = await response.json();
+			if (data?.error) {
+				throw data?.error;
+			} else {
+				// setToken(data.jwt);
+				setUser(data.user);
+				// alert(`Welcome to Social Cards ${data.user.username}!`);
+				navigate("/beams", { replace: true });
+			}
+		} catch (error) {
+			toast.error(error?.message ?? "Something went wrong!");
+			setError(error?.message ?? "Something went wrong!");
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
 	const Signup = () => {
-		if (!email) {
+		if (!name) {
+			// setErrors("Required");
+			setNameborder(true);
+			toast.error("Name Required");
+
+			return;
+		} else if (name) {
+			// setErrors("Required");
+			setNameborder(false);
+		} else if (!email) {
 			// setErrors("Required");
 			setEmailborder(true);
 			toast.error("Email Required");
@@ -46,6 +97,13 @@ export const Signup = () => {
 			toast.error("Check Password");
 			return;
 		}
+
+		if (passwordborder) {
+			toast.error("Check Password");
+			return;
+		}
+
+		signUpcall();
 	};
 
 	const checkpass = (e) => {
@@ -88,8 +146,6 @@ export const Signup = () => {
 			setPassupper(true);
 		}
 
-		console.log(passlen, passlower, passnum, passupper);
-
 		if (!error) {
 			setPasswordborder(false);
 		} else {
@@ -109,6 +165,19 @@ export const Signup = () => {
 			</div>
 			<div className="logincont">
 				<h2>Sign Up</h2>
+				<div className="loginitem">
+					{/* <label htmlFor="email">Enter Your Email Address</label> */}
+					<input
+						className={nameborder ? "inputborderred logininput" : "logininput"}
+						type="text"
+						id="name"
+						placeholder="Enter Your Name"
+						onChange={(e) => {
+							setName(e.target.value);
+						}}
+						value={name}
+					/>
+				</div>
 				<div className="loginitem">
 					{/* <label htmlFor="email">Enter Your Email Address</label> */}
 					<input
@@ -155,7 +224,6 @@ export const Signup = () => {
 								setIspassvis(!ispassvis);
 							}}
 							color={"#435CFF"}
-
 						/>
 					)}
 					{passwordborder && (
@@ -249,7 +317,11 @@ export const Signup = () => {
 						Signup();
 					}}
 				>
-					Sign Up
+					{isLoading ? (
+						<ClipLoader color="white" size={23}></ClipLoader>
+					) : (
+						"Sign Up"
+					)}
 				</button>
 				<p className="noaccout">
 					Have an account?{" "}

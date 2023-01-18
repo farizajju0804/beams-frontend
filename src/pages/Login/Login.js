@@ -8,20 +8,63 @@ import googlelogo from "../../assets/Google.png";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import loginimg from "../../assets/loginimg.png";
+import { API } from "../../constants";
+import { setToken } from "../../helpers";
+import { useAuthContext } from "../../context/AuthContext";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const Login = () => {
 	const [ispassvis, setIspassvis] = useState(false);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	// const [errors, setErrors] = useState("");
 	const [emailborder, setEmailborder] = useState(false);
 	const [passwordborder, setPasswordborder] = useState(false);
-
+	const { setUser } = useAuthContext();
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState("");
+	const [rememberme, setRememberme] = useState(true);
 	const navigate = useNavigate();
+
+	const logIn = async () => {
+		setIsLoading(true);
+		try {
+			const value = {
+				identifier: email,
+				password: password
+			};
+			const response = await fetch(`${API}/auth/local`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(value)
+			});
+
+			const data = await response.json();
+			if (data?.error) {
+				throw data?.error;
+			} else {
+				if (rememberme) {
+					setToken(data.jwt);
+				}
+				setUser(data.user);
+				// toast.success(`Welcome back ${data.user.username}!`);
+				navigate("/beams", { replace: true });
+			}
+		} catch (error) {
+			if (error.message === "Invalid identifier or password") {
+				toast.error("Invalid email or Password");
+			} else {
+				toast.error(error.message);
+			}
+			setError(error?.message ?? "Something went wrong!");
+		} finally {
+			setIsLoading(false);
+		}
+	};
 
 	const signIn = () => {
 		if (!email) {
-			// setErrors("Required");
 			setEmailborder(true);
 			toast.error("Email Required");
 
@@ -38,6 +81,8 @@ export const Login = () => {
 			toast.error("Check Password");
 			return;
 		}
+
+		logIn();
 	};
 
 	return (
@@ -74,8 +119,8 @@ export const Login = () => {
 						// className="logininput"
 						value={password}
 						type={ispassvis ? "text" : "password"}
-						id="email"
-						placeholder="Enter Password"
+						id="password"
+						placeholder="Enter Your Password"
 						onChange={(e) => {
 							setPassword(e.target.value);
 						}}
@@ -101,7 +146,14 @@ export const Login = () => {
 				</div>
 				<div className="loginoptions">
 					<div className="loginremember">
-						<input type="checkbox" id="logincheck" defaultChecked />
+						<input
+							type="checkbox"
+							onChange={(e) => {
+								setRememberme(e.target.checked);
+							}}
+							id="logincheck"
+							defaultChecked
+						/>
 						<label htmlFor="logincheck">Remember Me</label>
 					</div>
 					<span
@@ -118,10 +170,14 @@ export const Login = () => {
 						signIn();
 					}}
 				>
-					Sign In
+					{isLoading ? (
+						<ClipLoader color="white" size={23}></ClipLoader>
+					) : (
+						"Sign In"
+					)}
 				</button>
 				<p className="noaccout">
-					No account?{" "}
+					No account? &nbsp;{" "}
 					<strong
 						style={{ cursor: "pointer" }}
 						onClick={() => {

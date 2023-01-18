@@ -1,0 +1,52 @@
+.productspage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.prodsec1{
+    width: 100%;
+    height: 100vh;
+    padding: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../assets/productslandbg.png");
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.prodsec1 h1{
+    color: white;
+    font-size: 70px;
+    margin-bottom: 200px;
+}
+
+.prodsec1 span{
+    color: #191641;
+    background-color: white;
+    padding: 30px;
+    font-style: italic;
+    font-size: 50px;
+    border-radius: 20px;
+}
+
+.prodsec3{
+
+    width: 100%;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:#F7CD61;
+}
+
+.prodsec3 h2{
+    text-align: center;
+    width: 60%;
+    margin: 30px;
+    font-size: 50px;
+}
