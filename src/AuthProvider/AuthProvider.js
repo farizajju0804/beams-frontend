@@ -33,7 +33,7 @@ const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (authToken) {
-			fetchLoggedInUser(authToken);
+			// fetchLoggedInUser(authToken);
 		}
 	}, [authToken]);
 
