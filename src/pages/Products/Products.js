@@ -99,8 +99,8 @@ export const Products = () => {
 				</div>
 			</section>
 			<section className="prodsec6">
-				<div className="sec2label">
-					<span>Mini Beams</span>
+				<div className="secprodlabel">
+					<span>Why do you need this ?</span>
 				</div>
 				<div className="jumpedletterimg">
 					{" "}

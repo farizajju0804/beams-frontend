@@ -235,3 +235,16 @@
 .testicardinner > p{
     margin-top: 10px;
 }
+
+.secprodlabel{
+    max-width: 380px;
+    width: 35%;
+    background-color: #191641;
+    padding: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    /* margin-bottom: 30px; */
+   }
