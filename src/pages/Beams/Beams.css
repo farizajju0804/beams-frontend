@@ -25,7 +25,7 @@
 
 
 .minibeams{
-    margin-top: 100px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -48,6 +48,7 @@
     padding-left: 80px;
     padding-right: 80px;
     margin-top: 90px;
+    position: relative;
 }
 
 .minibeams > span{
@@ -147,11 +148,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 100px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
 .innernav > span{
     font-size: 26px;
+}
+
+.minicardsnaver{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}   
+
+.minicardcontscroller{
+   width: 100%;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 90px;
+   margin-bottom: 80px;
+}
+
+.minicardssectionscroller{
+
+    /* right: 100px; */
+    display: flex;
+    overflow-x: hidden;
+   width: 1120px;
+}
+
+.minicardssectionscroller1{
+    position: relative;
+    display: flex;
+    transition: right 0.3s ease;
+}
+
+.minicardssectionscroller::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .minicardssectionscroller {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .mover{
+  
 }

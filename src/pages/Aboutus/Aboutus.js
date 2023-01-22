@@ -4,13 +4,18 @@ import sidescrollimg1 from "../../assets/side1.png";
 import sidescrollimg2 from "../../assets/side2.png";
 import sidescrollimg3 from "../../assets/side3.png";
 import sidescrollimg4 from "../../assets/side4.png";
+import abtuslandimg from "../../assets/aboutuslandimg.png";
 import abtusman from "../../assets/abtusman.png";
 import abtusrocket from "../../assets/abtusrocket.png";
 import { BsChevronDoubleRight } from "react-icons/bs";
-import { BsChevronDoubleLeft } from "react-icons/bs";
+import { BsChevronDoubleLeft, BsChevronDoubleDown } from "react-icons/bs";
+import { Popupabtus } from "../../models/Popupabtus/Popupabtus";
 
 export const Aboutus = () => {
 	const [scroller, setScroller] = useState(0);
+	const [modelopen, setModelopen] = useState(false);
+	const close = () => setModelopen(false);
+	const open = () => setModelopen(true);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -26,10 +31,11 @@ export const Aboutus = () => {
 
 	return (
 		<div className="aboutuspage">
+			{modelopen && <Popupabtus handleClose={close}></Popupabtus>}
 			<section className="abtus1">
-				<div className="abt1bg">
-					<h1>Welcome to Innbrieff</h1>
-				</div>
+				<img src={abtuslandimg} alt="" />
+				<h1>Welcome to Innbrieff</h1>
+				<BsChevronDoubleDown size={30} style={{ marginTop: "20px" }} />
 			</section>
 			<section className="abtus2">
 				<div className="sec2label" style={{ backgroundColor: "#191641" }}>
@@ -219,8 +225,6 @@ export const Aboutus = () => {
 				<div
 					className="sec2label"
 					style={{
-						backgroundColor: "white",
-						color: "black",
 						fontWeight: "600"
 					}}
 				>
@@ -234,7 +238,14 @@ export const Aboutus = () => {
 				</div>
 			</section>
 			<section className="abtvission">
-				<div className="sec2label">
+				<div
+					className="sec2label"
+					style={{
+						backgroundColor: "white",
+						color: "#191641",
+						fontWeight: "600"
+					}}
+				>
 					<span>Vision</span>
 				</div>
 				<div className="abtvissioninner">
@@ -263,10 +274,6 @@ export const Aboutus = () => {
 							passionate about creating a brighter future and catalyzing others
 							to do the same.
 						</p>
-						<p>
-							Want to join forces and do this together? Embrace Beams today. We
-							built it for enthusiasts like you.
-						</p>
 					</div>
 				</div>
 			</section>
@@ -281,6 +288,20 @@ export const Aboutus = () => {
 					<h1>Malavika Bawri</h1>
 					<h3>FOUNDER</h3>
 					<div className="abtusdivider"></div>
+					<p>
+						Malvika Bawri is the Co-Founder and President of Think India. She is
+						the Founder of Diduce Technologies, a software{" "}
+					</p>
+					<p>
+						startup focused on search. She is the Co-Founder of Quantta
+						Analytics.{" "}
+						<span
+							style={{ fontWeight: "600", cursor: "pointer" }}
+							onClick={open}
+						>
+							Read More
+						</span>
+					</p>
 				</div>
 			</section>
 		</div>

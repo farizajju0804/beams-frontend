@@ -3,12 +3,9 @@ import "./Products.css";
 import data from "../../data/landingdata.json";
 import landingsec2img from "../../assets/landingsec2img.svg";
 import popupdoyouknow from "../../assets/Popupyouknow.png";
-import productssec3img from "../../assets/productssec3img.png";
 import prodsec5img from "../../assets/prodsec5img.png";
-import prodsec6img from "../../assets/sec6img.png";
 import prodsec7img from "../../assets/prodsec7img.png";
 import textiimagecont from "../../assets/testimockimg.png";
-import { BiAnalyse } from "react-icons/bi";
 
 export const Products = () => {
 	return (
@@ -45,8 +42,9 @@ export const Products = () => {
 				</div>
 			</section>
 			<section className="prodsec3">
-				<img src={productssec3img} alt="" />
-				<h2>“The Future started Yesterday and we are already late”</h2>
+				<h2 style={{ color: "white" }}>
+					“The Future started Yesterday and we are already late”
+				</h2>
 			</section>
 			<section className="prodsec4">
 				<img src={popupdoyouknow} alt="" className="prodsec4img" />
@@ -107,8 +105,7 @@ export const Products = () => {
 					<img src={prodsec7img} alt="" />
 				</div>
 			</section>
-			<section className="prodsec3">
-				<img src={prodsec6img} alt="" />
+			<section className="prodsec3 prodsec3bg2">
 				<h2>“The Future started Yesterday and we are already late”</h2>
 			</section>
 			<section className="prodsec7">

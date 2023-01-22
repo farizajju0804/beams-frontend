@@ -3,7 +3,7 @@ import "./Maxbeamscard.css";
 import maxbeammock from "../../assets/maxbeammock.png";
 import { useNavigate } from "react-router-dom";
 
-export const Maxbeamscard = () => {
+export const Maxbeamscard = ({ noshadow }) => {
 	const navigate = useNavigate();
 
 	return (

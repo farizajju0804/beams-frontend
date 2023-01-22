@@ -41,7 +41,17 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color:#F7CD61;
+    background-image: url("../../assets/productsec2bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+
+}
+
+.prodsec3bg2{
+    background-image: url("../../assets/productsec3bg.png");
+
 }
 
 .prodsec3 h2{
@@ -172,7 +182,7 @@
 }
 
 .jumpedletterimg img{
-    width: 60%;
+    width: 80%;
     height: auto;
 }
 

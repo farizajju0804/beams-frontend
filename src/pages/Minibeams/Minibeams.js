@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
 import microbeambgheroimg from "../../assets/microbeamheroimg.png";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { Popup } from "../../models/Popup/Popup";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export const Minibeams = () => {
+	const [modelopen, setModelopen] = useState(false);
+	const close = () => setModelopen(false);
+	const open = () => setModelopen(true);
+	const [scrollercontrol, setscrollercontrol] = useState(0);
+	const navigate = useNavigate();
+
 	return (
 		<div>
+			{modelopen && <Popup handleClose={close}></Popup>}
 			<section className="minibeamspage">
 				<section className="trendingbeamshero">
 					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
@@ -41,8 +51,8 @@ export const Minibeams = () => {
 					</div>
 					<div className="minicardcont">
 						<div className="minicardssection" style={{ marginBottom: "140px" }}>
-							<Minibeamscard />
-							<Minibeamscard />
+							<Minibeamscard open={open} />
+							<Minibeamscard open={open} />
 						</div>
 					</div>
 				</section>
@@ -50,12 +60,33 @@ export const Minibeams = () => {
 					<div className="sec2label">
 						<span>Trending</span>
 					</div>
-					<div className="minicardcont">
-						<div className="minicardssection" style={{ marginBottom: "140px" }}>
-							<Minibeamscard />
-							<Minibeamscard />
+					<div className="minicardcontscroller">
+						<FaChevronLeft
+							size={26}
+							onClick={() => {
+								if (scrollercontrol != 0)
+									setscrollercontrol(scrollercontrol - 560);
+							}}
+						/>
+						<div className="minicardssectionscroller">
+							<div
+								className="minicardssectionscroller1"
+								style={{ position: "relative", right: `${scrollercontrol}px` }}
+							>
+								<Minibeamscard open={open} />
+								<Minibeamscard open={open} />
+								<Minibeamscard open={open} />
+							</div>
 						</div>
+						<FaChevronRight
+							size={26}
+							onClick={() => {
+								// if (scrollercontrol != 0)
+								setscrollercontrol(scrollercontrol + 560);
+							}}
+						/>
 					</div>
+					<div className="minicardsnaver"></div>
 				</section>
 			</section>
 		</div>

@@ -1,0 +1,21 @@
+.abtuspopup{
+    width: 80%;
+    background-color: aliceblue;
+    height: 90%;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.abtuspopupdata{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.abtuspopupdata > p{
+    font-size: 20px;
+    line-height: 40px;
+}
