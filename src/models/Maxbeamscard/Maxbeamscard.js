@@ -7,8 +7,8 @@ export const Maxbeamscard = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className="maxbeamcardcont">
-			<div className="maxcardimg">
+		<div className="maxbeamcardcontnew">
+			<div className="maxcardimgnew">
 				<img src={maxbeammock} alt="" />
 			</div>
 			<div className="maxbeamdata">

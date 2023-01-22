@@ -1,49 +1,90 @@
 import React, { useState } from "react";
-import beamshero from "../../assets/beamshero.png";
 import "./Beams.css";
 import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
-// import { useNavigate } from "react-router-dom";
 import { Popup } from "../../models/Popup/Popup";
+import heroimg from "../../assets/beamsheroimg.png";
+import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export const Beams = () => {
 	const [modelopen, setModelopen] = useState(false);
 	const close = () => setModelopen(false);
 	const open = () => setModelopen(true);
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	return (
 		<div className="beamspage">
 			{modelopen && <Popup handleClose={close}></Popup>}
 			<section className="trendingbeamshero">
-				<div className="beamsherotexts">
-					<h3>TRENDING BEAMS</h3>
-					<span>
-						Read finely curated Beams from best magazines and articles
-					</span>
-				</div>
-				<img src={beamshero} alt="" />
+				<img src={heroimg} alt="" className="heroimgbeam" />
+				<h1>
+					Explore{" "}
+					<span
+						style={{
+							backgroundColor: "#F7CD61",
+							color: "black",
+							padding: "10px",
+							borderRadius: "10px"
+						}}
+					>
+						The Future
+					</span>{" "}
+					With Beams
+				</h1>
 			</section>
+			<div className="innernav">
+				<span>
+					<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
+					<span>Beams</span>
+				</span>
+				<div className="searchbar">
+					<input type="text" placeholder="search" />
+					<AiOutlineSearch className="searchicon" />
+				</div>
+			</div>
+
 			<section className="minibeams">
 				<div className="sec2label">
-					<span>Mini Beams</span>
+					<span>Micro Beams</span>
 				</div>
-				<div className="minicardssection">
-					<Minibeamscard open={open} />
-					<Minibeamscard />
-					<Minibeamscard />
+				<div className="minicardcont">
+					<div className="minicardssection">
+						<Minibeamscard open={open} />
+						<Minibeamscard />
+						<Minibeamscard />
+						<Minibeamscard />
+						<Minibeamscard />
+						<Minibeamscard />
+					</div>
 				</div>
-				<a href="/minibeams">See more...</a>
+				<span
+					onClick={() => {
+						navigate("/minibeams");
+					}}
+				>
+					See more
+				</span>
 			</section>
 			<section className="minibeams">
 				<div className="sec2label">
 					<span>Max Beams</span>
 				</div>
-				<div className="minicardssection">
-					<Maxbeamscard />
-					<Maxbeamscard />
+				<div className="minicardcont">
+					<div className="minicardssection">
+						<Maxbeamscard />
+						<Maxbeamscard />
+						<Maxbeamscard />
+						<Maxbeamscard />
+					</div>
 				</div>
-				<a href="/maxbeams">See more...</a>
+				<span
+					onClick={() => {
+						navigate("/maxbeams");
+					}}
+				>
+					See more
+				</span>
 			</section>
 		</div>
 	);

@@ -252,6 +252,24 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
+			<section className="abtus5">
+				<div className="sec2label" style={{ backgroundColor: "#191641" }}>
+					<span>Meet the future</span>
+				</div>
+				<div className="abtsec5inner">
+					<div className="abtsec5pdiv">
+						<p>
+							We're a group of innovators, futurists and early adopters. We are
+							passionate about creating a brighter future and catalyzing others
+							to do the same.
+						</p>
+						<p>
+							Want to join forces and do this together? Embrace Beams today. We
+							built it for enthusiasts like you.
+						</p>
+					</div>
+				</div>
+			</section>
 			<section className="abtus4">
 				<div
 					className="sec2label"

@@ -21,6 +21,7 @@ import { Completed } from "./pages/Library/Completed";
 import { Notes } from "./pages/Library/Notes";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import { Products } from "./pages/Products/Products";
+import { Redirectionpage } from "./pages/Redirectionpage/Redirectionpage";
 
 const router = createBrowserRouter([
 	{
@@ -161,6 +162,14 @@ const router = createBrowserRouter([
 				<Navbar />
 				<Products />
 				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/api/auth/google/callback",
+		element: (
+			<div>
+				<Redirectionpage />
 			</div>
 		)
 	}

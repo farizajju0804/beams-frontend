@@ -1,12 +1,23 @@
-.maxbeamcardcont{
+/* .maxbeamcardcont{
     display: flex;
     width: 500px;
     height: 250px;
     background-color: white;
     box-shadow: 0px 20px 60px rgba(128, 144, 155, 0.2);
     border-radius: 20px;
-    margin: 10px;
+    margin: 30px;
     
+} */
+
+
+.maxbeamcardcontnew{
+    display: flex;
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    box-shadow: 0px 20px 60px rgba(128, 144, 155, 0.2);
+    border-radius: 5px;
+    margin: 30px;
 }
 
 .maxbeamdata > button{
@@ -31,12 +42,12 @@
     width: 75%;
 }
 
-.maxcardimg{
+.maxcardimgnew{
     
     width: 35%;
 }
-.maxcardimg img{
+.maxcardimgnew img{
     height: 100%;
     width: 100%;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 5px 0px 0px 5px;
 }

@@ -335,7 +335,10 @@ export const Signup = () => {
 					</strong>{" "}
 				</p>
 				<div className="oauths">
-					<img src={googlelogo} alt="" />
+					<a href={`${API}/connect/google`}>
+						<img src={googlelogo} alt="" />
+					</a>
+
 					<img src={facebooklogo} alt="" />
 					<img src={applelogo} alt="" />
 				</div>
