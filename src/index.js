@@ -22,6 +22,7 @@ import { Notes } from "./pages/Library/Notes";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import { Products } from "./pages/Products/Products";
 import { Redirectionpage } from "./pages/Redirectionpage/Redirectionpage";
+import { Contact } from "./pages/ContactUs/Contact";
 
 const router = createBrowserRouter([
 	{
@@ -170,6 +171,16 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<Redirectionpage />
+			</div>
+		)
+	},
+	{
+		path: "/Contact",
+		element: (
+			<div>
+				<Navbar />
+				<Contact />
+				<Footer />
 			</div>
 		)
 	}
