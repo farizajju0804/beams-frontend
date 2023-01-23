@@ -13,7 +13,7 @@ export const Maxbeams = () => {
 				<section className="trendingbeamshero">
 					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
 					<h1>
-						Explore{" "}
+						Excel In{" "}
 						<span
 							style={{
 								backgroundColor: "#F7CD61",
@@ -34,7 +34,7 @@ export const Maxbeams = () => {
 						<span>Micro Beams</span>
 					</span>
 					<div className="searchbar">
-						<input type="text" placeholder="search" />
+						<input type="text" placeholder="Search" />
 						<AiOutlineSearch className="searchicon" />
 					</div>
 				</div>
@@ -66,9 +66,9 @@ export const Maxbeams = () => {
 								className="minicardssectionscroller1"
 								style={{ position: "relative", right: `${scrollercontrol}px` }}
 							>
-								<Maxbeamscard noshadow = {true}/>
-								<Maxbeamscard noshadow = {true}/>
-								<Maxbeamscard noshadow = {true}/>
+								<Maxbeamscard noshadow={true} />
+								<Maxbeamscard noshadow={true} />
+								<Maxbeamscard noshadow={true} />
 							</div>
 						</div>
 						<FaChevronRight

@@ -13,7 +13,7 @@ export const Minibeamscard = ({ open }) => {
 		<div className="minibeamscardcont">
 			<div className="minibeamsinner">
 				<h3>Massive Job Disruption</h3>
-				<p>By 2030, Over 2 Billion Jobs Will Disappear.</p>
+				<p>By 2030, Over 2 Billion <br /> Jobs Will Disappear.</p>
 				<button onClick={open}>View Now</button>
 			</div>
 			<div className="minicontrols">

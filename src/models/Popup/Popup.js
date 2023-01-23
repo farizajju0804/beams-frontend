@@ -20,7 +20,7 @@ export const Popup = ({ handleClose, text }) => {
 					<h2>Massive Job Disruption</h2>
 					<div className="popdatainner">
 						<img src={popupdoyouknow} alt="" />
-						<span>By 2030, Over 2 Billion Jobs Will Disappear</span>
+						<span>By 2030, Over 2 Billion Jobs Will Disappear.</span>
 						<div
 							style={{
 								display: "flex",

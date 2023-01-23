@@ -7,6 +7,7 @@ import sidescrollimg4 from "../../assets/side4.png";
 import abtuslandimg from "../../assets/aboutuslandimg.png";
 import abtusman from "../../assets/abtusman.png";
 import abtusrocket from "../../assets/abtusrocket.png";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { BsChevronDoubleRight } from "react-icons/bs";
 import { BsChevronDoubleLeft, BsChevronDoubleDown } from "react-icons/bs";
 import { Popupabtus } from "../../models/Popupabtus/Popupabtus";
@@ -35,7 +36,11 @@ export const Aboutus = () => {
 			<section className="abtus1">
 				<img src={abtuslandimg} alt="" />
 				<h1>Welcome to Innbrieff</h1>
-				<BsChevronDoubleDown size={30} style={{ marginTop: "20px" }} />
+				<BsChevronDoubleDown
+					size={30}
+					color={"blue"}
+					style={{ marginTop: "20px" }}
+				/>
 			</section>
 			<section className="abtus2">
 				<div className="sec2label" style={{ backgroundColor: "#191641" }}>
@@ -44,18 +49,26 @@ export const Aboutus = () => {
 				<div className="abtsec2inner">
 					<div className="abtsec2pdiv">
 						<p>
-							We feature cutting-edge and thought-provoking trends about
-							technology, science, and beyond; presented in bite-sized nuggets.
+							We equip people with potent knowledge so they are ready to thrive
+							even in an uncertain future.
 						</p>
 						<p>
-							Whether you're an entrepreneur, a researcher or just someone who
-							is curious about the future, innBrieff is the perfect place to
-							explore and get inspired.
+							<strong>
+								{" "}
+								Futurists predict the changes that will occur in the next 10
+								years will be greater than all the changes in the last 100
+								years.
+							</strong>
+						</p>
+						<p>
+							Whether you're an entrepreneur, an engineer or someone who is
+							curious about the future, innBrieff is the perfect place for you
+							to get inspired, stay updated and ease your way into the future.
 						</p>
 						<p>
 							Join us on this amazing journey as we uncover the latest
-							developments in technology and their potential to change the
-							world.
+							developments in technology and dive into their potential to change
+							the world.
 						</p>
 					</div>
 				</div>
@@ -65,7 +78,7 @@ export const Aboutus = () => {
 				<div className="abtussec3 scrolldiv" style={{ right: `${scroller}vw` }}>
 					<div className="abtussec31 bgabtus1">
 						<div className="scrollerarrow">
-							<BsChevronDoubleRight
+							<FaChevronCircleRight
 								size={52}
 								style={{ justifySelf: "flex-end", cursor: "pointer" }}
 								onClick={() => {
@@ -98,7 +111,7 @@ export const Aboutus = () => {
 							className="scrollerarrow"
 							style={{ justifyContent: "space-between" }}
 						>
-							<BsChevronDoubleLeft
+							<FaChevronCircleLeft
 								size={52}
 								color="white"
 								onClick={() => {
@@ -106,7 +119,7 @@ export const Aboutus = () => {
 								}}
 								style={{ cursor: "pointer" }}
 							/>
-							<BsChevronDoubleRight
+							<FaChevronCircleRight
 								size={52}
 								color="white"
 								// style={{ justifySelf: "flex-end" }}
@@ -142,7 +155,7 @@ export const Aboutus = () => {
 							className="scrollerarrow"
 							style={{ justifyContent: "space-between" }}
 						>
-							<BsChevronDoubleLeft
+							<FaChevronCircleLeft
 								size={52}
 								color="white"
 								onClick={() => {
@@ -150,7 +163,7 @@ export const Aboutus = () => {
 								}}
 								style={{ cursor: "pointer" }}
 							/>
-							<BsChevronDoubleRight
+							<FaChevronCircleRight
 								size={52}
 								color="white"
 								// style={{ justifySelf: "flex-end" }}
@@ -189,7 +202,7 @@ export const Aboutus = () => {
 							className="scrollerarrow"
 							style={{ justifyContent: "flex-start" }}
 						>
-							<BsChevronDoubleLeft
+							<FaChevronCircleLeft
 								size={52}
 								onClick={() => {
 									setScroller(scroller - 100);
@@ -233,7 +246,9 @@ export const Aboutus = () => {
 				<div className="abtmissioninner">
 					<img src={abtusrocket} alt="" className="abtusrocket" />
 					<div className="abtmissioncircle">
-						<h1>To unveil the future, One trend at a time.</h1>
+						<h1>
+							To unveil the future, <br /> One trend at a time.
+						</h1>
 					</div>
 				</div>
 			</section>
@@ -265,7 +280,7 @@ export const Aboutus = () => {
 			</section>
 			<section className="abtus5">
 				<div className="sec2label" style={{ backgroundColor: "#191641" }}>
-					<span>Meet the future</span>
+					<span>Our Team</span>
 				</div>
 				<div className="abtsec5inner">
 					<div className="abtsec5pdiv">
@@ -278,23 +293,14 @@ export const Aboutus = () => {
 				</div>
 			</section>
 			<section className="abtus4">
-				<div
-					className="sec2label"
-					style={{ backgroundColor: "white", color: "black" }}
-				>
-					<span>Our Team</span>
-				</div>
 				<div className="abtus4info">
-					<h1>Malavika Bawri</h1>
+					<h1>Malvika Bawri</h1>
 					<h3>FOUNDER</h3>
 					<div className="abtusdivider"></div>
 					<p>
 						Malvika Bawri is the Co-Founder and President of Think India. She is
-						the Founder of Diduce Technologies, a software{" "}
-					</p>
-					<p>
-						startup focused on search. She is the Co-Founder of Quantta
-						Analytics.{" "}
+						the Founder of Diduce Technologies, a software <br /> startup
+						focused on search. She is the Co-Founder of Quantta Analytics.{" "}
 						<span
 							style={{ fontWeight: "600", cursor: "pointer" }}
 							onClick={open}

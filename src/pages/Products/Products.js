@@ -43,7 +43,7 @@ export const Products = () => {
 			</section>
 			<section className="prodsec3">
 				<h2 style={{ color: "white" }}>
-					“The Future started Yesterday and we are already late”
+					“The Future started yesterday and we are already late”
 				</h2>
 			</section>
 			<section className="prodsec4">
@@ -106,7 +106,7 @@ export const Products = () => {
 				</div>
 			</section>
 			<section className="prodsec3 prodsec3bg2">
-				<h2>“The Future started Yesterday and we are already late”</h2>
+				<h2>“The Future started yesterday and we are already late”</h2>
 			</section>
 			<section className="prodsec7">
 				<div className="sec2label">

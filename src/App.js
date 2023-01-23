@@ -40,7 +40,9 @@ function App() {
 							muted
 						></video>
 						<div className="sec1data">
-							<h2 data-aos="zoom-in">{data.landingpage.herotext}</h2>
+							<h2 data-aos="zoom-in">
+								{data.landingpage.herotext} <br /> {data.landingpage.herotext2}
+							</h2>
 							<span data-aos="fade-up">{data.landingpage.subhero}</span>
 							<span data-aos="fade-up">{data.landingpage.subhero2}</span>
 							<button data-aos="fade-up">{data.landingpage.button}</button>
@@ -81,8 +83,8 @@ function App() {
 						The{" "}
 						<span
 							style={{
-								backgroundColor: "#435CFF",
-								color: "white",
+								backgroundColor: "#F7CD61",
+								color: "black",
 								padding: "10px",
 								borderRadius: "10px"
 							}}
@@ -93,7 +95,7 @@ function App() {
 					</h2>
 					<div className="the3qsitem">
 						<div className="the3qsitemdata">
-							<span>1.</span>
+							<span>1. &nbsp;</span>
 							<p>
 								WANT TO{" "}
 								<span
@@ -132,7 +134,7 @@ function App() {
 					</div>
 					<div className="the3qsitem">
 						<div className="the3qsitemdata">
-							<span>2.</span>
+							<span>2.&nbsp;</span>
 							<p>
 								WANT TO STAY INFORMED ABOUT THE{" "}
 								<span
@@ -163,14 +165,15 @@ function App() {
 							<p>
 								​Relevant, timely, and versatile content gems on the latest
 								technology trends and innovations. Consume them in less than 6
-								minutes a day. They are tailormade for busy leaders, visionaries
-								and future-focused individuals who need to stay informed.
+								minutes a day. They are tailor-made for busy leaders,
+								visionaries and future-focused individuals who need to stay
+								informed.
 							</p>
 						</div>
 					</div>
 					<div className="the3qsitem">
 						<div className="the3qsitemdata">
-							<span>3.</span>
+							<span>3.&nbsp;</span>
 							<p>
 								WANT TO{" "}
 								<span
@@ -181,7 +184,7 @@ function App() {
 										borderRadius: "10px"
 									}}
 								>
-									STAY REVELENT
+									STAY REVELANT
 								</span>{" "}
 								IN THE FUTURE?{" "}
 							</p>

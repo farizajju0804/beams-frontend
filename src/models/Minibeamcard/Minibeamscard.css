@@ -12,7 +12,13 @@
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-    margin: 30px;
+    margin-left: 30px;
+    margin-Right: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+
+
     position: relative;
 }
 
@@ -23,6 +29,7 @@
 
 .minibeamsinner > p{
     color: white;
+    line-height: 30px;
 }
 
 

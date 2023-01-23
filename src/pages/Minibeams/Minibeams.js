@@ -41,7 +41,7 @@ export const Minibeams = () => {
 						<span>Micro Beams</span>
 					</span>
 					<div className="searchbar">
-						<input type="text" placeholder="search" />
+						<input type="text" placeholder="Search" />
 						<AiOutlineSearch className="searchicon" />
 					</div>
 				</div>

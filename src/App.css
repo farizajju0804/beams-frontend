@@ -150,7 +150,7 @@
  }
 
  .the3qsbox{
-  height: 500px;
+  height: 540px;
   width: 480px;
   border-radius: 40px;
   background-color: white;
@@ -163,12 +163,13 @@
 
  .the3qsbox > img{
   width: 100%;
+  border-radius: 30px;
  }
 
  .the3qsbox > p{
   margin-top: 20px;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 35px;
  }
 
 

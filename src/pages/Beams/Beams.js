@@ -39,7 +39,7 @@ export const Beams = () => {
 					<span>Beams</span>
 				</span>
 				<div className="searchbar">
-					<input type="text" placeholder="search" />
+					<input type="text" placeholder="Search" />
 					<AiOutlineSearch className="searchicon" />
 				</div>
 			</div>
@@ -63,7 +63,7 @@ export const Beams = () => {
 						navigate("/minibeams");
 					}}
 				>
-					See more
+					See More
 				</span>
 			</section>
 			<section className="minibeams">
@@ -83,7 +83,7 @@ export const Beams = () => {
 						navigate("/maxbeams");
 					}}
 				>
-					See more
+					See More
 				</span>
 			</section>
 		</div>
