@@ -6,7 +6,7 @@ import songtracker from "../../assets/maxbeamsongtracker.png";
 
 export const Maxbeamsong = () => {
 	return (
-		<div className="Maxbeamsong">
+		<div className="Maxbeamsong mttop">
 			<div className="songcard">
 				<img src={songcardmock} alt="" className="scardbanner" />
 				<span>Massive Job Disrution</span>

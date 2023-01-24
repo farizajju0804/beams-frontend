@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export const Maxbeampage = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="maxbeampage">
+		<div className="maxbeampage mttop">
 			<div className="maxbeaminner">
 				<img src={maxbeamimg} alt="" />
 				<div className="maxbeampagedata">
