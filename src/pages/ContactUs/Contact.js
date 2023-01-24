@@ -91,6 +91,7 @@ export const Contact = () => {
 						scrolling="no"
 						marginheight="0"
 						marginwidth="0"
+						title="museum"
 					></iframe>
 				)}
 
@@ -104,6 +105,7 @@ export const Contact = () => {
 						scrolling="no"
 						marginheight="0"
 						marginwidth="0"
+						title="USA"
 					></iframe>
 				)}
 

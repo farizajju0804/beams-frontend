@@ -22,9 +22,13 @@ export const FavouritesCard = ({ completed }) => {
 					}}
 				>
 					<div
-						style={{ width: "80%", height: "5px", backgroundColor: "#435CFF" }}
+						style={{
+							width: "100%",
+							height: "5px",
+							backgroundColor: "#435CFF",
+							borderRadius: "20px"
+						}}
 					></div>
-					<span style={{ marginLeft: "10px" }}>100%</span>
 				</div>
 				<button
 					onClick={() => {

@@ -1,11 +1,12 @@
 .LibraryPage{
     background-color: #FAFAFA;
     width: 100%;
-    padding-top: 40px;
+    padding-top: 20px;
+    margin-top: 90px;
 }
 
 .libraryoption{
-    width: 100%;
+    width: 65%;
     display: flex;
     justify-content: space-between;
     padding-left: 100px;
@@ -17,6 +18,9 @@
 
 .libraryopitem{
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .libraryopitem span{
@@ -31,16 +35,34 @@
     color: #9F9F9F;
 }
 
+.opandfildivider{
+    margin-top: 20px;
+    width: 100%;
+    height: 1.4px;
+    background-color: #dfdfdf;
+}
+
 .filteroption{
     
     display: flex;
     padding-left: 100px;
     padding-right: 100px;
     margin-top: 30px;
+    justify-content: flex-end;
 }
 
-.filteroption select{
+.filteroption select, .filteroption option{
     margin-right: 30px;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* -moz-appearance:none;
+    -webkit-appearance:none;  */
+    /* appearance:none; */
+    /* width: 300px; */
 }
 
 .hightlightitem{
@@ -79,10 +101,36 @@
     background-color: #FAFAFA;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
     
 }
 
 .highlightdata > img{
     margin-top: 30px;
+}
+
+.highlightcomponent{
+    display: flex;
+    margin: 20px;
+
+}
+
+.highlightcomponent input{
+    margin-right: 20px;
+    transform: scale(1.5);
+}
+
+.highlightcomponentinner{
+    background-color: #FADF9C;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    /* max-width: 500px; */
+}
+
+.fwrap{
+    flex-direction: row;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }

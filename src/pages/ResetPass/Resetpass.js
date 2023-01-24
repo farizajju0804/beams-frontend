@@ -3,11 +3,39 @@ import "./Resetpass.css";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import loginimg from "../../assets/loginimg.png";
+import { API } from "../../constants";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const Resetpass = () => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [emailborder, setEmailborder] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+
+	const sendresetlink = async () => {
+		setIsLoading(true);
+		try {
+			const response = await fetch(`${API}/auth/forgot-password`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					email: email
+				})
+			});
+
+			const data = await response.json();
+			if (data?.error) {
+				throw data?.error;
+			} else if (data.ok === true) {
+				setIsLoading(false);
+				toast.success("Mail has been Sent");
+			}
+		} catch (error) {
+			toast.error(error?.message ?? "Something went wrong!");
+		}
+	};
 
 	const sendmail = () => {
 		if (!email) {
@@ -22,6 +50,8 @@ export const Resetpass = () => {
 			toast.error("Invalid email address");
 			return;
 		}
+
+		sendresetlink();
 	};
 
 	return (
@@ -35,7 +65,7 @@ export const Resetpass = () => {
 				/>
 			</div>
 			<div className="logincont">
-				<h2>Reset Password</h2>
+				<h2>Forgot Password</h2>
 				<div className="loginitem">
 					{/* <label htmlFor="email">Enter Your Email Address</label> */}
 					<input
@@ -55,7 +85,11 @@ export const Resetpass = () => {
 						sendmail();
 					}}
 				>
-					Get Reset Instruction
+					{isLoading ? (
+						<ClipLoader color="white" size={23}></ClipLoader>
+					) : (
+						"Send Reset Link"
+					)}
 				</button>
 				<p className="noaccout">
 					Go back to{" "}

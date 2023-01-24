@@ -1,8 +1,8 @@
 import React from "react";
-import { IoIosCheckmarkCircle } from "react-icons/io";
-import { AiFillHeart } from "react-icons/ai";
-import { MdEditNote } from "react-icons/md";
-import { BsPenFill } from "react-icons/bs";
+import libcompleted from "../../assets/libcompleted.png";
+import libfav from "../../assets/libfav.png";
+import libnotes from "../../assets/libnotes.png";
+import libhighlight from "../../assets/libhighlights.png";
 import { FavouritesCard } from "../../models/FavouritesCard/FavouritesCard";
 import "./Library.css";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ export const Completed = () => {
 						navigate("/completed");
 					}}
 				>
-					<IoIosCheckmarkCircle className="lbopic" size={20} color="#435CFF" />
+					<img src={libcompleted} className="lbopic" />
 					<span style={{ color: "#435CFF" }}>Completed</span>
 				</div>
 				<div
@@ -28,7 +28,7 @@ export const Completed = () => {
 						navigate("/favourites");
 					}}
 				>
-					<AiFillHeart className="lbopic" />
+					<img src={libfav} className="lbopic" />
 					<span>Favourites</span>
 				</div>
 				<div
@@ -37,7 +37,7 @@ export const Completed = () => {
 						navigate("/notes");
 					}}
 				>
-					<MdEditNote className="lbopic" size={20} />
+					<img src={libnotes} className="lbopic" />
 					<span>Notes </span>
 				</div>
 				<div
@@ -46,26 +46,31 @@ export const Completed = () => {
 						navigate("/hightlights");
 					}}
 				>
-					<BsPenFill className="lbopic" />
-					<span>Highlights</span>
+					<img src={libhighlight} className="lbopic" />
+					<span >Highlights</span>
 				</div>
+			</div>
+			<div className="opandfildivider"></div>
+			<div className="filteroption">
+				<select name="" id="">
+					<option value="">Micro Beams</option>
+					<option value="">Mini Beams</option>
+					<option value="">Max Beams</option>
+				</select>
+				<select name="" id="">
+					<option value="">Grid</option>
+					<option value="">List</option>
+				</select>
 				<div className="libraryopitem">
 					<span style={{ color: "black" }}>Sort By</span>
 					<select name="" id="">
 						<option value="">Title</option>
-						<option value="">xyz</option>
-						<option value="">abc</option>
+						<option value="">A-Z</option>
+						<option value="">Latest</option>
 					</select>
 				</div>
 			</div>
-			<div className="filteroption">
-				<select name="" id="">
-					<option value="">Micro Beams</option>
-					<option value="">xyz</option>
-					<option value="">abc</option>
-				</select>
-			</div>
-			<div className="highlightdata">
+			<div className="highlightdata fwrap">
 				<FavouritesCard completed={false}></FavouritesCard>
 				<FavouritesCard completed={false}></FavouritesCard>
 				<FavouritesCard completed={false}></FavouritesCard>

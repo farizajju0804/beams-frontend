@@ -1,0 +1,35 @@
+.emailverificationdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.emailverificationdiv img{
+    width: 70%;
+    height: auto;
+}
+
+.emailverificationdiv h2{
+    text-align: center;
+}
+
+.emailverificationdiv span{
+    font-weight: 500;
+    font-size: 17px;
+    text-align: center;
+}
+
+.didntrecdiv{
+    /* margin-top: 30px; */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.didntrecdiv p{
+    margin-top: 20px;
+}

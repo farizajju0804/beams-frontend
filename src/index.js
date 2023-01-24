@@ -23,6 +23,10 @@ import AuthProvider from "./AuthProvider/AuthProvider";
 import { Products } from "./pages/Products/Products";
 import { Redirectionpage } from "./pages/Redirectionpage/Redirectionpage";
 import { Contact } from "./pages/ContactUs/Contact";
+import { Emailverification } from "./pages/Emailverification/Emailverification";
+import { Resetpass2 } from "./pages/ResetPass2/Resetpass2";
+import { VerificationSuccess } from "./pages/Login/VerificationSuccess";
+import { ResetSuccessfull } from "./pages/ResetPass2/ResetSuccessfull";
 
 const router = createBrowserRouter([
 	{
@@ -53,6 +57,15 @@ const router = createBrowserRouter([
 			<div>
 				<Navbar />
 				<Resetpass />
+			</div>
+		)
+	},
+	{
+		path: "/resetpass",
+		element: (
+			<div>
+				<Navbar />
+				<Resetpass2 />
 			</div>
 		)
 	},
@@ -181,6 +194,33 @@ const router = createBrowserRouter([
 				<Navbar />
 				<Contact />
 				<Footer />
+			</div>
+		)
+	},
+	{
+		path: "/emailverification/:email",
+		element: (
+			<div>
+				<Navbar />
+				<Emailverification />
+			</div>
+		)
+	},
+	{
+		path: "/verificationsuccess",
+		element: (
+			<div>
+				<Navbar />
+				<VerificationSuccess />
+			</div>
+		)
+	},
+	{
+		path: "/resetsuccessful",
+		element: (
+			<div>
+				<Navbar />
+				<ResetSuccessfull />
 			</div>
 		)
 	}

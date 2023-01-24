@@ -1,54 +1,56 @@
 import React, { useState } from "react";
-import "../Login/Login.css";
-import { AiFillEyeInvisible } from "react-icons/ai";
-import { AiFillEye } from "react-icons/ai";
+import "./Resetpass.css";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
+import loginimg from "../../assets/loginimg.png";
+import { API } from "../../constants";
+import ClipLoader from "react-spinners/ClipLoader";
 import {
 	HiOutlineInformationCircle,
 	HiCheckCircle,
 	HiXCircle
 } from "react-icons/hi";
-import applelogo from "../../assets/Apple.png";
-import facebooklogo from "../../assets/facebook.png";
-import googlelogo from "../../assets/Google.png";
-import { useNavigate } from "react-router-dom";
-import { Toaster, toast } from "react-hot-toast";
-import loginimg from "../../assets/loginimg.png";
-import { API } from "../../constants";
-import { useAuthContext } from "../../context/AuthContext";
-import ClipLoader from "react-spinners/ClipLoader";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 
-export const Signup = () => {
-	const [ispassvis, setIspassvis] = useState(false);
-	const [email, setEmail] = useState("");
-	const [name, setName] = useState("");
-	const [password, setPassword] = useState("");
-	const [nameborder, setNameborder] = useState(false);
+export const Resetpass2 = () => {
+	const [searchParams, setSearchParams] = useSearchParams();
+	const code = searchParams.get("code");
+	const navigate = useNavigate();
+	const [confirmpass, setConfirmpass] = useState("");
 	const [emailborder, setEmailborder] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [password, setPassword] = useState("");
 	const [passwordborder, setPasswordborder] = useState(false);
 	const [passlen, setpasslen] = useState(false);
 	const [passnum, setPassnum] = useState(false);
 	const [passupper, setPassupper] = useState(false);
 	const [passlower, setPasslower] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
+	const [ispassvis, setIspassvis] = useState(false);
 
+	const sendresetlink = async () => {
+		if (passwordborder) {
+			toast.error("Check Password");
+			return;
+		}
 
-	const navigate = useNavigate();
+		if (password != confirmpass) {
+			toast.error("Passwords Does not Match");
+			setEmailborder(true);
+			return;
+		}
 
-	const { setUser } = useAuthContext();
-
-	const signUpcall = async () => {
 		setIsLoading(true);
 		try {
-			const response = await fetch(`${API}/auth/local/register`, {
+			const response = await fetch(`${API}/auth/reset-password`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
 				},
 				body: JSON.stringify({
-					name: name,
-					username: email,
-					email: email,
-					password: password
+					password: password,
+					passwordConfirmation: confirmpass,
+					code: code
 				})
 			});
 
@@ -56,51 +58,11 @@ export const Signup = () => {
 			if (data?.error) {
 				throw data?.error;
 			} else {
-				setUser(data.user);
-				navigate(`/emailverification/${data.user.email}`, { replace: true });
+				navigate("/resetsuccessful");
 			}
 		} catch (error) {
 			toast.error(error?.message ?? "Something went wrong!");
-		} finally {
-			setIsLoading(false);
 		}
-	};
-
-	const Signup = () => {
-		if (!name) {
-			// setErrors("Required");
-			setNameborder(true);
-			toast.error("Name Required");
-
-			return;
-		} else if (name) {
-			// setErrors("Required");
-			setNameborder(false);
-		} else if (!email) {
-			// setErrors("Required");
-			setEmailborder(true);
-			toast.error("Email Required");
-
-			return;
-		} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-			// setErrors("Invalid email address");
-			setEmailborder(true);
-			toast.error("Invalid email address");
-			return;
-		}
-
-		if (!password) {
-			setPasswordborder(true);
-			toast.error("Check Password");
-			return;
-		}
-
-		if (passwordborder) {
-			toast.error("Check Password");
-			return;
-		}
-
-		signUpcall();
 	};
 
 	const checkpass = (e) => {
@@ -161,33 +123,8 @@ export const Signup = () => {
 				/>
 			</div>
 			<div className="logincont">
-				<h2>Sign Up</h2>
-				<div className="loginitem">
-					{/* <label htmlFor="email">Enter Your Email Address</label> */}
-					<input
-						className={nameborder ? "inputborderred logininput" : "logininput"}
-						type="text"
-						id="name"
-						placeholder="Enter Your Name"
-						onChange={(e) => {
-							setName(e.target.value);
-						}}
-						value={name}
-					/>
-				</div>
-				<div className="loginitem">
-					{/* <label htmlFor="email">Enter Your Email Address</label> */}
-					<input
-						className={emailborder ? "inputborderred logininput" : "logininput"}
-						type="text"
-						id="email"
-						placeholder="Enter Your Email Address"
-						onChange={(e) => {
-							setEmail(e.target.value);
-						}}
-						value={email}
-					/>
-				</div>
+				<h2>Reset Password</h2>
+
 				<div className="loginitem">
 					{/* <label htmlFor="password">Enter Your Secure Password</label> */}
 					<input
@@ -300,45 +237,41 @@ export const Signup = () => {
 						</div>
 					</div>
 				</div>
-				<div className="loginoptions">
-					<div className="signupremember">
-						<input type="checkbox" id="logincheck" defaultChecked />
-						<label htmlFor="logincheck">
-							You agree to our Terms and Privacy Policy
-						</label>
-					</div>
+				<div className="loginitem">
+					{/* <label htmlFor="email">Enter Your Email Address</label> */}
+					<input
+						className={emailborder ? "inputborderred logininput" : "logininput"}
+						type="password"
+						placeholder="Confirm Password"
+						onChange={(e) => {
+							setConfirmpass(e.target.value);
+						}}
+						value={confirmpass}
+					/>
 				</div>
 				<button
 					className="loginsignbtn"
 					onClick={() => {
-						Signup();
+						sendresetlink();
 					}}
 				>
 					{isLoading ? (
 						<ClipLoader color="white" size={23}></ClipLoader>
 					) : (
-						"Sign Up"
+						"Send Reset Link"
 					)}
 				</button>
 				<p className="noaccout">
-					Have an account?{" "}
+					Go back to{" "}
 					<strong
 						style={{ cursor: "pointer" }}
 						onClick={() => {
 							navigate("/login");
 						}}
 					>
-						Sign In
+						Login
 					</strong>{" "}
 				</p>
-				<div className="oauths">
-					<a href={`${API}/connect/google`}>
-						<img src={googlelogo} alt="" />
-					</a>
-
-					<img src={facebooklogo} alt="" />
-					<img src={applelogo} alt="" />
-				</div>
 			</div>
 			<img src={loginimg} alt="" className="loginimgpos" />
 		</div>

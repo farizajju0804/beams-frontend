@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { ImBin } from "react-icons/im";
-import highlightlibrary from "../../assets/highlightsmock.png";
+import { HighlightComponent } from "./HighlightComponent";
 
 export const Hightlightitem = ({ open }) => {
 	const [closearrow, setClosearrow] = useState(!open ? false : true);
@@ -10,7 +10,14 @@ export const Hightlightitem = ({ open }) => {
 	return (
 		<div className="hightlightitem">
 			<div className="hightlightitemheading">
-				<span>Massive Job Disruption</span>
+				<span
+					style={{ cursor: "pointer" }}
+					onClick={(e) => {
+						setClosearrow(!closearrow);
+					}}
+				>
+					Massive Job Disruption
+				</span>
 				<div className="hightlightitemoptions">
 					<input type="checkbox" className="highlightitemicon" />
 					<ImBin className="highlightitemicon" color="red" />
@@ -33,18 +40,9 @@ export const Hightlightitem = ({ open }) => {
 			</div>
 			{closearrow && (
 				<div className="highlightdata">
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
-					<img src={highlightlibrary} alt="" />
+					<HighlightComponent />
+					<HighlightComponent />
+					<HighlightComponent />
 				</div>
 			)}
 		</div>

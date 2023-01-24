@@ -1,0 +1,75 @@
+.favouritesnewcardpage{
+    display: flex;
+    align-items: center;
+    margin:20px
+}
+
+.favouritesnewcardpage > input{
+    transform: scale(1.5);
+    margin-right: 20px;
+}
+
+.favnewinnercont{
+    width: 420px;
+    border: 2px solid #F7CD61;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.favnewinnercont > p{
+    margin-bottom: 20px;
+}
+
+.favnewinnercontdat{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.notescardoptions{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 100px;
+    width: 150px;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    /* display: none; */
+}
+
+.notescardoptionsinner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.notescardoptionsinner:hover{
+    background-color: rgb(243, 243, 243)
+}
+
+.notescardoptionsinner span{
+    margin-left: 30px;
+}
+
+.notescard3dots{
+    cursor: pointer;
+}
+
+
+
