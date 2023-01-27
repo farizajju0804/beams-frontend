@@ -1,12 +1,13 @@
 .favouritesnewcardpage{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin:20px
 }
 
 .favouritesnewcardpage > input{
     transform: scale(1.5);
     margin-right: 20px;
+    margin-top: 20px;
 }
 
 .favnewinnercont{
@@ -21,6 +22,8 @@
 
 .favnewinnercont > p{
     margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 .favnewinnercontdat{
@@ -64,7 +67,7 @@
 }
 
 .notescardoptionsinner span{
-    margin-left: 30px;
+    margin-left: 15px;
 }
 
 .notescard3dots{

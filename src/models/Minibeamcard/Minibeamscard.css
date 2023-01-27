@@ -88,11 +88,12 @@
     align-items: center;
     padding: 7px;
     border-radius: 20px;
-
+    cursor: pointer;
 }
 
 .opdpdisplay{
     display: flex;
+    padding-top: 20px;
 }
 
 .opdpitems:hover{   
@@ -100,3 +101,10 @@
 }
 
 
+
+.closeminicard{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}

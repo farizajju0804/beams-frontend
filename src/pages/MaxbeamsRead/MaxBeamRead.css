@@ -1,0 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,500;1,700&display=swap');
+
+.maxbeamsreadpage{
+    padding-top: 20px;
+
+}
+
+.maxbeamsreadheader{
+    height: 70px;
+    background-color: #435CFF;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 35px;
+}
+
+.maxbeamsreadheader h2{
+    font-size: 39px;
+    color: white;
+
+}
+
+.readtext{
+    width: 900px;
+    margin-top:  50px;
+    margin-bottom: 100px;
+
+}
+
+.readtext > h3{
+    color: #435CFF;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+.readtext > p{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 40px;
+}

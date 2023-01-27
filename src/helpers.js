@@ -1,7 +1,12 @@
 import { AUTH_TOKEN } from "./constants";
 
 export const getToken = () => {
-	return localStorage.getItem(AUTH_TOKEN);
+	var token = localStorage.getItem(AUTH_TOKEN);
+	if (token) {
+		return token;
+	} else {
+		return "";
+	}
 };
 
 export const setToken = (token) => {

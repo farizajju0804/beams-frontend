@@ -3,9 +3,11 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import "./NotesCard.css";
 import { MdDeleteForever } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
+import { useAuthContext } from "../../context/AuthContext";
 
-export const NotesCard = () => {
+export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
 	const [openpopup, setOpenpopup] = useState(false);
+	const { delinnernote } = useAuthContext();
 
 	return (
 		<div className="favouritesnewcardpage">
@@ -16,15 +18,9 @@ export const NotesCard = () => {
 					setOpenpopup(false);
 				}}
 			>
-				<p>
-					This is how a Note on innBrieff looks like! Lorem, ipsum dolor sit
-					amet consectetur adipisicing elit. Aspernatur quidem harum magni
-					excepturi, quisquam, nisi ea, soluta distinctio placeat quis
-					dignissimos maxime ratione possimus voluptatum facilis alias. Nobis,
-					magnam atque.{" "}
-				</p>
+				<p>{NoteContent}</p>
 				<div className="favnewinnercontdat">
-					<span>1 Aug, 2023</span>
+					<span>{date}</span>
 
 					<BsThreeDotsVertical
 						className="notescard3dots"
@@ -39,11 +35,16 @@ export const NotesCard = () => {
 					{openpopup && (
 						<div className="notescardoptions">
 							<div className="notescardoptionsinner">
-								<MdDeleteForever color="red" size={20} />
+								<AiFillEdit color="#435CFF" size={20} />
 								<span>Edit</span>
 							</div>
-							<div className="notescardoptionsinner">
-								<AiFillEdit color="#435CFF" size={20} />
+							<div
+								className="notescardoptionsinner"
+								onClick={() => {
+									delinnernote(`${beamid}`, noteitemid);
+								}}
+							>
+								<MdDeleteForever color="red" size={20} />
 								<span>Delete</span>
 							</div>
 						</div>

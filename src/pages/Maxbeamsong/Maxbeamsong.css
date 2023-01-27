@@ -43,3 +43,11 @@
     width: 70%;
     height: auto;
 }
+
+.rhap_container{
+    border-radius: 20px;
+}
+
+.rhap_container svg{
+    color: #435CFF;
+}

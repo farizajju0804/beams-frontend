@@ -1,0 +1,87 @@
+.popupnotes{
+    width: 600px;
+    height: 650px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Notepopheader{
+    height: 120px;
+    background-color: #F7CD61;
+    border-radius: 30px 30px 0px 0px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.Notepopheader span{
+    font-size: 18px;
+}
+
+.Notepopheader h2{
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+.notes {
+    background-attachment: local;
+    /* background-image:
+        linear-gradient(to right, white 15px, transparent 15px),
+        linear-gradient(to left, white 15px, transparent 15px),
+        repeating-linear-gradient(white, white 22px, #ccc 22px, #ccc 23px, white 22px); */
+    line-height: 31px;
+    padding: 8px 10px;
+    width: 100%;
+    height: 65%;
+    outline: none;
+    border: none;
+    resize: none;
+    font-size: 20px;
+}
+
+
+
+.popupnotes i{
+    margin-left: 40px;
+    
+}
+
+.notepopcntrl{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.popupcannsave{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notespopupsavebtn{
+    padding: 10px 30px 10px 30px;
+    color: white;
+    border-radius: 20px;
+    background-color: #435CFF;
+
+}
+
+.notepopcntrl{
+    cursor: pointer;
+}
+
+.notespopupdate{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}

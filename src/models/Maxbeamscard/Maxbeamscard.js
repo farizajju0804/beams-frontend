@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Maxbeamscard.css";
 import maxbeammock from "../../assets/maxbeammock.png";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 
-export const Maxbeamscard = ({ noshadow }) => {
+export const Maxbeamscard = ({ id, Title, Desc }) => {
+
 	const navigate = useNavigate();
+
+
+	
 
 	return (
 		<div className="maxbeamcardcontnew">
@@ -12,11 +17,11 @@ export const Maxbeamscard = ({ noshadow }) => {
 				<img src={maxbeammock} alt="" />
 			</div>
 			<div className="maxbeamdata">
-				<h3>Massive Job Disruption</h3>
-				<p>By 2030, Over 2 Billion Jobs Will Disappear.</p>
+				<h3>{Title}</h3>
+				<p>{Desc}</p>
 				<button
 					onClick={() => {
-						navigate("/maxbeampage/123");
+						navigate("/maxbeampage/" + id);
 					}}
 				>
 					Learn More

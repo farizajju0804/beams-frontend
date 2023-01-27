@@ -45,7 +45,9 @@ export const LoggedinNav = () => {
 							<CgProfile size={20} />
 							<span>My Profile</span>
 						</div>
-						<div className="accountdropdownitems">
+						<div className="accountdropdownitems" onClick={() => {
+							navigate("/hightlights")
+						}}>
 							<IoLibrarySharp />
 							<span>My Library</span>
 						</div>

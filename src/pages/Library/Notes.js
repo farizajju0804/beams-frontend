@@ -6,12 +6,17 @@ import libhighlight from "../../assets/libhighlights.png";
 import { Notesitem } from "../../models/Notesitem/Notesitem";
 import { useNavigate } from "react-router-dom";
 import "./Library.css";
+import { useAuthContext } from "../../context/AuthContext";
+import { Toaster } from "react-hot-toast";
 
 export const Notes = () => {
 	const navigate = useNavigate();
+	const { notes } = useAuthContext();
+	console.log(notes);
 
 	return (
 		<div className="LibraryPage">
+			<Toaster />
 			<div className="libraryoption">
 				<div
 					className="libraryopitem"
@@ -70,8 +75,16 @@ export const Notes = () => {
 					</select>
 				</div>
 			</div>
-			<Notesitem open={true}></Notesitem>
-			<Notesitem open={false}></Notesitem>
+			{notes.map((note) => {
+				return (
+					<Notesitem
+						title={note.BeamName}
+						beamid={note.Beamid}
+						beamtype={note.Beamtype}
+						noteitem={note.Noteitem}
+					></Notesitem>
+				);
+			})}
 		</div>
 	);
 };

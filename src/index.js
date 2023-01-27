@@ -27,6 +27,9 @@ import { Emailverification } from "./pages/Emailverification/Emailverification";
 import { Resetpass2 } from "./pages/ResetPass2/Resetpass2";
 import { VerificationSuccess } from "./pages/Login/VerificationSuccess";
 import { ResetSuccessfull } from "./pages/ResetPass2/ResetSuccessfull";
+import { MaxbeamRead } from "./pages/MaxbeamsRead/MaxbeamRead";
+import { Termsandcondition } from "./pages/Termsandcondition/Termsandcondition";
+import { UserProfile } from "./pages/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
 	{
@@ -221,6 +224,36 @@ const router = createBrowserRouter([
 			<div>
 				<Navbar />
 				<ResetSuccessfull />
+			</div>
+		)
+	},
+	{
+		path: "/maxbeamread/:id",
+		element: (
+			<div>
+				<LoggedinNav />
+				<MaxbeamRead />
+				<Footer></Footer>
+			</div>
+		)
+	},
+	{
+		path: "/termsandcondition",
+		element: (
+			<div>
+				<Navbar />
+				<Termsandcondition />
+				<Footer></Footer>
+			</div>
+		)
+	},
+	{
+		path: "/profile",
+		element: (
+			<div>
+				<Navbar />
+				<UserProfile />
+				<Footer></Footer>
 			</div>
 		)
 	}

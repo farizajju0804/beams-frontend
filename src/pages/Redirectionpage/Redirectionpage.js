@@ -4,6 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import "./redirectionpage.css";
+import { setToken } from "../../helpers";
 
 export const Redirectionpage = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -34,6 +35,7 @@ export const Redirectionpage = () => {
 			if (data?.error) {
 				throw data?.error;
 			} else {
+				setToken(data.jwt);
 				setUser(data.user);
 				navigate("/beams", { replace: true });
 			}

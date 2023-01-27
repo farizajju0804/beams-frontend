@@ -7,7 +7,7 @@ import hearticon from "../../assets/hearticon.png";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-export const Popup = ({ handleClose, text }) => {
+export const Popup = ({ handleClose, title, content }) => {
 	return (
 		<Backdrop handleClose={handleClose}>
 			<div
@@ -17,10 +17,10 @@ export const Popup = ({ handleClose, text }) => {
 				}}
 			>
 				<div className="popupdata">
-					<h2>Massive Job Disruption</h2>
+					<h2>{title}</h2>
 					<div className="popdatainner">
 						<img src={popupdoyouknow} alt="" />
-						<span>By 2030, Over 2 Billion Jobs Will Disappear.</span>
+						<span>{content}</span>
 						<div
 							style={{
 								display: "flex",

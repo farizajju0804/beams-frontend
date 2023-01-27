@@ -31,7 +31,6 @@ export const Signup = () => {
 	const [passlower, setPasslower] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 
-
 	const navigate = useNavigate();
 
 	const { setUser } = useAuthContext();
@@ -304,7 +303,8 @@ export const Signup = () => {
 					<div className="signupremember">
 						<input type="checkbox" id="logincheck" defaultChecked />
 						<label htmlFor="logincheck">
-							You agree to our Terms and Privacy Policy
+							You agree to our <a href="">Terms of Service</a> and{" "}
+							<a href="">Privacy Policy</a>
 						</label>
 					</div>
 				</div>
