@@ -7,7 +7,7 @@ import { useAuthContext } from "../../context/AuthContext";
 
 export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
 	const [openpopup, setOpenpopup] = useState(false);
-	const { delinnernote } = useAuthContext();
+	const { delfullnote } = useAuthContext();
 
 	return (
 		<div className="favouritesnewcardpage">
@@ -41,7 +41,7 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
 							<div
 								className="notescardoptionsinner"
 								onClick={() => {
-									delinnernote(`${beamid}`, noteitemid);
+									delfullnote(noteitemid);
 								}}
 							>
 								<MdDeleteForever color="red" size={20} />

@@ -6,12 +6,44 @@ import "react-h5-audio-player/lib/styles.css";
 import { API } from "../../constants";
 import ReactMarkdown from "react-markdown";
 import { BeatLoader } from "react-spinners";
+import { FaHighlighter } from "react-icons/fa";
+import { GrNotes } from "react-icons/gr";
+import { toast, Toaster } from "react-hot-toast";
+
+// import { onHighlightAction } from "../xpath";
+// q
 
 export const MaxbeamRead = () => {
-	const { token } = useAuthContext();
+	const { token, hightlights, setHighlights } = useAuthContext();
+	console.log(hightlights);
 	const [microbeams, setMicrobeams] = useState({});
 	const [microbeamsload, setMicrobeamsload] = useState(false);
+	const [highlightedtext, setHighlightedtext] = useState([]);
+	const [x, setX] = useState(0);
+	const [y, setY] = useState(0);
+	const [displayPopUp, setDisplayPopUp] = useState(false);
+	const [selectedText, setSelectedText] = useState("");
 	const { id } = useParams();
+
+	const mockhigh = [
+		"It is estimated that by 2030 automation could disrupt between 800 million to 2 billion jobs."
+	];
+
+	const handleMouseUp = (e) => {
+		var selectedtext = window.getSelection().toString().trim();
+
+		if (selectedtext) {
+			setSelectedText(window.getSelection().toString().trim());
+			setX(e.pageX);
+			setY(e.pageY);
+			console.log(e.pageX);
+			console.log(e.pageY);
+			setDisplayPopUp(true);
+
+			console.log(e);
+			console.log(`${window.getSelection().toString().trim()}`);
+		}
+	};
 
 	const fetchdata = async () => {
 		setMicrobeamsload(true);
@@ -22,18 +54,49 @@ export const MaxbeamRead = () => {
 		})
 			.then((res) => res.json())
 			.then((e) => {
-				// console.log(e.data.attributes);
 				setMicrobeams(e.data.attributes);
 				setMicrobeamsload(false);
+				getHighlightedData();
 			});
+	};
+
+	const getHighlightedData = () => {
+		if (!hightlights.length) {
+			return;
+		}
+		var items = document.getElementById("readtext");
+		if (!items) {
+			return;
+		}
+		var ptags = items.getElementsByTagName("p");
+		for (let i = 0; i < ptags.length; i++) {
+			hightlights.forEach((element) => {
+				console.log(element.HighlightedText);
+				if (ptags[i].innerText.includes(element.HighlightedText)) {
+					console.log("match");
+					ptags[i].innerHTML = ptags[i].innerHTML.replace(
+						element.HighlightedText,
+						`<span class="hightobjs">${element.HighlightedText}</span>`
+					);
+				}
+			});
+		}
+
+		return items;
 	};
 
 	useEffect(() => {
 		fetchdata();
+		// getHighlightedData();
 	}, []);
+
+	useEffect(() => {
+		getHighlightedData();
+	}, [hightlights]);
 
 	return (
 		<div className="maxbeamsreadpage">
+			<Toaster />
 			{microbeamsload ? (
 				<BeatLoader />
 			) : (
@@ -57,10 +120,50 @@ export const MaxbeamRead = () => {
 						}}
 					>
 						{" "}
-						<ReactMarkdown className="readtext">
-							{microbeams.Content}
-							{/* <ReactMarkdown children={microbeams.Content}> </ReactMarkdown> */}
-						</ReactMarkdown>
+						<div
+							onMouseUp={handleMouseUp}
+							onMouseDown={() => {
+								setSelectedText("");
+								setDisplayPopUp(false);
+							}}
+							id="readtext"
+						>
+							<ReactMarkdown className="readtext">
+								{microbeams.Content}
+							</ReactMarkdown>
+						</div>
+					</div>
+				</div>
+			)}
+			{displayPopUp && (
+				<div
+					className="highlightop"
+					style={{ left: `${x}px`, top: `${y - 100}px ` }}
+				>
+					<div
+						className="highlightopinner"
+						onClick={() => {
+							if (selectedText.split(" ").length > 5) {
+								setHighlights({
+									HighlightedText: selectedText,
+									BeamName: microbeams.Title,
+									BeamId: microbeams.id
+								});
+								setDisplayPopUp(false);
+								setSelectedText("");
+							} else {
+								toast.error("Select more than 4 words to highlight");
+								setDisplayPopUp(false);
+								setSelectedText("");
+							}
+						}}
+					>
+						<FaHighlighter size={22} />
+						<span>Highlight</span>
+					</div>
+					<div className="highlightopinner">
+						<GrNotes size={22} />
+						<span>Note</span>
 					</div>
 				</div>
 			)}

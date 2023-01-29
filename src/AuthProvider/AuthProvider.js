@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
 	const [userData, setUserData] = useState();
 	const [isLoading, setIsLoading] = useState(false);
 	const [Favourites, setFavourites] = useState([]);
+	const [highlightedText, setHighlightedText] = useState([]);
 	const [Notes, setNotes] = useState([]);
 	const authToken = getToken();
 
@@ -62,122 +63,77 @@ const AuthProvider = ({ children }) => {
 
 	//Favourites
 
-	//Notes
-	const fetchnotes = async (token) => {
-		setIsLoading(true);
-		try {
-			const response = await fetch(
-				`${API}/users/me?populate[Notes][populate]=*`,
-				{
-					headers: { Authorization: `${BEARER} ${token}` }
-				}
-			);
-			const data = await response.json();
-			// console.log(data);
-			setNotes(data.Notes);
-		} catch (error) {
-			console.error(error);
-			alert("Error While Getting Notes");
-		} finally {
-			setIsLoading(false);
-		}
+	//Highlights
+
+	const pushHighlights = async (highlightitem) => {
+		const data = await fetch(`${API}/users/${userData.id}`, {
+			method: "PUT",
+			headers: {
+				Authorization: `Bearer ${authToken}`,
+				"Content-Type": "application/json"
+			},
+
+			body: JSON.stringify({
+				Highlights: highlightitem
+			})
+		})
+			.then((res) => res.json())
+			.then((e) => {
+				console.log(e);
+			});
 	};
+
+	const addHighlights = async (highlightitem) => {
+		setHighlightedText([...highlightedText, highlightitem]);
+		var highlightadded = [...highlightedText, highlightitem];
+		pushHighlights(highlightadded);
+	};
+
+	const delhighlight = (id) => {
+		const newhightlights = highlightedText.filter((highlight) => {
+			return highlight.id != id;
+		});
+
+		setHighlightedText(newhightlights);
+		toast.promise(pushHighlights(newhightlights), {
+			loading: "Deleting Highlight",
+			success: <b>Highlight Deleted</b>,
+			error: <b>Could not delete hightlight.</b>
+		});
+	};
+
+	//Highlights
+
+	//Notes
 
 	const AddtoNotes = (BeamName, BeamId, BeamType, NoteItem) => {
-		var NotetopicPresent = false;
-		Notes.map((note) => {
-			if (note.Beamid === BeamId) {
-				NotetopicPresent = true;
-				note.Noteitem = [
-					...note.Noteitem,
-					{
-						NoteContent: NoteItem.content,
-						Date: NoteItem.date
-					}
-				];
-				return note;
-			}
-		});
+		const newnote = {
+			BeamName,
+			BeamId,
+			BeamType,
+			NoteContent: NoteItem.content,
+			Date: NoteItem.date
+		};
 
-		if (NotetopicPresent === false) {
-			var newNote = [
-				...Notes,
-				{
-					BeamName: BeamName,
-					Beamid: BeamId,
-					Beamtype: BeamType,
-					Noteitem: [
-						{
-							NoteContent: NoteItem.content,
-							Date: NoteItem.date
-						}
-					]
-				}
-			];
-
-			setNotes(newNote);
-
-			toast.promise(pushNotes(newNote), {
-				loading: "Saving Note",
-				success: <b>Note Saved</b>,
-				error: <b>Could not save note.</b>
-			});
-		} else {
-			setNotes(Notes);
-			toast.promise(pushNotes(Notes), {
-				loading: "Saving Note",
-				success: <b>Note Saved</b>,
-				error: <b>Could not save note.</b>
-			});
-		}
-	};
-
-	const delnote1 = (beamId) => {
-		const newnote = Notes.filter((note) => {
-			return note.Beamid != beamId;
-		});
-
-		setNotes(newnote);
-		toast.promise(pushNotes(newnote), {
-			loading: "Deleting Notes",
-			success: <b>Notes Deleted</b>,
+		setNotes([...Notes, newnote]);
+		toast.promise(pushNotes([...Notes, newnote]), {
+			loading: "Adding Note",
+			success: <b>Note Added</b>,
 			error: <b>Could not delete note.</b>
 		});
 	};
 
-	const delnote2 = (beamId, noteitemid) => {
-		var is1 = false;
-		var mocknote = Notes;
-		mocknote.map((note) => {
-			if (note.Beamid === beamId) {
-				if (note.Noteitem.length === 1) {
-					console.log(note.Noteitem.length);
-					is1 = true;
-					delnote1(beamId);
-				} else {
-					note.Noteitem = note.Noteitem.filter((noteitem) => {
-						return noteitem.id != noteitemid;
-					});
-				}
-
-				return note;
-			}
+	const delnote1 = (id) => {
+		const newnote = Notes.filter((note) => {
+			return note.id != id;
 		});
 
-		// var newnote = Notes;
-		// setNotes(newnote);
-		// console.log(newnote);
-
-		if (!is1) {
-			setNotes(mocknote);
-			// console.log(Notes);
-			toast.promise(pushNotes(mocknote), {
-				loading: "Deleting Note",
-				success: <b>Note Deleted</b>,
-				error: <b>Could not delete note.</b>
-			});
-			window.location.reload(false);
-		}
+		setNotes(newnote);
+		toast.promise(pushNotes(newnote), {
+			loading: "Deleting Note",
+			success: <b>Note Deleted</b>,
+			error: <b>Could not delete note.</b>
+		});
 	};
 
 	const pushNotes = async (item) => {
@@ -205,12 +161,11 @@ const AuthProvider = ({ children }) => {
 				headers: { Authorization: `${BEARER} ${token}` }
 			});
 			const data = await response.json();
-			// console.log(data);
 			setUserData(data);
 			setFavourites(data.Favourites);
 			setNotes(data.Notes);
+			setHighlightedText(data.Highlights);
 			console.log("datafound");
-			// console.log(Favourites);
 		} catch (error) {
 			console.error(error);
 			alert("Error While Getting Logged In User Details");
@@ -226,7 +181,6 @@ const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		if (authToken) {
 			fetchLoggedInUser(authToken);
-			fetchnotes(authToken);
 			return;
 		}
 	}, [authToken]);
@@ -244,7 +198,9 @@ const AuthProvider = ({ children }) => {
 				notes: Notes,
 				addnotes: AddtoNotes,
 				delfullnote: delnote1,
-				delinnernote: delnote2
+				hightlights: highlightedText,
+				setHighlights: addHighlights,
+				delhighlight: delhighlight
 			}}
 		>
 			{children}

@@ -1,18 +1,22 @@
 import React from "react";
-import { Hightlightitem } from "../../models/Hightlistitem/Hightlightitem";
 import { useNavigate } from "react-router-dom";
 import libcompleted from "../../assets/libcompleted.png";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
 import libhighlight from "../../assets/libhighlights.png";
+import { HighlightComponent } from "../../models/Hightlistitem/HighlightComponent";
+import { useAuthContext } from "../../context/AuthContext";
+import { Toaster } from "react-hot-toast";
 
 export const Library = () => {
 	const navigate = useNavigate();
+	const { hightlights, delhighlight } = useAuthContext();
 
 	return (
 		<div className="LibraryPage">
+			<Toaster />
 			<div className="libraryoption">
-				<div
+				{/* <div
 					className="libraryopitem"
 					onClick={() => {
 						navigate("/completed");
@@ -20,7 +24,7 @@ export const Library = () => {
 				>
 					<img src={libcompleted} className="lbopic" />
 					<span>Completed</span>
-				</div>
+				</div> */}
 				<div
 					className="libraryopitem"
 					onClick={() => {
@@ -69,8 +73,17 @@ export const Library = () => {
 					</select>
 				</div>
 			</div>
-			<Hightlightitem open={true}></Hightlightitem>
-			<Hightlightitem open={false}></Hightlightitem>
+			<div className="highlightdata">
+				{hightlights.map((hightlight) => {
+					return (
+						<HighlightComponent
+							title={hightlight.BeamName}
+							highlightdata={hightlight.HighlightedText}
+							id={hightlight.id}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

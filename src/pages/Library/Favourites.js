@@ -13,13 +13,13 @@ import "./Library.css";
 
 export const Favourites = () => {
 	const navigate = useNavigate();
-	const { favourites} = useAuthContext();
+	const { favourites } = useAuthContext();
 
 	return (
 		<div className="LibraryPage">
 			<Toaster />
 			<div className="libraryoption">
-				<div
+				{/* <div
 					className="libraryopitem"
 					onClick={() => {
 						navigate("/completed");
@@ -27,7 +27,7 @@ export const Favourites = () => {
 				>
 					<img src={libcompleted} className="lbopic" />
 					<span>Completed</span>
-				</div>
+				</div> */}
 				<div
 					className="libraryopitem"
 					onClick={() => {

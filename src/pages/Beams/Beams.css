@@ -209,3 +209,83 @@
   .mover{
   
 }
+
+.searchPage{
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.searchPageheading{
+    margin-top: 50px;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.searchPageoptions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.searchpageleftoptions{
+    display: flex;
+    width: 40%;
+
+    justify-content: space-between;
+}
+
+.searchpageleftoptions > span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 23px 15px 23px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.suggestionlist{
+    width: 261px;
+    height: 200px;
+    background-color: #ffffff;
+    position: absolute;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.suggestionlist::-webkit-scrollbar {
+    width: 20px;
+  }
+
+.suggestionlist::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+
+  .suggestionlist::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  .suggestionlist::-webkit-scrollbar-thumb:hover {
+    background-color: #c2c2c2;
+  }
+
+.suggestionlist > p{
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    
+}
+
+.suggestionlist > p:hover{
+    background-color: rgb(246, 246, 246);
+}

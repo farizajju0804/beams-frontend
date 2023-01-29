@@ -1,14 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
+import { useAuthContext } from "../../context/AuthContext";
 
-export const HighlightComponent = () => {
+export const HighlightComponent = ({ title, highlightdata,id }) => {
+	const [showMore, setShowMore] = useState(false);
+	const [openpopup, setopenpopup] = useState(false);
+	const { delhighlight } = useAuthContext();
 	return (
-		<div className="highlightcomponent">
-			<input type="checkbox" />
+		<div
+			className="highlightcomponent"
+			onClick={() => {
+				setopenpopup(false);
+			}}
+		>
 			<div className="highlightcomponentinner">
-				<p style={{ marginRight: "20px", maxWidth: "400px" }}>
-					This is how a Highlight on innBrieff looks like!
-				</p>
-				<span style={{ width: "100px" }}>1 Aug, 2023</span>
+				<span>{title}</span>
+				<div className="highlightcomponentinner2">
+					<p>
+						{highlightdata.length > 300 ? (
+							showMore ? (
+								<span>
+									{" "}
+									{highlightdata}{" "}
+									<strong
+										onClick={() => {
+											setShowMore(false);
+										}}
+									>
+										Read Less
+									</strong>
+								</span>
+							) : (
+								<span>
+									{" "}
+									{highlightdata.slice(0, 300)}{" "}
+									<strong
+										onClick={() => {
+											setShowMore(true);
+										}}
+									>
+										Read More
+									</strong>
+								</span>
+							)
+						) : (
+							highlightdata
+						)}
+					</p>
+					<BiDotsVerticalRounded
+						size={22}
+						style={{ marginLeft: "20px", cursor: "pointer" }}
+						onClick={(e) => {
+							e.stopPropagation();
+							setopenpopup(true);
+						}}
+					/>
+					{openpopup && (
+						<div className="highlightscardoptions">
+							<div
+								className="highlightscardoptionsinner"
+								onClick={() => {
+									delhighlight(id);
+								}}
+							>
+								<MdDeleteForever color="red" size={20} />
+								<span>Delete</span>
+							</div>
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);

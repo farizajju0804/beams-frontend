@@ -3,7 +3,7 @@ import libcompleted from "../../assets/libcompleted.png";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
 import libhighlight from "../../assets/libhighlights.png";
-import { Notesitem } from "../../models/Notesitem/Notesitem";
+import { NotesCard } from "../../models/NotesCard/NotesCard";
 import { useNavigate } from "react-router-dom";
 import "./Library.css";
 import { useAuthContext } from "../../context/AuthContext";
@@ -18,7 +18,7 @@ export const Notes = () => {
 		<div className="LibraryPage">
 			<Toaster />
 			<div className="libraryoption">
-				<div
+				{/* <div
 					className="libraryopitem"
 					onClick={() => {
 						navigate("/completed");
@@ -26,7 +26,7 @@ export const Notes = () => {
 				>
 					<img src={libcompleted} className="lbopic" />
 					<span>Completed</span>
-				</div>
+				</div> */}
 				<div
 					className="libraryopitem"
 					onClick={() => {
@@ -75,16 +75,18 @@ export const Notes = () => {
 					</select>
 				</div>
 			</div>
-			{notes.map((note) => {
-				return (
-					<Notesitem
-						title={note.BeamName}
-						beamid={note.Beamid}
-						beamtype={note.Beamtype}
-						noteitem={note.Noteitem}
-					></Notesitem>
-				);
-			})}
+			<div className="highlightdata fwrap">
+				{notes.map((item) => {
+					return (
+						<NotesCard
+							date={item.Date}
+							NoteContent={item.NoteContent}
+							noteitemid={item.id}
+							beamid={item.beamid}
+						></NotesCard>
+					);
+				})}
+			</div>
 		</div>
 	);
 };
