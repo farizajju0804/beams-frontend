@@ -53,9 +53,6 @@ export const Beams = () => {
 			.then((e) => {
 				setMicrobeams(e.data);
 				setMicrobeamsload(false);
-				// e.data.map((beam) => {
-				// 	suggestion.push(beam.attributes.Title);
-				// });
 			});
 	};
 
@@ -263,14 +260,6 @@ export const Beams = () => {
 								Mini Beams
 							</span>
 						</div>
-						{/* <div className="">
-							<span style={{ color: "black" }}>Sort By</span>
-							<select name="" id="">
-								<option value="">Title</option>
-								<option value="">A-Z</option>
-								<option value="">Latest</option>
-							</select>
-						</div> */}
 					</div>
 					<div className="minicardcont">
 						{maxbeams.length !== 0 ? (

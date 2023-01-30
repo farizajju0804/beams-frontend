@@ -11,7 +11,7 @@ export const Contact = () => {
 			<div className="contactleft">
 				<div className="contactleftinner">
 					<h1>Get in Touch</h1>
-					<p>Fill up the form our team will get back to you within 24 Hours</p>
+					{/* <p>Fill up the form our team will get back to you within 24 Hours</p> */}
 					<div className="contactlsec1">
 						<div className="contactlsec1inner marginright20">
 							<label For="contactname">First Name</label>

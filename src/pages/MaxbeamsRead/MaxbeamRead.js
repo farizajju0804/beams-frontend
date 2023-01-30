@@ -57,6 +57,7 @@ export const MaxbeamRead = () => {
 				setMicrobeams(e.data.attributes);
 				setMicrobeamsload(false);
 				getHighlightedData();
+				console.log(microbeams);
 			});
 	};
 
@@ -147,7 +148,7 @@ export const MaxbeamRead = () => {
 								setHighlights({
 									HighlightedText: selectedText,
 									BeamName: microbeams.Title,
-									BeamId: microbeams.id
+									BeamId: id	
 								});
 								setDisplayPopUp(false);
 								setSelectedText("");

@@ -45,13 +45,21 @@ export const LoggedinNav = () => {
 							<CgProfile size={20} />
 							<span>My Profile</span>
 						</div>
-						<div className="accountdropdownitems" onClick={() => {
-							navigate("/hightlights")
-						}}>
+						<div
+							className="accountdropdownitems"
+							onClick={() => {
+								navigate("/hightlights");
+							}}
+						>
 							<IoLibrarySharp />
 							<span>My Library</span>
 						</div>
-						<div className="accountdropdownitems">
+						<div
+							className="accountdropdownitems"
+							onClick={() => {
+								navigate("/");
+							}}
+						>
 							<FiLogOut />
 							<span>Log Out</span>
 						</div>

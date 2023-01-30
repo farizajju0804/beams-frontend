@@ -4,9 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Navbar } from "./models/navbar/Navbar";
 import landingvideo from "./assets/videoBg.mp4";
 import data from "./data/landingdata.json";
-import sec4card1 from "./assets/sec4card1.png";
-import sec4card2 from "./assets/sec4card2.png";
-import sec4card3 from "./assets/sec4card3.png";
+import HorizontalScroll from "react-scroll-horizontal";
 import sec6card1 from "./assets/sec6card1.png";
 import sec6card2 from "./assets/sec6card2.png";
 import sec6card3 from "./assets/sec6card3.png";
@@ -14,10 +12,19 @@ import { Footer } from "./models/footer/Footer";
 import threeqs1img from "./assets/3qs1img.png";
 import threeqs2img from "./assets/3qs2img.png";
 import threeqs3img from "./assets/3qs3img.png";
+import horiscroll1 from "./assets/horiscroll1.png";
+import horiscroll2 from "./assets/horiscroll2.png";
+import horiscroll3 from "./assets/horiscroll3.png";
+import q1video from "./assets/Question1.mp4";
+import q2video from "./assets/Question2.mp4";
+import q3video from "./assets/Question3.mp4";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useHorizontalScroll } from "./Horizontalscroll";
 
 function App() {
+	const scrollRef = useHorizontalScroll();
+
 	useEffect(() => {
 		AOS.init({
 			duration: 900,
@@ -45,39 +52,11 @@ function App() {
 							</h2>
 							<span data-aos="fade-up">{data.landingpage.subhero}</span>
 							<span data-aos="fade-up">{data.landingpage.subhero2}</span>
-							<button data-aos="fade-up">{data.landingpage.button}</button>
+							<button>{data.landingpage.button}</button>
 						</div>
 					</div>
 				</section>
-				{/* <section className="two landingsection">
-					<div className="sec2label" data-aos="fade-right">
-						<span>{data.landingpage.sec2title}</span>
-					</div>
-					<div className="sec2data">
-						<div
-							style={{
-								height: " 380px",
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center"
-							}}
-						>
-							<img src={landingsec2img} alt="" className="object" />
-						</div>
 
-						<div className="sec2idiv">
-							<h1 data-aos="fade-left">{data.landingpage.sec2quote}</h1>
-							<div className="sec2contdiv">
-								<h1 style={{ color: "#F7CD61" }} data-aos="fade-left">
-									{data.landingpage.sec2contheader}
-								</h1>
-								<span data-aos="fade-left">
-									{data.landingpage.sec2contdata}
-								</span>
-							</div>
-						</div>
-					</div>
-				</section> */}
 				<section className="thethreeqs">
 					<h2>
 						The{" "}
@@ -123,7 +102,7 @@ function App() {
 							</p>
 						</div>
 						<div className="the3qsbox">
-							<img src={threeqs1img} alt="" />
+							<video src={q1video} autoPlay loop playsInline={true} muted />
 							<p>
 								Meet Beams, meticulously distilled content nuggets, packed with
 								powerful and actionable knowledge. Count on them to be your
@@ -161,7 +140,7 @@ function App() {
 							</p>
 						</div>
 						<div className="the3qsbox">
-							<img src={threeqs2img} alt="" />
+							<video src={q2video} autoPlay loop playsInline={true} muted />
 							<p>
 								​Relevant, timely, and versatile content gems on the latest
 								technology trends and innovations. Consume them in less than 6
@@ -190,7 +169,7 @@ function App() {
 							</p>
 						</div>
 						<div className="the3qsbox">
-							<img src={threeqs3img} alt="" />
+							<video src={q3video} autoPlay loop playsInline={true} muted />
 							<p>
 								Beams will keep you current and future ready in minutes a day.
 								Leverage them to stay relevant, make better decisions, identify
@@ -218,110 +197,35 @@ function App() {
 					<div className="sec2label">
 						<span>{data.landingpage.sec4title}</span>
 					</div>
-					<div className="sec4datadiv">
+					<div ref={scrollRef} className="horiscroller">
+						{/* <HorizontalScroll reverseScroll={true}> */}
 						<div className="sec4spltitle">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								{data.landingpage.sec4innertitle}
 							</h1>
 						</div>
-						<div className="sec4cardsdiv">
-							<div className="sec4carddiv" data-aos="fade-up">
-								<div className="sec4cardimgcont">
-									<img src={sec4card1} alt="" />
-								</div>
-								<span>{data.landingpage.sec4card1}</span>
-							</div>
-							<div className="sec4carddiv" data-aos="fade-up">
-								<div className="sec4cardimgcont">
-									<img src={sec4card2} alt="" />
-								</div>
-								<span>{data.landingpage.sec4card2}</span>
-							</div>
-							<div className="sec4carddiv" data-aos="fade-up">
-								<div className="sec4cardimgcont">
-									<img src={sec4card3} alt="" />
-								</div>
-								<span>{data.landingpage.sec4card3}</span>
-							</div>
+						<div className="featurehoricard">
+							<img src={horiscroll1} alt="" />
+							<span>A new trending topic everyday</span>
 						</div>
+						<div
+							className="featurehoricard"
+							style={{ backgroundColor: "#F7CD61", color: "black" }}
+						>
+							<img src={horiscroll2} alt="" />
+							<span>Quickly understand bite sized content</span>
+						</div>
+						<div
+							className="featurehoricard"
+							style={{ backgroundColor: "#435CFF" }}
+						>
+							<img src={horiscroll3} alt="" />
+							<span>One of a kind knowledge portal</span>
+						</div>
+						{/* </HorizontalScroll> */}
 					</div>
 				</section>
-				{/* <section className="five landingsection">
-					<div className="sec2label">
-						<span>{data.landingpage.sec5title}</span>
-					</div>
-					<div className="carodiv">
-						<Carousel
-							showThumbs={false}
-							autoPlay
-							showArrows
-							showStatus={false}
-							dynamicHeight
-							className="carosel"
-							// width={"100%"}
-						>
-							<div className="caroitem">
-								<img src={testi} alt="" className="caroimg" />
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Turpis porta
-									adipiscing non arcu ac nulla. Justo sit et felis parturient
-									ut. Elit commodo nunc venenatis eu ultrices gravida
-									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
-									Pellentesque quam dictum quisque sit sit. Lorem ipsum dolor
-									sit amet consectetur. Turpis porta adipiscing non arcu ac
-									nulla. Justo sit et felis parturient ut. Elit commodo nunc
-									venenatis eu ultrices gravida adipiscing. Ut mauris at purus
-									phasellus pellentesque id diam. Pellentesque quam dictum
-									quisque sit sit. Lorem ipsum dolor sit amet consectetur.
-									Turpis porta adipiscing non arcu ac nulla. Justo sit et felis
-									parturient ut. Elit commodo nunc venenatis eu ultrices gravida
-									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
-									Pellentesque quam dictum quisque sit sit.
-								</p>
-							</div>
-							<div className="caroitem">
-								<img src={testi} alt="" className="caroimg" />
-
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Turpis porta
-									adipiscing non arcu ac nulla. Justo sit et felis parturient
-									ut. Elit commodo nunc venenatis eu ultrices gravida
-									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
-									Pellentesque quam dictum quisque sit sit. Lorem ipsum dolor
-									sit amet consectetur. Turpis porta adipiscing non arcu ac
-									nulla. Justo sit et felis parturient ut. Elit commodo nunc
-									venenatis eu ultrices gravida adipiscing. Ut mauris at purus
-									phasellus pellentesque id diam. Pellentesque quam dictum
-									quisque sit sit.Lorem ipsum dolor sit amet consectetur. Turpis
-									porta adipiscing non arcu ac nulla. Justo sit et felis
-									parturient ut. Elit commodo nunc venenatis eu ultrices gravida
-									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
-									Pellentesque quam dictum quisque sit sit.
-								</p>
-							</div>
-							<div className="caroitem">
-								<img src={testi} alt="" className="caroimg" />
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Turpis porta
-									adipiscing non arcu ac nulla. Justo sit et felis parturient
-									ut. Elit commodo nunc venenatis eu ultrices gravida
-									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
-									Pellentesque quam dictum quisque sit sit. Lorem ipsum dolor
-									sit amet consectetur. Turpis porta adipiscing non arcu ac
-									nulla. Justo sit et felis parturient ut. Elit commodo nunc
-									venenatis eu ultrices gravida adipiscing. Ut mauris at purus
-									phasellus pellentesque id diam. Pellentesque quam dictum
-									quisque sit sit.Lorem ipsum dolor sit amet consectetur. Turpis
-									porta adipiscing non arcu ac nulla. Justo sit et felis
-									parturient ut. Elit commodo nunc venenatis eu ultrices gravida
-									adipiscing. Ut mauris at purus phasellus pellentesque id diam.
-									Pellentesque quam dictum quisque sit sit.
-								</p>
-							</div>
-						</Carousel>
-					</div>
-				</section> */}
 				<section className="six landingsection">
 					<div className="sec2label">
 						<span>{data.landingpage.sec6title}</span>

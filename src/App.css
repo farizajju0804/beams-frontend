@@ -120,7 +120,7 @@
   transform: translate(-50%,-50%);
   }
   .sec1data h2{
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .sec1data span
@@ -150,7 +150,7 @@
  }
 
  .the3qsbox{
-  height: 540px;
+  /* height: 540px; */
   width: 480px;
   border-radius: 40px;
   background-color: white;
@@ -161,7 +161,7 @@
   padding: 40px;
  }
 
- .the3qsbox > img{
+ .the3qsbox > video{
   width: 100%;
   border-radius: 30px;
  }
@@ -206,6 +206,7 @@
   line-height: 70px;
   font-weight: 600;
   color: white;
+  margin-right: 20px;
  }
 
  .the3qsitemdata > span{
@@ -213,6 +214,75 @@
   font-weight: 600;
   font-size: 50px;
  }
+
+
+
+@media only screen and (max-width:1013px) {
+
+  .the3qsitem{
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .thethreeqs > h2{
+    text-align: center;
+    font-size: 50px;
+   }
+
+  .the3qsitemdata{
+    width: 90%;
+  }
+
+  .the3qsitemdata > p{
+  font-size: 24px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+ }
+
+ .the3qsitemdata > span{
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+ }
+ 
+  .the3qsbox > p{
+    font-size: 20px;
+ }
+
+}
+
+@media only screen and (max-width:600px) {
+
+  .thethreeqs > h2{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    line-height: 55px;
+   }
+
+  .the3qsbox{
+    width: 320px;
+    padding: 20px;
+  }
+
+  .the3qsbox > p{
+    font-size: 16px;
+ }
+
+ .the3qsitemdata > p{
+  font-size: 19px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+  line-height: 50px;
+ }
+
+ .the3qsitemdata > span{
+  font-size: 30px;
+ }
+}
+
 
  .two
  {
@@ -451,7 +521,7 @@
   }
 
   .sec4spltitle{
-    width: 450px;
+    min-width: 450px;
     /* background-color: #435CFF; */
     height: 150px;
     /* padding: 30px; */
@@ -461,9 +531,9 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    margin-top: 90px;
+    margin-top: 140px;
     margin-bottom: 90px;
-
+    margin-left: 80px;
   }
 
   .sec4innertitle{
@@ -609,7 +679,7 @@
     /* End of Sec 5 */
 
   .six{
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 100px;
     width: 100%;
     flex-direction: column;
@@ -826,3 +896,58 @@
 
 
   
+
+.horiscroller{
+    height: 450px;
+    /* background-color: #435CFF; */
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    min-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* overflow-x: hidden; */
+
+}
+
+.horiscroller::-webkit-scrollbar{
+  display: none;
+}
+
+.featurehoricard
+{
+  min-width: 550px;
+  height: 320px;
+  border-radius: 50px;
+  padding: 20px;
+  background-color: #191641;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 90px;
+}
+
+.featurehoricard > img{
+  height: 80%;
+  width: auto;
+}
+
+.featurehoricard > span{
+  font-size: 28px;
+  line-height: 50px;
+  text-align: center;
+}
+
+@media only screen and (max-width:1080px)
+{
+  .horiscroller{
+    margin-top: 0px;
+  }
+
+  .featurehoricard{
+    margin-top: 50px;
+  }
+}
