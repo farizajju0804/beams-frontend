@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./UserProfile.css";
 import userProfileimg from "../../assets/userprofile.png";
 import { useAuthContext } from "../../context/AuthContext";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export const UserProfile = () => {
 	const { user } = useAuthContext();
@@ -29,8 +31,11 @@ export const UserProfile = () => {
 						</div>
 						<button className="changepassbtn">Change Password</button>
 						<div className="profitems">
-							<label htmlFor="">Phone</label>
-							<input type="text" />
+							<PhoneInput
+								country={"in"}
+								// value={this.state.phone}
+								// onChange={(phone) => this.setState({ phone })}
+							/>
 						</div>
 						<div className="profileoptns">
 							<button className="cancelbtn">Cancel</button>
