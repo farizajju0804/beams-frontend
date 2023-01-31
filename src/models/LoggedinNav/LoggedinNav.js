@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { IoLibrarySharp } from "react-icons/io5";
+import { useAuthContext } from "../../context/AuthContext";
 
 export const LoggedinNav = () => {
+	const { user } = useAuthContext();
+	console.log(user);
 	const [dropdown, setDropdown] = useState(false);
 	const navigate = useNavigate();
 
@@ -32,7 +35,9 @@ export const LoggedinNav = () => {
 						src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=2000"
 						alt=""
 					/>
-					<span>Jeremy </span>
+					<span>
+						{user ? (user.name === null ? user.username : user.name) : ""}
+					</span>
 					<BsChevronDown />
 					<div
 						className={

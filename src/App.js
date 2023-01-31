@@ -40,6 +40,7 @@ function App() {
 					<Navbar></Navbar>
 					<div className="bgvideo">
 						<video
+							
 							src={landingvideo}
 							autoPlay
 							loop
@@ -165,7 +166,7 @@ function App() {
 								>
 									STAY REVELANT
 								</span>{" "}
-								IN THE FUTURE?{" "}
+								<br /> IN THE FUTURE?{" "}
 							</p>
 						</div>
 						<div className="the3qsbox">

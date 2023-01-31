@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
 import microbeambgheroimg from "../../assets/microbeamheroimg.png";
-import { AiOutlineSearch, AiFillCloseCircle } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { Popup } from "../../models/Popup/Popup";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -144,9 +144,9 @@ export const Maxbeams = () => {
 						{searchTerm === "" && !forceclose ? (
 							<AiOutlineSearch className="searchicon" />
 						) : (
-							<AiFillCloseCircle
+							<AiOutlineClose
 								className="searchicon"
-								color="blue"
+								color="black"
 								onClick={() => {
 									setSearchTerm("");
 									setforceclose(false);

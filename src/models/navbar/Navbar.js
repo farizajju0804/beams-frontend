@@ -38,7 +38,13 @@ export const Navbar = () => {
 					<HiOutlineXMark color="white" size={20} />
 				</div>
 				<div className="sidenavlinks">
-					<span>Product</span>
+					<span
+						onClick={() => {
+							navigate("/products");
+						}}
+					>
+						Product
+					</span>
 					<span>Testimonials</span>
 					<span>About Us</span>
 					<span>Contact Us</span>

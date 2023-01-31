@@ -132,7 +132,7 @@ export const Beams = () => {
 					) : (
 						<AiFillCloseCircle
 							className="searchicon"
-							color="blue"
+							color="black"
 							onClick={() => {
 								setSearchTerm("");
 								setforceclose(false);

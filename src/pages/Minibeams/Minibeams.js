@@ -147,7 +147,7 @@ export const Minibeams = () => {
 						) : (
 							<AiFillCloseCircle
 								className="searchicon"
-								color="blue"
+								color="black"
 								onClick={() => {
 									setSearchTerm("");
 									setforceclose(false);
