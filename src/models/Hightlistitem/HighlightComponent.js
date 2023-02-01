@@ -3,7 +3,7 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
 import { useAuthContext } from "../../context/AuthContext";
 
-export const HighlightComponent = ({ title, highlightdata,id }) => {
+export const HighlightComponent = ({ title, highlightdata, id, type }) => {
 	const [showMore, setShowMore] = useState(false);
 	const [openpopup, setopenpopup] = useState(false);
 	const { delhighlight } = useAuthContext();
@@ -15,7 +15,9 @@ export const HighlightComponent = ({ title, highlightdata,id }) => {
 			}}
 		>
 			<div className="highlightcomponentinner">
-				<span>{title}</span>
+				<span>
+					{title}  - 	 {type}
+				</span>
 				<div className="highlightcomponentinner2">
 					<p>
 						{highlightdata.length > 300 ? (

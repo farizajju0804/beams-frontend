@@ -5,7 +5,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
 
-export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
+export const NotesCard = ({ date, NoteContent, noteitemid, beamid, readmore, BeamName }) => {
 	const [openpopup, setOpenpopup] = useState(false);
 	const { delfullnote } = useAuthContext();
 
@@ -18,7 +18,17 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
 					setOpenpopup(false);
 				}}
 			>
-				<p>{NoteContent}</p>
+				{NoteContent.length <= 125 ? (
+					<p>{NoteContent}</p>
+				) : (
+					<p>
+						{NoteContent.slice(0, 125)}
+						<strong style={{ cursor: "pointer" }} onClick ={() => {
+							readmore({date,NoteContent,BeamName})
+						}}>Read More</strong>
+					</p>
+				)}
+
 				<div className="favnewinnercontdat">
 					<span>{date}</span>
 

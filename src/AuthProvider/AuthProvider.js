@@ -90,9 +90,16 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const delhighlight = (id) => {
+		console.log(id);
 		const newhightlights = highlightedText.filter((highlight) => {
-			return highlight.id != id;
+			if (highlight.id === id) {
+				return false;
+			} else {
+				return true;
+			}
 		});
+
+		console.log(newhightlights);
 
 		setHighlightedText(newhightlights);
 		toast.promise(pushHighlights(newhightlights), {
@@ -109,8 +116,8 @@ const AuthProvider = ({ children }) => {
 	const AddtoNotes = (BeamName, BeamId, BeamType, NoteItem) => {
 		const newnote = {
 			BeamName,
-			BeamId,
-			BeamType,
+			Beamid: BeamId,
+			Beamtype: BeamType,
 			NoteContent: NoteItem.content,
 			Date: NoteItem.date
 		};

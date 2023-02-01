@@ -46,7 +46,13 @@ export const Navbar = () => {
 						Product
 					</span>
 					<span>Testimonials</span>
-					<span>About Us</span>
+					<span
+						onClick={() => {
+							navigate("/aboutus");
+						}}
+					>
+						About Us
+					</span>
 					<span>Contact Us</span>
 					<span
 						className="spanpadding"

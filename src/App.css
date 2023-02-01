@@ -945,9 +945,44 @@
 {
   .horiscroller{
     margin-top: 0px;
+    flex-direction: column;
+    height: 100%;
+    overflow-x: hidden;
+    margin-bottom: 100px;
   }
 
   .featurehoricard{
     margin-top: 50px;
   }
+
+  .featurehoricard{
+    min-width: 460px;
+  }
+}
+
+@media only screen and (max-width:500px)
+{
+
+  .featurehoricard{
+    min-width: 350px;
+    padding: 10px;
+  }
+
+  .featurehoricard > img{
+  height: 50%;
+  width: auto;
+}
+
+.featurehoricard > span{
+  font-size: 22px;
+  line-height: 30px;
+
+}
+
+.vertic{
+  min-width: 300px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+
+}
 }

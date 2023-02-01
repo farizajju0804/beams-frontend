@@ -251,7 +251,7 @@ const router = createBrowserRouter([
 		path: "/profile",
 		element: (
 			<div>
-				<Navbar />
+				<LoggedinNav />
 				<UserProfile />
 				<Footer></Footer>
 			</div>

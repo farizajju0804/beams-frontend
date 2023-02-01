@@ -1,5 +1,4 @@
-import React from "react";
-import libcompleted from "../../assets/libcompleted.png";
+import React, { useState } from "react";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
 import libhighlight from "../../assets/libhighlights.png";
@@ -8,8 +7,19 @@ import { useNavigate } from "react-router-dom";
 import "./Library.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { Toaster } from "react-hot-toast";
+import { PopUpShowMore } from "../../models/PopupShowMore/PopupShowMore";
+import libcompleted from "../../assets/libcompleted.png";
 
 export const Notes = () => {
+	const closenotePopup = () => setNotesPopup(false);
+	const opennotePopup = (data) => {
+		setNotepopupdata(data);
+		setNotesPopup(true);
+	};
+
+	const [notesPopup, setNotesPopup] = useState(false);
+	const [notepopupdata, setNotepopupdata] = useState({});
+
 	const navigate = useNavigate();
 	const { notes } = useAuthContext();
 	console.log(notes);
@@ -17,8 +27,14 @@ export const Notes = () => {
 	return (
 		<div className="LibraryPage">
 			<Toaster />
+			{notesPopup && (
+				<PopUpShowMore
+					data={notepopupdata}
+					handleClose={closenotePopup}
+				></PopUpShowMore>
+			)}
 			<div className="libraryoption">
-				{/* <div
+				<div
 					className="libraryopitem"
 					onClick={() => {
 						navigate("/completed");
@@ -26,7 +42,7 @@ export const Notes = () => {
 				>
 					<img src={libcompleted} className="lbopic" />
 					<span>Completed</span>
-				</div> */}
+				</div>
 				<div
 					className="libraryopitem"
 					onClick={() => {
@@ -83,6 +99,8 @@ export const Notes = () => {
 							NoteContent={item.NoteContent}
 							noteitemid={item.id}
 							beamid={item.beamid}
+							BeamName={item.BeamName}
+							readmore={opennotePopup}
 						></NotesCard>
 					);
 				})}

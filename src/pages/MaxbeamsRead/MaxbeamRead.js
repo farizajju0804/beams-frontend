@@ -10,24 +10,19 @@ import { FaHighlighter } from "react-icons/fa";
 import { GrNotes } from "react-icons/gr";
 import { toast, Toaster } from "react-hot-toast";
 
-// import { onHighlightAction } from "../xpath";
-// q
+
 
 export const MaxbeamRead = () => {
 	const { token, hightlights, setHighlights } = useAuthContext();
 	console.log(hightlights);
 	const [microbeams, setMicrobeams] = useState({});
 	const [microbeamsload, setMicrobeamsload] = useState(false);
-	const [highlightedtext, setHighlightedtext] = useState([]);
 	const [x, setX] = useState(0);
 	const [y, setY] = useState(0);
 	const [displayPopUp, setDisplayPopUp] = useState(false);
 	const [selectedText, setSelectedText] = useState("");
 	const { id } = useParams();
 
-	const mockhigh = [
-		"It is estimated that by 2030 automation could disrupt between 800 million to 2 billion jobs."
-	];
 
 	const handleMouseUp = (e) => {
 		var selectedtext = window.getSelection().toString().trim();
@@ -148,7 +143,8 @@ export const MaxbeamRead = () => {
 								setHighlights({
 									HighlightedText: selectedText,
 									BeamName: microbeams.Title,
-									BeamId: id	
+									BeamId: id,
+									"BeamType": "Minibeam"
 								});
 								setDisplayPopUp(false);
 								setSelectedText("");

@@ -18,17 +18,17 @@ export const Aboutus = () => {
 	const close = () => setModelopen(false);
 	const open = () => setModelopen(true);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			if (scroller == 300) {
-				setScroller(0);
-			} else {
-				setScroller(scroller + 100);
-			}
-		}, 6000);
+	// useEffect(() => {
+	// 	const interval = setInterval(() => {
+	// 		if (scroller == 300) {
+	// 			setScroller(0);
+	// 		} else {
+	// 			setScroller(scroller + 100);
+	// 		}
+	// 	}, 6000);
 
-		return () => clearInterval(interval);
-	}, [scroller]);
+	// 	return () => clearInterval(interval);
+	// }, [scroller]);
 
 	return (
 		<div className="aboutuspage">
@@ -73,13 +73,13 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
-			<section className="abtussec3">
-				{/* <HorizontalScroll reverseScroll pageLock={true}> */}
+			{/* <section className="abtussec3">
 				<div className="abtussec3 scrolldiv" style={{ right: `${scroller}vw` }}>
 					<div className="abtussec31 bgabtus1">
 						<div className="scrollerarrow">
 							<FaChevronCircleRight
-								size={52}
+								className="arrowicon"
+								// size={52}
 								style={{ justifySelf: "flex-end", cursor: "pointer" }}
 								onClick={() => {
 									setScroller(scroller + 100);
@@ -93,7 +93,7 @@ export const Aboutus = () => {
 								fontWeight: 600
 							}}
 						>
-							<span>Our Story - 1</span>
+							<span>Our Story</span>
 						</div>
 						<div className="abtussec3inner">
 							<img src={sidescrollimg1} alt="" />
@@ -112,17 +112,18 @@ export const Aboutus = () => {
 							style={{ justifyContent: "space-between" }}
 						>
 							<FaChevronCircleLeft
-								size={52}
-								color="white"
+								className="arrowicon"
+								// size={52}
+								color="black"
 								onClick={() => {
 									setScroller(0);
 								}}
 								style={{ cursor: "pointer" }}
 							/>
 							<FaChevronCircleRight
-								size={52}
-								color="white"
-								// style={{ justifySelf: "flex-end" }}
+								className="arrowicon"
+								// size={52}
+								color="black"
 								onClick={() => {
 									setScroller(scroller + 100);
 								}}
@@ -136,7 +137,7 @@ export const Aboutus = () => {
 								fontWeight: 600
 							}}
 						>
-							<span>Our Story - 2</span>
+							<span>Our Story </span>
 						</div>
 						<div className="abtussec3inner">
 							{" "}
@@ -156,16 +157,18 @@ export const Aboutus = () => {
 							style={{ justifyContent: "space-between" }}
 						>
 							<FaChevronCircleLeft
-								size={52}
-								color="white"
+								className="arrowicon"
+								// size={52}
+								// color="white"
 								onClick={() => {
 									setScroller(100);
 								}}
 								style={{ cursor: "pointer" }}
 							/>
 							<FaChevronCircleRight
-								size={52}
-								color="white"
+								className="arrowicon"
+								// size={52}
+								// color="white"
 								// style={{ justifySelf: "flex-end" }}
 								onClick={() => {
 									setScroller(scroller + 100);
@@ -180,20 +183,17 @@ export const Aboutus = () => {
 								fontWeight: 600
 							}}
 						>
-							<span>Our Story - 3</span>
+							<span>Our Story </span>
 						</div>
 						<div className="abtussec3inner">
 							<img src={sidescrollimg3} alt="" />
-							<p style={{ color: "white" }}>
+							<p>
 								Fast forward to 2022. My schedule was chock a block. I wondered
 								how people like Warren Buffet found the time to read for 6 hours
 								a day, Mark Cuban for three hours, and Bill Gates for xx hours.
 								I was excited by the quantum and quality of knowledge I gained
 								in the last two years. The world was changing faster than ever
-								before. My mental canvas had broadened and sharpened with
-								insights into new topics, new ideas, and new perspectives.
-								Disappointment slowly gave way to excitement as I realized I
-								didn't have half the time I did in 2020-21.
+								before.
 							</p>
 						</div>
 					</div>
@@ -203,7 +203,8 @@ export const Aboutus = () => {
 							style={{ justifyContent: "flex-start" }}
 						>
 							<FaChevronCircleLeft
-								size={52}
+								className="arrowicon"
+								// size={52}
 								onClick={() => {
 									setScroller(scroller - 100);
 								}}
@@ -217,7 +218,7 @@ export const Aboutus = () => {
 								fontWeight: 600
 							}}
 						>
-							<span>Our Story - 4</span>
+							<span>Our Story</span>
 						</div>
 						<div className="abtussec3inner">
 							{" "}
@@ -231,10 +232,9 @@ export const Aboutus = () => {
 							</p>
 						</div>
 					</div>
-					{/* </HorizontalScroll> */}
 				</div>
-			</section>
-			<section className="abtmission">
+			</section> */}
+			{/* <section className="abtmission">
 				<div
 					className="sec2label"
 					style={{
@@ -251,8 +251,8 @@ export const Aboutus = () => {
 						</h1>
 					</div>
 				</div>
-			</section>
-			<section className="abtvission">
+			</section> */}
+			{/* <section className="abtvission">
 				<div
 					className="sec2label"
 					style={{
@@ -277,7 +277,7 @@ export const Aboutus = () => {
 						</p>
 					</div>
 				</div>
-			</section>
+			</section> */}
 			<section className="abtus5">
 				<div className="sec2label" style={{ backgroundColor: "#191641" }}>
 					<span>Our Team</span>
@@ -292,7 +292,7 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
-			<section className="abtus4">
+			{/* <section className="abtus4">
 				<div className="abtus4info">
 					<h1>Malvika Bawri</h1>
 					<h3>FOUNDER</h3>
@@ -309,7 +309,7 @@ export const Aboutus = () => {
 						</span>
 					</p>
 				</div>
-			</section>
+			</section> */}
 		</div>
 	);
 };

@@ -40,7 +40,6 @@ function App() {
 					<Navbar></Navbar>
 					<div className="bgvideo">
 						<video
-							
 							src={landingvideo}
 							autoPlay
 							loop
@@ -198,9 +197,11 @@ function App() {
 					<div className="sec2label">
 						<span>{data.landingpage.sec4title}</span>
 					</div>
-					<div ref={scrollRef} className="horiscroller">
-						{/* <HorizontalScroll reverseScroll={true}> */}
-						<div className="sec4spltitle">
+					<div
+						ref={window.innerWidth >= 1080 ? scrollRef : null}
+						className="horiscroller"
+					>
+						<div className="sec4spltitle vertic">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								{data.landingpage.sec4innertitle}
@@ -224,7 +225,6 @@ function App() {
 							<img src={horiscroll3} alt="" />
 							<span>One of a kind knowledge portal</span>
 						</div>
-						{/* </HorizontalScroll> */}
 					</div>
 				</section>
 				<section className="six landingsection">
@@ -232,7 +232,7 @@ function App() {
 						<span>{data.landingpage.sec6title}</span>
 					</div>
 					<div className="sec4datadiv">
-						<div className="sec4spltitle" data-aos="zoom-in-up">
+						<div className="sec4spltitle vertic" data-aos="zoom-in-up">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								{data.landingpage.sec6innertitle}

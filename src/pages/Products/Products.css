@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .prodsec1{
@@ -34,6 +35,35 @@
     border-radius: 20px;
 }
 
+@media only screen and (max-width:1085px) {
+    
+}
+
+.prodsec1{
+    padding: 40px;
+}
+
+@media only screen and (max-width:920px) {
+    .prodsec1{
+    padding: 20px;
+}
+
+.prodsec1 h1{
+    font-size: 50px;
+    margin-bottom: 50px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.prodsec1 span{
+    font-size: 30px;
+}
+
+}
+
+
+
 .prodsec3{
 
     width: 100%;
@@ -59,6 +89,21 @@
     width: 60%;
     margin: 30px;
     font-size: 50px;
+}
+
+@media only screen and (max-width:893px) {
+
+    .prodsec3{
+        padding: 20px;
+        height: 300px;
+
+    }
+
+    .prodsec3 h2{
+        margin: 0px;
+        font-size: 30px;
+        width: 100%;
+    }
 }
 
 
@@ -91,7 +136,7 @@
 
 .prodsec4data p{
     font-size: 20px;
-    line-height: 70px;
+    line-height: 50px;
 }
 
 .prodsec4data button{
@@ -112,6 +157,59 @@
     position: absolute;
     right: 100px;
     top: 100px;
+}
+
+
+@media only screen and (max-width:944px) {
+    .prodsec4img{
+    width: 250px;
+    height: auto;
+}
+
+.prodsec4data p{
+    font-size: 18px;
+    line-height: 35px;
+}
+}
+
+@media only screen and (max-width:800px) {
+ .prodsec4data h1{
+    font-size: 50px;
+}
+
+.prodsec4data{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.prodsec4img{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    right: 30px;
+    top: 150px;
+}
+}
+
+@media only screen and (max-width:600px) {
+ .prodsec4data h1{
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.prodsec4data{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.prodsec4img{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    right: -20px;
+    top: 210px;
+    transform: rotateZ(-30deg);
+}
 }
 
 .prodsec5{
@@ -167,6 +265,58 @@
     top: 100px;
 }
 
+@media only screen and (max-width:944px) {
+    .prodsec5img{
+    width: 250px;
+    height: auto;
+}
+
+.prodsec5data p{
+    font-size: 18px;
+    line-height: 35px;
+}
+}
+
+@media only screen and (max-width:800px) {
+ .prodsec5data h1{
+    font-size: 50px;
+}
+
+.prodsec5data{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.prodsec5img{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    right: 30px;
+    top: 150px;
+}
+}
+
+@media only screen and (max-width:600px) {
+ .prodsec5data h1{
+    font-size: 34px;
+    margin-top: 50px;
+}
+
+.prodsec5data{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.prodsec5img{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    right: -20px;
+    top: 190px;
+    transform: rotateZ(-30deg);
+}
+}
+
 .prodsec6{
     width: 100%;
     padding-top: 100px;
@@ -184,6 +334,13 @@
 .jumpedletterimg img{
     width: 80%;
     height: auto;
+}
+
+@media screen and (max-width:600px) {
+    .jumpedletterimg img{
+        width: 100%;
+        height: auto;
+    }
 }
 
 .prodsec7{
@@ -246,9 +403,44 @@
     margin-top: 10px;
 }
 
+@media only screen and (max-width:1160px) {
+    .prodsec7inner > h1{
+        font-size: 46px;
+    }
+
+    .prodsec7inner{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .prodsec7inner{
+        flex-direction: column;
+    }
+
+    .prodsec7inner > h1{
+        margin-right: 0px;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .testicard{
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .testicardinner{
+        padding: 10px;
+    }
+}
+
 .secprodlabel{
     max-width: 380px;
     width: 35%;
+    min-width: 260px;
     background-color: #191641;
     padding: 25px;
     color: white;

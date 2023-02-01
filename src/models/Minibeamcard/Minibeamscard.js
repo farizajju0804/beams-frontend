@@ -10,24 +10,83 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import { useAuthContext } from "../../context/AuthContext";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
+import { FaHighlighter } from "react-icons/fa";
+import { GrNotes } from "react-icons/gr";
 
 export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
+	const [x, setX] = useState(0);
+	const [y, setY] = useState(0);
+	const [displayPopUp, setDisplayPopUp] = useState(false);
+	const { token, hightlights, setHighlights } = useAuthContext();
+	const [selectedText, setSelectedText] = useState("");
 	const [dropdown, setDropdown] = useState(false);
 	const { addfav } = useAuthContext();
 	const type = "Minibeam";
+
+	const handleMouseUp = (e) => {
+		var selectedtext = window.getSelection().toString().trim();
+
+		if (selectedtext) {
+			setSelectedText(window.getSelection().toString().trim());
+			setX(e.pageX);
+			setY(e.pageY);
+			console.log(e.pageX);
+			console.log(e.pageY);
+			setDisplayPopUp(true);
+
+			console.log(e);
+			console.log(`${window.getSelection().toString().trim()}`);
+		}
+	};
+
+	const getHighlightedData = () => {
+		if (!hightlights.length) {
+			return;
+		}
+		var items = document.getElementById(`minibeamscard${id}`);
+		if (!items) {
+			return;
+		}
+		var ptags = items.getElementsByTagName("p");
+		console.log(ptags);
+		for (let i = 0; i < ptags.length; i++) {
+			hightlights.forEach((element) => {
+				if (ptags[i].innerText.includes(element.HighlightedText)) {
+					console.log("match");
+					ptags[i].innerHTML = ptags[i].innerHTML.replace(
+						element.HighlightedText,
+						`<span class="hightobjs">${element.HighlightedText}</span>`
+					);
+				}
+			});
+		}
+	};
+
+	useEffect(() => {
+		getHighlightedData();
+	}, [hightlights]);
 
 	return (
 		<div
 			className="minibeamscardcont"
 			onClick={() => {
 				setDropdown(false);
+				// setDisplayPopUp(false);
 			}}
 		>
 			<Toaster></Toaster>
-			<div className="minibeamsinner">
+			<div className="minibeamsinner" id={`minibeamscard${id}`}>
 				<h3>{title}</h3>
-				<p>{content}</p>
+				<p
+					onMouseUp={handleMouseUp}
+					onMouseDown={() => {
+						setSelectedText("");
+						setDisplayPopUp(false);
+					}}
+				>
+					{content}
+				</p>
 				<button
 					onClick={() => {
 						open(title, content);
@@ -102,6 +161,40 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 					<span>Add to Favourites</span>
 				</div>
 			</div>
+			{displayPopUp && (
+				<div
+					className="highlightop"
+					// style={{ left: `${x}px`, top: `${y - 100}px ` }}
+					style={{ left: `50%	`, top: "20px" }}
+				>
+					<div
+						className="highlightopinner"
+						onClick={() => {
+							if (selectedText.split(" ").length > 5) {
+								setHighlights({
+									HighlightedText: selectedText,
+									BeamName: title,
+									BeamId: `${id}`,
+									BeamType: "Maxbeam"
+								});
+								setDisplayPopUp(false);
+								setSelectedText("");
+							} else {
+								toast.error("Select more than 4 words to highlight");
+								setDisplayPopUp(false);
+								setSelectedText("");
+							}
+						}}
+					>
+						<FaHighlighter size={22} />
+						<span>Highlight</span>
+					</div>
+					<div className="highlightopinner">
+						<GrNotes size={22} />
+						<span>Note</span>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };

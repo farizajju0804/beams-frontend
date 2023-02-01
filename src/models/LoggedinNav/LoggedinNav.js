@@ -46,7 +46,12 @@ export const LoggedinNav = () => {
 								: "accountdropdown"
 						}
 					>
-						<div className="accountdropdownitems">
+						<div
+							className="accountdropdownitems"
+							onClick={() => {
+								navigate("/profile");
+							}}
+						>
 							<CgProfile size={20} />
 							<span>My Profile</span>
 						</div>

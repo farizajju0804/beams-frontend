@@ -80,6 +80,7 @@ export const Library = () => {
 							title={hightlight.BeamName}
 							highlightdata={hightlight.HighlightedText}
 							id={hightlight.id}
+							type = {hightlight.BeamType}
 						/>
 					);
 				})}
