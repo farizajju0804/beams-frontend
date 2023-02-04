@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import libcompleted from "../../assets/libcompleted.png";
 import libfav from "../../assets/libfav.png";
@@ -7,24 +7,36 @@ import libhighlight from "../../assets/libhighlights.png";
 import { HighlightComponent } from "../../models/Hightlistitem/HighlightComponent";
 import { useAuthContext } from "../../context/AuthContext";
 import { Toaster } from "react-hot-toast";
+import nohighlights from "../../assets/nohighlights.png";
+import { FiChevronDown } from "react-icons/fi";
+import Pagination from "@mui/material/Pagination";
 
 export const Library = () => {
 	const navigate = useNavigate();
-	const { hightlights, delhighlight } = useAuthContext();
+	const { hightlights, delhighlight, changehighs, hightlightpersist } =
+		useAuthContext();
+
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsperpage, setPostsperpage] = useState(5);
+
+	const [sortop, setSortop] = useState(2);
+
+	const [title, setTitle] = useState("");
+
+	console.log(hightlightpersist);
+
+	useEffect(() => {
+		console.log(sortop, title);
+	}, [sortop, title]);
+
+	const indexoflast = currentPage * postsperpage;
+	const indexoffirst = indexoflast - postsperpage;
+	// changehighs(hightlights.slice(indexoffirst, indexoflast));
 
 	return (
 		<div className="LibraryPage">
 			<Toaster />
 			<div className="libraryoption">
-				{/* <div
-					className="libraryopitem"
-					onClick={() => {
-						navigate("/completed");
-					}}
-				>
-					<img src={libcompleted} className="lbopic" />
-					<span>Completed</span>
-				</div> */}
 				<div
 					className="libraryopitem"
 					onClick={() => {
@@ -55,35 +67,160 @@ export const Library = () => {
 			</div>
 			<div className="opandfildivider"></div>
 			<div className="filteroption">
-				<select name="" id="">
-					<option value="">Micro Beams</option>
-					<option value="">Mini Beams</option>
-					<option value="">Max Beams</option>
-				</select>
-				<select name="" id="">
-					<option value="">Grid</option>
-					<option value="">List</option>
-				</select>
+				<div className="libraryopitem">
+					{" "}
+					<select
+						// onClick={(e) => {
+						// 	setTitle(e.target.value);
+						// }}
+						name=""
+						id=""
+						style={{ paddingRight: "40px" }}
+						onChange={(e) => {
+							if (e.target.value == "All Beam") {
+								changehighs(hightlightpersist);
+							} else {
+								const sorter = hightlightpersist.filter((h) => {
+									return h.BeamType == e.target.value;
+								});
+
+								changehighs(sorter);
+							}
+						}}
+					>
+						<option disabled defaultValue={""}>
+							Title
+						</option>
+						<option value="All Beam">All Beams</option>
+						<option value="Microbeam">Micro Beams</option>
+						<option value="Minibeam">Mini Beams</option>
+					</select>
+					<FiChevronDown className="arrowselectposition" />
+				</div>
+
 				<div className="libraryopitem">
 					<span style={{ color: "black" }}>Sort By</span>
-					<select name="" id="">
-						<option value="">Title</option>
-						<option value="">A-Z</option>
-						<option value="">Latest</option>
+					<select
+						name=""
+						id=""
+						onChange={(e) => {
+							// console.log(e.target.value);
+							setSortop(e.target.value);
+						}}
+					>
+						<option defaultValue={2} value={2}>
+							Latest
+						</option>
+						<option value={0}>A-Z</option>
+						<option value={1}>Z-A</option>
 					</select>
+					<FiChevronDown className="arrowselectposition" />
 				</div>
 			</div>
-			<div className="highlightdata">
-				{hightlights.map((hightlight) => {
-					return (
-						<HighlightComponent
-							title={hightlight.BeamName}
-							highlightdata={hightlight.HighlightedText}
-							id={hightlight.id}
-							type = {hightlight.BeamType}
-						/>
-					);
-				})}
+			{hightlights.length != 0 ? (
+				<div>
+					{sortop == 2 && (
+						<div className="highlightdata">
+							{hightlights
+								.map((hightlight) => {
+									return (
+										<HighlightComponent
+											title={hightlight.BeamName}
+											highlightdata={hightlight.HighlightedText}
+											id={hightlight.id}
+											type={hightlight.BeamType}
+										/>
+									);
+								})
+								.slice(indexoffirst, indexoflast)}
+						</div>
+					)}
+					{sortop == 0 && (
+						<div className="highlightdata">
+							{hightlights
+								.sort((a, b) => {
+									const nameA = a.BeamName.toUpperCase(); // ignore upper and lowercase
+									const nameB = b.BeamName.toUpperCase(); // ignore upper and lowercase
+									if (nameA > nameB) {
+										return -1;
+									}
+									if (nameA < nameB) {
+										return 1;
+									}
+
+									return 0;
+								})
+								.map((hightlight) => {
+									return (
+										<HighlightComponent
+											title={hightlight.BeamName}
+											highlightdata={hightlight.HighlightedText}
+											id={hightlight.id}
+											type={hightlight.BeamType}
+										/>
+									);
+								})
+								.slice(indexoffirst, indexoflast)}
+						</div>
+					)}
+					{sortop == 1 && (
+						<div className="highlightdata">
+							{hightlights
+								.sort((a, b) => {
+									const nameA = a.BeamName.toUpperCase(); // ignore upper and lowercase
+									const nameB = b.BeamName.toUpperCase(); // ignore upper and lowercase
+									if (nameA < nameB) {
+										return -1;
+									}
+									if (nameA > nameB) {
+										return 1;
+									}
+
+									return 0;
+								})
+								.map((hightlight) => {
+									return (
+										<HighlightComponent
+											title={hightlight.BeamName}
+											highlightdata={hightlight.HighlightedText}
+											id={hightlight.id}
+											type={hightlight.BeamType}
+										/>
+									);
+								})
+								.slice(indexoffirst, indexoflast)}
+						</div>
+					)}
+				</div>
+			) : (
+				<div
+					style={{
+						width: "100%",
+						justifyContent: "center",
+						alignItems: "center",
+						display: "flex",
+						flexDirection: "column",
+						marginTop: "50px"
+					}}
+				>
+					<img src={nohighlights} alt="" />
+					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
+						You haven't created any notes yet.
+					</h2>
+					<p style={{ marginTop: "20px" }}>
+						Start creating notes for easy recollection. Our notes are designed
+						beautifully!
+					</p>
+				</div>
+			)}
+			<div className="pagination">
+				<Pagination
+					shape="rounded"
+					count={Math.ceil(hightlights.length / postsperpage)}
+					onChange={(e, page) => {
+						setCurrentPage(page);
+					}}
+				/>
 			</div>
 		</div>
 	);

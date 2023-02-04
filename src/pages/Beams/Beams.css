@@ -232,7 +232,7 @@
 
 .searchpageleftoptions{
     display: flex;
-    width: 40%;
+    width: 500px;
 
     justify-content: space-between;
 }

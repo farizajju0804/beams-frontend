@@ -94,7 +94,9 @@
     font-weight: 600;
     color: #435CFF;
     font-size: 20px;
+    cursor: pointer;
 }
+
 
 .accountdropdown{
     position: absolute;
@@ -117,11 +119,17 @@
     display: flex;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     padding: 7px;
-    border-radius: 20px;
+    padding-left: 10px;
 
+}
+
+.accountdropdownitems >img {
+    margin-right: 20px;
+    height: 20px;
+    width: auto;
 }
 
 .accountdropdowndisplay{

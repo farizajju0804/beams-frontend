@@ -8,7 +8,9 @@ import "./Library.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import { PopUpShowMore } from "../../models/PopupShowMore/PopupShowMore";
-import libcompleted from "../../assets/libcompleted.png";
+import nohighlights from "../../assets/nohighlights.png";
+import { FiChevronDown } from "react-icons/fi";
+import Pagination from "@mui/material/Pagination";
 
 export const Notes = () => {
 	const closenotePopup = () => setNotesPopup(false);
@@ -18,11 +20,16 @@ export const Notes = () => {
 	};
 
 	const [notesPopup, setNotesPopup] = useState(false);
+	const [sortop, setSortop] = useState(2);
 	const [notepopupdata, setNotepopupdata] = useState({});
 
 	const navigate = useNavigate();
-	const { notes } = useAuthContext();
+	const { notes, changeNotes, notesPersist } = useAuthContext();
 	console.log(notes);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsperpage, setPostsperpage] = useState(6);
+	const indexoflast = currentPage * postsperpage;
+	const indexoffirst = indexoflast - postsperpage;
 
 	return (
 		<div className="LibraryPage">
@@ -34,15 +41,6 @@ export const Notes = () => {
 				></PopUpShowMore>
 			)}
 			<div className="libraryoption">
-				<div
-					className="libraryopitem"
-					onClick={() => {
-						navigate("/completed");
-					}}
-				>
-					<img src={libcompleted} className="lbopic" />
-					<span>Completed</span>
-				</div>
 				<div
 					className="libraryopitem"
 					onClick={() => {
@@ -73,37 +71,168 @@ export const Notes = () => {
 			</div>
 			<div className="opandfildivider"></div>
 			<div className="filteroption">
-				<select name="" id="">
-					<option value="">Micro Beams</option>
-					<option value="">Mini Beams</option>
-					<option value="">Max Beams</option>
-				</select>
-				<select name="" id="">
-					<option value="">Grid</option>
-					<option value="">List</option>
-				</select>
+				<div className="libraryopitem">
+					{" "}
+					<select
+						// onClick={(e) => {
+						// 	setTitle(e.target.value);
+						// }}
+						name=""
+						id=""
+						style={{ paddingRight: "40px" }}
+						onChange={(e) => {
+							if (e.target.value == "All Beam") {
+								console.log(notesPersist);
+								changeNotes(notesPersist);
+							} else {
+								const sorter = notesPersist.filter((h) => {
+									return h.Beamtype == e.target.value;
+								});
+
+								changeNotes(sorter);
+							}
+						}}
+					>
+						<option disabled defaultValue={""}>
+							Title
+						</option>
+						<option value="All Beam">All Beams</option>
+						<option value="Microbeam">Micro Beams</option>
+						<option value="Minibeam">Mini Beams</option>
+					</select>
+					<FiChevronDown className="arrowselectposition" />
+				</div>
+
 				<div className="libraryopitem">
 					<span style={{ color: "black" }}>Sort By</span>
-					<select name="" id="">
-						<option value="">Title</option>
-						<option value="">A-Z</option>
-						<option value="">Latest</option>
+					<select
+						name=""
+						id=""
+						onChange={(e) => {
+							// console.log(e.target.value);
+							setSortop(e.target.value);
+						}}
+					>
+						<option defaultValue={2} value={2}>
+							Latest
+						</option>
+						<option value={0}>A-Z</option>
+						<option value={1}>Z-A</option>
 					</select>
+					<FiChevronDown className="arrowselectposition" />
 				</div>
 			</div>
-			<div className="highlightdata fwrap">
-				{notes.map((item) => {
-					return (
-						<NotesCard
-							date={item.Date}
-							NoteContent={item.NoteContent}
-							noteitemid={item.id}
-							beamid={item.beamid}
-							BeamName={item.BeamName}
-							readmore={opennotePopup}
-						></NotesCard>
-					);
-				})}
+			{notes.length != 0 ? (
+				<div>	
+					<div className="gridwrapper">
+						{sortop == 1 && (
+							<div className="highlightdata fwrap">
+								{notes
+									.sort((a, b) => {
+										const nameA = a.BeamName.toUpperCase(); // ignore upper and lowercase
+										const nameB = b.BeamName.toUpperCase(); // ignore upper and lowercase
+										if (nameA > nameB) {
+											return -1;
+										}
+										if (nameA < nameB) {
+											return 1;
+										}
+
+										return 0;
+									})
+									.map((item) => {
+										return (
+											<NotesCard
+												date={item.Date}
+												NoteContent={item.NoteContent}
+												noteitemid={item.id}
+												beamid={item.beamid}
+												BeamName={item.BeamName}
+												readmore={opennotePopup}
+											></NotesCard>
+										);
+									})
+									.slice(indexoffirst, indexoflast)}
+							</div>
+						)}
+						{sortop == 0 && (
+							<div className="highlightdata fwrap">
+								{notes
+									.sort((a, b) => {
+										const nameA = a.BeamName.toUpperCase(); // ignore upper and lowercase
+										const nameB = b.BeamName.toUpperCase(); // ignore upper and lowercase
+										if (nameA < nameB) {
+											return -1;
+										}
+										if (nameA > nameB) {
+											return 1;
+										}
+
+										return 0;
+									})
+									.map((item) => {
+										return (
+											<NotesCard
+												date={item.Date}
+												NoteContent={item.NoteContent}
+												noteitemid={item.id}
+												beamid={item.beamid}
+												BeamName={item.BeamName}
+												readmore={opennotePopup}
+											></NotesCard>
+										);
+									})
+									.slice(indexoffirst, indexoflast)}
+							</div>
+						)}
+						{sortop == 2 && (
+							<div className="highlightdata fwrap">
+								{notes
+									.map((item) => {
+										return (
+											<NotesCard
+												date={item.Date}
+												NoteContent={item.NoteContent}
+												noteitemid={item.id}
+												beamid={item.beamid}
+												BeamName={item.BeamName}
+												readmore={opennotePopup}
+											></NotesCard>
+										);
+									})
+									.slice(indexoffirst, indexoflast)}
+							</div>
+						)}
+					</div>
+				</div>
+			) : (
+				<div
+					style={{
+						width: "100%",
+						justifyContent: "center",
+						alignItems: "center",
+						display: "flex",
+						flexDirection: "column",
+						marginTop: "50px"
+					}}
+				>
+					<img src={nohighlights} alt="" />
+					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
+						You haven't added any highlights yet.
+					</h2>
+					<p style={{ marginTop: "20px" }}>
+						Make highlights the highlight of your day.
+					</p>
+				</div>
+			)}
+			<div className="pagination">
+				<Pagination
+					shape="rounded"
+					count={Math.ceil(notes.length / postsperpage)}
+					onChange={(e, page) => {
+						setCurrentPage(page);
+					}}
+				/>
 			</div>
 		</div>
 	);

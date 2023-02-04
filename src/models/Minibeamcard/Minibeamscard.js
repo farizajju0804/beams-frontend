@@ -22,7 +22,7 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 	const [selectedText, setSelectedText] = useState("");
 	const [dropdown, setDropdown] = useState(false);
 	const { addfav } = useAuthContext();
-	const type = "Minibeam";
+	const type = "Microbeam";
 
 	const handleMouseUp = (e) => {
 		var selectedtext = window.getSelection().toString().trim();
@@ -87,20 +87,13 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 				>
 					{content}
 				</p>
-				<button
-					onClick={() => {
-						open(title, content);
-					}}
-				>
-					View Now
-				</button>
 			</div>
 			<div className="minicontrols">
 				<MdZoomOutMap
 					size={22}
 					style={{ marginRight: "10px", cursor: "pointer" }}
 					onClick={() => {
-						open(title, content);
+						open(title, content, id);
 					}}
 				/>
 				<BiDotsVerticalRounded
@@ -149,7 +142,7 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 							Name: title,
 							Desc: content,
 							idofbeam: `${id}`,
-							typeofbeam: "minibeam"
+							typeofbeam: type
 						});
 					}}
 				>
@@ -175,7 +168,7 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 									HighlightedText: selectedText,
 									BeamName: title,
 									BeamId: `${id}`,
-									BeamType: "Maxbeam"
+									BeamType: "Microbeam"
 								});
 								setDisplayPopUp(false);
 								setSelectedText("");
@@ -189,7 +182,12 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 						<FaHighlighter size={22} />
 						<span>Highlight</span>
 					</div>
-					<div className="highlightopinner">
+					<div
+						className="highlightopinner"
+						onClick={() => {
+							openNotes({ title, id, type });
+						}}
+					>
 						<GrNotes size={22} />
 						<span>Note</span>
 					</div>

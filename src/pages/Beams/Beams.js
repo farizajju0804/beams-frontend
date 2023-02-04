@@ -26,6 +26,8 @@ export const Beams = () => {
 	const [opensuggestionBox, setOpensuggestionBox] = useState(false);
 	const [forceclose, setforceclose] = useState(false);
 	const [searchOptionType, setSearchOptionType] = useState(0);
+	const [popupid, setPopupid] = useState(0);
+	const [popuptype, setPopuptype] = useState("");
 
 	const closenotePopup = () => setNotesPopup(false);
 	const opennotePopup = (data) => {
@@ -34,10 +36,12 @@ export const Beams = () => {
 	};
 
 	const close = () => setModelopen(false);
-	const open = (title, content) => {
+	const open = (title, content, id, type) => {
 		setPopupcontent(content);
 		setPopuptitle(title);
 		setModelopen(true);
+		setPopupid(id);
+		setPopuptype(type);
 	};
 	const navigate = useNavigate();
 	const { token } = useAuthContext();
@@ -89,6 +93,9 @@ export const Beams = () => {
 					content={popupcontent}
 					title={popuptitle}
 					handleClose={close}
+					id={popupid}
+					openNotes={opennotePopup}
+					type={popuptype}
 				></Popup>
 			)}
 			<section className="trendingbeamshero">
@@ -213,6 +220,7 @@ export const Beams = () => {
 												Desc={micro.attributes.shortDesc}
 												id={micro.id}
 												open={open}
+												openNotes={opennotePopup}
 											/>
 										);
 									})}
@@ -261,6 +269,7 @@ export const Beams = () => {
 							</span>
 						</div>
 					</div>
+
 					<div className="minicardcont">
 						{maxbeams.length !== 0 ? (
 							<div className="minicardssection">

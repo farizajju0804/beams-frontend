@@ -15,9 +15,7 @@ export const HighlightComponent = ({ title, highlightdata, id, type }) => {
 			}}
 		>
 			<div className="highlightcomponentinner">
-				<span>
-					{title}  - 	 {type}
-				</span>
+				<span>{title}</span>
 				<div className="highlightcomponentinner2">
 					<p>
 						{highlightdata.length > 300 ? (

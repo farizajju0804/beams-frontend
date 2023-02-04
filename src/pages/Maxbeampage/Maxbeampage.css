@@ -20,14 +20,16 @@
 }
 
 .maxbeampagedata > span{
-    font-size: 40px;
-    
+    font-size: 50px;
+    color: #191641;
 }
 
 .maxbeampagedata > p{
     margin-top: 50px;
     width: 90%;
-    line-height: 25px;
+    line-height: 32px;
+    font-size: 20px;
+    color: rgb(132, 132, 132);
 }
 
 .maxbeamspagebtns{
@@ -43,6 +45,7 @@
     padding: 10px 30px;
     border-radius: 30px;
     cursor: pointer;
+    align-items: center;
 }
 
 .maxbeamsbtn > span{

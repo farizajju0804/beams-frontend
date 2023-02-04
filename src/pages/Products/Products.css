@@ -242,7 +242,7 @@
 
 .prodsec5data p{
     font-size: 20px;
-    line-height: 70px;
+    line-height: 50px;
 }
 
 .prodsec5data button{
@@ -438,7 +438,7 @@
 }
 
 .secprodlabel{
-    max-width: 380px;
+    max-width: 400px;
     width: 35%;
     min-width: 260px;
     background-color: #191641;

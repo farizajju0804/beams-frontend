@@ -6,6 +6,9 @@ import { FiLogOut } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { IoLibrarySharp } from "react-icons/io5";
 import { useAuthContext } from "../../context/AuthContext";
+import acc1 from "../../assets/acc1.png";
+import acc2 from "../../assets/acc2.png";
+import acc3 from "../../assets/acc3.png";
 
 export const LoggedinNav = () => {
 	const { user } = useAuthContext();
@@ -52,7 +55,8 @@ export const LoggedinNav = () => {
 								navigate("/profile");
 							}}
 						>
-							<CgProfile size={20} />
+							{/* <CgProfile size={20} /> */}
+							<img src={acc1} alt="" />
 							<span>My Profile</span>
 						</div>
 						<div
@@ -61,7 +65,9 @@ export const LoggedinNav = () => {
 								navigate("/hightlights");
 							}}
 						>
-							<IoLibrarySharp />
+							{/* <IoLibrarySharp /> */}
+							<img src={acc2} alt="" />
+
 							<span>My Library</span>
 						</div>
 						<div
@@ -70,7 +76,8 @@ export const LoggedinNav = () => {
 								navigate("/");
 							}}
 						>
-							<FiLogOut />
+							{/* <FiLogOut /> */}
+							<img src={acc3} alt="" />
 							<span>Log Out</span>
 						</div>
 					</div>

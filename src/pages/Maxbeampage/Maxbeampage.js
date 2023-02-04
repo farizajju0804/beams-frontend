@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { BeatLoader } from "react-spinners";
 import { API } from "../../constants";
+import { BsHeadphones } from "react-icons/bs";
 
 export const Maxbeampage = () => {
 	const navigate = useNavigate();
@@ -55,16 +56,13 @@ export const Maxbeampage = () => {
 							</div>
 							<div
 								className="maxbeamsbtn"
+								style={{ backgroundColor: "#435CFF", color: "white" }}
 								onClick={() => {
 									navigate("/maxbeamsong/" + id);
 								}}
 							>
-								<FaBook />
+								<BsHeadphones size={21} />
 								<span>Listen</span>
-							</div>
-							<div className="maxbeamsbtn">
-								<FaBook />
-								<span>Slideshow</span>
 							</div>
 						</div>
 					</div>

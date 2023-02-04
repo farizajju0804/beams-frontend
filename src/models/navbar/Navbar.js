@@ -45,7 +45,7 @@ export const Navbar = () => {
 					>
 						Product
 					</span>
-					<span>Testimonials</span>
+			
 					<span
 						onClick={() => {
 							navigate("/aboutus");
@@ -68,6 +68,8 @@ export const Navbar = () => {
 							setSidenav(false);
 							navigate("/signup");
 						}}
+
+						className="spanborder"
 					>
 						Sign Up
 					</span>

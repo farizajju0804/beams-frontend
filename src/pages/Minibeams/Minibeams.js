@@ -13,12 +13,7 @@ import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 
 export const Minibeams = () => {
 	const [modelopen, setModelopen] = useState(false);
-	const close = () => setModelopen(false);
-	const open = (title, content) => {
-		setPopupcontent(content);
-		setPopuptitle(title);
-		setModelopen(true);
-	};
+
 	const [scrollercontrol, setscrollercontrol] = useState(0);
 	const navigate = useNavigate();
 	const [maxbeams, setMaxbeams] = useState([]);
@@ -36,8 +31,19 @@ export const Minibeams = () => {
 	const [searchOptionType, setSearchOptionType] = useState(0);
 	const [notesPopup, setNotesPopup] = useState(false);
 	const [notepopupdata, setNotepopupdata] = useState({});
+	const [popupid, setPopupid] = useState(0);
+	const [popuptype, setPopuptype] = useState("");
 
 	const { token } = useAuthContext();
+
+	const close = () => setModelopen(false);
+	const open = (title, content, id, type) => {
+		setPopupcontent(content);
+		setPopuptitle(title);
+		setModelopen(true);
+		setPopupid(id);
+		setPopuptype(type);
+	};
 
 	const opennotePopup = (data) => {
 		setNotepopupdata(data);
@@ -97,6 +103,9 @@ export const Minibeams = () => {
 					content={popupcontent}
 					title={popuptitle}
 					handleClose={close}
+					id={popupid}
+					openNotes={opennotePopup}
+					type={popuptype}
 				></Popup>
 			)}
 			{notesPopup && (
@@ -126,7 +135,15 @@ export const Minibeams = () => {
 				<div className="innernav">
 					<span>
 						<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
-						<span>Beams</span>&nbsp; &gt; &nbsp; <span>Microbeams</span>
+						<span
+							style={{ color: "#435CFF", cursor: "pointer" }}
+							onClick={() => {
+								navigate("/beams");
+							}}
+						>
+							Beams
+						</span>
+						&nbsp; &gt; &nbsp; <span>Microbeams</span>
 					</span>
 					<div className="searchbar">
 						<input
@@ -262,7 +279,7 @@ export const Minibeams = () => {
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
 													open={open}
-													openNotes={opennotePopup}	
+													openNotes={opennotePopup}
 												/>
 											);
 										})}

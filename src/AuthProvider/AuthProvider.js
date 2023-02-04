@@ -9,8 +9,11 @@ const AuthProvider = ({ children }) => {
 	const [userData, setUserData] = useState();
 	const [isLoading, setIsLoading] = useState(false);
 	const [Favourites, setFavourites] = useState([]);
+	const [favpersist, setFavpersist] = useState([]);
 	const [highlightedText, setHighlightedText] = useState([]);
+	const [hightlightpersist, setHightlightpersist] = useState([]);
 	const [Notes, setNotes] = useState([]);
+	const [notesPersist, setnotesPersist] = useState([]);
 	const authToken = getToken();
 
 	//Favourites
@@ -37,7 +40,10 @@ const AuthProvider = ({ children }) => {
 		var itemstatus = false;
 
 		Favourites.forEach((fav) => {
-			if (fav.idofbeam === item.idofbeam) {
+			if (
+				fav.idofbeam === item.idofbeam &&
+				fav.typeofbeam === item.typeofbeam
+			) {
 				itemstatus = true;
 			}
 		});
@@ -52,9 +58,13 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const deleteFavourites = (item) => {
+		console.log(item);
+		console.log(Favourites);
 		const filteredfavs = Favourites.filter((e) => {
-			return e.idofbeam != item.idofbeam;
+			return e.id != item.id;
 		});
+
+		console.log(filteredfavs);
 
 		setFavourites(filteredfavs);
 		pushfav(filteredfavs);
@@ -170,8 +180,11 @@ const AuthProvider = ({ children }) => {
 			const data = await response.json();
 			setUserData(data);
 			setFavourites(data.Favourites);
+			setFavpersist(data.Favourites);
 			setNotes(data.Notes);
+			setnotesPersist(data.Notes);
 			setHighlightedText(data.Highlights);
+			setHightlightpersist(data.Highlights);
 			console.log("datafound");
 		} catch (error) {
 			console.error(error);
@@ -207,7 +220,13 @@ const AuthProvider = ({ children }) => {
 				delfullnote: delnote1,
 				hightlights: highlightedText,
 				setHighlights: addHighlights,
-				delhighlight: delhighlight
+				delhighlight: delhighlight,
+				changehighs: setHighlightedText,
+				hightlightpersist: hightlightpersist,
+				notesPersist: notesPersist,
+				changeNotes: setNotes,
+				favpersist: favpersist,
+				changefav: setFavourites
 			}}
 		>
 			{children}

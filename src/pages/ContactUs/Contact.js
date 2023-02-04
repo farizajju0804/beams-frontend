@@ -13,25 +13,25 @@ export const Contact = () => {
 					<h1>Get in Touch</h1>
 					{/* <p>Fill up the form our team will get back to you within 24 Hours</p> */}
 					<div className="contactlsec1">
-						<div className="contactlsec1inner marginright20">
-							<label For="contactname">First Name</label>
+						<div className="contactlsec1inner ">
+							{/* <label For="contactname">First Name</label> */}
 							<input
 								type="text"
 								id="contactname"
-								placeholder="Enter your first name"
+								placeholder="Enter your Full Name"
 							/>
 						</div>
-						<div className="contactlsec1inner marginleft20">
+						{/* <div className="contactlsec1inner marginleft20">
 							<label For="contactlastname">Last Name</label>
 							<input
 								type="text"
 								id="contactlastname"
 								placeholder="Enter your last lame "
 							/>
-						</div>
+						</div> */}
 					</div>
 					<div className="contactlsec2">
-						<label For="contactemail">Email Address</label>
+						{/* <label For="contactemail">Email Address</label> */}
 						<input
 							type="text"
 							id="contactemail"
@@ -39,11 +39,11 @@ export const Contact = () => {
 						/>
 					</div>
 					<div className="contactlsec3">
-						<label For="contactlastname">Message</label>
+						{/* <label For="contactlastname">Message</label> */}
 						<textarea
 							type="text"
 							id="contactlastname"
-							placeholder="Write your messages"
+							placeholder="Don't be shy, drop us a line. Who knows, it might just be the next big idea."
 						/>
 					</div>
 					<button className="contactusmsgbtn">Send Message</button>
@@ -51,14 +51,12 @@ export const Contact = () => {
 						<div className="contactlsec4inner">
 							<AiOutlinePhone className="contacticon" color="white" size={65} />
 							<div className="contactlsec4innerdata">
-								<span>Phone Number</span>
 								<span className="contactlsec4innerdata2">+91 987654321</span>
 							</div>
 						</div>
 						<div className="contactlsec4inner">
 							<AiOutlineMail className="contacticon" color="white" size={65} />
 							<div className="contactlsec4innerdata">
-								<span>Email</span>
 								<span className="contactlsec4innerdata2">
 									innbrieff@gmail.com
 								</span>

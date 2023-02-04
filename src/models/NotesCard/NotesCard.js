@@ -5,27 +5,39 @@ import { MdDeleteForever } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
 
-export const NotesCard = ({ date, NoteContent, noteitemid, beamid, readmore, BeamName }) => {
+export const NotesCard = ({
+	date,
+	NoteContent,
+	noteitemid,
+	beamid,
+	readmore,
+	BeamName
+}) => {
 	const [openpopup, setOpenpopup] = useState(false);
 	const { delfullnote } = useAuthContext();
 
 	return (
 		<div className="favouritesnewcardpage">
-			<input type="checkbox" />
 			<div
 				className="favnewinnercont"
 				onClick={() => {
 					setOpenpopup(false);
 				}}
 			>
-				{NoteContent.length <= 125 ? (
+				<h3 style={{ marginBottom: "20px" }}>{BeamName.toUpperCase()}</h3>
+				{NoteContent.length <= 95 ? (
 					<p>{NoteContent}</p>
 				) : (
 					<p>
-						{NoteContent.slice(0, 125)}
-						<strong style={{ cursor: "pointer" }} onClick ={() => {
-							readmore({date,NoteContent,BeamName})
-						}}>Read More</strong>
+						{NoteContent.slice(0, 95)}
+						<strong
+							style={{ cursor: "pointer" }}
+							onClick={() => {
+								readmore({ date, NoteContent, BeamName });
+							}}
+						>
+							Read More
+						</strong>
 					</p>
 				)}
 
@@ -44,10 +56,10 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid, readmore, Bea
 					/>
 					{openpopup && (
 						<div className="notescardoptions">
-							<div className="notescardoptionsinner">
+							{/* <div className="notescardoptionsinner">
 								<AiFillEdit color="#435CFF" size={20} />
 								<span>Edit</span>
-							</div>
+							</div> */}
 							<div
 								className="notescardoptionsinner"
 								onClick={() => {

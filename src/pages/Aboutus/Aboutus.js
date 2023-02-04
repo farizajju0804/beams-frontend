@@ -11,6 +11,7 @@ import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { BsChevronDoubleRight } from "react-icons/bs";
 import { BsChevronDoubleLeft, BsChevronDoubleDown } from "react-icons/bs";
 import { Popupabtus } from "../../models/Popupabtus/Popupabtus";
+import aboutsliderbg4 from "../../assets/aboutsliderbg4.png";
 
 export const Aboutus = () => {
 	const [scroller, setScroller] = useState(0);
@@ -18,17 +19,17 @@ export const Aboutus = () => {
 	const close = () => setModelopen(false);
 	const open = () => setModelopen(true);
 
-	// useEffect(() => {
-	// 	const interval = setInterval(() => {
-	// 		if (scroller == 300) {
-	// 			setScroller(0);
-	// 		} else {
-	// 			setScroller(scroller + 100);
-	// 		}
-	// 	}, 6000);
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (scroller == 300) {
+				setScroller(0);
+			} else {
+				setScroller(scroller + 100);
+			}
+		}, 6000);
 
-	// 	return () => clearInterval(interval);
-	// }, [scroller]);
+		return () => clearInterval(interval);
+	}, [scroller]);
 
 	return (
 		<div className="aboutuspage">
@@ -73,7 +74,7 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
-			{/* <section className="abtussec3">
+			<section className="abtussec3">
 				<div className="abtussec3 scrolldiv" style={{ right: `${scroller}vw` }}>
 					<div className="abtussec31 bgabtus1">
 						<div className="scrollerarrow">
@@ -98,11 +99,9 @@ export const Aboutus = () => {
 						<div className="abtussec3inner">
 							<img src={sidescrollimg1} alt="" />
 							<p>
-								It was 2022. The world was slowly trickling back to a new
-								normal. Through 2020 and 2021, I read over 50 books a year,
-								numerous newspapers, magazines, blogs, tweets and scores of
-								research reports. I even read the fine print on almond milk
-								cartons.{" "}
+								It was 2022. The world was trickling back to a new normal. In
+								2020-21, I read 50 books a year, newspapers, magazines and
+								blogs. I even read the fine print on milk cartons, just kidding.
 							</p>
 						</div>
 					</div>
@@ -145,9 +144,7 @@ export const Aboutus = () => {
 							<p>
 								I explored new subjects, kept up with the latest innovations,
 								and revived my love for history. This was an unprecedented
-								luxury since I never had so much time to indulge in my favorite
-								hobby. But as we all know the pandemic changed everything,
-								literally and figuratively.
+								luxury since I never had so much free time.
 							</p>
 						</div>
 					</div>
@@ -159,7 +156,7 @@ export const Aboutus = () => {
 							<FaChevronCircleLeft
 								className="arrowicon"
 								// size={52}
-								// color="white"
+								color="white"
 								onClick={() => {
 									setScroller(100);
 								}}
@@ -168,7 +165,7 @@ export const Aboutus = () => {
 							<FaChevronCircleRight
 								className="arrowicon"
 								// size={52}
-								// color="white"
+								color="white"
 								// style={{ justifySelf: "flex-end" }}
 								onClick={() => {
 									setScroller(scroller + 100);
@@ -187,13 +184,16 @@ export const Aboutus = () => {
 						</div>
 						<div className="abtussec3inner">
 							<img src={sidescrollimg3} alt="" />
-							<p>
-								Fast forward to 2022. My schedule was chock a block. I wondered
-								how people like Warren Buffet found the time to read for 6 hours
-								a day, Mark Cuban for three hours, and Bill Gates for xx hours.
-								I was excited by the quantum and quality of knowledge I gained
-								in the last two years. The world was changing faster than ever
-								before.
+							<p style={{ color: "white" }}>
+								It was 2022. My mental canvas had greatly broadened and
+								sharpened in the last two years. I had new and innovative ideas
+								and insights into new topics, However since my schedule was
+								chock-a-block I couldn't indulge hours into staying updated.
+							</p>
+							<p style={{ color: "white" }}>
+								I wondered how Bill Gates, Warren Buffet and a few others could
+								spend over three hours reading, everyday. I realized there has
+								to be an easier solution.
 							</p>
 						</div>
 					</div>
@@ -224,17 +224,21 @@ export const Aboutus = () => {
 							{" "}
 							<img src={sidescrollimg4} alt="" />
 							<p>
-								How do people do it? How do they find the time? I was reminded
-								of the American actress, Arlene Francis's claim that she
-								overheard the Tower of London saying to the Leaning Tower of
-								Pisa, “Let’s get together, kid. I’ve got the time—and you’ve got
-								the inclination!”
+								I spoke to my mother that evening and asked her if she could
+								think of a potent and easy way for people to stay updated.
+								Thoughts, and ideas kept rolling off her tongue until...she
+								described what she thought the ideal solution should look like.
+							</p>
+							<p>
+								Within seconds we both realized we were onto something.
+								InnBrieff was born in those few seconds when Mom and I were
+								bonding and brainstorming.
 							</p>
 						</div>
 					</div>
 				</div>
-			</section> */}
-			{/* <section className="abtmission">
+			</section>
+			<section className="abtmission">
 				<div
 					className="sec2label"
 					style={{
@@ -251,8 +255,8 @@ export const Aboutus = () => {
 						</h1>
 					</div>
 				</div>
-			</section> */}
-			{/* <section className="abtvission">
+			</section>
+			<section className="abtvission">
 				<div
 					className="sec2label"
 					style={{
@@ -277,7 +281,7 @@ export const Aboutus = () => {
 						</p>
 					</div>
 				</div>
-			</section> */}
+			</section>
 			<section className="abtus5">
 				<div className="sec2label" style={{ backgroundColor: "#191641" }}>
 					<span>Our Team</span>
@@ -292,7 +296,7 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
-			{/* <section className="abtus4">
+			<section className="abtus4">
 				<div className="abtus4info">
 					<h1>Malvika Bawri</h1>
 					<h3>FOUNDER</h3>
@@ -309,7 +313,7 @@ export const Aboutus = () => {
 						</span>
 					</p>
 				</div>
-			</section> */}
+			</section>
 		</div>
 	);
 };
