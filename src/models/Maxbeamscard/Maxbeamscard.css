@@ -24,6 +24,16 @@
     position: relative;
 }
 
+@media only screen and (max-width:600px)
+{
+    .maxbeamcardcontnew{
+        height: 250px;
+    }
+    
+
+   
+}
+
 .maxbeamdata > button{
     width: 120px;
     height: 41.5px;

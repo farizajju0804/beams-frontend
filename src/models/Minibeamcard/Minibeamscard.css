@@ -19,6 +19,33 @@
     position: relative;
 }
 
+
+
+
+@media only screen and (max-width:600px)
+{
+
+    .minicardssection{
+        width: 100%;
+        padding: 0px;
+
+    }
+
+    .minibeamscardcont{
+        min-width: 85% !important;
+        height: 270px;
+        background-image: url('../../assets//Popupbg.png');
+        
+    }
+
+    .minibeamsinner{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+   
+}
+
 .minibeamsinner > h3{
     font-size: 22px;
     color: #F7CD61;
@@ -75,6 +102,13 @@
     align-items: center;
     justify-content: space-between;
     display: none;
+}
+
+@media only screen and (max-width:450px) {
+    .opdp{
+    right: -20px;
+
+    }
 }
 
 .opdpitems{

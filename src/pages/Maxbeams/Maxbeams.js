@@ -210,6 +210,7 @@ export const Maxbeams = () => {
 							</div>
 							<div className="minicardcontscroller">
 								<FaChevronLeft
+									className="sliderarrows"
 									size={26}
 									onClick={() => {
 										if (scrollercontrol != 0)
@@ -236,6 +237,7 @@ export const Maxbeams = () => {
 									</div>
 								</div>
 								<FaChevronRight
+									className="sliderarrows"
 									size={26}
 									onClick={() => {
 										console.log(trendingmicrobeams.length);

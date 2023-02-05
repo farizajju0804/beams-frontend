@@ -17,7 +17,7 @@ export const Library = () => {
 		useAuthContext();
 
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsperpage, setPostsperpage] = useState(5);
+	const [postsperpage, setPostsperpage] = useState(6);
 
 	const [sortop, setSortop] = useState(2);
 
@@ -220,6 +220,8 @@ export const Library = () => {
 					onChange={(e, page) => {
 						setCurrentPage(page);
 					}}
+					showFirstButton
+					showLastButton
 				/>
 			</div>
 		</div>

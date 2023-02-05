@@ -223,13 +223,14 @@ export const Minibeams = () => {
 								)}
 							</div>
 						</section>
-						<section className="minibeams" style={{ marginTop: "0px" }}>
+						<section className="minibeams">
 							<div className="sec2label">
 								<span>Trending</span>
 							</div>
 							<div className="minicardcontscroller">
 								<FaChevronLeft
-									size={26}
+									className="sliderarrows"
+									size={22}
 									onClick={() => {
 										if (scrollercontrol != 0)
 											setscrollercontrol(scrollercontrol - 560);
@@ -256,6 +257,7 @@ export const Minibeams = () => {
 									</div>
 								</div>
 								<FaChevronRight
+									className="sliderarrows"
 									size={26}
 									onClick={() => {
 										console.log(trendingmicrobeams.length);

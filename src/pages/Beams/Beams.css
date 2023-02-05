@@ -21,6 +21,68 @@
 
 }
 
+@media only screen and (max-width:935px) {
+    .trendingbeamshero > h1{
+        font-size: 42px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .trendingbeamshero > h1{
+        font-size: 36px;
+    }
+    .heroimgbeam{
+        height: auto;
+        width: 300px    ;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .trendingbeamshero > h1{
+        font-size: 30px;
+    }
+
+    .heroimgbeam{
+        height: auto;
+        width: 300px;
+        bottom: -60px !important; 
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .trendingbeamshero > h1{
+        font-size: 30px;
+        text-align: center !important;
+        line-height: 50px;
+    }
+
+    .heroimgbeam{
+        height: auto;
+        width: 300px;
+        bottom: -60px !important; 
+       
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .trendingbeamshero > h1{
+        font-size: 28px;
+        text-align: center !important;
+        line-height: 50px;
+    }
+
+    .heroimgbeam{
+        height: auto;
+        width: 250px;
+        bottom: -60px !important; 
+       
+    }
+
+    .minibeams > span{
+        margin-right: 25px !important; 
+    }
+}
+
 
 
 
@@ -164,6 +226,32 @@
     font-size: 26px;
 }
 
+@media only screen and (max-width:1014px) {
+    .innernav{
+        margin-top: 110px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .innernav > span{
+        font-size: 21px;
+    }
+
+    .searchbar > input{
+        width: 200px !important;
+    }
+}
+
+@media only screen and (max-width:450px)
+{
+    .searchbar > input{
+        width: 180px !important;
+    }
+
+    .innernav > span{
+        font-size: 18px;
+    }
+}
+
 .minicardsnaver{
     width: 100vw;
     display: flex;
@@ -194,6 +282,7 @@
     position: relative;
     display: flex;
     transition: right 0.3s ease;
+   
 }
 
 .minicardssectionscroller::-webkit-scrollbar {
@@ -208,6 +297,38 @@
 
   .mover{
   
+}
+
+@media only screen and (max-width:1178px) {
+    .sliderarrows{
+        display: none;
+    }
+
+    .minicardssectionscroller{
+
+        /* right: 100px; */
+        display: flex;
+        /* flex-direction: column; */
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .minicardssectionscroller1{
+        position: relative;
+        display: flex;
+        transition: right 0.3s ease;
+        width: 100%;
+        /* flex-direction: column; */
+        flex-wrap: wrap ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .minicardcontscroller{
+        margin-bottom: 0px;
+    }
 }
 
 .searchPage{
