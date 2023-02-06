@@ -11,6 +11,13 @@
     
 }
 
+@media only screen and (max-width:537px)
+{
+    .maxbeamcardcont{
+        width: 95vw;
+    }
+}
+
 .maxbeamdata > button{
     width: 120px;
     height: 41.5px;

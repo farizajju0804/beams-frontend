@@ -226,3 +226,46 @@
     justify-content: center;
     margin-top: 40px;
 }
+
+@media only screen and (max-width:1193px)
+{
+    .libraryoption{
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width:900px)
+{
+    .libraryoption{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:637px)
+{
+    .filteroption{
+        padding-right: 0px;
+    }
+
+    .highlightdata{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .libraryopitem span{
+        font-size: 16px;
+        margin-left: 2px;
+    }
+}
+
+@media only screen and (max-width:623px) {
+    .libraryoption{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .filteroption{
+        padding-left: 0px;
+    }
+}

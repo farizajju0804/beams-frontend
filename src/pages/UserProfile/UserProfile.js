@@ -186,9 +186,11 @@ export const UserProfile = () => {
 								containerStyle={{
 									width: "400px"
 								}}
+								inputClass={"containerclass"}
 								inputStyle={{
 									width: "400px",
-									fontSize: "18px"
+									fontSize: "18px",
+									"@media (max-width: 450px)": { width: "300px" }
 								}}
 								country={"in"}
 								style={{ marginTop: "40px" }}

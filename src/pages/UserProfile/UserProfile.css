@@ -142,3 +142,97 @@
     margin: 4px;
 
 }
+
+.containerclass{
+    width: 500px;
+    font-size: 18px;
+}
+
+@media only screen and (max-width:1413px)
+{
+    .profileleft{
+        width: 30%;
+    }
+
+    .profileright{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:1115px)
+{
+    .profileleft{
+        width: 40%;
+    }
+
+    .profileright{
+        width: 60%;
+    }
+
+    .profrightdata > span{
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: 'Pacifico', cursive;
+    }
+    
+    .profrightdata > p{
+        font-size: 18px;
+        margin: 4px;
+    
+    }
+}
+
+@media only screen and (max-width:941px)
+{
+    .Userprofile{
+        /* width: 100%; */
+        padding-left: 0px;
+    }
+
+    .profileleft{
+        width: 100%;
+    }
+
+    .profileright{
+        display: none;
+    }
+
+    .profrightdata > span{
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: 'Pacifico', cursive;
+    }
+    
+    .profrightdata > p{
+        font-size: 18px;
+        margin: 4px;
+    
+    }
+}
+
+@media only screen and (max-width:450px)
+{
+    .profitems input{
+        width: 90vw;
+    }
+
+    .changepassbtn{
+        width: 90vw;
+
+    }
+
+    .profileleft img{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+    }
+
+    .containerclass{
+        width: 200px;
+    }
+}
