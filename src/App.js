@@ -40,7 +40,9 @@ function App() {
 					<Navbar></Navbar>
 					<div className="bgvideo">
 						<video
-							src={landingvideo}
+							src={
+								"https://firebasestorage.googleapis.com/v0/b/teenz-fe41d.appspot.com/o/innbrieff%20hero%20video%20-%20Made%20with%20Clipchamp%20(3)%20(1).mp4?alt=media&token=c04d3c55-902b-4368-b64d-69ce316a4f8a"
+							}
 							autoPlay
 							loop
 							playsInline={true}
@@ -48,10 +50,10 @@ function App() {
 						></video>
 						<div className="sec1data">
 							<h2 data-aos="zoom-in">
-								{data.landingpage.herotext} <br /> {data.landingpage.herotext2}
+								{data.landingpage.herotext} {data.landingpage.herotext2}
 							</h2>
-							<span data-aos="fade-up">{data.landingpage.subhero}</span>
-							<span data-aos="fade-up">{data.landingpage.subhero2}</span>
+							<span data-aos="fade-up">{data.landingpage.subhero}{data.landingpage.subhero2}</span>
+							<span data-aos="fade-up"></span>
 							<button>{data.landingpage.button}</button>
 						</div>
 					</div>

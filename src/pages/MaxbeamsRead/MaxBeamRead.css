@@ -19,7 +19,6 @@
 .maxbeamsreadheader h2{
     font-size: 39px;
     color: white;
-
 }
 
 .readtext{
@@ -27,6 +26,26 @@
     margin-top:  50px;
     margin-bottom: 100px;
 
+}
+
+@media only screen and (max-width:980px) {
+    .readtext{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .readtext p{
+        font-size: 18px !important;
+    }
+
+    .maxbeamsreadheader h2{
+        font-size: 28px;
+    }
+
+    .innernav > span{
+        width: 80%;
+    }
 }
 
 .readtext > h3{

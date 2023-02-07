@@ -25,17 +25,14 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 						<img src={popupdoyouknow} alt="" />
 						<span>{content}</span>
 						<div
-							style={{
-								display: "flex",
-								flexDirection: "column"
-							}}
+							className="popupicons"
 						>
 							<img
 								src={noteicon}
 								alt=""
 								height={50}
 								width={50}
-								style={{ marginBottom: "40px", cursor: "pointer" }}
+					
 								onClick={() => {
 									handleClose();
 									openNotes({ title, id, type });
@@ -46,7 +43,7 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 								alt=""
 								height={50}
 								width={50}
-								style={{ marginBottom: "40px", cursor: "pointer" }}
+				
 								onClick={() => {
 									addfav({
 										Name: title,
@@ -61,7 +58,7 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 								alt=""
 								height={50}
 								width={50}
-								style={{ marginBottom: "40px", cursor: "pointer", zIndex: 50 }}
+							
 							/>
 						</div>
 					</div>

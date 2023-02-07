@@ -57,7 +57,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* background-color: aquamarine; */
+  background-color: rgb(0, 0, 0, 0.2);
+  border-radius: 30px;
   height: 400px;
   justify-content: space-evenly;
   width: 70%;

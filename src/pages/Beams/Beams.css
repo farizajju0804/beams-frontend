@@ -153,8 +153,8 @@
 }
 
 .popup{
-    width: clamp(60%,1000px,90%);
-    height: min(85%,900px);
+    width: clamp(60%,1000px,95%);
+    height: min(70%,900px);
     margin: auto;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -163,6 +163,43 @@
     border-radius: 20px;
     position: relative;
 
+}
+
+@media only screen and (max-width:700px) {
+    .popup{
+        height: 300px !important;
+    }
+
+    .popupdata{
+        padding: 10px !important;
+    }
+
+    .popupdata > h2{
+   
+        font-size: 30px !important;
+        text-align: center;
+    }
+    
+    .popdatainner > span{
+        font-size: 20px !important;
+        line-height: 35px !important;
+    }
+
+    .popdatainner > img{
+        width: 25% !important;
+
+    }
+
+    .popupicons > img{
+        margin-bottom: 15px !important;
+        height: 30px;
+        width: 30px;
+    }
+
+    .popupicons{
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }
 
 .popupdata{
@@ -226,6 +263,18 @@
     font-size: 26px;
 }
 
+
+.popupicons{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.popupicons > img{
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
 @media only screen and (max-width:1014px) {
     .innernav{
         margin-top: 110px;
@@ -239,6 +288,8 @@
     .searchbar > input{
         width: 200px !important;
     }
+
+   
 }
 
 @media only screen and (max-width:450px)
@@ -338,6 +389,27 @@
     padding-right: 80px;
 }
 
+@media only screen and (max-width:600px)
+{
+    .searchPage{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .searchPageheading{
+        margin-left: 20px;
+    }
+
+    .searchpageleftoptions{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .searchpageleftoptions > span{
+        font-size: 15px !important;
+    }
+}
+
 .searchPageheading{
     margin-top: 50px;
     font-size: 34px;
@@ -369,6 +441,7 @@
     cursor: pointer;
 }
 
+
 .suggestionlist{
     width: 261px;
     height: 200px;
@@ -379,6 +452,13 @@
     border-radius: 20px;
     padding: 20px;
     overflow-y: scroll;
+}
+
+@media only screen and (max-width:1015px) {
+    .suggestionlist{
+        right: 5px;
+        width: 230px;
+    }
 }
 
 .suggestionlist::-webkit-scrollbar {

@@ -156,8 +156,8 @@ export const MaxbeamRead = () => {
 					<div
 						style={{
 							display: "flex",
-							alignItems: "center",
-							justifyContent: "center	"
+							justifyContent: "center",
+							width: "100%"
 						}}
 					>
 						{" "}
