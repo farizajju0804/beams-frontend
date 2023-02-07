@@ -45,7 +45,7 @@ export const Navbar = () => {
 					>
 						Product
 					</span>
-			
+
 					<span
 						onClick={() => {
 							navigate("/aboutus");
@@ -53,7 +53,13 @@ export const Navbar = () => {
 					>
 						About Us
 					</span>
-					<span>Contact Us</span>
+					<span
+						onClick={() => {
+							navigate("/contact");
+						}}
+					>
+						Contact Us
+					</span>
 					<span
 						className="spanpadding"
 						onClick={() => {
@@ -68,7 +74,6 @@ export const Navbar = () => {
 							setSidenav(false);
 							navigate("/signup");
 						}}
-
 						className="spanborder"
 					>
 						Sign Up
