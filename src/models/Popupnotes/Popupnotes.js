@@ -20,18 +20,25 @@ export const Popupnotes = ({ handleClose, data }) => {
 
 	function formatDate(date) {
 		const monthNames = [
-		  "Jan", "Feb", "Mar",
-		  "Apr", "May", "Jun", "Jul",
-		  "Aug", "Sep", "Oct",
-		  "Nov", "Dec"
+			"Jan",
+			"Feb",
+			"Mar",
+			"Apr",
+			"May",
+			"Jun",
+			"Jul",
+			"Aug",
+			"Sep",
+			"Oct",
+			"Nov",
+			"Dec"
 		];
-		
-		const day = String(date.getDate()).padStart(2, '0');
+
+		const day = String(date.getDate()).padStart(2, "0");
 		const monthIndex = date.getMonth();
 		const year = date.getFullYear();
-	  
-		return `${day}/${monthNames[monthIndex]}/${year}`;
-	  }
+		return `${day} ${monthNames[monthIndex]} ${year}`;
+	}
 
 	return (
 		<Backdrop handleClose={handleClose}>
@@ -44,7 +51,7 @@ export const Popupnotes = ({ handleClose, data }) => {
 				<div className="Notepopheader">
 					<span>{data.type}</span>
 					<h2>{data.title}</h2>
-					<p className="notespopupdate">{getDate()}</p>
+					<p className="notespopupdate">{formatDate(date)}</p>
 				</div>
 				<textarea
 					class="notes"
