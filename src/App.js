@@ -68,7 +68,16 @@ function App() {
 						</div>
 					</div>
 				</section>
-
+				<section className="insertsection">
+					<div>
+						<h2>Beam: ray of light; shine brightly</h2>
+						<span>
+							Our flagship product, Beams provides insights and foresights{" "}
+							<br />
+							into leading technology trends in less than a minute a day.
+						</span>
+					</div>
+				</section>
 				<section className="thethreeqs">
 					<h2>
 						The{" "}
