@@ -195,24 +195,46 @@ export const UserProfile = () => {
 							</p>
 						</div>
 						<div className="profitems">
-							<PhoneInput
-								containerStyle={{
-									width: "400px"
-								}}
-								inputClass={"containerclass"}
-								inputStyle={{
-									width: "400px",
-									fontSize: "18px",
-									"@media (max-width: 450px)": { width: "300px" }
-								}}
-								country={"in"}
-								style={{ marginTop: "40px" }}
-								value={phone}
-								onChange={(phone) => {
-									console.log(phone);
-									setPhone(phone);
-								}}
-							/>
+							{window.innerWidth <= 450 ? (
+								<PhoneInput
+									// containerStyle={{
+									// 	width: "90vw"
+									// }}
+									// inputClass={"containerclass"}
+									inputStyle={{
+										width: "90vw",
+										fontSize: "18px"
+									}}
+									country={"in"}
+									style={{ marginTop: "40px" }}
+									value={phone}
+									onChange={(phone) => {
+										console.log(phone);
+										setPhone(phone);
+									}}
+								/>
+							) : (
+								<PhoneInput
+									// containerStyle={{
+									// 	width: "90vw"
+									// }}
+									// inputClass={"containerclass"}
+									inputStyle={{
+										width: "400px",
+										fontSize: "18px",
+										"@media only screen and (max-width: 450px)": {
+											width: "90vw !important"
+										}
+									}}
+									country={"in"}
+									style={{ marginTop: "40px" }}
+									value={phone}
+									onChange={(phone) => {
+										console.log(phone);
+										setPhone(phone);
+									}}
+								/>
+							)}
 						</div>
 						<div className="profileoptns">
 							<button className="cancelbtn">Cancel</button>
