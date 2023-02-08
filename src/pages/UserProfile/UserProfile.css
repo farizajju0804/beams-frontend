@@ -189,6 +189,7 @@
     .Userprofile{
         /* width: 100%; */
         padding-left: 0px;
+        padding-bottom: 30px;
     }
 
     .profileleft{
@@ -216,6 +217,9 @@
 
 @media only screen and (max-width:450px)
 {
+    .profileoptns{
+        width: 300px;
+    }
     .profitems input{
         width: 90vw;
     }
@@ -227,8 +231,8 @@
 
     .profileleft img{
         border-radius: 50%;
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         cursor: pointer;
     }
 

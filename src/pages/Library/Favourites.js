@@ -210,6 +210,7 @@ export const Favourites = () => {
 						flexDirection: "column",
 						marginTop: "50px"
 					}}
+					className="nodatadiv"
 				>
 					<img src={nofav} alt="" />
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>

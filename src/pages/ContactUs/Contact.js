@@ -120,7 +120,7 @@ export const Contact = () => {
 						>
 							<option value="0">Kolkata,India</option>
 							<option value="1">Mumbai,India</option>
-							<option value="2">San Fransisco,USA</option>
+							<option value="2">San Francisco,USA</option>
 						</select>
 					</div>
 				</div>

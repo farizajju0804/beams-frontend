@@ -82,7 +82,7 @@
         width: 230px;
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: flex-start;
     }
 
     .contactlsec4innerdata2{

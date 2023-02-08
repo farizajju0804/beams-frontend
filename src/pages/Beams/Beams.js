@@ -203,10 +203,10 @@ export const Beams = () => {
 								navigate("/minibeams");
 							}}
 						>
-							See More
+							View More
 						</span>
 					</section>
-					<section className="minibeams">
+					<section className="minibeams" style={{ marginTop: "140px" }}>
 						<div className="sec2label">
 							<span>Max Beams</span>
 						</div>
@@ -234,7 +234,7 @@ export const Beams = () => {
 								navigate("/maxbeams");
 							}}
 						>
-							See More
+							View More
 						</span>
 					</section>
 				</div>

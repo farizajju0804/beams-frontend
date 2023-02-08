@@ -252,9 +252,6 @@
 
 }
 
-@media only screen and (max-width:1030px) {
-    
-}
 
 @media only screen and (max-width:900px) {
     .abtussec3inner {
@@ -282,9 +279,19 @@
 }   
 
 @media screen and (max-width:478px) {
+
+    .blackcolor > p{
+        color: black !important;
+    }
+
+    .blackicon{
+        color: black !important;
+    }
+
     .abtussec3inner p{
-        width: 90%;
+        width: 95%;
         line-height: 32px;
+        font-size: 20px;
     }
 
     .bgabtus4{
@@ -314,7 +321,7 @@
     }
 
     .abtussec3{
-        height: 1100px;
+        height: 1000px;
     }
 }
 
@@ -580,6 +587,7 @@
 {
     .abtmission{
         height: 690px;
+        padding-top: 30px;
     }
 
     .abtvission{

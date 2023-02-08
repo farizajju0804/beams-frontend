@@ -130,9 +130,12 @@
     margin-bottom: 24px;
     margin-left: 20px;
     margin-Right: 20px;
+}
 
-
-
+@media only screen and (max-width:450px) {
+    .highlightcomponent{
+        margin-bottom: 35px;
+    }
 }
 
 .highlightcomponent input{
@@ -268,4 +271,28 @@
     .filteroption{
         padding-left: 0px;
     }
+}
+
+
+@media only screen and (max-width:628px) {
+    .nodatadiv > img{
+        width: 270px;
+        height: auto;
+    }
+
+    .nodatadiv > h2{
+        text-align: center;
+        font-size: 18px !important;
+    }
+
+    .nodatadiv > p{
+        text-align: center;
+        font-size: 16px !important;
+        padding: 30px;
+
+    }
+}
+
+@media only screen and (max-width:628px) {
+
 }

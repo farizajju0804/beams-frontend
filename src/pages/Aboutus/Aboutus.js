@@ -74,7 +74,7 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
-			{/* <section className="abtussec3">
+			<section className="abtussec3">
 				<div className="abtussec3 scrolldiv" style={{ right: `${scroller}vw` }}>
 					<div className="abtussec31 bgabtus1">
 						<div className="scrollerarrow">
@@ -154,18 +154,17 @@ export const Aboutus = () => {
 							style={{ justifyContent: "space-between" }}
 						>
 							<FaChevronCircleLeft
-								className="arrowicon"
+								className="arrowicon blackicon"
 								// size={52}
-								color="white"
+								// style={{ color: "black" }}
+								// color="white"
 								onClick={() => {
 									setScroller(100);
 								}}
 								style={{ cursor: "pointer" }}
 							/>
 							<FaChevronCircleRight
-								className="arrowicon"
-								// size={52}
-								color="white"
+								className="arrowicon blackicon"
 								// style={{ justifySelf: "flex-end" }}
 								onClick={() => {
 									setScroller(scroller + 100);
@@ -182,7 +181,7 @@ export const Aboutus = () => {
 						>
 							<span>Our Story </span>
 						</div>
-						<div className="abtussec3inner">
+						<div className="abtussec3inner blackcolor">
 							<img src={sidescrollimg3} alt="" />
 							<p style={{ color: "white" }}>
 								It was 2022. My mental canvas had greatly broadened and
@@ -237,7 +236,7 @@ export const Aboutus = () => {
 						</div>
 					</div>
 				</div>
-			</section> */}
+			</section>
 			<section className="abtmission">
 				<div
 					className="sec2label"

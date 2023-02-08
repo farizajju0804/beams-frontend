@@ -123,7 +123,7 @@ export const Notes = () => {
 				</div>
 			</div>
 			{notes.length != 0 ? (
-				<div>	
+				<div>
 					<div className="gridwrapper">
 						{sortop == 1 && (
 							<div className="highlightdata fwrap">
@@ -215,6 +215,7 @@ export const Notes = () => {
 						flexDirection: "column",
 						marginTop: "50px"
 					}}
+					className="nodatadiv"
 				>
 					<img src={nohighlights} alt="" />
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
