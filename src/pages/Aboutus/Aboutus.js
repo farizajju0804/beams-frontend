@@ -74,7 +74,7 @@ export const Aboutus = () => {
 					</div>
 				</div>
 			</section>
-			<section className="abtussec3">
+			{/* <section className="abtussec3">
 				<div className="abtussec3 scrolldiv" style={{ right: `${scroller}vw` }}>
 					<div className="abtussec31 bgabtus1">
 						<div className="scrollerarrow">
@@ -237,7 +237,7 @@ export const Aboutus = () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 			<section className="abtmission">
 				<div
 					className="sec2label"
@@ -274,11 +274,11 @@ export const Aboutus = () => {
 							To be the leading source of the latest trends, insights and
 							thought-provoking foresights on technology.
 						</p>
-						<p>
+						{/* <p>
 							To create a technology platform that fosters a community of
 							like-minded people who are passionate about leveraging technology
 							to create a brighter future.
-						</p>
+						</p> */}
 					</div>
 				</div>
 			</section>

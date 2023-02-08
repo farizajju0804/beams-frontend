@@ -349,6 +349,19 @@
     margin: 20px;
 }
 
+@media only screen and (max-width:630px) {
+    .abtus4info h1{
+        font-size: 48px;
+        margin-bottom: 0px;
+    }
+    
+    .abtus4info h3{
+       font-size: 28px;
+       margin-bottom: 0px;
+       margin-top: 0px;
+    }
+}
+
 .abtus4info div{
     margin: 20px;
   
@@ -362,6 +375,26 @@
     border-radius: 10px;
     line-height: 30px;
     color: black;
+}
+
+@media only screen and (max-width:1484px) {
+    .abtus4info{
+        bottom: 100px;
+        left: 50px;
+    }
+}
+
+@media only screen and (max-width: 1185px) {
+    .abtus4info{
+       position: static;
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       margin-bottom: 40px;
+       margin-left: 20px;
+       margin-right: 20px;
+    }
 }
 
 .abtmission{
@@ -398,6 +431,7 @@
     line-height: 80px;
 }
 
+
 .abtvission{
     padding-top: 100px;
     width: 100%;
@@ -432,8 +466,6 @@
     color: #191641;
     padding: 120px;
     line-height: 50px;
-    /* padding-right: 80px; */
-    /* text-align: center; */
 }
 
 .abtusrocket{
@@ -451,6 +483,141 @@
     top: 120px;
     height: 600px;
     width: 600px;
+}
+
+@media only screen and (max-width:1160px) {
+    .abtusrocket{
+        height: 550px !important;
+        width: 550px !important;  
+        left: 500px;
+        top: 190px;
+    }
+
+    .abtmissioncircle{
+        width: 650px;
+        height: 650px;
+    }
+
+    .abtvissioncircle{
+        width: 650px;
+        height: 650px;
+    }
+
+    .abtusman
+    {
+        height: 500px;
+        width: 500px;
+        right: 500px;
+        
+    }
+
+}
+
+@media only screen and (max-width:970px) {
+
+    .abtmission{
+        height: 700px;
+    }
+
+    .abtusrocket{
+        height: 450px !important;
+        width: 450px !important;  
+        left: 400px;
+        top: 0px;
+    }
+
+    .abtmissioncircle{
+        width: 550px;
+        height: 550px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+
+    .abtvissioncircle{
+        width: 550px;
+        height: 550px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .abtusman
+    {
+        height: 400px;
+        width: 400px;
+        right: 300px;
+        
+    }
+    
+}
+
+@media only screen and (max-width:780px) {
+    .abtusrocket{
+        height: 350px !important;
+        width: 350px !important;  
+        left: 320px;
+        top: 200px;
+    }
+
+    .abtmissioncircle{
+        width: 450px;
+        height: 450px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .abtvissioncircle{
+        /* width: 450px;
+        height: 450px; */
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+
+}
+
+@media only screen and (max-width:600px)
+{
+    .abtmission{
+        height: 690px;
+    }
+
+    .abtvission{
+        height: 850px;
+    }
+
+    .abtusrocket{
+        height: 250px !important;
+        width: 250px !important;  
+        left: 190px;
+        top: 50px;
+        transform: rotateZ(15deg);
+    }
+
+    .abtmissioncircle{
+        width: 400px;
+        height: 400px;
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    .abtvissioncircle{
+        width: 450px;
+        height: 450px;
+        font-size: 18px;
+        line-height: 40px;
+        padding: 80px;
+        margin-right: 40px;
+
+    }
+
+    .abtusman
+    {
+        height: 250px;
+        width: 250px;
+        right: 120px;
+        top: 90px;
+    }
 }
 
 .abtus5{
@@ -486,4 +653,28 @@
 .abtsec5pdiv > p{
     font-size: 32px;
     line-height: 70px;
+}
+
+@media only screen and (max-width:950px) {
+    .abtsec5pdiv > p{
+        font-size: 28px;
+        line-height: 70px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+@media only screen and (max-width:650px) {
+
+    .abtus5{
+        height: 450px;
+
+    }
+
+    .abtsec5pdiv > p{
+        font-size: 20px;
+        line-height: 40px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 }
