@@ -40,6 +40,8 @@ export const Navbar = () => {
 				<div className="sidenavlinks">
 					<span
 						onClick={() => {
+							setSidenav(false);
+
 							navigate("/products");
 						}}
 					>
@@ -48,6 +50,8 @@ export const Navbar = () => {
 
 					<span
 						onClick={() => {
+							setSidenav(false);
+
 							navigate("/aboutus");
 						}}
 					>
@@ -55,6 +59,8 @@ export const Navbar = () => {
 					</span>
 					<span
 						onClick={() => {
+							setSidenav(false);
+
 							navigate("/contact");
 						}}
 					>

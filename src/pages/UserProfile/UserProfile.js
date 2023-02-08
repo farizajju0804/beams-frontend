@@ -7,8 +7,10 @@ import "react-phone-input-2/lib/style.css";
 import { API } from "../../constants";
 import { Toaster, toast } from "react-hot-toast";
 import { RxImage } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 export const UserProfile = () => {
+	const navigate = useNavigate();
 	const { user, token } = useAuthContext();
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState();
@@ -180,7 +182,18 @@ export const UserProfile = () => {
 							<label htmlFor="">Email</label>
 							<input type="text" value={user.email} disabled />
 						</div>
-						<button className="changepassbtn">Change Password</button>
+						<div className="profitems">
+							<label htmlFor="">Password</label>
+							<input type="text" value="***********" disabled />
+							<p
+								style={{ marginTop: "5px", color: "blue", cursor: "pointer" }}
+								onClick={() => {
+									navigate("/resetpassword");
+								}}
+							>
+								Change Password{" "}
+							</p>
+						</div>
 						<div className="profitems">
 							<PhoneInput
 								containerStyle={{
@@ -203,23 +216,7 @@ export const UserProfile = () => {
 						</div>
 						<div className="profileoptns">
 							<button className="cancelbtn">Cancel</button>
-							<input
-								type="submit"
-								value="Submit"
-								className="savbtn"
-								// onClick={() => {
-								// 	toast.promise(uploadPhoto(), {
-								// 		loading: "Updating Photo",
-								// 		success: <b>Photo Updated</b>,
-								// 		error: <b>Could not Upload Photo.</b>
-								// 	});
-								// 	toast.promise(updateProfile(), {
-								// 		loading: "Updating Profile",
-								// 		success: <b>Profile Updated</b>,
-								// 		error: <b>Could not Upload Profile.</b>
-								// 	});
-								// }}
-							>
+							<input type="submit" value="Submit" className="savbtn">
 								{/* Save */}
 							</input>
 						</div>

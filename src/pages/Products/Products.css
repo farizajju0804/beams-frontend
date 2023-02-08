@@ -338,8 +338,10 @@
 
 @media screen and (max-width:600px) {
     .jumpedletterimg img{
-        width: 100%;
+        width: 90%;
         height: auto;
+        content:url("../../assets/responsiveprod.png");
+        margin-top: 80px;
     }
 }
 

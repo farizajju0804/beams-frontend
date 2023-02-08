@@ -6,7 +6,7 @@ import "./Popupnotes.css";
 
 export const Popupnotes = ({ handleClose, data }) => {
 	const [notedata, setNotedata] = useState("");
-
+	const date = new Date();
 	const { addnotes } = useAuthContext();
 
 	const getDate = () => {
@@ -17,6 +17,21 @@ export const Popupnotes = ({ handleClose, data }) => {
 		today = dd + "/" + mm + "/" + yyyy;
 		return today;
 	};
+
+	function formatDate(date) {
+		const monthNames = [
+		  "Jan", "Feb", "Mar",
+		  "Apr", "May", "Jun", "Jul",
+		  "Aug", "Sep", "Oct",
+		  "Nov", "Dec"
+		];
+		
+		const day = String(date.getDate()).padStart(2, '0');
+		const monthIndex = date.getMonth();
+		const year = date.getFullYear();
+	  
+		return `${day}/${monthNames[monthIndex]}/${year}`;
+	  }
 
 	return (
 		<Backdrop handleClose={handleClose}>
@@ -59,7 +74,7 @@ export const Popupnotes = ({ handleClose, data }) => {
 
 								addnotes(data.title, `${data.id}`, data.type, {
 									content: notedata,
-									date: getDate()
+									date: formatDate(date)
 								});
 								handleClose();
 							}}
