@@ -167,6 +167,22 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
+    position: relative;
+}
+
+.textlimiter{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    color: rgb(123, 123, 123);
+    font-size: 14px;
+    transition: all 0.3 ease;
+}
+
+.textlimitererror{
+    color: red;
+    font-size: 18px;
+
 }
 
 .contactlsec3 > label{
@@ -218,6 +234,13 @@
     background-color: #435CFF;
     color: white;
     margin-right: 20px;
+}
+
+@media only screen and (max-width:600px) {
+    .contacticon{
+        padding: 15px;
+        
+    }
 }
 
 .contactlsec4innerdata2{

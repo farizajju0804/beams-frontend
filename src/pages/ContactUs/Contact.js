@@ -6,6 +6,8 @@ import "./Contact.css";
 export const Contact = () => {
 	const [mapselector, setMapselector] = useState("1");
 
+	const [contactcontent, setContactcontent] = useState("");
+
 	return (
 		<div className="contactuspage">
 			<div className="contactleft">
@@ -43,19 +45,33 @@ export const Contact = () => {
 						<textarea
 							type="text"
 							id="contactlastname"
+							value={contactcontent}
+							onChange={(e) => {
+								if (contactcontent.length < 400)
+									setContactcontent(e.target.value);
+							}}
 							placeholder="Don't be shy, drop us a line. Who knows, it might just be the next big idea."
 						/>
+						<span
+							className={
+								contactcontent.length == 400
+									? "textlimiter textlimitererror"
+									: "textlimiter"
+							}
+						>
+							{contactcontent.length}/400
+						</span>
 					</div>
 					<button className="contactusmsgbtn">Send Message</button>
 					<div className="contactlsec4">
 						<div className="contactlsec4inner">
-							<AiOutlinePhone className="contacticon" color="white" size={65} />
+							<AiOutlinePhone className="contacticon" color="white" size={55} />
 							<div className="contactlsec4innerdata">
 								<span className="contactlsec4innerdata2">+91 987654321</span>
 							</div>
 						</div>
 						<div className="contactlsec4inner">
-							<AiOutlineMail className="contacticon" color="white" size={65} />
+							<AiOutlineMail className="contacticon" color="white" size={55} />
 							<div className="contactlsec4innerdata">
 								<span className="contactlsec4innerdata2">
 									innbrieff@gmail.com

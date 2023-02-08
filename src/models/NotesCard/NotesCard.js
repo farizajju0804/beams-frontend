@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./NotesCard.css";
 import { MdDeleteForever } from "react-icons/md";
-import { AiFillEdit } from "react-icons/ai";
+import { AiOutlineShareAlt } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
 
 export const NotesCard = ({
@@ -56,10 +56,10 @@ export const NotesCard = ({
 					/>
 					{openpopup && (
 						<div className="notescardoptions">
-							{/* <div className="notescardoptionsinner">
-								<AiFillEdit color="#435CFF" size={20} />
-								<span>Edit</span>
-							</div> */}
+							<div className="notescardoptionsinner">
+								<AiOutlineShareAlt color="#435CFF" size={20} />
+								<span>Share</span>
+							</div>
 							<div
 								className="notescardoptionsinner"
 								onClick={() => {
