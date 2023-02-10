@@ -106,7 +106,7 @@ export const Beams = () => {
 				></Popup>
 			)}
 
-			<ShareModel />
+			{/* <ShareModel /> */}
 
 			<section className="trendingbeamshero">
 				<img src={heroimg} alt="" className="heroimgbeam" />
