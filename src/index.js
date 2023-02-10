@@ -30,6 +30,7 @@ import { ResetSuccessfull } from "./pages/ResetPass2/ResetSuccessfull";
 import { MaxbeamRead } from "./pages/MaxbeamsRead/MaxbeamRead";
 import { Termsandcondition } from "./pages/Termsandcondition/Termsandcondition";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -85,11 +86,13 @@ const router = createBrowserRouter([
 	{
 		path: "/maxbeams",
 		element: (
-			<div>
-				<LoggedinNav />
-				<Maxbeams />
-				<Footer />
-			</div>
+			<PrivateRoute>
+				<div>
+					<LoggedinNav />
+					<Maxbeams />
+					<Footer />
+				</div>
+			</PrivateRoute>
 		)
 	},
 	{

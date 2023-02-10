@@ -10,6 +10,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { BeatLoader } from "react-spinners";
 import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
+import ShareModel from "../../models/ShareModel/ShareModel";
 
 export const Beams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -44,7 +45,7 @@ export const Beams = () => {
 		setPopuptype(type);
 	};
 	const navigate = useNavigate();
-	const { token } = useAuthContext();
+	const { token, user } = useAuthContext();
 
 	const fetchdata = async () => {
 		setMicrobeamsload(true);
@@ -55,8 +56,11 @@ export const Beams = () => {
 		})
 			.then((res) => res.json())
 			.then((e) => {
-				setMicrobeams(e.data);
-				setMicrobeamsload(false);
+				if (e.error) {
+				} else {
+					setMicrobeams(e.data);
+					setMicrobeamsload(false);
+				}
 			});
 	};
 
@@ -69,8 +73,11 @@ export const Beams = () => {
 		})
 			.then((res) => res.json())
 			.then((e) => {
-				setMaxbeams(e.data);
-				setMaxbeamsload(false);
+				if (e.error) {
+				} else {
+					setMaxbeams(e.data);
+					setMaxbeamsload(false);
+				}
 			});
 	};
 
@@ -78,7 +85,7 @@ export const Beams = () => {
 		setSuggestion([]);
 		fetchdata();
 		fetchdata2();
-	}, []);
+	}, [user]);
 
 	return (
 		<div className="beamspage">
@@ -98,6 +105,9 @@ export const Beams = () => {
 					type={popuptype}
 				></Popup>
 			)}
+
+			<ShareModel />
+
 			<section className="trendingbeamshero">
 				<img src={heroimg} alt="" className="heroimgbeam" />
 				<h1>

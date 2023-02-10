@@ -113,7 +113,7 @@ export const UserProfile = () => {
 											}}
 										>
 											<img
-												src={`http://localhost:1337${user.Profilepic.url}`}
+												src={`https://orca-app-oxt3w.ondigitalocean.app${user.Profilepic.url}`}
 												alt=""
 											/>
 											<div className="proftag">
