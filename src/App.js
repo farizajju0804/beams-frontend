@@ -48,10 +48,7 @@ function App() {
 						<div className="sec1data">
 							<h2 data-aos="zoom-in">
 								{data.landingpage.herotext}{" "}
-								<h2 className="landingtextoutline">
-									{" "}
-									{data.landingpage.herotext2}
-								</h2>
+								<h2> {data.landingpage.herotext2}</h2>
 							</h2>
 							<span data-aos="fade-up">
 								{/* {data.landingpage.subhero}

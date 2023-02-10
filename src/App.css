@@ -53,7 +53,7 @@
   width: 100%;
   position: absolute;
   height: 100%;
-  background-color: rgb(25, 22, 65, 0.7);
+  background-color: rgb(25, 22, 65, 0);
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -75,7 +75,7 @@
 
  .sec1data h2{
   color: white;
-  font-size: 130px;
+  font-size: 100px;
   letter-spacing: 3px;
   text-align: center;
  }
@@ -110,7 +110,7 @@
   text-align: center;
   color: #FFFFFF;
   cursor:pointer;
-  margin-top: 40px;
+  margin-top: 60px;
  }
 
  .insertsection{
