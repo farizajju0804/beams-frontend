@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Navbar } from "./models/navbar/Navbar";
-import landingvideo from "./assets/videoBg.mp4";
+import landingvideo from "./assets/videoBg3.mp4";
 import data from "./data/landingdata.json";
 import sec6card1 from "./assets/sec6card1.png";
 import sec6card2 from "./assets/sec6card2.png";
@@ -50,10 +50,7 @@ function App() {
 								{data.landingpage.herotext}{" "}
 								<h2> {data.landingpage.herotext2}</h2>
 							</h2>
-							<span data-aos="fade-up">
-								{/* {data.landingpage.subhero}
-								{data.landingpage.subhero2} */}
-							</span>
+							<span data-aos="fade-up"></span>
 							<span data-aos="fade-up"></span>
 							<button
 								onClick={() => {
