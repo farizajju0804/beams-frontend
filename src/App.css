@@ -148,6 +148,7 @@
   width: 1300px;
   font-size: 80px;
   text-align: center;
+  
  }
 
  .insertsection > div > span{
@@ -171,6 +172,12 @@
     margin-top: 25px;
     font-size: 28px;
     line-height: 40px;
+   }
+ }
+
+ @media only screen and (max-width:1430px) {
+  .insertsection > div > h2{
+    font-size: 45px;
    }
  }
 
