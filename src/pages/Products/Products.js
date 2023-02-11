@@ -6,10 +6,12 @@ import popupdoyouknow from "../../assets/Popupyouknow.png";
 import prodsec5img from "../../assets/prodsec5img.png";
 import prodsec7img from "../../assets/prodsec7img.png";
 import textiimagecont from "../../assets/testimockimg.png";
+import { GotoTop } from "../../models/GotoTop/GotoTop";
 
 export const Products = () => {
 	return (
 		<div className="productspage">
+			<GotoTop></GotoTop>
 			<section className="prodsec1">
 				<h1>BEAMS</h1>
 				<span>Illuminating the Future in a Flash!</span>

@@ -18,6 +18,8 @@ import q3video from "./assets/Question3.mp4";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useHorizontalScroll } from "./Horizontalscroll";
+import { GotoTop } from "./models/GotoTop/GotoTop";
+
 
 function App() {
 	const navigate = useNavigate();
@@ -34,6 +36,7 @@ function App() {
 	return (
 		<div className="App">
 			<Navbar></Navbar>
+			<GotoTop></GotoTop>
 			<div className="landingpage">
 				<section className="one">
 					<div className="bgvideo">

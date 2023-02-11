@@ -12,6 +12,7 @@ import { BsChevronDoubleRight } from "react-icons/bs";
 import { BsChevronDoubleLeft, BsChevronDoubleDown } from "react-icons/bs";
 import { Popupabtus } from "../../models/Popupabtus/Popupabtus";
 import aboutsliderbg4 from "../../assets/aboutsliderbg4.png";
+import { GotoTop } from "../../models/GotoTop/GotoTop";
 
 export const Aboutus = () => {
 	const [scroller, setScroller] = useState(0);
@@ -33,6 +34,7 @@ export const Aboutus = () => {
 
 	return (
 		<div className="aboutuspage">
+			<GotoTop></GotoTop>
 			{modelopen && <Popupabtus handleClose={close}></Popupabtus>}
 			<section className="abtus1">
 				<img src={abtuslandimg} alt="" />
