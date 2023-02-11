@@ -78,7 +78,7 @@ export const Products = () => {
 			<section className="prodsec5">
 				<img src={prodsec5img} alt="" className="prodsec5img" />
 				<div className="sec2label">
-					<span>Max Beams</span>
+					<span>Mini Beams</span>
 				</div>
 				<div className="prodsec5data">
 					<h1>
