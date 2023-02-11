@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Navbar } from "./models/navbar/Navbar";
-import landingvideo from "./assets/videoBg3.mp4";
+import landingvideo from "./assets/videoBgL.mp4";
 import data from "./data/landingdata.json";
 import sec6card1 from "./assets/sec6card1.png";
 import sec6card2 from "./assets/sec6card2.png";
@@ -33,9 +33,9 @@ function App() {
 
 	return (
 		<div className="App">
+			<Navbar></Navbar>
 			<div className="landingpage">
 				<section className="one">
-					<Navbar></Navbar>
 					<div className="bgvideo">
 						<video
 							src={landingvideo}
@@ -50,6 +50,9 @@ function App() {
 								{data.landingpage.herotext}{" "}
 								<h2> {data.landingpage.herotext2}</h2>
 							</h2>
+							<span>
+								The leading guide to technology trends and innovations.{" "}
+							</span>
 							<span data-aos="fade-up"></span>
 							<span data-aos="fade-up"></span>
 							<button
