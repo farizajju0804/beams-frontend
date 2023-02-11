@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Navbar } from "./models/navbar/Navbar";
-
+import newsletterstylish from "./assets/newsletterstylish.png";
 import data from "./data/landingdata.json";
 import sec6card1 from "./assets/sec6card1.png";
 import sec6card2 from "./assets/sec6card2.png";
@@ -232,7 +232,7 @@ function App() {
 						<div className="sec4spltitle vertic">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
-								{data.landingpage.sec4innertitle}
+								How will we enhance your Future?
 							</h1>
 						</div>
 						<div className="featurehoricard">
@@ -283,7 +283,9 @@ function App() {
 								<div className="sec4cardimgcont">
 									<img src={sec6card3} alt="" />
 								</div>
-								<span>{data.landingpage.sec6card3}</span>
+								<span>
+									Increase your chances <br /> of success
+								</span>
 							</div>
 						</div>
 					</div>
@@ -291,6 +293,11 @@ function App() {
 				<section className="seven landingsection">
 					<div className="newletter">
 						<div className="outnews1">
+							<img
+								src={newsletterstylish}
+								alt=""
+								className="newsletterstylish"
+							/>
 							<div className="newsoutbod"></div>
 							<div className="outnewsinner">
 								<div className="outnewsleft">
