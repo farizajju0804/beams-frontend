@@ -125,10 +125,12 @@ function App() {
 						<div className="the3qsbox">
 							<video src={q1video} autoPlay loop playsInline={true} muted />
 							<p>
-								Meet Beams, meticulously distilled content nuggets, packed with
-								powerful and actionable knowledge. Count on them to be your
-								ultimate resource enabling you to excel and stay ahead of the
-								curve.
+								Beams are relevant, timely, and versatile content gems featuring
+								the latest global technology trends and innovations.
+							</p>
+							<p>
+								They are tailor-made for busy leaders, visionaries, and future
+								focused individuals who want to stay ahead of the curve.
 							</p>
 						</div>
 					</div>
@@ -163,11 +165,13 @@ function App() {
 						<div className="the3qsbox">
 							<video src={q2video} autoPlay loop playsInline={true} muted />
 							<p>
-								​Relevant, timely, and versatile content gems on the latest
-								technology trends and innovations. Consume them in less than 6
-								minutes a day. They are tailor-made for busy leaders,
-								visionaries and future-focused individuals who need to stay
-								informed.
+								Unlock the power of the future with Beams - expertly curated
+								content nuggets ​with​ actionable insights and powerful
+								foresights​ ​required ​to succeed​ in an uncertain future.
+							</p>
+							<p>
+								Stay updated in one minute a day​. B​eams are your ultimate
+								resource to excel today, tomorrow, and in future.
 							</p>
 						</div>
 					</div>
@@ -193,9 +197,12 @@ function App() {
 							<video src={q3video} autoPlay loop playsInline={true} muted />
 							<p>
 								Beams will keep you current and future ready in minutes a day.
-								Leverage them to stay relevant, make better decisions, identify
-								new business opportunities. Don't ever get left behind. Ace your
-								game no matter where you are - one trend at a time!
+								Leverage them to stay relevant, make better decisions, and
+								identify new business opportunities.
+							</p>
+							<p>
+								Don't ever get left behind. Ace your game no matter where you
+								are - one trend at a time!
 							</p>
 						</div>
 					</div>
