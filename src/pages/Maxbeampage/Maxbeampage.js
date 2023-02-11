@@ -64,6 +64,16 @@ export const Maxbeampage = () => {
 								<BsHeadphones size={21} />
 								<span>Listen</span>
 							</div>
+							<div
+								className="maxbeamsbtn"
+								style={{ backgroundColor: "#191641", color: "white" }}
+								onClick={() => {
+									navigate("/maxbeamslideshow");
+								}}	
+							>
+								<BsHeadphones size={21} />
+								<span>Slideshow</span>
+							</div>
 						</div>
 					</div>
 				</div>

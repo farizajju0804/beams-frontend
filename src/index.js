@@ -31,6 +31,7 @@ import { MaxbeamRead } from "./pages/MaxbeamsRead/MaxbeamRead";
 import { Termsandcondition } from "./pages/Termsandcondition/Termsandcondition";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
 import PrivateRoute from "./PrivateRoute";
+import { Maxbeamslideshow } from "./pages/Maxbeamslideshow/Maxbeamslideshow";
 
 const router = createBrowserRouter([
 	{
@@ -256,6 +257,16 @@ const router = createBrowserRouter([
 			<div>
 				<LoggedinNav />
 				<UserProfile />
+				<Footer></Footer>
+			</div>
+		)
+	},
+	{
+		path: "/maxbeamslideshow",
+		element: (
+			<div>
+				<LoggedinNav />
+				<Maxbeamslideshow />
 				<Footer></Footer>
 			</div>
 		)
