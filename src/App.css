@@ -227,10 +227,23 @@
  }
 
 
+ @media only screen and (max-width:1280px)
+ {
+  .sec1data{
+    height: 250px;
+    width: 100%;
+  }
 
- @media only screen and (max-width:800px) {
   .sec1data h2{
-    font-size: 80px;
+    font-size: 70px;
+  }
+ }
+
+
+
+ @media only screen and (max-width:810px) {
+  .sec1data h2{
+    font-size: 60px;
   }
 
   .sec1data span
@@ -240,16 +253,24 @@
 
  }
 
- @media only screen and (max-width:540px) {
+
+ @media only screen and (max-width:810px) {
+  .sec1data h2{
+    font-size: 50px;
+  }
+ }
+
+
+ @media only screen and (max-width:562px) {
   .sec1data{
-  height: 400px;
+  height: 200px;
   width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   }
   .sec1data h2{
-    font-size: 60px;
+    font-size: 30px;
   }
 
   .sec1data span
@@ -259,12 +280,19 @@
 
   .sec1data button{
     height: 60px;
-    width: 150px;
+    width: 250px;
     padding: 10px 20px;
     font-size: 17px;
 
   }
 
+ }
+
+ @media only screen and (max-width:404px) {
+
+  .sec1data h2{
+    font-size: 25px;
+  }
  }
 
  /* End of Sec 1 */
