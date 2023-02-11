@@ -38,7 +38,9 @@ function App() {
 				<section className="one">
 					<div className="bgvideo">
 						<video
-							src={landingvideo}
+							src={
+								"https://firebasestorage.googleapis.com/v0/b/teenz-fe41d.appspot.com/o/videoBgL.mp4?alt=media&token=4990273c-a809-4b6d-adf2-512419c031e3"
+							}
 							autoPlay
 							loop
 							playsInline={true}
