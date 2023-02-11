@@ -50,10 +50,6 @@ export const Aboutus = () => {
 				<div className="abtsec2inner">
 					<div className="abtsec2pdiv">
 						<p>
-							We equip people with potent knowledge so they are ready to thrive
-							even in an uncertain future.
-						</p>
-						<p>
 							<strong>
 								{" "}
 								Futurists predict the changes that will occur in the next 10
@@ -62,9 +58,11 @@ export const Aboutus = () => {
 							</strong>
 						</p>
 						<p>
-							Whether you're an entrepreneur, an engineer or someone who is
-							curious about the future, innBrieff is the perfect place for you
-							to get inspired, stay updated and ease your way into the future.
+							We equip people with potent knowledge so they are ready to thrive
+							even in an uncertain future. Whether you're an entrepreneur, an
+							engineer or someone who is curious about the future, innBrieff is
+							the perfect place for you to get inspired, stay updated and ease
+							your way into the future.
 						</p>
 						<p>
 							Join us on this amazing journey as we uncover the latest
