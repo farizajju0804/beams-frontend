@@ -439,6 +439,12 @@
     }
 }
 
+@media only screen and (max-width:1260px) {
+    .prodsec7inner > h1{
+            font-size: 46px !important;
+    }
+}
+
 .secprodlabel{
     max-width: 400px;
     width: 35%;

@@ -49,7 +49,7 @@ export const Products = () => {
 			<section className="prodsec4">
 				<img src={popupdoyouknow} alt="" className="prodsec4img" />
 				<div className="sec2label">
-					<span>Mini Beams</span>
+					<span>Micro Beams</span>
 				</div>
 				<div className="prodsec4data">
 					<h1>
@@ -61,10 +61,12 @@ export const Products = () => {
 						Micro Beams contain bite-sized and highly relevant content about the
 						forces shaping the future. They are perfect for people who are short
 						on time but want to keep pace with leading global trends. Stay
-						updated and inspired in just a couple of minutes. Imagine having a
-						wealth of knowledge at your fingertips, ready to be explored
-						whenever and wherever you are. Don't let a busy schedule keep you
-						from staying ahead of the curve. Dive into the future with
+						updated and inspired in just a couple of minutes.
+					</p>
+					<p style={{ marginTop: "20px" }}>
+						Imagine having a wealth of knowledge at your fingertips, ready to be
+						explored whenever and wherever you are. Don't let a busy schedule
+						keep you from staying ahead of the curve. Dive into the future with
 						Microbeams and discover the endless possibilities that the future
 						holds.
 					</p>
@@ -87,8 +89,11 @@ export const Products = () => {
 						Micro Beams. They are condensed, easy to understand and designed to
 						be consumed in less than 5 minutes. Imagine having a front-row seat
 						viewing the latest trends and advancements in technology and
-						science. They will take you on an amazing exploratory journey about
-						the trends impact, business opportunity and blue oceans. Collect a
+						science.
+					</p>
+					<p style={{ marginTop: "20px" }}>
+						They will take you on an amazing exploratory journey about the
+						trends impact, business opportunity, and blue oceans. Collect a
 						treasure trove of knowledge, ready to be explored whenever and
 						wherever you are. Let Mini Beams guide you on your journey to unveil
 						the future.
@@ -114,7 +119,7 @@ export const Products = () => {
 				</div>
 				<div className="prodsec7inner">
 					<h1>
-						What Our <br /> Users Say...
+						What Our <br /> Users Say
 					</h1>
 					<div className="testicard">
 						<img src={textiimagecont} alt="" />
@@ -126,7 +131,10 @@ export const Products = () => {
 							<p>
 								Lorem ipsum dolor sit amet consectetur. Vulputate sem blandit
 								cursus congue eu faucibus sem aliquam. Vulputate dui velit ut
-								lorem. Non quis cursus quam varius orci ultrices odio quam
+								lorem.
+							</p>
+							<p>
+								Non quis cursus quam varius orci ultrices odio quam
 								varius.lorem. Non quis cursus quam varius orci ultrices odio
 								quam varius.lorem. Non quis cursus quam varius orci ultrices
 								odio quam varius.
