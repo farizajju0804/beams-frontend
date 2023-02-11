@@ -10,6 +10,7 @@ import { BeatLoader } from "react-spinners";
 import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
+import { GotoTop } from "../../models/GotoTop/GotoTop";
 
 export const Maxbeams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -91,6 +92,7 @@ export const Maxbeams = () => {
 	}, []);
 	return (
 		<div>
+			<GotoTop />
 			{modelopen && (
 				<Popup
 					content={popupcontent}

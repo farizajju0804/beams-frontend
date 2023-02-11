@@ -13,6 +13,7 @@ import { AiFillSetting } from "react-icons/ai";
 import Slider from "@mui/material/Slider";
 import { BiFontSize, BiFontFamily } from "react-icons/bi";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
+import { GotoTop } from "../../models/GotoTop/GotoTop";
 
 export const MaxbeamRead = () => {
 	const { token, hightlights, setHighlights } = useAuthContext();
@@ -131,6 +132,7 @@ export const MaxbeamRead = () => {
 				setSettingPopup(false);
 			}}
 		>
+			<GotoTop />
 			<Toaster />
 			{microbeamsload ? (
 				<BeatLoader />

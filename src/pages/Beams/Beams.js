@@ -11,6 +11,7 @@ import { BeatLoader } from "react-spinners";
 import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import ShareModel from "../../models/ShareModel/ShareModel";
+import { GotoTop } from "../../models/GotoTop/GotoTop";
 
 export const Beams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -89,6 +90,7 @@ export const Beams = () => {
 
 	return (
 		<div className="beamspage">
+			<GotoTop />
 			{notesPopup && (
 				<Popupnotes
 					data={notepopupdata}
