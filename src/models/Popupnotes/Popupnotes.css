@@ -8,6 +8,16 @@
     flex-direction: column;
 }
 
+@media only screen and (max-width:1280px) {
+    .popupnotes{
+        height: 550px;
+    }
+
+    .notes{
+        height: 55% !important;
+    }
+}
+
 @media only screen and (max-width:629px) {
     .popupnotes{
         width: 95%;

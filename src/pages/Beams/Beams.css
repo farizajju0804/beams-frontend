@@ -115,6 +115,13 @@
     position: relative;
 }
 
+@media only screen and (max-width:1280px) {
+    .minicardssection{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 .minibeams > span{
     align-self: flex-end;
     margin-right: 170px;

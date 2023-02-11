@@ -19,7 +19,12 @@
     position: relative;
 }
 
-
+@media only screen and (max-width:1280px) {
+    .minibeamscardcont{
+        margin-left: 10px;
+        margin-Right: 10px;
+    }
+}
 
 
 @media only screen and (max-width:600px)
