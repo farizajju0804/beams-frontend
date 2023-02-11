@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Navbar } from "./models/navbar/Navbar";
-import landingvideo from "./assets/videoBgL.mp4";
+
 import data from "./data/landingdata.json";
 import sec6card1 from "./assets/sec6card1.png";
 import sec6card2 from "./assets/sec6card2.png";
