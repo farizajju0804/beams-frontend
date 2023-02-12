@@ -14,24 +14,40 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { BsClipboardCheck } from "react-icons/bs";
 import "./Sharemodel.css";
 import { toast } from "react-hot-toast";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-const ShareModel = () => {
+const ShareModel = ({ handleClose }) => {
 	return (
-		<Backdrop>
+		<Backdrop handleClose={handleClose}>
 			<div className="sharecontainer">
+				<div className="sharemodelcloser">
+					<AiFillCloseCircle />
+				</div>
 				<div className="sharesocialcont">
 					<span>Share in Social Media</span>
 					<div className="shareicons">
-						<FacebookShareButton>
+						<FacebookShareButton
+							url="https://pixelmatters.pages.dev/beams"
+							title="Inbrieff"
+						>
 							<FacebookIcon round={true} />
 						</FacebookShareButton>
-						<WhatsappShareButton>
+						<WhatsappShareButton
+							url="https://pixelmatters.pages.dev/beams"
+							title="Inbrieff"
+						>
 							<WhatsappIcon round={true}></WhatsappIcon>
 						</WhatsappShareButton>
-						<TwitterShareButton>
+						<TwitterShareButton
+							url="https://pixelmatters.pages.dev/beams"
+							title="Inbrieff"
+						>
 							<TwitterIcon round={true} />
 						</TwitterShareButton>
-						<EmailShareButton>
+						<EmailShareButton
+							url="https://pixelmatters.pages.dev/beams"
+							title="Inbrieff"
+						>
 							<EmailIcon round={true} />
 						</EmailShareButton>
 					</div>
@@ -42,7 +58,7 @@ const ShareModel = () => {
 					onCopy={() => toast.success("Copied to Clipboard")}
 				>
 					<div className="ctoclipboard">
-						<span>https://www.inbrieff.com</span>
+						<span>https://pixelmatters.pages.dev/</span>
 						<BsClipboardCheck size={22} />
 					</div>
 				</CopyToClipboard>

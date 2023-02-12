@@ -30,6 +30,11 @@ export const Beams = () => {
 	const [searchOptionType, setSearchOptionType] = useState(0);
 	const [popupid, setPopupid] = useState(0);
 	const [popuptype, setPopuptype] = useState("");
+	const [sharemodelstaus, setSharemodelstaus] = useState(false);
+
+	const closesharemodel = () => setSharemodelstaus(false);
+
+	const opensharemodel = () => setSharemodelstaus(true);
 
 	const closenotePopup = () => setNotesPopup(false);
 	const opennotePopup = (data) => {
@@ -108,7 +113,7 @@ export const Beams = () => {
 				></Popup>
 			)}
 
-			{/* <ShareModel /> */}
+			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
 
 			<section className="trendingbeamshero">
 				<img src={heroimg} alt="" className="heroimgbeam" />
@@ -202,6 +207,7 @@ export const Beams = () => {
 												id={micro.id}
 												open={open}
 												openNotes={opennotePopup}
+												openshare={opensharemodel}
 											/>
 										);
 									})}
@@ -233,6 +239,7 @@ export const Beams = () => {
 												id={micro.id}
 												open={open}
 												openNotes={opennotePopup}
+												openshare={opensharemodel}
 											/>
 										);
 									})}
@@ -301,6 +308,7 @@ export const Beams = () => {
 													id={micro.id}
 													open={open}
 													openNotes={opennotePopup}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -319,6 +327,7 @@ export const Beams = () => {
 													Desc={micro.attributes.shortDesc}
 													id={micro.id}
 													open={open}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -337,6 +346,7 @@ export const Beams = () => {
 													content={micro.attributes.Content}
 													id={micro.id}
 													open={open}
+													openshare={opensharemodel}
 													openNotes={opennotePopup}
 												/>
 											);
@@ -356,6 +366,7 @@ export const Beams = () => {
 													Desc={micro.attributes.shortDesc}
 													id={micro.id}
 													open={open}
+													openshare={opensharemodel}
 												/>
 											);
 										})}

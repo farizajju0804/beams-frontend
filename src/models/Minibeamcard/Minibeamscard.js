@@ -14,7 +14,14 @@ import { Toaster, toast } from "react-hot-toast";
 import { FaHighlighter } from "react-icons/fa";
 import { GrNotes } from "react-icons/gr";
 
-export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
+export const Minibeamscard = ({
+	open,
+	title,
+	content,
+	id,
+	openNotes,
+	openshare
+}) => {
 	const [x, setX] = useState(0);
 	const [y, setY] = useState(0);
 	const [displayPopUp, setDisplayPopUp] = useState(false);
@@ -128,7 +135,12 @@ export const Minibeamscard = ({ open, title, content, id, openNotes }) => {
 					/>
 					<span>Notes</span>
 				</div>
-				<div className="opdpitems">
+				<div
+					className="opdpitems"
+					onClick={() => {
+						openshare();
+					}}
+				>
 					<AiOutlineShareAlt
 						size={20}
 						style={{ marginRight: "10px", cursor: "pointer" }}

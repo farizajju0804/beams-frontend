@@ -11,6 +11,7 @@ import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
+import ShareModel from "../../models/ShareModel/ShareModel";
 
 export const Minibeams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -34,7 +35,11 @@ export const Minibeams = () => {
 	const [notepopupdata, setNotepopupdata] = useState({});
 	const [popupid, setPopupid] = useState(0);
 	const [popuptype, setPopuptype] = useState("");
+	const [sharemodelstaus, setSharemodelstaus] = useState(false);
 
+	const closesharemodel = () => setSharemodelstaus(false);
+
+	const opensharemodel = () => setSharemodelstaus(true);
 	const { token } = useAuthContext();
 
 	const close = () => setModelopen(false);
@@ -116,6 +121,9 @@ export const Minibeams = () => {
 					handleClose={closenotePopup}
 				></Popupnotes>
 			)}
+
+			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
+
 			<section className="minibeamspage">
 				<section className="trendingbeamshero">
 					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
@@ -216,6 +224,7 @@ export const Minibeams = () => {
 													content={micro.attributes.Content}
 													open={open}
 													openNotes={opennotePopup}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -253,6 +262,7 @@ export const Minibeams = () => {
 													content={micro.attributes.Content}
 													open={open}
 													openNotes={opennotePopup}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -284,6 +294,7 @@ export const Minibeams = () => {
 													content={micro.attributes.Content}
 													open={open}
 													openNotes={opennotePopup}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -344,6 +355,7 @@ export const Minibeams = () => {
 														id={micro.id}
 														open={open}
 														openNotes={opennotePopup}
+														openshare={opensharemodel}
 													/>
 												);
 											})}
@@ -362,6 +374,7 @@ export const Minibeams = () => {
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
 														open={open}
+														openshare={opensharemodel}
 													/>
 												);
 											})}
@@ -381,6 +394,7 @@ export const Minibeams = () => {
 														id={micro.id}
 														open={open}
 														openNotes={opennotePopup}
+														openshare={opensharemodel}
 													/>
 												);
 											})}
@@ -399,6 +413,7 @@ export const Minibeams = () => {
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
 														open={open}
+														openshare={opensharemodel}
 													/>
 												);
 											})}

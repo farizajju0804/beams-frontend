@@ -11,6 +11,7 @@ import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
+import ShareModel from "../../models/ShareModel/ShareModel";
 
 export const Maxbeams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -37,6 +38,11 @@ export const Maxbeams = () => {
 	const [searchOptionType, setSearchOptionType] = useState(0);
 	const [notesPopup, setNotesPopup] = useState(false);
 	const [notepopupdata, setNotepopupdata] = useState({});
+	const [sharemodelstaus, setSharemodelstaus] = useState(false);
+
+	const closesharemodel = () => setSharemodelstaus(false);
+
+	const opensharemodel = () => setSharemodelstaus(true);
 
 	const { token } = useAuthContext();
 
@@ -106,6 +112,9 @@ export const Maxbeams = () => {
 					handleClose={closenotePopup}
 				></Popupnotes>
 			)}
+
+			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
+
 			<section className="minibeamspage">
 				<section className="trendingbeamshero">
 					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
@@ -197,6 +206,7 @@ export const Maxbeams = () => {
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
 													id={micro.attributes.id}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -233,6 +243,7 @@ export const Maxbeams = () => {
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
 													id={micro.attributes.id}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -263,6 +274,7 @@ export const Maxbeams = () => {
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
 													id={micro.attributes.id}
+													openshare={opensharemodel}
 												/>
 											);
 										})}
@@ -321,6 +333,7 @@ export const Maxbeams = () => {
 														Title={micro.attributes.Title}
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
+														openshare={opensharemodel}
 														open={open}
 													/>
 												);
@@ -341,6 +354,7 @@ export const Maxbeams = () => {
 														id={micro.id}
 														open={open}
 														openNotes={opennotePopup}
+														openshare={opensharemodel}
 													/>
 												);
 											})}
@@ -358,6 +372,7 @@ export const Maxbeams = () => {
 														Title={micro.attributes.Title}
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
+														openshare={opensharemodel}
 														open={open}
 													/>
 												);
@@ -377,6 +392,7 @@ export const Maxbeams = () => {
 														content={micro.attributes.Content}
 														id={micro.id}
 														open={open}
+														openshare={opensharemodel}
 														openNotes={opennotePopup}
 													/>
 												);

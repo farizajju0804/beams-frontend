@@ -11,7 +11,7 @@ import {
 } from "react-icons/ai";
 import { SlNote } from "react-icons/sl";
 
-export const Maxbeamscard = ({ id, Title, Desc, openNotes }) => {
+export const Maxbeamscard = ({ id, Title, Desc, openNotes, openshare }) => {
 	const navigate = useNavigate();
 	const [dropdown, setDropdown] = useState(false);
 	const { addfav } = useAuthContext();
@@ -67,7 +67,12 @@ export const Maxbeamscard = ({ id, Title, Desc, openNotes }) => {
 					/>
 					<span>Notes</span>
 				</div>
-				<div className="opdpitems">
+				<div
+					className="opdpitems"
+					onClick={() => {
+						openshare();
+					}}
+				>
 					<AiOutlineShareAlt
 						size={20}
 						style={{ marginRight: "10px", cursor: "pointer" }}
