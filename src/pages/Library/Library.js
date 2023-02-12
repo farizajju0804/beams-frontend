@@ -107,6 +107,7 @@ export const Library = () => {
 							// console.log(e.target.value);
 							setSortop(e.target.value);
 						}}
+						style={{ paddingRight: "40px" }}
 					>
 						<option defaultValue={2} value={2}>
 							Latest
@@ -202,16 +203,15 @@ export const Library = () => {
 						flexDirection: "column",
 						marginTop: "50px"
 					}}
-
 					className="nodatadiv"
 				>
 					<img src={nohighlights} alt="" />
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
-						You haven't created any notes yet.
+						You haven't added any highlights yet.
 					</h2>
 					<p style={{ marginTop: "20px" }}>
-						Start creating notes for easy recollection. Our notes are designed
-						beautifully!
+						Start creating highlights for easy recollection. Our notes are
+						designed beautifully!
 					</p>
 				</div>
 			)}

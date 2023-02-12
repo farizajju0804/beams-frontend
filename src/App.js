@@ -20,7 +20,6 @@ import "aos/dist/aos.css";
 import { useHorizontalScroll } from "./Horizontalscroll";
 import { GotoTop } from "./models/GotoTop/GotoTop";
 
-
 function App() {
 	const navigate = useNavigate();
 	const scrollRef = useHorizontalScroll();
@@ -58,8 +57,6 @@ function App() {
 							<span>
 								The leading guide to technology trends and innovations.{" "}
 							</span>
-							<span data-aos="fade-up"></span>
-							<span data-aos="fade-up"></span>
 							<button
 								onClick={() => {
 									navigate("/products");

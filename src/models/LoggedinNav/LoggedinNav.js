@@ -24,7 +24,13 @@ export const LoggedinNav = () => {
 				Innbrieff.
 			</h1>
 			<div className="bandacont">
-				<span>Beams</span>
+				<span
+					onClick={() => {
+						navigate("/beams");
+					}}
+				>
+					Beams
+				</span>
 				<div
 					className="navaccoutholder"
 					onClick={() => {

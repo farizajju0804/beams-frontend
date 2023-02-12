@@ -1,6 +1,6 @@
 import React from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
-import popupdoyouknow from "../../assets/Popupyouknow.png";
+import popupdoyouknow from "../../assets/Popupyouknow2.png";
 import noteicon from "../../assets/shareicon.png";
 import shareicon from "../../assets/share1icon.png";
 import hearticon from "../../assets/hearticon.png";
@@ -24,15 +24,12 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 					<div className="popdatainner">
 						<img src={popupdoyouknow} alt="" />
 						<span>{content}</span>
-						<div
-							className="popupicons"
-						>
+						<div className="popupicons">
 							<img
 								src={noteicon}
 								alt=""
 								height={50}
 								width={50}
-					
 								onClick={() => {
 									handleClose();
 									openNotes({ title, id, type });
@@ -43,7 +40,6 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 								alt=""
 								height={50}
 								width={50}
-				
 								onClick={() => {
 									addfav({
 										Name: title,
@@ -53,13 +49,7 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 									});
 								}}
 							/>
-							<img
-								src={hearticon}
-								alt=""
-								height={50}
-								width={50}
-							
-							/>
+							<img src={hearticon} alt="" height={50} width={50} />
 						</div>
 					</div>
 				</div>

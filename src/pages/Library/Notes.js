@@ -112,6 +112,7 @@ export const Notes = () => {
 							// console.log(e.target.value);
 							setSortop(e.target.value);
 						}}
+						style={{ paddingRight: "40px" }}
 					>
 						<option defaultValue={2} value={2}>
 							Latest

@@ -89,7 +89,7 @@
   color: white;
   font-size: 24px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 35px;
  }
 
  .landingtextoutline{
@@ -519,7 +519,7 @@
  .sec2contdiv{
   min-height: 230px;
   margin-top: 40px;
-  height: 40%;
+  /* height: 60%; */
   background-color: #435CFF;
   width: 100%;
   max-width: 700px;

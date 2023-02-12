@@ -16,7 +16,7 @@
     background-image: url("../../assets/productslandbg.png");
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     justify-content: center;
 }
 
@@ -33,6 +33,7 @@
     font-style: italic;
     font-size: 50px;
     border-radius: 20px;
+    align-self: center;
 }
 
 @media only screen and (max-width:1085px) {
@@ -69,6 +70,7 @@
     width: 100%;
     padding: 60px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     background-image: url("../../assets/productsec2bg.png");
@@ -106,6 +108,26 @@
     }
 }
 
+.prodsec3 > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    background: #435CFF;
+    border-radius: 100px;
+    border: none;
+    width: 300px;
+    height: 72px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor:pointer;
+    margin-top: 10px;
+}
 
 .prodsec4{
     padding-top: 100px;
@@ -136,7 +158,7 @@
 
 .prodsec4data p{
     font-size: 20px;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .prodsec4data button{
@@ -242,7 +264,7 @@
 
 .prodsec5data p{
     font-size: 20px;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .prodsec5data button{
@@ -403,6 +425,18 @@
 
 .testicardinner > p{
     margin-top: 10px;
+}
+
+.protestiwaves{
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.protestiright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media only screen and (max-width:1160px) {
