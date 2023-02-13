@@ -32,16 +32,27 @@ import { Termsandcondition } from "./pages/Termsandcondition/Termsandcondition";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import { Maxbeamslideshow } from "./pages/Maxbeamslideshow/Maxbeamslideshow";
+import ScrollToTop from "./ScrollToTop";
 
 const router = createBrowserRouter([
+	// {
+	// 	path: "/",
+	// 	element:
+	// },
 	{
 		path: "/",
-		element: <App />
+		element: (
+			<div>
+				<ScrollToTop />
+				<App />
+			</div>
+		)
 	},
 	{
 		path: "/login",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Login />
 			</div>
@@ -51,6 +62,7 @@ const router = createBrowserRouter([
 		path: "/signup",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Signup />
 			</div>
@@ -60,6 +72,7 @@ const router = createBrowserRouter([
 		path: "/resetpassword",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Resetpass />
 			</div>
@@ -69,6 +82,7 @@ const router = createBrowserRouter([
 		path: "/resetpass",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Resetpass2 />
 			</div>
@@ -78,6 +92,7 @@ const router = createBrowserRouter([
 		path: "/beams",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Beams />
 				<Footer />
@@ -89,6 +104,7 @@ const router = createBrowserRouter([
 		element: (
 			<PrivateRoute>
 				<div>
+					<ScrollToTop />
 					<LoggedinNav />
 					<Maxbeams />
 					<Footer />
@@ -100,6 +116,7 @@ const router = createBrowserRouter([
 		path: "/minibeams",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Minibeams />
 				<Footer />
@@ -110,6 +127,7 @@ const router = createBrowserRouter([
 		path: "/maxbeampage/:id",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Maxbeampage />
 				<Footer />
@@ -120,6 +138,7 @@ const router = createBrowserRouter([
 		path: "/maxbeamsong/:id",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Maxbeamsong />
 				<Footer />
@@ -130,6 +149,7 @@ const router = createBrowserRouter([
 		path: "/aboutus",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Aboutus />
 				<Footer />
@@ -140,6 +160,7 @@ const router = createBrowserRouter([
 		path: "/hightlights",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Library />
 				<Footer />
@@ -150,6 +171,7 @@ const router = createBrowserRouter([
 		path: "/favourites",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Favourites />
 				<Footer />
@@ -160,6 +182,7 @@ const router = createBrowserRouter([
 		path: "/completed",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Completed />
 				<Footer />
@@ -170,6 +193,7 @@ const router = createBrowserRouter([
 		path: "/notes",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Notes />
 				<Footer />
@@ -180,6 +204,7 @@ const router = createBrowserRouter([
 		path: "/products",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Products />
 				<Footer />
@@ -190,6 +215,7 @@ const router = createBrowserRouter([
 		path: "/api/auth/google/callback",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Redirectionpage />
 			</div>
 		)
@@ -198,6 +224,7 @@ const router = createBrowserRouter([
 		path: "/Contact",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Contact />
 				<Footer />
@@ -208,6 +235,7 @@ const router = createBrowserRouter([
 		path: "/emailverification/:email",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Emailverification />
 			</div>
@@ -217,6 +245,7 @@ const router = createBrowserRouter([
 		path: "/verificationsuccess",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<VerificationSuccess />
 			</div>
@@ -226,6 +255,7 @@ const router = createBrowserRouter([
 		path: "/resetsuccessful",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<ResetSuccessfull />
 			</div>
@@ -235,6 +265,7 @@ const router = createBrowserRouter([
 		path: "/maxbeamread/:id",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<MaxbeamRead />
 				<Footer></Footer>
@@ -245,6 +276,7 @@ const router = createBrowserRouter([
 		path: "/termsandcondition",
 		element: (
 			<div>
+				<ScrollToTop />
 				<Navbar />
 				<Termsandcondition />
 				<Footer></Footer>
@@ -255,6 +287,7 @@ const router = createBrowserRouter([
 		path: "/profile",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<UserProfile />
 				<Footer></Footer>
@@ -265,6 +298,7 @@ const router = createBrowserRouter([
 		path: "/maxbeamslideshow",
 		element: (
 			<div>
+				<ScrollToTop />
 				<LoggedinNav />
 				<Maxbeamslideshow />
 				<Footer></Footer>

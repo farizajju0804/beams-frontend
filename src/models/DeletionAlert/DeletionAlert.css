@@ -1,0 +1,56 @@
+.backdropwelcome{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(120, 120, 120, 0.7);
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    z-index: 100;
+}
+
+.DeletionAlert{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.delalbtnscont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;width: 100%;
+}
+
+.delalbtns{
+    padding: 5px;
+    border-radius: 10px;
+    width: 130px;
+    cursor: pointer;
+}
+
+.delalcancel{
+    background-color: white;
+    font-size: 19px;
+    border-color: #165ccb !important;
+}
+
+.delaldel{
+    background-color: #FF0000;
+    font-size: 19px; 
+    outline: none;
+    border-color: #FF0000;
+    color: white;
+}

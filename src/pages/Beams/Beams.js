@@ -12,6 +12,8 @@ import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import ShareModel from "../../models/ShareModel/ShareModel";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
+import { WelcomePopUp } from "../../models/WelcomePopUp/WelcomePopUp";
+import { FirstHighlightPopUp } from "../../models/FirstHighlightPopUp/FirstHightlightPopUp";
 
 export const Beams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -31,6 +33,7 @@ export const Beams = () => {
 	const [popupid, setPopupid] = useState(0);
 	const [popuptype, setPopuptype] = useState("");
 	const [sharemodelstaus, setSharemodelstaus] = useState(false);
+	const [welcomepopupsate, setWelcomepopupsate] = useState(false);
 
 	const closesharemodel = () => setSharemodelstaus(false);
 
@@ -51,7 +54,7 @@ export const Beams = () => {
 		setPopuptype(type);
 	};
 	const navigate = useNavigate();
-	const { token, user } = useAuthContext();
+	const { token, user, firsthightlight, setFirsthightlight } = useAuthContext();
 
 	const fetchdata = async () => {
 		setMicrobeamsload(true);
@@ -114,6 +117,21 @@ export const Beams = () => {
 			)}
 
 			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
+
+			{user && user.newuser && !welcomepopupsate && (
+				<WelcomePopUp
+					handleClose={() => {
+						setWelcomepopupsate(true);
+					}}
+				/>
+			)}
+
+			{/* <FirstHighlightPopUp /> */}
+			{firsthightlight && (
+				<FirstHighlightPopUp
+					handleClose={() => setFirsthightlight(false)}
+				></FirstHighlightPopUp>
+			)}
 
 			<section className="trendingbeamshero">
 				<img src={heroimg} alt="" className="heroimgbeam" />

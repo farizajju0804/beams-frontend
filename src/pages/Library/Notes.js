@@ -11,6 +11,7 @@ import { PopUpShowMore } from "../../models/PopupShowMore/PopupShowMore";
 import nohighlights from "../../assets/nohighlights.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
+import { DeleteionAlert } from "../../models/DeletionAlert/DeleteionAlert";
 
 export const Notes = () => {
 	const closenotePopup = () => setNotesPopup(false);
@@ -34,6 +35,7 @@ export const Notes = () => {
 	return (
 		<div className="LibraryPage">
 			<Toaster />
+			{/* <DeleteionAlert></DeleteionAlert> */}
 			{notesPopup && (
 				<PopUpShowMore
 					data={notepopupdata}

@@ -12,6 +12,7 @@ import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
 import ShareModel from "../../models/ShareModel/ShareModel";
+import { FirstHighlightPopUp } from "../../models/FirstHighlightPopUp/FirstHightlightPopUp";
 
 export const Minibeams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -40,7 +41,7 @@ export const Minibeams = () => {
 	const closesharemodel = () => setSharemodelstaus(false);
 
 	const opensharemodel = () => setSharemodelstaus(true);
-	const { token } = useAuthContext();
+	const { token, firsthightlight, setFirsthightlight } = useAuthContext();
 
 	const close = () => setModelopen(false);
 	const open = (title, content, id, type) => {
@@ -123,6 +124,12 @@ export const Minibeams = () => {
 			)}
 
 			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
+
+			{firsthightlight && (
+				<FirstHighlightPopUp
+					handleClose={() => setFirsthightlight(false)}
+				></FirstHighlightPopUp>
+			)}
 
 			<section className="minibeamspage">
 				<section className="trendingbeamshero">

@@ -14,9 +14,10 @@ import Slider from "@mui/material/Slider";
 import { BiFontSize, BiFontFamily } from "react-icons/bi";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
+import { FirstHighlightPopUp } from "../../models/FirstHighlightPopUp/FirstHightlightPopUp";
 
 export const MaxbeamRead = () => {
-	const { token, hightlights, setHighlights } = useAuthContext();
+	const { token, hightlights, setHighlights,firsthightlight, setFirsthightlight } = useAuthContext();
 	const [microbeams, setMicrobeams] = useState({});
 	const [microbeamsload, setMicrobeamsload] = useState(false);
 	const [x, setX] = useState(0);
@@ -132,6 +133,11 @@ export const MaxbeamRead = () => {
 				setSettingPopup(false);
 			}}
 		>
+			{firsthightlight && (
+				<FirstHighlightPopUp
+					handleClose={() => setFirsthightlight(false)}
+				></FirstHighlightPopUp>
+			)}
 			<GotoTop />
 			<Toaster />
 			{microbeamsload ? (

@@ -19,6 +19,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useHorizontalScroll } from "./Horizontalscroll";
 import { GotoTop } from "./models/GotoTop/GotoTop";
+import { ScrollToTop } from "./ScrollToTop";
 
 function App() {
 	const navigate = useNavigate();

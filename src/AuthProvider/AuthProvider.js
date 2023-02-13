@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
 	const [hightlightpersist, setHightlightpersist] = useState([]);
 	const [Notes, setNotes] = useState([]);
 	const [notesPersist, setnotesPersist] = useState([]);
+	const [firsthightlight, setFirsthightlight] = useState(false);
 	const authToken = getToken();
 
 	//Favourites
@@ -97,6 +98,9 @@ const AuthProvider = ({ children }) => {
 		setHighlightedText([...highlightedText, highlightitem]);
 		var highlightadded = [...highlightedText, highlightitem];
 		pushHighlights(highlightadded);
+		if (userData.firsthighlight) {
+			setFirsthightlight(true);
+		}
 	};
 
 	const delhighlight = (id) => {
@@ -171,6 +175,48 @@ const AuthProvider = ({ children }) => {
 
 	//Notes
 
+	//firstuser
+
+	const updateFirstUser = async () => {
+		const data = await fetch(`${API}/users/${userData.id}`, {
+			method: "PUT",
+			headers: {
+				Authorization: `Bearer ${authToken}`,
+				"Content-Type": "application/json"
+			},
+
+			body: JSON.stringify({
+				newuser: false
+			})
+		})
+			.then((res) => res.json())
+			.then((e) => {
+				console.log(e);
+			});
+	};
+
+	//firstuser
+
+	//updatehighlightfirst
+	const updateHighlightfirst = async () => {
+		const data = await fetch(`${API}/users/${userData.id}`, {
+			method: "PUT",
+			headers: {
+				Authorization: `Bearer ${authToken}`,
+				"Content-Type": "application/json"
+			},
+
+			body: JSON.stringify({
+				firsthighlight: false
+			})
+		})
+			.then((res) => res.json())
+			.then((e) => {
+				console.log(e);
+			});
+	};
+	//updatehighlightfirst
+
 	const fetchLoggedInUser = async (token) => {
 		setIsLoading(true);
 		try {
@@ -179,6 +225,7 @@ const AuthProvider = ({ children }) => {
 			});
 			const data = await response.json();
 			setUserData(data);
+			console.log(data);
 			setFavourites(data.Favourites);
 			setFavpersist(data.Favourites);
 			setNotes(data.Notes);
@@ -226,7 +273,11 @@ const AuthProvider = ({ children }) => {
 				notesPersist: notesPersist,
 				changeNotes: setNotes,
 				favpersist: favpersist,
-				changefav: setFavourites
+				changefav: setFavourites,
+				updateFirstUser: updateFirstUser,
+				firsthightlight: firsthightlight,
+				setFirsthightlight: setFirsthightlight,
+				updateHighlightfirst: updateHighlightfirst
 			}}
 		>
 			{children}
