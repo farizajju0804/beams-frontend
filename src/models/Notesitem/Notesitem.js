@@ -12,6 +12,7 @@ export const Notesitem = ({ open, title, beamid, beamtype, noteitem }) => {
 
 	return (
 		<div className="hightlightitem">
+		
 			<div className="hightlightitemheading">
 				<span
 					style={{ cursor: "pointer", color: "blue" }}

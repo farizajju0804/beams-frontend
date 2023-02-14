@@ -35,7 +35,7 @@ export const Notes = () => {
 	return (
 		<div className="LibraryPage">
 			<Toaster />
-			{/* <DeleteionAlert></DeleteionAlert> */}
+			
 			{notesPopup && (
 				<PopUpShowMore
 					data={notepopupdata}

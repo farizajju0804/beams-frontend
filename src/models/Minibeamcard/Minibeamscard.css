@@ -37,7 +37,7 @@
     }
 
     .minibeamscardcont{
-        min-width: 85% !important;
+        min-width: 85vw !important;
         height: 270px;
         background-image: url('../../assets//Popupbg.png');
         

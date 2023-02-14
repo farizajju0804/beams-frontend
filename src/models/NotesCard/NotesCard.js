@@ -4,6 +4,7 @@ import "./NotesCard.css";
 import { MdDeleteForever } from "react-icons/md";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
+import { DeleteionAlert } from "../DeletionAlert/DeleteionAlert";
 
 export const NotesCard = ({
 	date,
@@ -15,9 +16,20 @@ export const NotesCard = ({
 }) => {
 	const [openpopup, setOpenpopup] = useState(false);
 	const { delfullnote } = useAuthContext();
+	const [deletionpopup, setDeletionpopup] = useState(false);
 
 	return (
 		<div className="favouritesnewcardpage">
+			{deletionpopup && (
+				<DeleteionAlert
+					delfullnote={() => {
+						delfullnote(noteitemid);
+					}}
+					handleClose={() => {
+						setDeletionpopup(false);
+					}}
+				/>
+			)}
 			<div
 				className="favnewinnercont"
 				onClick={() => {
@@ -63,7 +75,8 @@ export const NotesCard = ({
 							<div
 								className="notescardoptionsinner"
 								onClick={() => {
-									delfullnote(noteitemid);
+									setDeletionpopup(true);
+									// delfullnote(noteitemid);
 								}}
 							>
 								<MdDeleteForever color="red" size={20} />

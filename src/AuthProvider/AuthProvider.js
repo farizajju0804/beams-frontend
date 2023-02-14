@@ -34,6 +34,7 @@ const AuthProvider = ({ children }) => {
 			.then((res) => res.json())
 			.then((e) => {
 				console.log(e);
+				// fetchLoggedInUser();
 			});
 	};
 
@@ -63,6 +64,7 @@ const AuthProvider = ({ children }) => {
 		console.log(Favourites);
 		const filteredfavs = Favourites.filter((e) => {
 			return e.id != item.id;
+			// console.log(e.id, item.id);
 		});
 
 		console.log(filteredfavs);

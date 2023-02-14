@@ -22,6 +22,8 @@ export const FavouritesCard = ({
 }) => {
 	const navigate = useNavigate();
 
+	console.log(id);
+
 	// console.log(typeofbeam);
 
 	const [dropdown, setDropdown] = useState(false);

@@ -5,7 +5,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import "./DeletionAlert.css";
 import { useAuthContext } from "../../context/AuthContext";
 
-export const DeleteionAlert = ({ handleClose }) => {
+export const DeleteionAlert = ({ handleClose, delfullnote }) => {
 	const { updateFirstUser } = useAuthContext();
 
 	return (
@@ -26,8 +26,23 @@ export const DeleteionAlert = ({ handleClose }) => {
 					sure you want to delete it?
 				</p>
 				<div className="delalbtnscont">
-					<span className="delalbtns delalcancel">Cancel</span>
-					<span className="delalbtns delaldel">Delete</span>
+					<span
+						className="delalbtns delalcancel"
+						onClick={() => {
+							handleClose();
+						}}
+					>
+						Cancel
+					</span>
+					<span
+						className="delalbtns delaldel"
+						onClick={() => {
+							delfullnote();
+							handleClose();
+						}}
+					>
+						Delete
+					</span>
 				</div>
 			</div>
 		</BackdropWelcome>

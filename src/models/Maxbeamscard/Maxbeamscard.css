@@ -28,10 +28,11 @@
 {
     .maxbeamcardcontnew{
         height: 250px;
+        width: 85vw;
     }
-    
 
-   
+
+    
 }
 
 .maxbeamdata > button{

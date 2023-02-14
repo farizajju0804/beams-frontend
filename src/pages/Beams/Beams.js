@@ -14,6 +14,7 @@ import ShareModel from "../../models/ShareModel/ShareModel";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
 import { WelcomePopUp } from "../../models/WelcomePopUp/WelcomePopUp";
 import { FirstHighlightPopUp } from "../../models/FirstHighlightPopUp/FirstHightlightPopUp";
+import nosearch from "../../assets/nosearch.png";
 
 export const Beams = () => {
 	const [modelopen, setModelopen] = useState(false);
@@ -349,6 +350,37 @@ export const Beams = () => {
 												/>
 											);
 										})}
+
+								{searchOptionType === 0 &&
+								microbeams.filter((item) => {
+									const searchterm = searchTerm.toLowerCase();
+									const title = item.attributes.Title.toLowerCase();
+
+									return title.includes(searchterm);
+								}).length === 0 ? (
+									<div
+										style={{
+											width: "100%",
+											justifyContent: "center",
+											alignItems: "center",
+											display: "flex",
+											flexDirection: "column",
+											marginTop: "50px"
+										}}
+										className="nodatadiv"
+									>
+										<img src={nosearch} alt="" />
+										<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
+											You haven't added any highlights yet.
+										</h2>
+										<p style={{ marginTop: "20px" }}>
+											Make highlights the highlight of your day.
+										</p>
+									</div>
+								) : (
+									<div></div>
+								)}
+
 								{searchOptionType === 1 &&
 									microbeams
 										.filter((item) => {

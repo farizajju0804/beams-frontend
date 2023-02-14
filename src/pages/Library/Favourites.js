@@ -22,6 +22,8 @@ export const Favourites = () => {
 	const indexoffirst = indexoflast - postsperpage;
 	const [sortop, setSortop] = useState(2);
 
+	console.log(favourites);
+
 	return (
 		<div className="LibraryPage">
 			<Toaster />
