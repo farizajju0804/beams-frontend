@@ -1,0 +1,112 @@
+import React, { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import { useAuthContext } from "../../context/AuthContext";
+import { API } from "../../constants";
+import "./PrivacyPolicies.css";
+
+export const PrivacyPolicies = () => {
+	const { token } = useAuthContext();
+	const [microbeams, setMicrobeams] = useState({});
+	const [microbeamsload, setMicrobeamsload] = useState(false);
+
+	const fetchdata = async () => {
+		setMicrobeamsload(true);
+		const data = await fetch(`${API}/termsandcondition/`, {
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		})
+			.then((res) => res.json())
+			.then((e) => {
+				setMicrobeams(e.data.attributes);
+				setMicrobeamsload(false);
+			});
+	};
+
+	useEffect(() => {
+		fetchdata();
+	}, []);
+
+	return (
+		<div className="termsandconditions">
+			<div className="innertermsandconditions">
+				<h1 className="headingterms">We care about your privacy</h1>
+				<p>
+					At Innbrieff, we take your privacy seriously and are committed to
+					protecting your personal information. This Privacy Policy outlines
+					what personal data we collect, why we collect it, and how we use it to
+					provide you with the best possible experience on our platform.
+				</p>
+				<div>
+					<h3>What information do we collect?</h3>
+					<p>
+						Innbrieff may collect the following types of information from you:
+					</p>
+					<ul>
+						<li>
+							Contact information such as your name, email address, and phone
+							number
+						</li>
+						<li>
+							Demographic information such as your age, gender, and location
+						</li>
+						<li>
+							Information about your use of the Innbrieff platform, including
+							browsing history and the content you interact with
+						</li>
+					</ul>
+					<h3>Why We Collect Your Information?</h3>
+					<p>The information we collect from you is used to:</p>
+					<ul>
+						<li>
+							Provide you with the best possible user experience on the
+							Innbrieff platform
+						</li>
+						<li>
+							Customize the content and features we offer to better meet your
+							needs
+						</li>
+						<li>
+							Send you updates and promotions about Innbrieff and its services
+						</li>
+						<li>Improve our platform and develop new features</li>
+					</ul>
+					<h3>How We Use Your Information ?</h3>
+					<p>
+						Innbrieff will never sell, rent, or share your personal information
+						with third parties for their own marketing purposes. The information
+						we collect will only be used for the purposes outlined in this
+						Privacy Policy.
+					</p>
+					<h3>Security of Your Information</h3>
+					<p>
+						We take the security of your information seriously and use
+						appropriate measures to protect it from unauthorized access,
+						disclosure, alteration, or destruction. However, please keep in mind
+						that no method of data storage or transmission is 100% secure.
+					</p>
+					<h3>Changes to This Privacy Policy</h3>
+					<p>
+						Pharetra morbi libero id aliquam elit massa integer tellus. Quis
+						felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit
+						dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac
+						pellentesque ac.
+					</p>
+					<h3>What are your privacy rights?</h3>
+					<p>
+						Innbrieff may update this Privacy Policy from time to time to
+						reflect changes in our practices or regulations. If we make any
+						material changes to this Privacy Policy, we will notify you by email
+						or by displaying a prominent notice on the Innbrieff platform
+					</p>
+					<h3>How can you contact us about this policy?</h3>
+					<p>
+						If you have any questions or concerns about Innbrieff's Privacy
+						Policy or the information we collect, please contact us. We will be
+						happy to assist you
+					</p>
+				</div>
+			</div>
+		</div>
+	);
+};

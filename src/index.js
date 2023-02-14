@@ -28,11 +28,12 @@ import { Resetpass2 } from "./pages/ResetPass2/Resetpass2";
 import { VerificationSuccess } from "./pages/Login/VerificationSuccess";
 import { ResetSuccessfull } from "./pages/ResetPass2/ResetSuccessfull";
 import { MaxbeamRead } from "./pages/MaxbeamsRead/MaxbeamRead";
-import { Termsandcondition } from "./pages/Termsandcondition/Termsandcondition";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import { Maxbeamslideshow } from "./pages/Maxbeamslideshow/Maxbeamslideshow";
 import ScrollToTop from "./ScrollToTop";
+import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions";
+import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
 
 const router = createBrowserRouter([
 	// {
@@ -278,7 +279,18 @@ const router = createBrowserRouter([
 			<div>
 				<ScrollToTop />
 				<Navbar />
-				<Termsandcondition />
+				<Termsandconditions />
+				<Footer></Footer>
+			</div>
+		)
+	},
+	{
+		path: "/privacypolicy",
+		element: (
+			<div>
+				<ScrollToTop />
+				<Navbar />
+				<PrivacyPolicies />
 				<Footer></Footer>
 			</div>
 		)

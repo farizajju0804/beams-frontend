@@ -5,8 +5,11 @@ import { AiFillFacebook } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="footer">
 			<div className="fdivder"></div>
@@ -36,8 +39,20 @@ export const Footer = () => {
 				<div className="footitem">
 					<h3>Support</h3>
 					<p>FAQ</p>
-					<p>Privacy Policy</p>
-					<p>Terms of Service</p>
+					<p
+						onClick={() => {
+							navigate("/privacypolicy");
+						}}
+					>
+						Privacy Policy
+					</p>
+					<p
+						onClick={() => {
+							navigate("/termsandcondition");
+						}}
+					>
+						Terms of Service
+					</p>
 				</div>
 				<div className="footitem">
 					<h3>Contact</h3>
