@@ -20,6 +20,7 @@ import "aos/dist/aos.css";
 import { useHorizontalScroll } from "./Horizontalscroll";
 import { GotoTop } from "./models/GotoTop/GotoTop";
 import { ScrollToTop } from "./ScrollToTop";
+import { useAuthContext } from "./context/AuthContext";
 
 function App() {
 	const navigate = useNavigate();
@@ -32,6 +33,8 @@ function App() {
 			offset: 20
 		});
 	}, []);
+
+	const { user } = useAuthContext();
 
 	return (
 		<div className="App">
@@ -60,7 +63,7 @@ function App() {
 							</span>
 							<button
 								onClick={() => {
-									navigate("/products");
+									user ? navigate("/beams") : navigate("/login");
 								}}
 							>
 								{data.landingpage.button}
