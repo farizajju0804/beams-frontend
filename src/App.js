@@ -73,12 +73,24 @@ function App() {
 				</section>
 				<section className="insertsection">
 					<div>
-						<h2>
-							<i> beam: ray of light; shine brightly</i>
-						</h2>
+						<i
+							style={
+								{
+									// display: "flex",
+									// alignItems: "center",
+									// justifyContent: "center"
+								}
+							}
+							className="sec2bannertitle"
+						>
+							<span style={{ color: "#F7CD61", fontWeight: "600" }}>beam:</span>{" "}
+							ray of light; shine brightly
+						</i>
 						<span>
-							Our flagship product, Beams provides insights and foresights
-							into leading technology trends in one minute a day.
+							Our flagship product, <i style={{ color: "#F7CB61" }}>Beams</i>{" "}
+							will empower you to stay ahead of the curve. Gain invaluable
+							insights and foresights into the leading technology trends and
+							innovations.
 						</span>
 					</div>
 				</section>
@@ -101,7 +113,48 @@ function App() {
 						<div className="the3qsitemdata">
 							<span>1. &nbsp;</span>
 							<p>
-								WANT TO{" "}
+								WOULD YOU LIKE TO KEEP PACE WITH THE{" "}
+								<span
+									style={{
+										backgroundColor: "#F7CD61",
+										color: "black",
+										padding: "10px",
+										borderRadius: "10px"
+									}}
+								>
+									LATEST
+								</span>{" "}
+								TECHNOLOGY{" "}
+								<span
+									style={{
+										backgroundColor: "#F7CD61",
+										color: "black",
+										padding: "10px",
+										borderRadius: "10px"
+									}}
+								>
+									TRENDS?
+								</span>{" "}
+							</p>
+						</div>
+						<div className="the3qsbox">
+							<video src={q1video} autoPlay loop playsInline={true} muted />
+							<p>
+								Beams are powerful, relevant, and timely content gems that
+								enable people to keep pace with the latest global technology
+								trends and innovations.
+							</p>
+							<p>
+								They are tailor-made for busy leaders, visionaries, and future
+								focused individuals.
+							</p>
+						</div>
+					</div>
+					<div className="the3qsitem">
+						<div className="the3qsitemdata">
+							<span>2.&nbsp;</span>
+							<p>
+								WOULD YOU LIKE TO{" "}
 								<span
 									style={{
 										backgroundColor: "#F7CD61",
@@ -127,46 +180,6 @@ function App() {
 							</p>
 						</div>
 						<div className="the3qsbox">
-							<video src={q1video} autoPlay loop playsInline={true} muted />
-							<p>
-								Beams are relevant, timely, and versatile content gems featuring
-								the latest global technology trends and innovations.
-							</p>
-							<p>
-								They are tailor-made for busy leaders, visionaries, and future
-								focused individuals who want to stay ahead of the curve.
-							</p>
-						</div>
-					</div>
-					<div className="the3qsitem">
-						<div className="the3qsitemdata">
-							<span>2.&nbsp;</span>
-							<p>
-								WANT TO STAY INFORMED ABOUT THE{" "}
-								<span
-									style={{
-										backgroundColor: "#F7CD61",
-										color: "black",
-										padding: "10px",
-										borderRadius: "10px"
-									}}
-								>
-									LATEST
-								</span>{" "}
-								TECHNOLOGY{" "}
-								<span
-									style={{
-										backgroundColor: "#F7CD61",
-										color: "black",
-										padding: "10px",
-										borderRadius: "10px"
-									}}
-								>
-									TRENDS?
-								</span>{" "}
-							</p>
-						</div>
-						<div className="the3qsbox">
 							<video src={q2video} autoPlay loop playsInline={true} muted />
 							<p>
 								Unlock the power of the future with Beams - expertly curated
@@ -174,8 +187,8 @@ function App() {
 								foresights​ ​required ​to succeed​ in an uncertain future.
 							</p>
 							<p>
-								Stay updated in one minute a day​. B​eams are your ultimate
-								resource to excel today, tomorrow, and in future.
+								Stay updated in less than a minute a day​. B​eams are your
+								ultimate resource to excel today, tomorrow, and in future.
 							</p>
 						</div>
 					</div>
