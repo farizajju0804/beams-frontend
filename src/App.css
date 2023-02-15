@@ -83,13 +83,14 @@
   font-size: 90px;
   letter-spacing: 3px;
   text-align: center;
+  letter-spacing: 0px;
  }
 
  .sec1data span{
   color: white;
   font-size: 24px;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 100px;
  }
 
  .landingtextoutline{
@@ -116,7 +117,7 @@
   text-align: center;
   color: #FFFFFF;
   cursor:pointer;
-  margin-top: 60px;
+  margin-top: 25px;
  }
 
  .insertsection{
