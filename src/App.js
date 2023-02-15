@@ -294,10 +294,12 @@ function App() {
 						<span>{data.landingpage.sec6title}</span>
 					</div>
 					<div className="sec4datadiv">
-						<div className="sec4spltitle vertic" data-aos="zoom-in-up">
+						<div className="sec4spltitle vertic" style={{ minWidth: "325px" }}>
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
-								{data.landingpage.sec6innertitle}
+								<span>How will</span>
+								<br />
+								<span>you benefit?</span>
 							</h1>
 						</div>
 						<div className="sec4cardsdiv">
@@ -340,7 +342,6 @@ function App() {
 										<span>You deserve access to premium content.</span> <br />{" "}
 										Join 1000+ people who want to stay future-ready.
 									</p>
-								
 								</div>
 								<div className="outinner2">
 									<div className="subsnow">
