@@ -21,10 +21,13 @@ import { useHorizontalScroll } from "./Horizontalscroll";
 import { GotoTop } from "./models/GotoTop/GotoTop";
 import { ScrollToTop } from "./ScrollToTop";
 import { useAuthContext } from "./context/AuthContext";
+import { NewsletterPopUp } from "./models/NewsletterPopUp/NewsletterPopUp";
+import { useState } from "react";
 
 function App() {
 	const navigate = useNavigate();
 	const scrollRef = useHorizontalScroll();
+	const [newsletterpopup, setNewsletterpopup] = useState(false);
 
 	useEffect(() => {
 		AOS.init({
@@ -40,6 +43,13 @@ function App() {
 		<div className="App">
 			<Navbar></Navbar>
 			<GotoTop></GotoTop>
+			{newsletterpopup && (
+				<NewsletterPopUp
+					handleClose={() => {
+						setNewsletterpopup(false);
+					}}
+				/>
+			)}
 			<div className="landingpage">
 				<section className="one">
 					<div className="bgvideo">
@@ -327,13 +337,21 @@ function App() {
 								<div className="outnewsleft">
 									<h3 data-aos="fade-up"> Newsletter</h3>
 									<p data-aos="fade-up">
-										Everybody deserves to know about unique global trends.
+										<span>You deserve access to premium content.</span> <br />{" "}
+										Join 1000+ people who want to stay future-ready.
 									</p>
+								
 								</div>
 								<div className="outinner2">
 									<div className="subsnow">
 										<input type="text" placeholder="Enter your email address" />
-										<div className="subsbtnnews">
+										<div
+											className="subsbtnnews"
+											onClick={() => {
+												// toast.success("Newsletter Subscribed");
+												setNewsletterpopup(true);
+											}}
+										>
 											<span>Subscribe</span>
 										</div>
 									</div>

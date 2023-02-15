@@ -28,17 +28,27 @@ export const Footer = () => {
 						<AiFillLinkedin size={30} />
 					</div>
 				</div>
-				<div className="footitem">
-					<h3>What we Do</h3>
-					<p>Product</p>
-				</div>
+
 				<div className="footitem">
 					<h3>Company</h3>
-					<p>About us</p>
+					<p
+						onClick={() => {
+							navigate("/aboutus");
+						}}
+					>
+						About us
+					</p>
+					<p
+						onClick={() => {
+							navigate("/products");
+						}}
+					>
+						Product
+					</p>
 				</div>
 				<div className="footitem">
 					<h3>Support</h3>
-					<p>FAQ</p>
+					{/* <p>FAQ</p> */}
 					<p
 						onClick={() => {
 							navigate("/privacypolicy");
@@ -59,7 +69,7 @@ export const Footer = () => {
 					<p>info@innbrieff.com</p>
 				</div>
 			</div>
-			<div className="fdivder"></div>
+			{/* <div className="fdivder"></div> */}
 			<p>© 2023 Innbrieff. All Rights Reserved.</p>
 		</div>
 	);

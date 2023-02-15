@@ -348,7 +348,7 @@
   font-size: 60px;
   margin-top: 120px;
   color: white;
-  margin-bottom: 80px;
+  margin-bottom: 160px;
  }
 
  .the3qsitem{
@@ -400,6 +400,7 @@
   .thethreeqs > h2{
     text-align: center;
     font-size: 50px;
+    margin-bottom: 80px;
    }
 
   .the3qsitemdata{
@@ -749,6 +750,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    height: 285px;
+    width: 285px;
   }
 
   .sec4carddiv span{
@@ -970,6 +973,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .subsbtnnews > span{
@@ -983,6 +987,16 @@
     border: none;
     font-size: 16px;
     outline: none;
+    padding-left: 10px  ;
+  }
+
+  .outnewsleft > p{
+    color: #757575;
+    line-height: 30px;
+  }
+
+  .outnewsleft > p > span{
+    font-size: 22px;
   }
 
   @media only screen and (max-width:1320px) {
