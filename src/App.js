@@ -196,7 +196,7 @@ function App() {
 						<div className="the3qsitemdata">
 							<span>3.&nbsp;</span>
 							<p>
-								WANT TO{" "}
+								WOULD YOU LIKE TO BE ABLE TO{" "}
 								<span
 									style={{
 										backgroundColor: "#F7CD61",
@@ -205,9 +205,9 @@ function App() {
 										borderRadius: "10px"
 									}}
 								>
-									STAY REVELANT
+									SKILLFULLY DEAL
 								</span>{" "}
-								<br /> IN THE FUTURE?{" "}
+								WITH THE UNCERTAINITY IN THE FUTURE?{" "}
 							</p>
 						</div>
 						<div className="the3qsbox">
@@ -232,7 +232,12 @@ function App() {
 						<div className="sec3innerdiv">
 							<span data-aos="fade-right">{data.landingpage.sec3content}</span>
 							<span data-aos="fade-right">{data.landingpage.sec3content1}</span>
-							<button data-aos="fade-up">
+							<button
+								data-aos="fade-up"
+								onClick={() => {
+									user ? navigate("/beams") : navigate("/login");
+								}}
+							>
 								{data.landingpage.sec3btncontent}
 							</button>
 						</div>
@@ -249,7 +254,9 @@ function App() {
 						<div className="sec4spltitle vertic">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
-								How will we enhance your Future?
+								<span>How will we enhance</span>
+								<br />
+								<span>your Future?</span>
 							</h1>
 						</div>
 						<div className="featurehoricard">

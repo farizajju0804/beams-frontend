@@ -358,7 +358,7 @@
   width: 100%;
   padding-left: 80px;
   padding-right: 80px;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 140px;
  }
 
@@ -612,7 +612,7 @@
   display: flex;
   padding-top: 140px;
   flex-direction: column;
-  height: 800px;
+  height: 680px;
  }
 
  .sec3innerdiv{
@@ -710,7 +710,7 @@
   .sec4innertitle{
     /* font-weight: 500; */
     font-size: 40px;
-    text-align: center;
+    /* text-align: center; */
     padding: 20px;
     z-index: 2;
   
@@ -719,7 +719,7 @@
   .sec4splbg{
     background-color: #F7CD61;
     height: 100%;
-    width: 176px;
+    width: 124px;
     position: absolute;
     border-radius: 100px 0px 0px 0px;
     z-index: 0;
@@ -773,7 +773,7 @@
     }
 
     .sec4spltitle{
-      width: 350px;
+      width: 400px;
       height: 70%;
       border-radius: 10px 0px 0px 0px;
     }
