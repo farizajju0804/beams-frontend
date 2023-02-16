@@ -8,7 +8,15 @@ import { useAuthContext } from "../../context/AuthContext";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
+export const Popup = ({
+	handleClose,
+	title,
+	content,
+	id,
+	openNotes,
+	type,
+	openshare
+}) => {
 	const { addfav } = useAuthContext();
 
 	return (
@@ -49,7 +57,16 @@ export const Popup = ({ handleClose, title, content, id, openNotes, type }) => {
 									});
 								}}
 							/>
-							<img src={hearticon} alt="" height={50} width={50} />
+							<img
+								src={hearticon}
+								alt=""
+								height={50}
+								width={50}
+								onClick={() => {
+									handleClose();
+									openshare();
+								}}
+							/>
 						</div>
 					</div>
 				</div>

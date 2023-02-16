@@ -28,6 +28,7 @@ function App() {
 	const navigate = useNavigate();
 	const scrollRef = useHorizontalScroll();
 	const [newsletterpopup, setNewsletterpopup] = useState(false);
+	const [newletter, setNewletter] = useState("");
 
 	useEffect(() => {
 		AOS.init({
@@ -37,7 +38,7 @@ function App() {
 		});
 	}, []);
 
-	const { user } = useAuthContext();
+	const { user, addnewsletter } = useAuthContext();
 
 	return (
 		<div className="App">
@@ -345,12 +346,19 @@ function App() {
 								</div>
 								<div className="outinner2">
 									<div className="subsnow">
-										<input type="text" placeholder="Enter your email address" />
+										<input
+											type="text"
+											placeholder="Enter your email address"
+											onChange={(e) => {
+												setNewletter(e.target.value);
+											}}
+										/>
 										<div
 											className="subsbtnnews"
 											onClick={() => {
-												// toast.success("Newsletter Subscribed");
-												setNewsletterpopup(true);
+												addnewsletter(newletter, setNewsletterpopup);
+
+												// setNewsletterpopup(true);
 											}}
 										>
 											<span>Subscribe</span>

@@ -142,9 +142,10 @@ export const Aboutus = () => {
 							{" "}
 							<img src={sidescrollimg2} alt="" />
 							<p>
-								I explored new subjects, kept up with the latest innovations,
-								and revived my love for history. This was an unprecedented
-								luxury since I never had so much free time.
+								I explored new subjects, kept up with the latest innovations and
+								technologies and clearly understood the global forces that are
+								making this the most important time in history. This was an
+								unprecedented luxury since I had never had so much free time.
 							</p>
 						</div>
 					</div>
@@ -154,7 +155,7 @@ export const Aboutus = () => {
 							style={{ justifyContent: "space-between" }}
 						>
 							<FaChevronCircleLeft
-								className="arrowicon blackicon"
+								className="arrowicon blackicon yellowicon"
 								// size={52}
 								// style={{ color: "black" }}
 								// color="white"
@@ -164,7 +165,7 @@ export const Aboutus = () => {
 								style={{ cursor: "pointer" }}
 							/>
 							<FaChevronCircleRight
-								className="arrowicon blackicon"
+								className="arrowicon blackicon yellowicon"
 								// style={{ justifySelf: "flex-end" }}
 								onClick={() => {
 									setScroller(scroller + 100);
@@ -184,15 +185,11 @@ export const Aboutus = () => {
 						<div className="abtussec3inner blackcolor">
 							<img src={sidescrollimg3} alt="" />
 							<p style={{ color: "white" }}>
-								It was 2022. My mental canvas had greatly broadened and
-								sharpened in the last two years. I had new and innovative ideas
-								and insights into new topics, However since my schedule was
-								chock-a-block I couldn't indulge hours into staying updated.
-							</p>
-							<p style={{ color: "white" }}>
-								I wondered how Bill Gates, Warren Buffet and a few others could
-								spend over three hours reading, everyday. I realized there has
-								to be an easier solution.
+								It was 2022. My mental canvas had greatly broadened. I had smart
+								actionable insights into subjects I didn't know much about
+								earlier. My schedule was chock-a-block and I didn't have enough
+								time to read voraciously. I knew there had to be an easier
+								solution.
 							</p>
 						</div>
 					</div>
@@ -223,15 +220,11 @@ export const Aboutus = () => {
 							{" "}
 							<img src={sidescrollimg4} alt="" />
 							<p>
-								I spoke to my mother that evening and asked her if she could
-								think of a potent and easy way for people to stay updated.
-								Thoughts, and ideas kept rolling off her tongue until...she
-								described what she thought the ideal solution should look like.
-							</p>
-							<p>
-								Within seconds we both realized we were onto something.
-								InnBrieff was born in those few seconds when Mom and I were
-								bonding and brainstorming.
+								I spoke to Mom that evening and we brainstormed potential
+								solutions. Ideas kept rolling off her tongue until...she
+								described a solution that had me say Aha. We both realized we
+								were onto something. InnBrieff was born during those moments
+								when Mom and I were bonding and brainstorming
 							</p>
 						</div>
 					</div>
@@ -273,11 +266,11 @@ export const Aboutus = () => {
 							To be the leading source of the latest trends, insights and
 							thought-provoking foresights on technology.
 						</p>
-						{/* <p>
+						<p>
 							To create a technology platform that fosters a community of
 							like-minded people who are passionate about leveraging technology
 							to create a brighter future.
-						</p> */}
+						</p>
 					</div>
 				</div>
 			</section>

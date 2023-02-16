@@ -3,9 +3,10 @@ import "./footer.css";
 import logo from "../../assets/logo.svg";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
-import { AiFillTwitterCircle } from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { BsPinterest } from "react-icons/bs";
 
 export const Footer = () => {
 	const navigate = useNavigate();
@@ -17,14 +18,25 @@ export const Footer = () => {
 				<div className="footabout">
 					<img src={logo} alt="" />
 					<p>
-						Lorem ipsum dolor sit amet consectetur. Mauris nam vitae enim
-						turpis. Arcu purus ullamcorper vitae mauris consectetur duis
-						faucibus non.
+						InnBrieff is the leading guide to the technology trends and
+						innovations that will shape our future. It’s content is packed with
+						actionable insights and deep foresights; the North Star for people
+						who want to stay ahead of the curve.
 					</p>
 					<div className="fabouticonsdiv">
-						<AiFillFacebook size={30} />
-						<AiFillTwitterCircle size={30} />
-						<AiFillYoutube size={30} />
+						<AiFillFacebook
+							size={30}
+							onClick={() => {}}
+							href="https://www.instagram.com/innbrieff"
+						/>
+						<a href="https://www.instagram.com/innbrieff">
+							<AiFillInstagram size={30} color="black" />
+						</a>
+						<a href="www.pinterest.com/innbrieff">
+							{" "}
+							<BsPinterest size={30} color="black" />
+						</a>
+
 						<AiFillLinkedin size={30} />
 					</div>
 				</div>
@@ -66,7 +78,9 @@ export const Footer = () => {
 				</div>
 				<div className="footitem">
 					<h3>Contact</h3>
-					<p>info@innbrieff.com</p>
+					<p onClick={() => (window.location = "mailto:info@innbrieff.com")}>
+						info@innbrieff.com
+					</p>
 				</div>
 			</div>
 			{/* <div className="fdivder"></div> */}

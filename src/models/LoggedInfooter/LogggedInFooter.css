@@ -1,0 +1,10 @@
+.loggedinsocial{
+    display: flex;
+}
+
+.loggedinnanv{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+

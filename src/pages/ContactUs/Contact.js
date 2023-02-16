@@ -2,38 +2,35 @@ import React, { useState } from "react";
 import { ImLocation } from "react-icons/im";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
 import "./Contact.css";
+import { ContactPopUp } from "../../models/ContactPopUp/ContactPopUp";
 
 export const Contact = () => {
 	const [mapselector, setMapselector] = useState("1");
-
 	const [contactcontent, setContactcontent] = useState("");
+	const [contactpopstatus, setContactpopstatus] = useState(false);
 
 	return (
 		<div className="contactuspage">
+			{contactpopstatus && (
+				<ContactPopUp
+					handleClose={() => {
+						setContactpopstatus(false);
+					}}
+				/>
+			)}
 			<div className="contactleft">
 				<div className="contactleftinner">
 					<h1>Get in Touch</h1>
-					{/* <p>Fill up the form our team will get back to you within 24 Hours</p> */}
 					<div className="contactlsec1">
 						<div className="contactlsec1inner ">
-							{/* <label For="contactname">First Name</label> */}
 							<input
 								type="text"
 								id="contactname"
 								placeholder="Enter your Full Name"
 							/>
 						</div>
-						{/* <div className="contactlsec1inner marginleft20">
-							<label For="contactlastname">Last Name</label>
-							<input
-								type="text"
-								id="contactlastname"
-								placeholder="Enter your last lame "
-							/>
-						</div> */}
 					</div>
 					<div className="contactlsec2">
-						{/* <label For="contactemail">Email Address</label> */}
 						<input
 							type="text"
 							id="contactemail"
@@ -41,7 +38,6 @@ export const Contact = () => {
 						/>
 					</div>
 					<div className="contactlsec3">
-						{/* <label For="contactlastname">Message</label> */}
 						<textarea
 							type="text"
 							id="contactlastname"
@@ -62,17 +58,26 @@ export const Contact = () => {
 							{contactcontent.length}/400
 						</span>
 					</div>
-					<button className="contactusmsgbtn">Send Message</button>
+					<button
+						className="contactusmsgbtn"
+						onClick={() => {
+							setContactpopstatus(true);
+						}}
+					>
+						Send Message
+					</button>
 					<div className="contactlsec4">
 						<div className="contactlsec4inner">
-							<AiOutlinePhone className="contacticon" color="white" size={55} />
-							<div className="contactlsec4innerdata">
-								<span className="contactlsec4innerdata2">+91 987654321</span>
+							<div
+								className="contacticon"
+								onClick={() => (window.location = "mailto:info@innbrieff.com")}
+							>
+								<AiOutlineMail color="white" size={30} />
 							</div>
-						</div>
-						<div className="contactlsec4inner">
-							<AiOutlineMail className="contacticon" color="white" size={55} />
-							<div className="contactlsec4innerdata">
+							<div
+								className="contactlsec4innerdata"
+								onClick={() => (window.location = "mailto:info@innbrieff.com")}
+							>
 								<span className="contactlsec4innerdata2">
 									innbrieff@gmail.com
 								</span>

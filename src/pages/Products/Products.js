@@ -9,8 +9,13 @@ import textiimagecont from "../../assets/testimockimg.png";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
 import wasves from "../../assets/protestiwaves.png";
 import Pagination from "@mui/material/Pagination";
+import { useAuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const Products = () => {
+	const navigate = useNavigate();
+	const { user } = useAuthContext();
+
 	return (
 		<div className="productspage">
 			<GotoTop></GotoTop>
@@ -20,7 +25,7 @@ export const Products = () => {
 			</section>
 			<section className="two landingsection">
 				<div className="sec2label">
-					<span>Meet Beams</span>
+					<span>Introducing Beams</span>
 				</div>
 				<div className="sec2data">
 					<div
@@ -42,14 +47,7 @@ export const Products = () => {
 									excel? Well, you are at the right place! Beams are the
 									solution you've been searching for. These unique, powerful,
 									and actionable insights on the top global technological trends
-									and innovations are exactly what you need to thrive in future.{" "}
-								</p>
-								<p style={{ marginTop: "20px" }}>
-									Leading subject matter experts meticulously research,
-									carefully curate, and distil information to ensure that Beams
-									are of the highest quality. And the best part? They're packed
-									in an engaging and easy-to-consume format so you can stay
-									updated in just 6 minutes a day.{" "}
+									and innovations are exactly what you need to thrive in future.
 								</p>
 							</span>
 						</div>
@@ -62,7 +60,7 @@ export const Products = () => {
 				</h2>
 				<button
 					onClick={() => {
-						// navigate("/products");
+						user ? navigate("/beams") : navigate("/login");
 					}}
 				>
 					{data.landingpage.button}
@@ -83,15 +81,14 @@ export const Products = () => {
 						Micro Beams contain bite-sized and highly relevant content about the
 						forces shaping the future. They are perfect for people who are short
 						on time but want to keep pace with leading global trends. Stay
-						updated and inspired in less than a minute a day.
-					</p>
-					<p style={{ marginTop: "20px" }}>
-						Imagine having a wealth of knowledge at your fingertips, ready to be
-						explored whenever and wherever you are. Don't let a busy schedule
-						keep you from staying ahead of the curve. Dive into the future with
+						updated and inspired in less than a minute a day. Imagine having a
+						wealth of knowledge at your fingertips, ready to be explored
+						whenever and wherever you are. Don't let a busy schedule keep you
+						from staying ahead of the curve. Dive into the future with
 						Microbeams and discover the endless possibilities that the future
 						holds.
 					</p>
+
 					<button>Explore Now</button>
 				</div>
 			</section>
@@ -110,21 +107,17 @@ export const Products = () => {
 						Mini Beams are designed for people who want a deeper understanding
 						of Micro Beams. They are condensed, easy to understand, and designed
 						to be consumed in less than 5 minutes. Imagine having a front-row
-						seat viewing the latest trends and advancements in technology?
-					</p>
-					<p style={{ marginTop: "20px" }}>
-						They will take you on an amazing exploratory journey learning and
-						visualizing the changing forces that will shape our world. Collect a
-						treasure trove of knowledge, ready to be explored whenever and
-						wherever you are. Let Mini Beams guide you on your journey to unveil
-						the future.
+						seat viewing the latest trends and advancements in technology. Learn
+						about, visualize, and leverage the immense power of the forces that
+						will reshape our world. Are you ready to get started? Let Mini Beams
+						guide you on your journey to unveil the future.
 					</p>
 					<button>Explore Now</button>
 				</div>
 			</section>
 			<section className="prodsec6">
 				<div className="secprodlabel">
-					<span>Why Do You Need Beams ?</span>
+					<span style={{ fontSize: "29px" }}>Why Do You Need Beams ?</span>
 				</div>
 				<div className="jumpedletterimg">
 					{" "}
@@ -135,7 +128,7 @@ export const Products = () => {
 				<h2>“The Future started yesterday and we are already late”</h2>
 				<button
 					onClick={() => {
-						// navigate("/products");
+						user ? navigate("/beams") : navigate("/login");
 					}}
 				>
 					{data.landingpage.button}

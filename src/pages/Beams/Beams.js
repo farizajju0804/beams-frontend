@@ -114,6 +114,7 @@ export const Beams = () => {
 					id={popupid}
 					openNotes={opennotePopup}
 					type={popuptype}
+					openshare={opensharemodel}
 				></Popup>
 			)}
 
@@ -217,63 +218,73 @@ export const Beams = () => {
 						</div>
 						<div className="minicardcont">
 							{microbeams.length !== 0 ? (
-								<div className="minicardssection">
-									{microbeams.map((micro) => {
-										return (
-											<Minibeamscard
-												title={micro.attributes.Title}
-												content={micro.attributes.Content}
-												id={micro.id}
-												open={open}
-												openNotes={opennotePopup}
-												openshare={opensharemodel}
-											/>
-										);
-									})}
+								<div style={{ display: "flex", flexDirection: "column" }}>
+									<div className="minicardssection">
+										{microbeams.map((micro) => {
+											return (
+												<Minibeamscard
+													title={micro.attributes.Title}
+													content={micro.attributes.Content}
+													id={micro.id}
+													open={open}
+													openNotes={opennotePopup}
+													openshare={opensharemodel}
+												/>
+											);
+										})}
+									</div>
+									<span
+										style={{ alignSelf: "flex-end", marginRight: "40px" }}
+										onClick={() => {
+											navigate("/minibeams");
+										}}
+									>
+										View More
+									</span>
 								</div>
 							) : (
 								<BeatLoader />
 							)}
 						</div>
-						<span
-							onClick={() => {
-								navigate("/minibeams");
-							}}
-						>
-							View More
-						</span>
 					</section>
 					<section className="minibeams" style={{ marginTop: "140px" }}>
 						<div className="sec2label">
-							<span>Max Beams</span>
+							<span>Mini Beams</span>
 						</div>
 						<div className="minicardcont">
 							{maxbeams.length !== 0 ? (
-								<div className="minicardssection">
-									{maxbeams.map((micro) => {
-										return (
-											<Maxbeamscard
-												Title={micro.attributes.Title}
-												Desc={micro.attributes.shortDesc}
-												id={micro.id}
-												open={open}
-												openNotes={opennotePopup}
-												openshare={opensharemodel}
-											/>
-										);
-									})}
+								<div style={{ display: "flex", flexDirection: "column" }}>
+									<div className="minicardssection">
+										{maxbeams.map((micro) => {
+											return (
+												<Maxbeamscard
+													Title={micro.attributes.Title}
+													Desc={micro.attributes.shortDesc}
+													id={micro.id}
+													open={open}
+													openNotes={opennotePopup}
+													openshare={opensharemodel}
+												/>
+											);
+										})}
+									</div>
+									<span
+										style={{
+											alignSelf: "flex-end",
+											marginRight: "60px",
+											marginBottom: "120px"
+										}}
+										onClick={() => {
+											navigate("/maxbeams");
+										}}
+									>
+										View More
+									</span>
 								</div>
 							) : (
 								<BeatLoader />
 							)}
 						</div>
-						<span
-							onClick={() => {
-								navigate("/maxbeams");
-							}}
-						>
-							View More
-						</span>
 					</section>
 				</div>
 			) : (
@@ -365,17 +376,16 @@ export const Beams = () => {
 											alignItems: "center",
 											display: "flex",
 											flexDirection: "column",
-											marginTop: "50px"
+											marginTop: "50px",
+											marginBottom: "200px	"
 										}}
 										className="nodatadiv"
 									>
 										<img src={nosearch} alt="" />
 										<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
-											You haven't added any highlights yet.
+											Unfortunately, we couldn't find any results for your
+											search.
 										</h2>
-										<p style={{ marginTop: "20px" }}>
-											Make highlights the highlight of your day.
-										</p>
 									</div>
 								) : (
 									<div></div>

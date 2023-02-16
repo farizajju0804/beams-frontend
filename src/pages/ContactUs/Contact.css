@@ -207,6 +207,7 @@
     border-radius: 40px;
     border: none;
     margin-bottom: 40px;
+    font-size: 22px;
 }
 .contactlsec4{
     margin-bottom: 40px;
@@ -229,11 +230,12 @@
 }
 
 .contacticon{
-    padding: 20px;
+    padding: 10px;
     border-radius: 50%;
     background-color: #435CFF;
     color: white;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width:600px) {

@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
 	const [Notes, setNotes] = useState([]);
 	const [notesPersist, setnotesPersist] = useState([]);
 	const [firsthightlight, setFirsthightlight] = useState(false);
+
 	const authToken = getToken();
 
 	//Favourites
@@ -219,6 +220,33 @@ const AuthProvider = ({ children }) => {
 	};
 	//updatehighlightfirst
 
+	//newsletter
+	const addnewsletter = async (email, setNewsletterpopup) => {
+		const value = {
+			data: {
+				email: email
+			}
+		};
+
+		const data = await fetch(`${API}/newsletters`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+
+			body: JSON.stringify(value)
+		})
+			.then((res) => res.json())
+			.then((e) => {
+				if (e.data) {
+					setNewsletterpopup(true);
+				} else {
+					toast.error("Email Already Subscribed");
+				}
+			});
+	};
+	//newsletter
+
 	const fetchLoggedInUser = async (token) => {
 		setIsLoading(true);
 		try {
@@ -279,7 +307,8 @@ const AuthProvider = ({ children }) => {
 				updateFirstUser: updateFirstUser,
 				firsthightlight: firsthightlight,
 				setFirsthightlight: setFirsthightlight,
-				updateHighlightfirst: updateHighlightfirst
+				updateHighlightfirst: updateHighlightfirst,
+				addnewsletter: addnewsletter
 			}}
 		>
 			{children}

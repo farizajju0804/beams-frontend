@@ -24,6 +24,10 @@
     height: auto;
 }
 
+.yellowicon{
+    color: #F7CD61;
+}
+
 @media only screen and (max-width:835px) {
     .abtus1 > h1{
         font-size: 50px;
@@ -394,6 +398,8 @@
     border-radius: 10px;
     line-height: 30px;
     color: black;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 @media only screen and (max-width:1484px) {
@@ -485,6 +491,7 @@
     color: #191641;
     padding: 120px;
     line-height: 50px;
+    padding-right: 170px;
 }
 
 .abtusrocket{
@@ -520,6 +527,8 @@
     .abtvissioncircle{
         width: 650px;
         height: 650px;
+        font-size: 18px;
+        /* padding: 68px; */
     }
 
     .abtusman
@@ -556,7 +565,7 @@
     .abtvissioncircle{
         width: 550px;
         height: 550px;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 40px;
     }
 
@@ -588,7 +597,7 @@
     .abtvissioncircle{
         /* width: 450px;
         height: 450px; */
-        font-size: 20px;
+        font-size: 18px;
         line-height: 40px;
     }
 

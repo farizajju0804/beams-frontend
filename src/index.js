@@ -34,6 +34,8 @@ import { Maxbeamslideshow } from "./pages/Maxbeamslideshow/Maxbeamslideshow";
 import ScrollToTop from "./ScrollToTop";
 import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions";
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
+import { LoggedInfooter } from "./models/LoggedInfooter/LoggedInfooter";
+
 
 const router = createBrowserRouter([
 	// {
@@ -96,7 +98,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Beams />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
