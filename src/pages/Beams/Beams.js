@@ -369,7 +369,7 @@ export const Beams = () => {
 											);
 										})}
 
-								{searchOptionType === 1441 &&
+								{searchOptionType === 1 &&
 									microbeams
 										.filter((item) => {
 											const searchterm = searchTerm.toLowerCase();
@@ -385,6 +385,26 @@ export const Beams = () => {
 													id={micro.id}
 													open={open}
 													openNotes={opennotePopup}
+													openshare={opensharemodel}
+												/>
+											);
+										})}
+
+								{searchOptionType === 2 &&
+									maxbeams
+										.filter((item) => {
+											const searchterm = searchTerm.toLowerCase();
+											const title = item.attributes.Title.toLowerCase();
+
+											return title.includes(searchterm);
+										})
+										.map((micro) => {
+											return (
+												<Maxbeamscard
+													Title={micro.attributes.Title}
+													Desc={micro.attributes.shortDesc}
+													id={micro.id}
+													open={open}
 													openshare={opensharemodel}
 												/>
 											);
