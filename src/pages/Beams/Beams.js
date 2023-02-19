@@ -195,6 +195,7 @@ export const Beams = () => {
 								.map((item) => {
 									return (
 										<p
+											style={{ paddingLeft: "20px", paddingRight: "20px	" }}
 											onClick={(e) => {
 												e.stopPropagation();
 												setSearchTerm(item.attributes.Title);
@@ -296,7 +297,9 @@ export const Beams = () => {
 								onClick={() => {
 									setSearchOptionType(0);
 								}}
-								style={{ backgroundColor: "#E3E3E3" }}
+								style={{
+									backgroundColor: searchOptionType == 0 ? "#F7CD61" : "#E3E3E3"
+								}}
 							>
 								All
 							</span>
@@ -304,7 +307,9 @@ export const Beams = () => {
 								onClick={() => {
 									setSearchOptionType(1);
 								}}
-								style={{ backgroundColor: "#F7CD61" }}
+								style={{
+									backgroundColor: searchOptionType == 1 ? "#F7CD61" : "#E3E3E3"
+								}}
 							>
 								Micro Beams
 							</span>
@@ -312,7 +317,9 @@ export const Beams = () => {
 								onClick={() => {
 									setSearchOptionType(2);
 								}}
-								style={{ backgroundColor: "#E3E3E3" }}
+								style={{
+									backgroundColor: searchOptionType == 2 ? "#F7CD61" : "#E3E3E3"
+								}}
 							>
 								Mini Beams
 							</span>
@@ -362,8 +369,28 @@ export const Beams = () => {
 											);
 										})}
 
-								{searchOptionType === 0 &&
-								microbeams.filter((item) => {
+								{searchOptionType === 1441 &&
+									microbeams
+										.filter((item) => {
+											const searchterm = searchTerm.toLowerCase();
+											const title = item.attributes.Title.toLowerCase();
+
+											return title.includes(searchterm);
+										})
+										.map((micro) => {
+											return (
+												<Minibeamscard
+													title={micro.attributes.Title}
+													content={micro.attributes.Content}
+													id={micro.id}
+													open={open}
+													openNotes={opennotePopup}
+													openshare={opensharemodel}
+												/>
+											);
+										})}
+
+								{microbeams.filter((item) => {
 									const searchterm = searchTerm.toLowerCase();
 									const title = item.attributes.Title.toLowerCase();
 
@@ -390,46 +417,6 @@ export const Beams = () => {
 								) : (
 									<div></div>
 								)}
-
-								{searchOptionType === 1 &&
-									microbeams
-										.filter((item) => {
-											const searchterm = searchTerm.toLowerCase();
-											const title = item.attributes.Title.toLowerCase();
-
-											return title.includes(searchterm);
-										})
-										.map((micro) => {
-											return (
-												<Minibeamscard
-													title={micro.attributes.Title}
-													content={micro.attributes.Content}
-													id={micro.id}
-													open={open}
-													openshare={opensharemodel}
-													openNotes={opennotePopup}
-												/>
-											);
-										})}
-								{searchOptionType === 2 &&
-									maxbeams
-										.filter((item) => {
-											const searchterm = searchTerm.toLowerCase();
-											const title = item.attributes.Title.toLowerCase();
-
-											return title.includes(searchterm);
-										})
-										.map((micro) => {
-											return (
-												<Maxbeamscard
-													Title={micro.attributes.Title}
-													Desc={micro.attributes.shortDesc}
-													id={micro.id}
-													open={open}
-													openshare={opensharemodel}
-												/>
-											);
-										})}
 							</div>
 						) : (
 							<BeatLoader />

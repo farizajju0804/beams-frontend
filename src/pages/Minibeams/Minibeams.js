@@ -200,6 +200,7 @@ export const Minibeams = () => {
 									.map((item) => {
 										return (
 											<p
+												style={{ paddingLeft: "20px", paddingRight: "20px" }}
 												onClick={(e) => {
 													e.stopPropagation();
 													setSearchTerm(item.attributes.Title);
@@ -316,31 +317,42 @@ export const Minibeams = () => {
 					<div className="searchPage">
 						<span className="searchPageheading">Search Results</span>
 						<div className="searchPageoptions">
-							<div className="searchpageleftoptions">
-								<span
-									onClick={() => {
-										setSearchOptionType(0);
-									}}
-									style={{ backgroundColor: "#E3E3E3" }}
-								>
-									All
-								</span>
-								<span
-									onClick={() => {
-										setSearchOptionType(1);
-									}}
-									style={{ backgroundColor: "#F7CD61" }}
-								>
-									Micro Beams
-								</span>
-								<span
-									onClick={() => {
-										setSearchOptionType(2);
-									}}
-									style={{ backgroundColor: "#E3E3E3" }}
-								>
-									Mini Beams
-								</span>
+							<div className="searchPageoptions">
+								<div className="searchpageleftoptions">
+									<span
+										onClick={() => {
+											setSearchOptionType(0);
+										}}
+										style={{
+											backgroundColor:
+												searchOptionType == 0 ? "#F7CD61" : "#E3E3E3"
+										}}
+									>
+										All
+									</span>
+									<span
+										onClick={() => {
+											setSearchOptionType(1);
+										}}
+										style={{
+											backgroundColor:
+												searchOptionType == 1 ? "#F7CD61" : "#E3E3E3"
+										}}
+									>
+										Micro Beams
+									</span>
+									<span
+										onClick={() => {
+											setSearchOptionType(2);
+										}}
+										style={{
+											backgroundColor:
+												searchOptionType == 2 ? "#F7CD61" : "#E3E3E3"
+										}}
+									>
+										Mini Beams
+									</span>
+								</div>
 							</div>
 						</div>
 						<div className="minicardcont">
