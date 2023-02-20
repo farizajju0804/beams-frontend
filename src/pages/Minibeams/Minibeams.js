@@ -248,6 +248,7 @@ export const Minibeams = () => {
 							</div>
 							<div className="minicardcontscroller">
 								<FaChevronLeft
+									style={{ cursor: "pointer" }}
 									className="sliderarrows"
 									size={22}
 									onClick={() => {
@@ -277,6 +278,7 @@ export const Minibeams = () => {
 									</div>
 								</div>
 								<FaChevronRight
+									style={{ cursor: "pointer" }}
 									className="sliderarrows"
 									size={26}
 									onClick={() => {

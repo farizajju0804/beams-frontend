@@ -303,8 +303,24 @@ export const Signup = () => {
 					<div className="signupremember">
 						<input type="checkbox" id="logincheck" defaultChecked />
 						<label htmlFor="logincheck">
-							You agree to our <a href="">Terms of Service</a> and{" "}
-							<a href="">Privacy Policy</a>
+							You agree to our{" "}
+							<a
+								href=""
+								onClick={() => {
+									navigate("/termsandcondition");
+								}}
+							>
+								Terms of Service
+							</a>{" "}
+							and{" "}
+							<a
+								href=""
+								onClick={() => {
+									navigate("/privacypolicy");
+								}}
+							>
+								Privacy Policy
+							</a>
 						</label>
 					</div>
 				</div>

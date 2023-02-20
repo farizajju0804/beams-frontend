@@ -11,6 +11,7 @@ import nohighlights from "../../assets/nohighlights.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
 
+
 export const Library = () => {
 	const navigate = useNavigate();
 	const { hightlights, delhighlight, changehighs, hightlightpersist } =
@@ -70,9 +71,6 @@ export const Library = () => {
 				<div className="libraryopitem">
 					{" "}
 					<select
-						// onClick={(e) => {
-						// 	setTitle(e.target.value);
-						// }}
 						name=""
 						id=""
 						style={{ paddingRight: "40px" }}
@@ -104,7 +102,6 @@ export const Library = () => {
 						name=""
 						id=""
 						onChange={(e) => {
-							// console.log(e.target.value);
 							setSortop(e.target.value);
 						}}
 						style={{ paddingRight: "40px" }}
@@ -112,8 +109,8 @@ export const Library = () => {
 						<option defaultValue={2} value={2}>
 							Latest
 						</option>
-						<option value={0}>A-Z</option>
-						<option value={1}>Z-A</option>
+						<option value={1}>A-Z</option>
+						<option value={0}>Z-A</option>
 					</select>
 					<FiChevronDown className="arrowselectposition" />
 				</div>
@@ -209,10 +206,6 @@ export const Library = () => {
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
 						You haven't added any highlights yet.
 					</h2>
-					<p style={{ marginTop: "20px" }}>
-						Start creating highlights for easy recollection. Our notes are
-						designed beautifully!
-					</p>
 				</div>
 			)}
 			<div className="pagination">

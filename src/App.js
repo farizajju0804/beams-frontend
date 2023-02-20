@@ -23,8 +23,11 @@ import { ScrollToTop } from "./ScrollToTop";
 import { useAuthContext } from "./context/AuthContext";
 import { NewsletterPopUp } from "./models/NewsletterPopUp/NewsletterPopUp";
 import { useState } from "react";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 function App() {
+	const [scroller, setScroller] = useState(0);
+
 	const navigate = useNavigate();
 	const scrollRef = useHorizontalScroll();
 	const [newsletterpopup, setNewsletterpopup] = useState(false);
@@ -38,6 +41,17 @@ function App() {
 		});
 	}, []);
 
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (scroller == 200) {
+				setScroller(0);
+			} else {
+				setScroller(scroller + 100);
+			}
+		}, 6000);
+
+		return () => clearInterval(interval);
+	}, [scroller]);
 	const { user, addnewsletter } = useAuthContext();
 
 	return (
@@ -258,10 +272,7 @@ function App() {
 					<div className="sec2label">
 						<span>{data.landingpage.sec4title}</span>
 					</div>
-					<div
-						ref={window.innerWidth >= 1080 ? scrollRef : null}
-						className="horiscroller"
-					>
+					<div className="landingslider">
 						<div className="sec4spltitle vertic">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
@@ -270,23 +281,67 @@ function App() {
 								<span>your Future?</span>
 							</h1>
 						</div>
-						<div className="featurehoricard">
-							<img src={horiscroll1} alt="" />
-							<span>A new trending topic everyday</span>
-						</div>
-						<div
-							className="featurehoricard"
-							style={{ backgroundColor: "#F7CD61", color: "black" }}
-						>
-							<img src={horiscroll2} alt="" />
-							<span>Quickly understand bite sized content</span>
-						</div>
-						<div
-							className="featurehoricard"
-							style={{ backgroundColor: "#435CFF" }}
-						>
-							<img src={horiscroll3} alt="" />
-							<span>One of a kind knowledge portal</span>
+						<div className="silderfunctions" style={{ right: `${scroller}vw` }}>
+							<div className="landinnerslider">
+								<BsChevronLeft
+									size={30}
+									onClick={() => {
+										setScroller(200);
+									}}
+									style={{ cursor: "pointer" }}
+								/>
+								<div className="firstslider">
+									<img src={horiscroll1} alt="" />
+									<p>A new trending topic everyday</p>
+								</div>
+								<BsChevronRight
+									size={30}
+									onClick={() => {
+										setScroller(scroller + 100);
+									}}
+									style={{ cursor: "pointer" }}
+								/>
+							</div>
+							<div className="landinnerslider">
+								<BsChevronLeft
+									size={30}
+									onClick={() => {
+										setScroller(scroller - 100);
+									}}
+									style={{ cursor: "pointer" }}
+								/>
+								<div className="firstslider">
+									<img src={horiscroll2} alt="" />
+									<p>Quickly understand bite sized content</p>
+								</div>
+								<BsChevronRight
+									size={30}
+									onClick={() => {
+										setScroller(scroller + 100);
+									}}
+									style={{ cursor: "pointer" }}
+								/>
+							</div>
+							<div className="landinnerslider">
+								<BsChevronLeft
+									size={30}
+									onClick={() => {
+										setScroller(scroller - 100);
+									}}
+									style={{ cursor: "pointer" }}
+								/>
+								<div className="firstslider">
+									<img src={horiscroll3} alt="" />
+									<p>One of a kind knowledge portal</p>
+								</div>
+								<BsChevronRight
+									size={30}
+									onClick={() => {
+										setScroller(0);
+									}}
+									style={{ cursor: "pointer" }}
+								/>
+							</div>
 						</div>
 					</div>
 				</section>

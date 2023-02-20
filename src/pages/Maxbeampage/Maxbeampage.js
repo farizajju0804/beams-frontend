@@ -7,6 +7,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { BeatLoader } from "react-spinners";
 import { API } from "../../constants";
 import { BsHeadphones } from "react-icons/bs";
+import { FiMonitor } from "react-icons/fi";
 
 export const Maxbeampage = () => {
 	const navigate = useNavigate();
@@ -52,7 +53,7 @@ export const Maxbeampage = () => {
 									navigate("/maxbeamslideshow");
 								}}
 							>
-								<BsHeadphones size={21} />
+								<FiMonitor size={21} />
 								<span>Slideshow</span>
 							</div>
 							<div

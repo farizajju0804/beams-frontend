@@ -11,6 +11,7 @@ import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
+import maxbeamsboys from "../../assets/maxbeamboy.png";
 import ShareModel from "../../models/ShareModel/ShareModel";
 
 export const Maxbeams = () => {
@@ -37,8 +38,8 @@ export const Maxbeams = () => {
 	const [forceclose, setforceclose] = useState(false);
 	const [searchOptionType, setSearchOptionType] = useState(0);
 	const [notesPopup, setNotesPopup] = useState(false);
-	const [notepopupdata, setNotepopupdata] = useState({});
 	const [sharemodelstaus, setSharemodelstaus] = useState(false);
+	const [notepopupdata, setNotepopupdata] = useState({});
 
 	const closesharemodel = () => setSharemodelstaus(false);
 
@@ -117,7 +118,7 @@ export const Maxbeams = () => {
 
 			<section className="minibeamspage">
 				<section className="trendingbeamshero">
-					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
+					<img src={maxbeamsboys} alt="" className="heroimgbeam" />
 					<h1>
 						Explore{" "}
 						<span
@@ -136,7 +137,7 @@ export const Maxbeams = () => {
 				<div className="innernav">
 					<span>
 						<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
-						<span>Beams</span>&nbsp; &gt; &nbsp; <span>Microbeams</span>
+						<span>Beams</span>&nbsp; &gt; &nbsp; <span>Minibeams</span>
 					</span>
 					<div className="searchbar">
 						<input
@@ -206,7 +207,9 @@ export const Maxbeams = () => {
 												<Maxbeamscard
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
-													id={micro.attributes.id}
+													id={micro.id}
+													open={open}
+													openNotes={opennotePopup}
 													openshare={opensharemodel}
 												/>
 											);
@@ -223,6 +226,7 @@ export const Maxbeams = () => {
 							</div>
 							<div className="minicardcontscroller">
 								<FaChevronLeft
+									style={{ cursor: "pointer" }}
 									className="sliderarrows"
 									size={26}
 									onClick={() => {
@@ -243,7 +247,9 @@ export const Maxbeams = () => {
 												<Maxbeamscard
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
-													id={micro.attributes.id}
+													id={micro.id}
+													open={open}
+													openNotes={opennotePopup}
 													openshare={opensharemodel}
 												/>
 											);
@@ -251,6 +257,7 @@ export const Maxbeams = () => {
 									</div>
 								</div>
 								<FaChevronRight
+									style={{ cursor: "pointer" }}
 									className="sliderarrows"
 									size={26}
 									onClick={() => {
@@ -264,7 +271,7 @@ export const Maxbeams = () => {
 						</section>
 						<section className="minibeams">
 							<div className="sec2label">
-								<span>Micro Beams</span>
+								<span>Minibeams</span>
 							</div>
 							<div className="minicardcont">
 								{microbeams.length !== 0 ? (
@@ -274,7 +281,9 @@ export const Maxbeams = () => {
 												<Maxbeamscard
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
-													id={micro.attributes.id}
+													id={micro.id}
+													open={open}
+													openNotes={opennotePopup}
 													openshare={opensharemodel}
 												/>
 											);
@@ -345,8 +354,9 @@ export const Maxbeams = () => {
 														Title={micro.attributes.Title}
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
-														openshare={opensharemodel}
 														open={open}
+														openNotes={opennotePopup}
+														openshare={opensharemodel}
 													/>
 												);
 											})}
@@ -361,8 +371,8 @@ export const Maxbeams = () => {
 											.map((micro) => {
 												return (
 													<Minibeamscard
-														title={micro.attributes.Title}
-														content={micro.attributes.Content}
+														Title={micro.attributes.Title}
+														Desc={micro.attributes.shortDesc}
 														id={micro.id}
 														open={open}
 														openNotes={opennotePopup}
@@ -384,8 +394,9 @@ export const Maxbeams = () => {
 														Title={micro.attributes.Title}
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
-														openshare={opensharemodel}
 														open={open}
+														openNotes={opennotePopup}
+														openshare={opensharemodel}
 													/>
 												);
 											})}
@@ -400,12 +411,12 @@ export const Maxbeams = () => {
 											.map((micro) => {
 												return (
 													<Minibeamscard
-														title={micro.attributes.Title}
-														content={micro.attributes.Content}
+														Title={micro.attributes.Title}
+														Desc={micro.attributes.shortDesc}
 														id={micro.id}
 														open={open}
-														openshare={opensharemodel}
 														openNotes={opennotePopup}
+														openshare={opensharemodel}
 													/>
 												);
 											})}

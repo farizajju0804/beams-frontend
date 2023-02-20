@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Products.css";
 import data from "../../data/landingdata.json";
 import landingsec2img from "../../assets/landingsec2img.svg";
@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 export const Products = () => {
 	const navigate = useNavigate();
 	const { user } = useAuthContext();
+	const [testinumber, setTestinumber] = useState(1);
 
 	return (
 		<div className="productspage">
@@ -144,31 +145,84 @@ export const Products = () => {
 						What Our <br /> Users Say
 					</h1>
 					<div className="protestiright">
-						<div className="testicard">
-							<img src={textiimagecont} alt="" />
-							<div className="testicardinner">
-								<img
-									src="https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png"
-									alt=""
-								/>
-								<p>
-									Lorem ipsum dolor sit amet consectetur. Vulputate sem blandit
-									cursus congue eu faucibus sem aliquam. Vulputate dui velit ut
-									lorem.
-								</p>
-								<p>
-									Non quis cursus quam varius orci ultrices odio quam
-									varius.lorem. Non quis cursus quam varius orci ultrices odio
-									quam varius.lorem. Non quis cursus quam varius orci ultrices
-									odio quam varius.
-								</p>
-								<h6>Jeremy</h6>
+						{testinumber == 1 && (
+							<div className="testicard">
+								<img src={textiimagecont} alt="" />
+								<div className="testicardinner">
+									<img
+										src="https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png"
+										alt=""
+									/>
+									<p>
+										Lorem ipsum dolor sit amet consectetur. Vulputate sem
+										blandit cursus congue eu faucibus sem aliquam. Vulputate dui
+										velit ut lorem.
+									</p>
+									<p>
+										Non quis cursus quam varius orci ultrices odio quam
+										varius.lorem.
+									</p>
+									<h6>Jeremy</h6>
+								</div>
 							</div>
-						</div>
+						)}
+
+						{testinumber == 2 && (
+							<div className="testicard">
+								<img src={textiimagecont} alt="" />
+								<div className="testicardinner">
+									<img
+										src="https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png"
+										alt=""
+									/>
+									<p>
+										Lorem ipsum dolor sit amet consectetur. Vulputate sem
+										blandit cursus congue eu faucibus sem aliquam. Vulputate dui
+										velit ut lorem.
+									</p>
+									<p>
+										Non quis cursus quam varius orci ultrices odio quam
+										varius.lorem. Non quis cursus quam varius orci ultrices odio
+										quam varius.lorem. Non quis cursus quam varius orci ultrices
+										odio quam varius.
+									</p>
+									<h6>Ajmal</h6>
+								</div>
+							</div>
+						)}
+
+						{testinumber == 3 && (
+							<div className="testicard">
+								<img src={textiimagecont} alt="" />
+								<div className="testicardinner">
+									<img
+										src="https://www.pngall.com/wp-content/uploads/4/Quotation-Symbol-PNG.png"
+										alt=""
+									/>
+									<p>
+										Non quis cursus quam varius orci ultrices odio quam
+										varius.lorem. Non quis cursus quam varius orci ultrices odio
+										quam varius.lorem. Non quis cursus quam varius orci ultrices
+										odio quam varius.
+									</p>
+									<p>
+										Lorem ipsum dolor sit amet consectetur. Vulputate sem
+										blandit cursus congue eu faucibus sem aliquam. Vulputate dui
+										velit ut lorem.
+									</p>
+
+									<h6>Malavika</h6>
+								</div>
+							</div>
+						)}
+
 						<Pagination
 							shape="rounded"
-							count={1}
+							count={3}
 							style={{ marginTop: "20px" }}
+							onChange={(e, page) => {
+								setTestinumber(page);
+							}}
 						/>
 					</div>
 				</div>

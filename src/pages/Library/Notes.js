@@ -11,7 +11,6 @@ import { PopUpShowMore } from "../../models/PopupShowMore/PopupShowMore";
 import nohighlights from "../../assets/nohighlights.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
-import { DeleteionAlert } from "../../models/DeletionAlert/DeleteionAlert";
 
 export const Notes = () => {
 	const closenotePopup = () => setNotesPopup(false);
@@ -76,9 +75,7 @@ export const Notes = () => {
 				<div className="libraryopitem">
 					{" "}
 					<select
-						// onClick={(e) => {
-						// 	setTitle(e.target.value);
-						// }}
+						
 						name=""
 						id=""
 						style={{ paddingRight: "40px" }}
@@ -111,7 +108,7 @@ export const Notes = () => {
 						name=""
 						id=""
 						onChange={(e) => {
-							// console.log(e.target.value);
+							
 							setSortop(e.target.value);
 						}}
 						style={{ paddingRight: "40px" }}

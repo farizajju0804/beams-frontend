@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { Backdrop } from "../Backdrop/Backdrop";
 import "./Popupnotes.css";
 
 export const Popupnotes = ({ handleClose, data }) => {
+	const navigate = useNavigate();
 	const [notedata, setNotedata] = useState("");
 	const date = new Date();
 	const { addnotes } = useAuthContext();
@@ -55,14 +57,21 @@ export const Popupnotes = ({ handleClose, data }) => {
 				</div>
 				<textarea
 					class="notes"
-					placeholder="Type Here.........."
+					placeholder="Type Here..."
 					onChange={(e) => {
 						setNotedata(e.target.value);
 					}}
 				></textarea>
 				<i>Don't let your thoughts disappear, save your note now</i>
 				<div className="notepopcntrl">
-					<span style={{ color: "#435CFF" }}>View Notes</span>
+					<span
+						style={{ color: "#435CFF" }}
+						onClick={() => {
+							navigate("/notes");
+						}}
+					>
+						View Notes
+					</span>
 					<div className="popupcannsave">
 						<span
 							onClick={() => {

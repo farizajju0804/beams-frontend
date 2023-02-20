@@ -258,7 +258,7 @@ export const Resetpass2 = () => {
 					{isLoading ? (
 						<ClipLoader color="white" size={23}></ClipLoader>
 					) : (
-						"Send Reset Link"
+						"Change Password"
 					)}
 				</button>
 				<p className="noaccout">
