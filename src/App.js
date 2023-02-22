@@ -289,7 +289,7 @@ function App() {
 									onClick={() => {
 										setScroller(200);
 									}}
-									style={{ cursor: "pointer" }}
+									style={{ cursor: "pointer", margin: "15px" }}
 								/>
 								<div className="firstslider">
 									<img src={horiscroll1} alt="" />
@@ -300,7 +300,7 @@ function App() {
 									onClick={() => {
 										setScroller(scroller + 100);
 									}}
-									style={{ cursor: "pointer" }}
+									style={{ cursor: "pointer", margin: "15px" }}
 								/>
 							</div>
 							<div className="landinnerslider">
@@ -309,7 +309,7 @@ function App() {
 									onClick={() => {
 										setScroller(scroller - 100);
 									}}
-									style={{ cursor: "pointer" }}
+									style={{ cursor: "pointer", margin: "15px" }}
 								/>
 								<div className="firstslider">
 									<img src={horiscroll2} alt="" />
@@ -320,7 +320,7 @@ function App() {
 									onClick={() => {
 										setScroller(scroller + 100);
 									}}
-									style={{ cursor: "pointer" }}
+									style={{ cursor: "pointer", margin: "15px" }}
 								/>
 							</div>
 							<div className="landinnerslider">
@@ -329,7 +329,7 @@ function App() {
 									onClick={() => {
 										setScroller(scroller - 100);
 									}}
-									style={{ cursor: "pointer" }}
+									style={{ cursor: "pointer", margin: "15px" }}
 								/>
 								<div className="firstslider">
 									<img src={horiscroll3} alt="" />
@@ -340,7 +340,7 @@ function App() {
 									onClick={() => {
 										setScroller(0);
 									}}
-									style={{ cursor: "pointer" }}
+									style={{ cursor: "pointer", margin: "15px" }}
 								/>
 							</div>
 						</div>
