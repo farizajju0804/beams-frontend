@@ -36,7 +36,6 @@ import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
 import { LoggedInfooter } from "./models/LoggedInfooter/LoggedInfooter";
 
-
 const router = createBrowserRouter([
 	// {
 	// 	path: "/",
@@ -98,7 +97,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Beams />
-				<LoggedInfooter />
+				{/* <LoggedInfooter /> */}
 			</div>
 		)
 	},

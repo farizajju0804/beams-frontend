@@ -126,8 +126,6 @@
     border: none;
     outline: none;
     border-radius: 10px;
-    /* margin-top: 20px; */
-
 }
 
 .contactleftinner > h1{
@@ -136,7 +134,7 @@
 }
 
 .contactleftinner > p{
-    /* margin-bottom: 20px; */
+
 }
 
 
