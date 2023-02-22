@@ -132,7 +132,10 @@ export const Minibeams = () => {
 			)}
 
 			<section className="minibeamspage">
-				<section className="trendingbeamshero">
+				<section
+					className="trendingbeamshero minibeamsbg"
+					
+				>
 					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
 					<h1>
 						Explore{" "}

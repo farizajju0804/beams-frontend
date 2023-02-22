@@ -117,7 +117,7 @@ export const Maxbeams = () => {
 			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
 
 			<section className="minibeamspage">
-				<section className="trendingbeamshero">
+				<section className="trendingbeamshero microbeambg">
 					<img src={maxbeamsboys} alt="" className="heroimgbeam" />
 					<h1>
 						Explore{" "}

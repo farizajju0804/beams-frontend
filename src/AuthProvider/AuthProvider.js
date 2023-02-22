@@ -240,8 +240,12 @@ const AuthProvider = ({ children }) => {
 			.then((e) => {
 				if (e.data) {
 					setNewsletterpopup(true);
-				} else {
-					toast.error("Email Already Subscribed");
+				}
+				if (e.error.message == "email must be a valid email") {
+					toast.error("email must be a valid email");
+				}
+				if (e.error.message == "This attribute must be unique") {
+					toast.error("Email subscribed Already");
 				}
 			});
 	};

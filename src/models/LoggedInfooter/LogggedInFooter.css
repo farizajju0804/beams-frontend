@@ -8,3 +8,50 @@
     justify-content: space-evenly;
 }
 
+.loggedinfooticons{
+    margin: 5px;
+    font-size: 22px;
+}
+
+@media only screen and (max-width:831px) {
+    .loggedinnanv > p{
+        font-size: 10px;
+    }
+
+    .loggedinnanv > img{
+        height: 50px;
+        width: auto;
+    }
+
+    .loggedinfooticons{
+        margin: 2px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+
+    .loggedinnanv > p{
+        font-size: 12px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .loggedinnanv{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .loggedinnanv > img{
+        height: 70px;
+        width: auto;
+    }
+
+    .loggedinfooticons{
+        margin: 2px;
+        font-size: 20px;
+    }
+}

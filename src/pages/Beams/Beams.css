@@ -21,6 +21,16 @@
 
 }
 
+.minibeamsbg{
+    
+    background-image: url("../../assets/microbeamsbannerbg.png");
+}
+
+.microbeambg{
+    
+    background-image: url("../../assets/minibeamsbannerbg.png");
+}
+
 @media only screen and (max-width:935px) {
     .trendingbeamshero > h1{
         font-size: 42px;

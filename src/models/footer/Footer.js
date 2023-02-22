@@ -30,10 +30,9 @@ export const Footer = () => {
 							href="https://www.instagram.com/innbrieff"
 						/>
 						<a href="https://www.instagram.com/innbrieff">
-							<AiFillInstagram size={30} color="black" />
+							<AiFillInstagram size={30} color="black" />	
 						</a>
-						<a href="www.pinterest.com/innbrieff">
-							{" "}
+						<a href="https://www.pinterest.com/innbrieff">
 							<BsPinterest size={30} color="black" />
 						</a>
 

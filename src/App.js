@@ -19,11 +19,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useHorizontalScroll } from "./Horizontalscroll";
 import { GotoTop } from "./models/GotoTop/GotoTop";
-import { ScrollToTop } from "./ScrollToTop";
 import { useAuthContext } from "./context/AuthContext";
 import { NewsletterPopUp } from "./models/NewsletterPopUp/NewsletterPopUp";
 import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 	const [scroller, setScroller] = useState(0);
@@ -56,6 +56,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<Toaster />
 			<Navbar></Navbar>
 			<GotoTop></GotoTop>
 			{newsletterpopup && (

@@ -146,15 +146,15 @@ export const Login = () => {
 				</div>
 				<div className="loginoptions">
 					<div className="loginremember">
-						<input
+						{/* <input
 							type="checkbox"
 							onChange={(e) => {
 								setRememberme(e.target.checked);
 							}}
 							id="logincheck"
 							defaultChecked
-						/>
-						<label htmlFor="logincheck">Remember Me</label>
+						/> */}
+						{/* <label htmlFor="logincheck">Remember Me</label> */}
 					</div>
 					<span
 						onClick={() => {

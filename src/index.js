@@ -97,7 +97,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Beams />
-				{/* <LoggedInfooter /> */}
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -109,7 +109,7 @@ const router = createBrowserRouter([
 					<ScrollToTop />
 					<LoggedinNav />
 					<Maxbeams />
-					<Footer />
+					<LoggedInfooter />
 				</div>
 			</PrivateRoute>
 		)
@@ -121,7 +121,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Minibeams />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -132,7 +132,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Maxbeampage />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -143,7 +143,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Maxbeamsong />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -165,7 +165,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Library />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -176,7 +176,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Favourites />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -187,7 +187,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Completed />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
@@ -198,7 +198,7 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<Notes />
-				<Footer />
+				<LoggedInfooter />
 			</div>
 		)
 	},
