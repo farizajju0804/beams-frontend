@@ -6,6 +6,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import acc1 from "../../assets/acc1.png";
 import acc2 from "../../assets/acc2.png";
 import acc3 from "../../assets/acc3.png";
+import { API_Photo } from "../../constants";
 
 export const LoggedinNav = () => {
 	const { user } = useAuthContext();
@@ -18,7 +19,7 @@ export const LoggedinNav = () => {
 			<h1
 				style={{ color: "#435CFF" }}
 				onClick={() => {
-					navigate("/beams");
+					navigate("/");
 				}}
 			>
 				Innbrieff.
@@ -37,10 +38,22 @@ export const LoggedinNav = () => {
 						setDropdown(!dropdown);
 					}}
 				>
-					<img
-						src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=2000"
-						alt=""
-					/>
+					{user ? (
+						user.Profilepic === null ? (
+							<div className="mockprofileimg">
+								<p>{user.name[0]}</p>
+							</div>
+						) : user.Profilepic === undefined ? (
+							<div className="mockprofileimg">
+								<p>{user.name[0]}</p>
+							</div>
+						) : (
+							<img src={API_Photo + user.Profilepic.url}></img>
+						)
+					) : (
+						<div></div>
+					)}
+
 					<span>
 						{user ? (user.name === null ? user.username : user.name) : ""}
 					</span>

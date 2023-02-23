@@ -100,7 +100,7 @@ export const Minibeamscard = ({
 					size={22}
 					style={{ marginRight: "10px", cursor: "pointer" }}
 					onClick={() => {
-						open(title, content, id);
+						open(title, content, id, type);
 					}}
 				/>
 				<BiDotsVerticalRounded

@@ -18,10 +18,10 @@ export const Footer = () => {
 				<div className="footabout">
 					<img src={logo} alt="" />
 					<p>
-						InnBrieff is the leading guide to the technology trends and
-						innovations that will shape our future. It’s content is packed with
-						actionable insights and deep foresights; the North Star for people
-						who want to stay ahead of the curve.
+						InnBrieff is the leading guide to technology trends and
+						innovations that will shape our future.Packed actionable insights and deep
+						foresights, its the North Star for people who want to stay ahead of
+						the curve.
 					</p>
 					<div className="fabouticonsdiv">
 						<AiFillFacebook
@@ -30,7 +30,7 @@ export const Footer = () => {
 							href="https://www.instagram.com/innbrieff"
 						/>
 						<a href="https://www.instagram.com/innbrieff">
-							<AiFillInstagram size={30} color="black" />	
+							<AiFillInstagram size={30} color="black" />
 						</a>
 						<a href="https://www.pinterest.com/innbrieff">
 							<BsPinterest size={30} color="black" />

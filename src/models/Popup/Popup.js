@@ -53,7 +53,7 @@ export const Popup = ({
 										Name: title,
 										Desc: content,
 										idofbeam: `${id}`,
-										typeofbeam: "minibeam"
+										typeofbeam: "Microbeam"
 									});
 								}}
 							/>

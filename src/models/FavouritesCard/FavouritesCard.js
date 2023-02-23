@@ -41,7 +41,17 @@ export const FavouritesCard = ({
 				<img src={maxbeammock} alt="" />
 			</div>
 			<div className="maxbeamdata">
-				<h3>{title}</h3>
+				<h3
+					onClick={() => {
+						if (typeofbeam == "minibeam") {
+							navigate(`/maxbeampage/${idofbeam}`);
+						} else {
+							navigate(`/minibeams/`);
+						}
+					}}
+				>
+					{title}
+				</h3>
 				<div
 					style={{
 						width: "100%",

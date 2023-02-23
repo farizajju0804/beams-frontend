@@ -140,6 +140,18 @@
     background-color: #f3f3f3;
 }
 
+.mockprofileimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: black;
+}
+
 @media only screen and (max-width:1090px)  {
     .loggedinnav{
         padding-left: 30px;
