@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Maxbeamscard.css";
 import maxbeammock from "../../assets/maxbeammock.png";
 import { useNavigate } from "react-router-dom";
 import { BiDotsVerticalRounded } from "react-icons/bi";
@@ -11,38 +10,29 @@ import {
 } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useAuthContext } from "../../context/AuthContext";
+import { Toaster } from "react-hot-toast";
+import { MdZoomOutMap } from "react-icons/md";
 
-export const FavouritesCard = ({
-	completed,
-	id,
-	title,
-	Desc,
-	typeofbeam,
-	idofbeam
-}) => {
+function Favouritescard2({ completed, id, title, Desc, typeofbeam, idofbeam }) {
 	const navigate = useNavigate();
 
 	console.log(id);
-
-	// console.log(typeofbeam);
-
 	const [dropdown, setDropdown] = useState(false);
 	const { delfav } = useAuthContext();
-	// console.log(id);
+	const [displayPopUp, setDisplayPopUp] = useState(false);
 
 	return (
 		<div
-			className="maxbeamcardcont"
+			className="minibeamscardcontfav"
 			onClick={() => {
 				setDropdown(false);
+				// setDisplayPopUp(false);
 			}}
 		>
-			<div className="maxcardimg">
-				<img src={maxbeammock} alt="" />
-			</div>
-			<div className="maxbeamdata">
+			<Toaster></Toaster>
+			<div className="minibeamsinnerfav" id={`minibeamscard${id}`}>
 				<h3
-					style={{ cursor: "pointer" }}
+					style={{ cursor: "pointer", marginBottom: "25px" }}
 					onClick={() => {
 						if (typeofbeam === "Minibeam") {
 							navigate("/maxbeampage/" + idofbeam);
@@ -53,16 +43,7 @@ export const FavouritesCard = ({
 				>
 					{title}
 				</h3>
-				<div
-					style={{
-						width: "100%",
-						height: "10px",
-						display: "flex",
-						alignItems: "center"
-					}}
-				>
-					<p style={{ marginTop: "15px", marginBottom: "15px" }}>{Desc}</p>
-				</div>
+				<p>{Desc}</p>
 				<button
 					onClick={() => {
 						if (typeofbeam === "Minibeam") {
@@ -75,15 +56,24 @@ export const FavouritesCard = ({
 					Read Again
 				</button>
 			</div>
-			<BiDotsVerticalRounded
-				className="favcard3dots"
-				color="black"
-				fontSize={22}
-				onClick={(e) => {
-					e.stopPropagation();
-					setDropdown(!dropdown);
-				}}
-			></BiDotsVerticalRounded>
+			<div className="minicontrols">
+				{/* <MdZoomOutMap
+					size={22}
+					style={{ marginRight: "10px", cursor: "pointer" }}
+					onClick={() => {
+						open(title, Desc, id, typeofbeam);
+					}}
+				/> */}
+				<BiDotsVerticalRounded
+					size={24}
+					style={{ cursor: "pointer", zIndex: 50 }}
+					className="threedotbtn"
+					onClick={(e) => {
+						e.stopPropagation();
+						setDropdown(!dropdown);
+					}}
+				/>
+			</div>
 			<div className={dropdown ? "opdp opdpdisplay favcarddrop" : "opdp"}>
 				<AiOutlineCloseCircle
 					color="red"
@@ -123,4 +113,6 @@ export const FavouritesCard = ({
 			</div>
 		</div>
 	);
-};
+}
+
+export default Favouritescard2;

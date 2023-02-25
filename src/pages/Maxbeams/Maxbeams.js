@@ -136,8 +136,32 @@ export const Maxbeams = () => {
 				</section>
 				<div className="innernav">
 					<span>
-						<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
-						<span>Beams</span>&nbsp; &gt; &nbsp; <span>Minibeams</span>
+						<span
+							style={{ color: "#435CFF", cursor: "pointer" }}
+							onClick={() => {
+								navigate("/");
+							}}
+						>
+							Home
+						</span>{" "}
+						&nbsp; &gt; &nbsp;{" "}
+						<span
+							style={{ color: "#435CFF", cursor: "pointer" }}
+							onClick={() => {
+								navigate("/beams");
+							}}
+						>
+							Beams
+						</span>
+						&nbsp; &gt; &nbsp;{" "}
+						<span
+							style={{ cursor: "pointer" }}
+							onClick={() => {
+								navigate("/maxbeams");
+							}}
+						>
+							Minibeams
+						</span>
 					</span>
 					<div className="searchbar">
 						<input

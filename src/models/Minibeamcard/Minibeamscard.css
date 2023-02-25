@@ -19,12 +19,53 @@
     position: relative;
 }
 
+.minibeamscardcontfav{
+    width: 500px;
+    height: 250px;
+    background-image: url('../../assets/microbeamsbg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+   
+    margin: 10px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.minibeamsinnerfav{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    position: absolute;
+    width: 300px;
+    right: 30px;
+}
+
+@media only screen and (max-width:537px)
+{
+    .minibeamscardcontfav{
+        width: 95vw;
+    }
+}
+
 @media only screen and (max-width:1280px) {
     .minibeamscardcont{
         margin-left: 10px;
         margin-Right: 10px;
     }
 }
+
+
 
 
 @media only screen and (max-width:600px)
@@ -51,18 +92,18 @@
    
 }
 
-.minibeamsinner > h3{
+.minibeamsinner > h3, .minibeamsinnerfav >h3{
     font-size: 22px;
     color: #F7CD61;
 }
 
-.minibeamsinner > p{
+.minibeamsinner > p, .minibeamsinnerfav >p{
     color: white;
     line-height: 30px;
 }
 
 
-.minibeamsinner > button{
+.minibeamsinner > button, .minibeamsinnerfav > button{
     width: 120px;
     height: 41.5px;
     background: #F7CD61;

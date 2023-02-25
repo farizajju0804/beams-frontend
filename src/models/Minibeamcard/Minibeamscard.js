@@ -20,7 +20,8 @@ export const Minibeamscard = ({
 	content,
 	id,
 	openNotes,
-	openshare
+	openshare,
+	navid
 }) => {
 	const [x, setX] = useState(0);
 	const [y, setY] = useState(0);
@@ -76,6 +77,7 @@ export const Minibeamscard = ({
 
 	return (
 		<div
+			id={navid}
 			className="minibeamscardcont"
 			onClick={() => {
 				setDropdown(false);

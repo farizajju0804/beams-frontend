@@ -132,10 +132,7 @@ export const Minibeams = () => {
 			)}
 
 			<section className="minibeamspage">
-				<section
-					className="trendingbeamshero minibeamsbg"
-					
-				>
+				<section className="trendingbeamshero minibeamsbg">
 					<img src={microbeambgheroimg} alt="" className="heroimgbeam" />
 					<h1>
 						Explore{" "}
@@ -154,7 +151,15 @@ export const Minibeams = () => {
 				</section>
 				<div className="innernav">
 					<span>
-						<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
+						<span
+							style={{ color: "#435CFF" }}
+							onClick={() => {
+								navigate("/");
+							}}
+						>
+							Home
+						</span>{" "}
+						&nbsp; &gt; &nbsp;{" "}
 						<span
 							style={{ color: "#435CFF", cursor: "pointer" }}
 							onClick={() => {
@@ -163,7 +168,14 @@ export const Minibeams = () => {
 						>
 							Beams
 						</span>
-						&nbsp; &gt; &nbsp; <span>Microbeams</span>
+						&nbsp; &gt; &nbsp;{" "}
+						<span
+							onClick={() => {
+								navigate("/minibeams");
+							}}
+						>
+							Microbeams
+						</span>
 					</span>
 					<div className="searchbar">
 						<input

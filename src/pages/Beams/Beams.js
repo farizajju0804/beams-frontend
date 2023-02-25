@@ -5,7 +5,7 @@ import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { Popup } from "../../models/Popup/Popup";
 import heroimg from "../../assets/beamsheroimg.png";
 import { AiOutlineSearch, AiFillCloseCircle } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { BeatLoader } from "react-spinners";
 import { API } from "../../constants";
@@ -35,6 +35,7 @@ export const Beams = () => {
 	const [popuptype, setPopuptype] = useState("");
 	const [sharemodelstaus, setSharemodelstaus] = useState(false);
 	const [welcomepopupsate, setWelcomepopupsate] = useState(false);
+	const location = useLocation();
 
 	const closesharemodel = () => setSharemodelstaus(false);
 
@@ -90,6 +91,21 @@ export const Beams = () => {
 				}
 			});
 	};
+
+	useEffect(() => {
+		if (location.hash) {
+			let elem = document.getElementById(location.hash.slice(1));
+			if (elem) {
+				elem.scrollIntoView({
+					behavior: "smooth",
+					inline: "center",
+					block: "center"
+				});
+			}
+		} else {
+			window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+		}
+	}, [location, microbeams]);
 
 	useEffect(() => {
 		setSuggestion([]);
@@ -154,8 +170,23 @@ export const Beams = () => {
 			</section>
 			<div className="innernav">
 				<span>
-					<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
-					<span>Beams</span>
+					<span
+						style={{ color: "#435CFF", cursor: "pointer" }}
+						onClick={() => {
+							navigate("/");
+						}}
+					>
+						Home
+					</span>{" "}
+					&nbsp; &gt; &nbsp;{" "}
+					<span
+						style={{ cursor: "pointer" }}
+						onClick={() => {
+							navigate("/beams");
+						}}
+					>
+						Beams
+					</span>
 				</span>
 				<div className="searchbar">
 					<input
@@ -224,6 +255,7 @@ export const Beams = () => {
 										{microbeams.map((micro) => {
 											return (
 												<Minibeamscard
+													navid={micro.id + "Microbeam"}
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
 													id={micro.id}
@@ -235,7 +267,11 @@ export const Beams = () => {
 										})}
 									</div>
 									<span
-										style={{ alignSelf: "flex-end", marginRight: "40px" }}
+										style={{
+											alignSelf: "flex-end",
+											marginRight: "40px",
+											cursor: "pointer"
+										}}
 										onClick={() => {
 											navigate("/minibeams");
 										}}
@@ -259,6 +295,7 @@ export const Beams = () => {
 										{maxbeams.map((micro) => {
 											return (
 												<Maxbeamscard
+													navid={micro.id + "Minibeam"}
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
 													id={micro.id}
@@ -273,7 +310,8 @@ export const Beams = () => {
 										style={{
 											alignSelf: "flex-end",
 											marginRight: "60px",
-											marginBottom: "120px"
+											marginBottom: "120px",
+											cursor: "pointer"
 										}}
 										onClick={() => {
 											navigate("/maxbeams");
@@ -343,6 +381,7 @@ export const Beams = () => {
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
 													id={micro.id}
+													navid={micro.id + "mini"}
 													open={open}
 													openNotes={opennotePopup}
 													openshare={opensharemodel}
@@ -363,6 +402,7 @@ export const Beams = () => {
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
 													id={micro.id}
+													navid={micro.id + "max"}
 													open={open}
 													openshare={opensharemodel}
 												/>
@@ -383,6 +423,7 @@ export const Beams = () => {
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
 													id={micro.id}
+													navid={micro.id + "mini"}
 													open={open}
 													openNotes={opennotePopup}
 													openshare={opensharemodel}
@@ -401,6 +442,7 @@ export const Beams = () => {
 										.map((micro) => {
 											return (
 												<Maxbeamscard
+													navid={micro.id + "max"}
 													Title={micro.attributes.Title}
 													Desc={micro.attributes.shortDesc}
 													id={micro.id}

@@ -10,8 +10,8 @@ import nofav from "../../assets/nofav.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
 import { Toaster } from "react-hot-toast";
-
 import "./Library.css";
+import Favouritescard2 from "../../models/Favouritescard2/Favouritescard2";
 
 export const Favourites = () => {
 	const navigate = useNavigate();
@@ -28,15 +28,6 @@ export const Favourites = () => {
 		<div className="LibraryPage">
 			<Toaster />
 			<div className="libraryoption">
-				{/* <div
-					className="libraryopitem"
-					onClick={() => {
-						navigate("/completed");
-					}}
-				>
-					<img src={libcompleted} className="lbopic" />
-					<span>Completed</span>
-				</div> */}
 				<div
 					className="libraryopitem"
 					onClick={() => {
@@ -70,9 +61,6 @@ export const Favourites = () => {
 				<div className="libraryopitem">
 					{" "}
 					<select
-						// onClick={(e) => {
-						// 	setTitle(e.target.value);
-						// }}
 						name=""
 						id=""
 						style={{ paddingRight: "40px" }}
@@ -124,16 +112,29 @@ export const Favourites = () => {
 						<div className="highlightdata fwrap">
 							{favourites
 								.map((e) => {
-									return (
-										<FavouritesCard
-											completed={false}
-											id={e.id}
-											title={e.Name}
-											typeofbeam={e.typeofbeam}
-											Desc={e.Desc}
-											idofbeam={e.idofbeam}
-										></FavouritesCard>
-									);
+									if (e.typeofbeam === "Minibeam") {
+										return (
+											<FavouritesCard
+												completed={false}
+												id={e.id}
+												title={e.Name}
+												typeofbeam={e.typeofbeam}
+												Desc={e.Desc}
+												idofbeam={e.idofbeam}
+											></FavouritesCard>
+										);
+									} else {
+										return (
+											<Favouritescard2
+												completed={false}
+												id={e.id}
+												title={e.Name}
+												typeofbeam={e.typeofbeam}
+												Desc={e.Desc}
+												idofbeam={e.idofbeam}
+											></Favouritescard2>
+										);
+									}
 								})
 								.slice(indexoffirst, indexoflast)}
 						</div>

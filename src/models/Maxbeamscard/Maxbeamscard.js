@@ -11,14 +11,21 @@ import {
 } from "react-icons/ai";
 import { SlNote } from "react-icons/sl";
 
-export const Maxbeamscard = ({ id, Title, Desc, openNotes, openshare }) => {
+export const Maxbeamscard = ({
+	id,
+	Title,
+	navid,
+	Desc,
+	openNotes,
+	openshare
+}) => {
 	const navigate = useNavigate();
 	const [dropdown, setDropdown] = useState(false);
 	const { addfav } = useAuthContext();
 	const type = "Minibeam";
 
 	return (
-		<div className="maxbeamcardcontnew">
+		<div className="maxbeamcardcontnew" id={navid}>
 			<div className="maxcardimgnew">
 				<img src={maxbeammock} alt="" />
 			</div>
