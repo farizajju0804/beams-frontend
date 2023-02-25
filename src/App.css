@@ -696,40 +696,11 @@
     justify-content: space-evenly;
   }
 
-  .sec4spltitle{
-    min-width: 450px;
-    /* background-color: #435CFF; */
-    height: 150px;
-    /* padding: 30px; */
-    border-radius: 100px 0px 0px 0px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    margin-top: 140px;
-    margin-bottom: 90px;
-    margin-left: 80px;
-  }
-
-  .sec4innertitle{
-    /* font-weight: 500; */
-    font-size: 40px;
-    /* text-align: center; */
-    padding: 20px;
-    z-index: 2;
   
-  }
 
-  .sec4splbg{
-    background-color: #F7CD61;
-    height: 100%;
-    width: 124px;
-    position: absolute;
-    border-radius: 100px 0px 0px 0px;
-    z-index: 0;
-    left: 0;
-  }
+ 
+
+ 
 
   .sec4cardsdiv
   {
@@ -775,20 +746,11 @@
       margin: 20px;
     }
 
-    .sec4innertitle{
-      font-size: 24px;
-    }
+  
 
-    .sec4spltitle{
-      width: 330px;
-      height: 70%;
-      border-radius: 10px 0px 0px 0px;
-    }
+    
 
-    .sec4splbg{
-      width: 116px;
-      height: 100px;
-    }
+   
 
     .four{
       padding-bottom: 0px;
@@ -1178,12 +1140,7 @@
 
 }
 
-.vertic{
-  min-width: 300px;
-  margin-left: 30px;
-  margin-bottom: 40px;
 
-}
 }
 
 .landingslider{
@@ -1266,9 +1223,7 @@
     padding-right: 30px;
   }
 
-  .sec4spltitle{
-    margin-bottom: 40px;
-  }
+  
 }
 
 @media only screen and (max-width:560px) {
@@ -1296,4 +1251,49 @@
 .sec4spltitle{
   margin-top: 80px;
 }
+}
+
+
+.sec4spltitle{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  position: relative;
+  margin-top: 40px;
+}
+
+.sec4splbg{
+  width: 95px;
+  height: 120px;
+  background-color: #F7CD61;
+  position: absolute;
+  left: 0px;
+  border-radius: 50px 0px 0px 0px;
+}
+
+.sec4innertitle{
+  z-index: 50;
+  padding: 20px;
+  font-size: 35px;
+}
+
+.leftmover{
+  margin-left: 15px;
+}
+
+@media only screen and (max-width:695px) {
+  .sec4innertitle{
+    z-index: 50;
+    padding: 20px;
+    font-size: 25px;
+  }
+
+  .sec4splbg{
+    width: 77px;
+    height: 90px;
+    background-color: #F7CD61;
+    position: absolute;
+    left: 0px;
+    border-radius: 50px 0px 0px 0px;
+  }
 }

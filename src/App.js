@@ -274,12 +274,12 @@ function App() {
 						<span>{data.landingpage.sec4title}</span>
 					</div>
 					<div className="landingslider">
-						<div className="sec4spltitle vertic">
+						<div className="sec4spltitle">
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								<span>How will we enhance</span>
 								<br />
-								<span>your Future?</span>
+								<span className="leftmover">your Future?</span>
 							</h1>
 						</div>
 						<div className="silderfunctions" style={{ right: `${scroller}vw` }}>
@@ -351,12 +351,15 @@ function App() {
 						<span>{data.landingpage.sec6title}</span>
 					</div>
 					<div className="sec4datadiv">
-						<div className="sec4spltitle vertic" style={{ minWidth: "325px" }}>
+						<div
+							className="sec4spltitle vertic"
+							style={{ marginBottom: "70px" }}
+						>
 							<div className="sec4splbg"></div>
 							<h1 className="sec4innertitle">
 								<span>How will</span>
 								<br />
-								<span>you benefit?</span>
+								<span className="leftmover">you benefit?</span>
 							</h1>
 						</div>
 						<div className="sec4cardsdiv">
