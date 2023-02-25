@@ -35,11 +35,15 @@ export const Beams = () => {
 	const [popuptype, setPopuptype] = useState("");
 	const [sharemodelstaus, setSharemodelstaus] = useState(false);
 	const [welcomepopupsate, setWelcomepopupsate] = useState(false);
+	const [sharemodelurl, setSharemodelurl] = useState("");
 	const location = useLocation();
 
 	const closesharemodel = () => setSharemodelstaus(false);
 
-	const opensharemodel = () => setSharemodelstaus(true);
+	const opensharemodel = (url) => {
+		setSharemodelurl(url);
+		setSharemodelstaus(true);
+	};
 
 	const closenotePopup = () => setNotesPopup(false);
 	const opennotePopup = (data) => {
@@ -134,7 +138,9 @@ export const Beams = () => {
 				></Popup>
 			)}
 
-			{sharemodelstaus && <ShareModel handleClose={closesharemodel} />}
+			{sharemodelstaus && (
+				<ShareModel handleClose={closesharemodel} url={sharemodelurl} />
+			)}
 
 			{user && user.newuser && !welcomepopupsate && (
 				<WelcomePopUp

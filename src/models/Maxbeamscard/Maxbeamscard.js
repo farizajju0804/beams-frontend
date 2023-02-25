@@ -77,7 +77,7 @@ export const Maxbeamscard = ({
 				<div
 					className="opdpitems"
 					onClick={() => {
-						openshare();
+						openshare(id + type);
 					}}
 				>
 					<AiOutlineShareAlt

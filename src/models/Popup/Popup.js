@@ -64,7 +64,7 @@ export const Popup = ({
 								width={50}
 								onClick={() => {
 									handleClose();
-									openshare();
+									openshare(id + type);
 								}}
 							/>
 						</div>

@@ -16,7 +16,7 @@ import "./Sharemodel.css";
 import { toast } from "react-hot-toast";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-const ShareModel = ({ handleClose }) => {
+const ShareModel = ({ handleClose, url }) => {
 	return (
 		<Backdrop handleClose={handleClose}>
 			<div className="sharecontainer">
@@ -58,7 +58,7 @@ const ShareModel = ({ handleClose }) => {
 					onCopy={() => toast.success("Copied to Clipboard")}
 				>
 					<div className="ctoclipboard">
-						<span>https://pixelmatters.pages.dev/</span>
+						<span>{"https://pixelmatters.pages.dev/beams#" + url}</span>
 						<BsClipboardCheck size={22} />
 					</div>
 				</CopyToClipboard>

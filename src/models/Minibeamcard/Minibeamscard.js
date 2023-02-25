@@ -140,7 +140,7 @@ export const Minibeamscard = ({
 				<div
 					className="opdpitems"
 					onClick={() => {
-						openshare();
+						openshare(id + type);
 					}}
 				>
 					<AiOutlineShareAlt
