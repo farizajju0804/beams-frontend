@@ -618,9 +618,12 @@
     .abtusrocket{
         height: 250px !important;
         width: 250px !important;  
-        left: 190px;
-        top: 50px;
+        left: 170px;
+        top: 130px;
         transform: rotateZ(15deg);
+        animation: mymove alternate;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
     }
 
     .abtmissioncircle{
@@ -708,3 +711,10 @@
         padding-right: 25px;
     }
 }
+
+/* aboutusrockanimation */
+
+@keyframes mymove {
+    0%   {top: 150px;}
+    100% {top: 0}
+  }
