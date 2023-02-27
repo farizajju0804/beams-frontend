@@ -187,6 +187,10 @@ export const Login = () => {
 						Sign Up
 					</strong>{" "}
 				</p>
+				<div className="orloginwith">
+					<strong style={{ margin: "10px" }}>or</strong>
+					<strong>-- Login using --</strong>
+				</div>
 				<div className="oauths">
 					<a href={`${API}/connect/google`}>
 						<img src={googlelogo} alt="" />

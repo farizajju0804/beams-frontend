@@ -44,6 +44,16 @@ export const Popup = ({
 								}}
 							/>
 							<img
+								src={hearticon}
+								alt=""
+								height={50}
+								width={50}
+								onClick={() => {
+									handleClose();
+									openshare(id + type);
+								}}
+							/>
+							<img
 								src={shareicon}
 								alt=""
 								height={50}
@@ -55,16 +65,6 @@ export const Popup = ({
 										idofbeam: `${id}`,
 										typeofbeam: "Microbeam"
 									});
-								}}
-							/>
-							<img
-								src={hearticon}
-								alt=""
-								height={50}
-								width={50}
-								onClick={() => {
-									handleClose();
-									openshare(id + type);
 								}}
 							/>
 						</div>

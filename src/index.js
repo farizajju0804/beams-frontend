@@ -93,12 +93,14 @@ const router = createBrowserRouter([
 	{
 		path: "/beams",
 		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Beams />
-				<Footer></Footer>
-			</div>
+			<PrivateRoute>
+				<div>
+					<ScrollToTop />
+					<LoggedinNav />
+					<Beams />
+					<Footer></Footer>
+				</div>
+			</PrivateRoute>
 		)
 	},
 	{

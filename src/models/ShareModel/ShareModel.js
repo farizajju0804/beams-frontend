@@ -16,7 +16,7 @@ import "./Sharemodel.css";
 import { toast } from "react-hot-toast";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-const ShareModel = ({ handleClose, url }) => {
+const ShareModel = ({ handleClose, url, desc, title }) => {
 	return (
 		<Backdrop handleClose={handleClose}>
 			<div className="sharecontainer">
@@ -29,12 +29,15 @@ const ShareModel = ({ handleClose, url }) => {
 						<FacebookShareButton
 							url="https://pixelmatters.pages.dev/beams"
 							title="Inbrieff"
+							quote={desc}
+							hashtag="Innbrieff"
 						>
 							<FacebookIcon round={true} />
 						</FacebookShareButton>
 						<WhatsappShareButton
 							url="https://pixelmatters.pages.dev/beams"
 							title="Inbrieff"
+							
 						>
 							<WhatsappIcon round={true}></WhatsappIcon>
 						</WhatsappShareButton>

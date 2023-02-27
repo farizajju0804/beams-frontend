@@ -22,7 +22,7 @@
 }
 
 .footabout{
-    width: 20%;
+    width: 30%;
 }
 
 .footabout img{
@@ -99,4 +99,9 @@
     .footitem > h3{
         margin-bottom: 0px;
     }
+}
+
+.footicions{
+    height: 30px;
+    width: 30px;
 }

@@ -196,13 +196,23 @@ export const Aboutus = () => {
 					<div className="abtussec31 bgabtus4">
 						<div
 							className="scrollerarrow"
-							style={{ justifyContent: "flex-start" }}
+							style={{ justifyContent: "space-between" }}
 						>
 							<FaChevronCircleLeft
-								className="arrowicon"
+								className="arrowicon blackicon "
 								// size={52}
+								// style={{ color: "black" }}
+								// color="white"
 								onClick={() => {
-									setScroller(scroller - 100);
+									setScroller(100);
+								}}
+								style={{ cursor: "pointer" }}
+							/>
+							<FaChevronCircleRight
+								className="arrowicon blackicon "
+								// style={{ justifySelf: "flex-end" }}
+								onClick={() => {
+									setScroller(0);
 								}}
 								style={{ cursor: "pointer" }}
 							/>

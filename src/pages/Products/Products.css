@@ -55,10 +55,12 @@
     /* background-color: black; */
     padding: 10px;
     border-radius: 10px;
+    text-shadow: -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000;
 }
 
 .prodsec1 span{
     font-size: 30px;
+    text-align: center  ;
 }
 
 }
@@ -320,7 +322,7 @@
 
 @media only screen and (max-width:600px) {
  .prodsec5data h1{
-    font-size: 34px;
+    font-size: 30px;
     margin-top: 50px;
 }
 
@@ -433,6 +435,7 @@
     position: absolute;
     width: 100%;
     height: auto;
+    z-index: -50;
 }
 
 .protestiright{

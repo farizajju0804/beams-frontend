@@ -7,6 +7,7 @@ import acc1 from "../../assets/acc1.png";
 import acc2 from "../../assets/acc2.png";
 import acc3 from "../../assets/acc3.png";
 import { API_Photo } from "../../constants";
+import { removeToken } from "../../helpers";
 
 export const LoggedinNav = () => {
 	const { user } = useAuthContext();
@@ -94,7 +95,13 @@ export const LoggedinNav = () => {
 						>
 							{/* <FiLogOut /> */}
 							<img src={acc3} alt="" />
-							<span>Log Out</span>
+							<span
+								onClick={() => {
+									removeToken();
+								}}
+							>
+								Log Out
+							</span>
 						</div>
 					</div>
 				</div>

@@ -10,6 +10,12 @@
     position: relative;
 }
 
+@media only screen and (max-width:650px) {
+    .sharecontainer{
+        width: 90%;
+    }
+}
+
 .sharesocialcont{
     width: 100%;
     display: flex;
@@ -29,12 +35,20 @@
     margin-top: 20px;
 }
 
+
+
 .ctoclipboard{
     width: 100%;
     padding: 10px;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width:600px) {
+    .ctoclipboard{
+        display: none;
+    }
 }
 
 .sharemodelcloser{

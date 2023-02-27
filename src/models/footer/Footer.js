@@ -7,6 +7,10 @@ import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { BsPinterest } from "react-icons/bs";
+import facebookicon from "../../assets/facebookicno.png";
+import instaicon from "../../assets/instaicon.png";
+import twittericon from "../../assets/facebookicno.png";
+import prins from "../../assets/pinicon.png";
 
 export const Footer = () => {
 	const navigate = useNavigate();
@@ -18,25 +22,22 @@ export const Footer = () => {
 				<div className="footabout">
 					<img src={logo} alt="" />
 					<p>
-						InnBrieff is the leading guide to technology trends and
-						innovations that will shape our future.Packed actionable insights and deep
-						foresights, its the North Star for people who want to stay ahead of
-						the curve.
+						InnBrieff is the leading guide to technology trends and innovations
+						that will shape our future.
+					</p>
+					<p>
+						Packed with actionable insights and deep foresights, its the North
+						Star for people who want to stay ahead of the curve.
 					</p>
 					<div className="fabouticonsdiv">
-						<AiFillFacebook
-							size={30}
-							onClick={() => {}}
-							href="https://www.instagram.com/innbrieff"
-						/>
+						<img src={facebookicon} alt="" className="footicions" />
 						<a href="https://www.instagram.com/innbrieff">
-							<AiFillInstagram size={30} color="black" />
+							<img src={instaicon} alt="" className="footicions" />
 						</a>
 						<a href="https://www.pinterest.com/innbrieff">
-							<BsPinterest size={30} color="black" />
+							<img src={prins} alt="" className="footicions" />
 						</a>
-
-						<AiFillLinkedin size={30} />
+						<img src={twittericon} alt="" className="footicions" />
 					</div>
 				</div>
 
