@@ -1,0 +1,106 @@
+.statistic-icon1 {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .statistic-title-text1 {
+    flex: 1;
+    position: relative;
+    letter-spacing: 0.08px;
+    line-height: 19.2px;
+    font-weight: 600;
+  }
+  .statistic-title1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-mid);
+    font-size: 24px;
+  }
+  
+  .span34 {
+    line-height: 35px;
+  }
+  .a15 {
+    color: var(--color-mediumslateblue);
+  }
+  .statistic-content-text1 {
+    flex: 1;
+    position: relative;
+  }
+  .statistic-content1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: var(--bookerly-reading-desktop-size);
+    font-family: var(--bookerly-reading-desktop);
+  }
+  .statistic1 {
+    align-self: stretch;
+    border-radius: var(--br-xs);
+    background-color: var(--white);
+    box-shadow: var(--effect-1);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-21xl);
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+  }
+  .statistic-container1 {
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-3xs) var(--padding-31xl);
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    color: var(--black);
+    font-family: var(--font-poppins);
+  }
+  
+  @media screen and (max-width: 420px) {
+    .statistic-icon1 {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .statistic-title-text1 {
+      font-size: 18px;
+    }
+  
+    .statistic-content-text1 {
+      font-size: var(--font-size-base);
+      
+    }
+
+    .span34{
+      line-height: 30px;
+    }
+    .statistic-container1{
+        width: 100%;
+        padding: 0.3rem;
+    }
+
+    .statistic1{
+      padding: 20px;
+      gap: 15px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .statistic-container1{
+      width: 100%;
+      padding: 0.3rem;
+    }
+
+  }

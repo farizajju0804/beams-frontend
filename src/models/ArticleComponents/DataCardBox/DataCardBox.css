@@ -1,0 +1,19 @@
+
+  .data-cards-box {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  font-size: var(--font-size-base);
+  font-family: var(--bookerly-reading-desktop);
+  }
+
+@media screen and (max-width: 912px) {
+    
+    .data-cards-box {
+      flex-direction: column;
+    }
+  }
+  

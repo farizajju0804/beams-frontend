@@ -1,4 +1,4 @@
-import {Featuretitle} from '../../../models/Feature-title/Featuretitle'
+import Featuretitle from "../../../models/Feature-title/Featuretitle";
 import { PlayCircle } from "iconsax-react";
 import "./Feature4.css";
 const Feature4 = () => {

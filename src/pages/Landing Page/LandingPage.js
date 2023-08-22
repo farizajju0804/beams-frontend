@@ -9,7 +9,6 @@ import IntroducingBeams from './IntroducingBeams/IntroducingBeams'
 import Testimonial from './Testimonial/Testimonial';
 import Benefits from './Benefits/Benefits';
 
-
 function LandingPage() {
   return (
     <div>
@@ -26,4 +25,4 @@ function LandingPage() {
   )
 }
 
-export {LandingPage};
+export default LandingPage;

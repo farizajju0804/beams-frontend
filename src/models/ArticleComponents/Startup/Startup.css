@@ -1,0 +1,91 @@
+.startup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+.relevance{
+    display: flex;
+    background-color: var(--black);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:85%;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.relevance-content{
+    color: var(--white);
+    font-size: 16px;
+    line-height: 25px;
+    font-family: var(--bookerly-reading-desktop);
+    margin-top: 30px;
+}
+.relevance-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    background-color: var(--white);
+    font-size: 18px;
+    font-family: var(--bookerly-reading-desktop);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.superscript-link-1{
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.startup-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--white);
+    font-size: 20px;
+    font-family: var(--bookerly-reading-desktop);
+    color: var(--black);
+    align-self: stretch;
+    z-index: 1;
+}
+
+.arrow-relevance{
+    position: absolute;
+    top: 8px;
+    z-index: 0;
+    left: 5%;
+}
+.arrow-relevance img{
+    width: 80px;
+}
+
+
+@media screen and (max-width:767px) {
+    .startup-content,.relevance-content,.relevance-wrapper{
+        font-size: 16px;
+        line-height: 33px;
+    }
+    .startup-content span{
+       line-height: 30px;
+    }
+    .arrow-relevance{
+        position: absolute;
+        top: 20%;
+        z-index: 0;
+        left: 5%;
+    }
+}

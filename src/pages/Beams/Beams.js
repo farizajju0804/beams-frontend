@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Beams.css";
-import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { Popup } from "../../models/Popup/Popup";
 import heroimg from "../../assets/beamsheroimg.png";
@@ -260,7 +259,7 @@ export const Beams = () => {
 									<div className="minicardssection">
 										{microbeams.map((micro) => {
 											return (
-												<Minibeamscard
+												<Maxbeamscard
 													navid={micro.id + "Microbeam"}
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
@@ -383,7 +382,7 @@ export const Beams = () => {
 										})
 										.map((micro) => {
 											return (
-												<Minibeamscard
+												<Maxbeamscard
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
 													id={micro.id}
@@ -425,7 +424,7 @@ export const Beams = () => {
 										})
 										.map((micro) => {
 											return (
-												<Minibeamscard
+												<Maxbeamscard
 													title={micro.attributes.Title}
 													content={micro.attributes.Content}
 													id={micro.id}

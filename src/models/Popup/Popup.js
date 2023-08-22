@@ -1,6 +1,6 @@
 import React from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
-import popupdoyouknow from "../../assets/Popupyouknow2.png";
+// import popupdoyouknow from "../../assets/Popupyouknow2.png";
 import noteicon from "../../assets/shareicon.png";
 import shareicon from "../../assets/share1icon.png";
 import hearticon from "../../assets/hearticon.png";
@@ -30,7 +30,7 @@ export const Popup = ({
 				<div className="popupdata">
 					<h2>{title}</h2>
 					<div className="popdatainner">
-						<img src={popupdoyouknow} alt="" />
+						{/* <img src={popupdoyouknow} alt="" /> */}
 						<span>{content}</span>
 						<div className="popupicons">
 							<img

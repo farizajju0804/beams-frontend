@@ -1,8 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../../assets/logo.png";
-
 import './Footer.css'
 function Footer() {
     const [mail, setMail] = useState('');
@@ -28,14 +26,9 @@ function Footer() {
         </div>
         
         <div className='footer-content'>
-        <Link to='/'>
-    
-            
-            <img className='footer-logo'
-				src={logo}
-				alt=""
-				style={{ cursor: "pointer" }}
-			/></Link>
+            <div className='logo-footer'>
+            <Link className='logo-dummy' to='/'>Beams-----</Link>
+            </div>
             <div className='about-link'>
             <Link to='/about'>About Us</Link>
             </div>
@@ -56,4 +49,4 @@ function Footer() {
   )
 }
 
-export {Footer};
+export default Footer

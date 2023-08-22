@@ -1,8 +1,8 @@
 import "./Feature3.css";
-import {Featuretitle} from '../../../models/Feature-title/Featuretitle'
-
+import Featuretitle from "../../../models/Feature-title/Featuretitle";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+
 const Feature3 = () => {
   return (
     <div className="bg">
@@ -20,7 +20,6 @@ const Feature3 = () => {
           src="Assets/images/Audio-player.png"
         /> */}
         <AudioPlayer
-    autoPlay
     src="Assets/sample-audio.mp3"
     onPlay={e => console.log("onPlay")}
   />

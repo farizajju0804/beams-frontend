@@ -98,7 +98,7 @@
         font-size: var(--font-size-1xl)
         
     }
-    img{
+    .Goldfish{
         width: 70%;
         object-fit: cover;
     }

@@ -46,8 +46,10 @@
 
 .rhap_container{
     border-radius: 20px;
+    width: 80% !important;
+    margin-bottom: 20px !important;
 }
 
 .rhap_container svg{
-    color: #435CFF;
+    color: var(--orange);
 }

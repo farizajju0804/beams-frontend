@@ -11,4 +11,4 @@ function Featuretitle(props) {
   )
 }
 
-export {Featuretitle}
+export default Featuretitle

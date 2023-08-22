@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="content">
-        <h1 className="beams">Beams</h1>
+        <h1 className="beams">Your GPS For The Future</h1>
         <h3 className="unleashing-the-light">
           Unleashing the Light of Knowledge!
         </h3>

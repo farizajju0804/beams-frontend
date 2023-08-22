@@ -1,23 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*{
-  margin: 0px;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
@@ -30,6 +10,18 @@ code {
 @font-face {
   font-family: "bookerly";
   src: url("/public/Assets/fonts/Bookerly.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "bookerly-italic";
+  src: url("/public/Assets/fonts/Bookerly\ Italic.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "bookerly-bold-italic";
+  src: url("/public/Assets/fonts/Bookerly\ Bold\ Italic.ttf");
   font-weight: 400;
 }
 
@@ -46,10 +38,12 @@ code {
 :root {
   /* fonts */
   --font-mulish: Mulish;
-  --font-pacifico: Pacifico;
-  --font-poppins: Poppins;
+  --font-pacifico: "Pacifico";
+  --font-poppins: "Poppins",sans-serif;
   --font-glimmer-of-light: "glimmer of light";
   --bookerly-reading-desktop: "Bookerly";
+  --bookerly-reading-desktop-italic: "Bookerly-Italic";
+  --bookerly-reading-desktop-bold-italic: "Bookerly-Bold-Italic";
 
   /* font sizes */
   --font-size-3xl: 3rem;
@@ -58,6 +52,16 @@ code {
   --font-size-xl: 2rem;
   --font-size-l: 1.5rem;
   --font-size-xs: 0.8rem;
+  --bookerly-reading-desktop-size: 20px;
+  --font-size-5xl: 24px;
+  --font-size-lg: 18px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-29xl: 48px;
+  --font-size-9xl: 28px;
+  --font-size-13xl: 32px;
+  --font-size-37xl: 56px;
+  --font-size-lgi-2: 19.2px;
 
   /* Colors */
   --white: #fffffe;
@@ -65,7 +69,7 @@ code {
   --orange: #f96f2e;
   --yellow: #f7cd61;
   --green : #17cd92;
-  --text-gray: #556573;
+  --text-gray: #3C464F;
   --color-mediumslateblue: #435cff;
   --color-khaki: #ffe68b;
   /* Gaps */

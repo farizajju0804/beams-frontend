@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Minibeamscard } from "../../models/Minibeamcard/Minibeamscard";
-import microbeambgheroimg from "../../assets/microbeamheroimg.png";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { Popup } from "../../models/Popup/Popup";
@@ -11,7 +9,6 @@ import { API } from "../../constants";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
 import { Maxbeamscard } from "../../models/Maxbeamscard/Maxbeamscard";
 import { GotoTop } from "../../models/GotoTop/GotoTop";
-import maxbeamsboys from "../../assets/maxbeamboy.png";
 import ShareModel from "../../models/ShareModel/ShareModel";
 
 export const Maxbeams = () => {
@@ -118,7 +115,7 @@ export const Maxbeams = () => {
 
 			<section className="minibeamspage">
 				<section className="trendingbeamshero microbeambg">
-					<img src={maxbeamsboys} alt="" className="heroimgbeam" />
+					{/* <img src={maxbeamsboys} alt="" className="heroimgbeam" /> */}
 					<h1>
 						Explore{" "}
 						<span
@@ -394,7 +391,7 @@ export const Maxbeams = () => {
 											})
 											.map((micro) => {
 												return (
-													<Minibeamscard
+													<Maxbeamscard
 														Title={micro.attributes.Title}
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}
@@ -434,7 +431,7 @@ export const Maxbeams = () => {
 											})
 											.map((micro) => {
 												return (
-													<Minibeamscard
+													<Maxbeamscard
 														Title={micro.attributes.Title}
 														Desc={micro.attributes.shortDesc}
 														id={micro.id}

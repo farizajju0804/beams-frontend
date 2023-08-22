@@ -1,4 +1,4 @@
-import {Featuretitle} from '../../../models/Feature-title/Featuretitle'
+import Featuretitle from "../../../models/Feature-title/Featuretitle";
 import "./Feature1.css";
 import React from 'react'
 

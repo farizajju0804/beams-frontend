@@ -1,0 +1,64 @@
+.in-2022 {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    text-transform: capitalize;
+    font-weight: 300;
+  }
+  .the-first-true {
+    margin: 0;
+  }
+  .the-first-true-container {
+    align-self: stretch;
+    position: relative;
+    font-size: var(--bookerly-reading-desktop-size);
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-poppins);
+    color: var(--yellow);
+  }
+  .occurred {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    text-transform: lowercase;
+  }
+  .international-energy-associati1 {
+    text-decoration: underline;
+  }
+  .international-energy-associati {
+    color: inherit;
+  }
+  .link-resource2 {
+    align-self: stretch;
+    position: relative;
+    font-size: var(--font-size-xs);
+    line-height: 20px;
+    text-transform: capitalize;
+    color: var(--font-inherit);
+  }
+  .data-card2 {
+    align-self: stretch;
+    background-color: var(--black);
+    box-shadow: var(--shadow-1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-xl);
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-mini);
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--white);
+    font-family: var(--bookerly-reading-desktop);
+    width: 265px;
+  }
+  
+  @media screen and (max-width: 912px) {
+    .data-card2 {   
+      align-self: unset;
+    }
+  }
+  
