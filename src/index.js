@@ -8,7 +8,7 @@ import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
 import { Beams } from "./pages/Beams/Beams";
 import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
-import Footer from "./models/footer/Footer";
+import Footer from "./models/Footer/Footer";
 import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
 import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
 import { Maxbeamsong } from "./pages/Maxbeamsong/Maxbeamsong";
@@ -266,7 +266,7 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/termsandcondition",
+		path: "/terms-of-service",
 		element: (
 			<div>
 				<ScrollToTop />
@@ -277,7 +277,7 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/privacypolicy",
+		path: "/privacy-policy",
 		element: (
 			<div>
 				<ScrollToTop />

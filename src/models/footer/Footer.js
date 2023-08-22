@@ -30,7 +30,7 @@ function Footer() {
             <Link className='logo-dummy' to='/'>Beams-----</Link>
             </div>
             <div className='about-link'>
-            <Link to='/about'>About Us</Link>
+            <Link to='/aboutus'>About Us</Link>
             </div>
             <div className='contact-link'>
             <Link to='/contact'>Contact Us</Link>
