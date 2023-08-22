@@ -11,15 +11,19 @@
     /* backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px ); */
     /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-    position: fixed;
-    z-index: 10;
+    position: absolute;
+    z-index: 1000;
+}
+
+.logo{
+    width: 10%;
 }
 
 .opmock{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: #435CFF;
+    background-color: var(--orange);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,13 +40,14 @@
     width: 350px;
     right: 0px;
     top: 0px;
-    background-color: white;
+    background-color: var(--white);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 100;
+    color: var(--black);
     /* display: none; */
 }
 
@@ -55,7 +60,7 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: #435CFF;
+    background-color: var(--orange);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,8 +85,8 @@
 
 .spanpadding{
     padding: 10px;
-    background-color: #435CFF;
-    color: white;
+    background-color: var(--orange);
+    color: var(--white);
     border-radius: 100px;
     width: 200px;
     text-align: center;
@@ -89,7 +94,7 @@
 
 .spanborder{
     border-radius: 100px;
-    border: 2px solid #435CFF;
+    border: 2px solid var(--orange);
     padding: 10px;
     width: 200px;
     text-align: center;
@@ -120,4 +125,11 @@
     .sidenavlinks{
         margin-bottom: 50px;
     }
+
+    .logo{
+        width: 30%;
+    }
 }
+
+
+    

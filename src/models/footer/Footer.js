@@ -1,90 +1,60 @@
-import React from "react";
-import "./footer.css";
-import logo from "../../assets/logo.svg";
-import { AiFillFacebook } from "react-icons/ai";
-import { AiFillLinkedin } from "react-icons/ai";
-import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
-import { AiFillYoutube } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
-import { BsPinterest } from "react-icons/bs";
-import facebookicon from "../../assets/facebookicno.png";
-import instaicon from "../../assets/instaicon.png";
-import twittericon from "../../assets/facebookicno.png";
-import prins from "../../assets/pinicon.png";
+import React from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from "../../assets/logo.png";
 
-export const Footer = () => {
-	const navigate = useNavigate();
+import './Footer.css'
+function Footer() {
+    const [mail, setMail] = useState('');
+    const handleChange = event => {
+        setMail(event.target.value);
+      };
+  return (
+    <section className='footer'>
+        
+        <div className='newsletter-container'>
+        <div className='yellow-bg'>
+            </div>
+            <div className='newsletter-title'>
+                <h1>Newsletter</h1>
+                <p>Everybody deserves to know about unique global trends.</p>
+            </div>
+            <div className='input-box'>
+             <input className="email-input" type="email" name="email" placeholder='Enter your email' onChange={handleChange}
+            value={mail}/>
+             <button className="footer-btn" type="submit">Subscribe</button>
+        </div>
+       
+        </div>
+        
+        <div className='footer-content'>
+        <Link to='/'>
+    
+            
+            <img className='footer-logo'
+				src={logo}
+				alt=""
+				style={{ cursor: "pointer" }}
+			/></Link>
+            <div className='about-link'>
+            <Link to='/about'>About Us</Link>
+            </div>
+            <div className='contact-link'>
+            <Link to='/contact-us'>Contact Us</Link>
+            </div>
+            <div className='terms'>
+            <Link to='/terms-of-service'>Terms Of Service</Link>
+            </div>
+            <div className='policy'>
+            <Link to='/privacy-policy'>Privacy Policy</Link>
+            </div>
+            <div className='copyright'>
+              © 2023 Beams. All Rights Reserved. 
+            </div>
+        </div>
+    </section>
+  )
+}
 
-	return (
-		<div className="footer">
-			<div className="fdivder"></div>
-			<div className="footeritems">
-				<div className="footabout">
-					<img src={logo} alt="" />
-					<p>
-						InnBrieff is the leading guide to technology trends and innovations
-						that will shape our future.
-					</p>
-					<p>
-						Packed with actionable insights and deep foresights, its the North
-						Star for people who want to stay ahead of the curve.
-					</p>
-					<div className="fabouticonsdiv">
-						<img src={facebookicon} alt="" className="footicions" />
-						<a href="https://www.instagram.com/innbrieff">
-							<img src={instaicon} alt="" className="footicions" />
-						</a>
-						<a href="https://www.pinterest.com/innbrieff">
-							<img src={prins} alt="" className="footicions" />
-						</a>
-						<img src={twittericon} alt="" className="footicions" />
-					</div>
-				</div>
-
-				<div className="footitem">
-					<h3>Company</h3>
-					<p
-						onClick={() => {
-							navigate("/aboutus");
-						}}
-					>
-						About us
-					</p>
-					<p
-						onClick={() => {
-							navigate("/products");
-						}}
-					>
-						Product
-					</p>
-				</div>
-				<div className="footitem">
-					<h3>Support</h3>
-					{/* <p>FAQ</p> */}
-					<p
-						onClick={() => {
-							navigate("/privacypolicy");
-						}}
-					>
-						Privacy Policy
-					</p>
-					<p
-						onClick={() => {
-							navigate("/termsandcondition");
-						}}
-					>
-						Terms of Service
-					</p>
-				</div>
-				<div className="footitem">
-					<h3>Contact</h3>
-					<p onClick={() => (window.location = "mailto:info@innbrieff.com")}>
-						info@innbrieff.com
-					</p>
-				</div>
-			</div>
-			{/* <div className="fdivder"></div> */}
-			<p>© 2023 Innbrieff. All Rights Reserved.</p>
-		</div>
-	);
-};
+export 
+{Footer};

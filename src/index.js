@@ -9,7 +9,7 @@ import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
 import { Beams } from "./pages/Beams/Beams";
 import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
-import { Footer } from "./models/footer/Footer";
+import {Footer} from './models/Footer/Footer'
 import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
 import { Minibeams } from "./pages/Minibeams/Minibeams";
 import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
@@ -35,6 +35,7 @@ import ScrollToTop from "./ScrollToTop";
 import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions";
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
 import { LoggedInfooter } from "./models/LoggedInfooter/LoggedInfooter";
+import {LandingPage} from './pages/Landing Page/LandingPage'
 
 const router = createBrowserRouter([
 	// {
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<App />
+				<Navbar/>
+				<LandingPage/>
+				<Footer></Footer>
 			</div>
 		)
 	},

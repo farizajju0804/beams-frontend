@@ -1,0 +1,147 @@
+.feature-4{
+    width: 100%;
+    height: auto;
+    background-color: var(--yellow);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.container-4{
+    width: 85%;
+    height: auto;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--br-base);
+    box-shadow: var(--effect-1);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    margin: 2.5rem 1.2rem;
+}
+
+
+.video-player{
+    width: 70%;
+    height: 30vw;
+}
+
+.video-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.video-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.thumbnail1,.thumbnail2,.thumbnail3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 18vw;
+    height: 10vw;
+    border-radius: var(--br-xs);
+    background-position: center;
+}
+
+.thumbnail1{
+    background: url(/public/Assets/images/placebo-topic.png);
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+}
+
+.thumbnail2{
+    background: url(/public/Assets/images/Synthetic-bio-article.png);
+    background-size: cover;
+    object-fit: cover;
+}
+.thumbnail3{
+    background: url(/public/Assets/images/blue-light-topic.jpg);
+    background-size: cover;
+    object-fit: cover;
+}
+
+.video-title{
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    width: 18vw;
+    text-align: center;
+    display: flex;
+    align-items: first baseline                                                                                                     ;
+    justify-content: center;
+    font-size: var(--font-size-base);
+}
+
+@media screen and (max-width: 912px){
+
+    .video-row{
+        background: transparent;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .container-4{
+        width: 80%;
+        gap: 50px;
+        padding: 2.5rem 2rem;
+        margin: 2.5rem 1.2rem;
+      
+    }
+
+    .thumbnail1,.thumbnail2,.thumbnail3{
+
+        width: 35vw;
+        height: 20vw;
+       
+    }
+    .video-title{
+        width: 28vw;
+        
+    }
+
+    .video-player{
+        width: 80%;
+        height: 40vw;
+    }
+    
+}
+
+@media screen and (max-width: 767px){
+    .thumbnail1,.thumbnail2,.thumbnail3{
+        width: 50vw;
+        height: 25vw;
+        
+    }
+    .video-title{
+        width: 40vw;
+        font-size: var(--font-size-xs);
+    }
+    .video-player{
+        width: 100%;
+    }
+    .container-4{
+        gap: 40px;
+      
+    }
+    .video-row{
+        gap: 40px;
+    }
+    
+}

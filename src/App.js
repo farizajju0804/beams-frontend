@@ -1,62 +1,42 @@
-import { useEffect } from "react";
-import "./App.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Navbar } from "./models/navbar/Navbar";
-import newsletterstylish from "./assets/newsletterstylish.png";
-import data from "./data/landingdata.json";
-import sec6card1 from "./assets/sec6card1.png";
-import sec6card2 from "./assets/sec6card2.png";
-import sec6card3 from "./assets/sec6card3.png";
-import { Footer } from "./models/footer/Footer";
-import horiscroll1 from "./assets/horiscroll1.png";
-import horiscroll2 from "./assets/horiscroll2.png";
-import horiscroll3 from "./assets/horiscroll3.png";
-import q1video from "./assets/Question1.mp4";
-import q2video from "./assets/Question2.mp4";
-import { useNavigate } from "react-router-dom";
-import q3video from "./assets/Question3.mp4";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useHorizontalScroll } from "./Horizontalscroll";
-import { GotoTop } from "./models/GotoTop/GotoTop";
-import { useAuthContext } from "./context/AuthContext";
-import { NewsletterPopUp } from "./models/NewsletterPopUp/NewsletterPopUp";
-import { useState } from "react";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { Toaster } from "react-hot-toast";
+
+import { LandingPage } from "./pages/Landing Page/LandingPage";
+import ScrollToTop from "./ScrollToTop";
+
 
 function App() {
-	const [scroller, setScroller] = useState(0);
+	// const [scroller, setScroller] = useState(0);
 
-	const navigate = useNavigate();
-	const scrollRef = useHorizontalScroll();
-	const [newsletterpopup, setNewsletterpopup] = useState(false);
-	const [newletter, setNewletter] = useState("");
+	// const navigate = useNavigate();
+	// const [newsletterpopup, setNewsletterpopup] = useState(false);
+	// const [newletter, setNewletter] = useState("");
 
-	useEffect(() => {
-		AOS.init({
-			duration: 900,
-			once: true,
-			offset: 20
-		});
-	}, []);
+	// useEffect(() => {
+	// 	AOS.init({
+	// 		duration: 900,
+	// 		once: true,
+	// 		offset: 20
+	// 	});
+	// }, []);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			if (scroller == 200) {
-				setScroller(0);
-			} else {
-				setScroller(scroller + 100);
-			}
-		}, 6000);
+	// useEffect(() => {
+	// 	const interval = setInterval(() => {
+	// 		if (scroller == 200) {
+	// 			setScroller(0);
+	// 		} else {
+	// 			setScroller(scroller + 100);
+	// 		}
+	// 	}, 6000);
 
-		return () => clearInterval(interval);
-	}, [scroller]);
-	const { user, addnewsletter } = useAuthContext();
+	// 	return () => clearInterval(interval);
+	// }, [scroller]);
+	// const { user, addnewsletter } = useAuthContext();
 
 	return (
 		<div className="App">
-			<Toaster />
+		   <ScrollToTop />
+
+			<LandingPage/>
+			{/* <Toaster />
 			<Navbar></Navbar>
 			<GotoTop></GotoTop>
 			{newsletterpopup && (
@@ -429,7 +409,7 @@ function App() {
 					</div>
 					<Footer />
 				</section>
-			</div>
+			</div> */}
 		</div>
 	);
 }

@@ -1,0 +1,140 @@
+.benefit-title {
+    position: relative;
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+  }
+  .benefit-img-box{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefit-img {
+    width: 75%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .benefit-img.active {
+    opacity: 1;
+  }
+
+  .point {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 600;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+  .point.active {
+    opacity: 1;
+    cursor: default;
+  }
+  
+  .sticky {
+    opacity: 1;
+    transform: translateY (0);
+  }
+  
+  /* .point-1{
+    opacity: 1;
+  } */
+  .benefits-points {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    width: 50%;
+    height: 100%;
+    font-size: 18px;
+  }
+  .benefit-img{
+    width: 75%;
+    opacity: 1;
+    transition: all 0.3s ease
+  }
+  
+  .benefit-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 130px;
+    width: 100%;
+    height: 100%;
+  }
+  .benefit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+   width: 85%;
+   height: 80%;
+}
+  .benefits {
+    position: relative;
+    background-color: var(--green);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    color: var(--black);
+    font-family: var(--font-poppins);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 2rem 1.2rem;
+  }
+
+  @media screen and (max-width: 912px){
+    
+    .benefits{
+
+        padding: 2.5rem 2rem;
+    }
+
+    .benefit-content{
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+    }
+    .benefits-points{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        font-size: var(--font-size-l);
+        font-weight: normal;
+        height: auto;
+    }
+    .benefit-img-box{
+        width: 50%;
+        height: 40%;
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .benefit-title{
+        font-size: var(--font-size-l);
+    }
+    .benefits-points{
+    
+        gap: 20px;
+        font-size: var(--font-size-base);
+    
+
+    }
+    .benefit-img-box{
+        width: 90%;
+        height: auto;
+    }
+  }

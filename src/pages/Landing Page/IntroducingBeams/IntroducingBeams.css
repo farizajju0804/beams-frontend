@@ -1,0 +1,104 @@
+.brain-img-1-icon,
+.bulb-img-1-icon {
+ 
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image-grp {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 100px;
+  
+}
+
+.introducing {
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+
+}
+
+.beams-wrapper {
+  border-radius: var(--br-base);
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-size-2xl);
+  color: var(--yellow);
+  font-family: var(--font-glimmer-of-light);
+  padding: 5px 20px;
+}
+.beams-content {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 30px;
+  font-family: var(--font-mulish);
+  text-align: left;
+  width: 80%;
+}
+.book-1-icon {
+  width: 30%;
+  object-fit: cover;
+}
+.introducing-beams {
+  position: relative;
+  background: radial-gradient(50% 50%at 50% 55%, #f7cd61, #fffffe 47.45%);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  font-size: var(--font-size-1xl);
+  color: var(--black);
+  font-family: var(--font-poppins);
+}
+
+.intro-beams-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .beams-content {
+        font-size: var(--font-size-xs);
+        line-height: 20px;
+        text-align: center;
+      }
+
+      .beams-wrapper {
+        font-size: var(--font-size-l);
+        padding: var(--padding-mini) var(--padding-xl);
+      }
+.brain-img-1-icon,
+.bulb-img-1-icon {
+ 
+  width: 30%;
+  height: auto;
+  
+}
+.image-grp{
+    gap: 140px;
+}
+.book-1-icon {
+    width: 50%;
+    object-fit: cover;
+  }
+  .introducing-beams{
+    gap: 50px;
+  background: radial-gradient(60% 40%at 50% 47%, #f7cd61, #fffffe 47.45%);
+
+
+  }
+}

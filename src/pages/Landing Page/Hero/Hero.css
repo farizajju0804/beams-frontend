@@ -1,0 +1,69 @@
+.beams {
+    margin: 0;
+    align-self: stretch;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+  }
+  .beams,
+  .subscribe-now1,
+  .unleashing-the-light {
+    position: relative;
+    text-transform: capitalize;
+  }
+  .unleashing-the-light {
+    margin: 0;
+    align-self: stretch;
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-family: var(--font-mulish);
+  }
+  .btn {
+    font-size: var(--font-size-base);
+    font-family: var(--font-poppins);
+    color: var(--white);
+    text-align: center;
+  }
+  .primary-button1 {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 50px;
+    background-color: var(--orange);
+    border-radius: 100px;
+    justify-content: center;
+  }
+  .content,
+  .hero,
+  .primary-button1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    justify-content: flex-start;
+    gap: 30px;
+  }
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    background-image: url(/public/Assets/images/hero-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--black);
+    font-family: var(--font-glimmer-of-light);
+  }
+  
+  @media screen and (max-width: 600px){
+    .unleashing-the-light {
+      font-size: var(--font-size-l);
+      font-weight: 400;
+      
+    }
+  }
+

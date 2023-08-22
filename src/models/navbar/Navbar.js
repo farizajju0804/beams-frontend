@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar">
-			<img
+			<img className="logo"
 				src={logo}
 				alt=""
 				onClick={() => {
@@ -38,15 +38,7 @@ export const Navbar = () => {
 					<HiOutlineXMark color="white" size={20} />
 				</div>
 				<div className="sidenavlinks">
-					<span
-						onClick={() => {
-							setSidenav(false);
-
-							navigate("/products");
-						}}
-					>
-						Product
-					</span>
+					
 
 					<span
 						onClick={() => {

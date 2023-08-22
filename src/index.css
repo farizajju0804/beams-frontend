@@ -7,7 +7,116 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*{
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@font-face {
+  font-family: "glimmer of light";
+  src: url("/public/Assets/fonts/glimmer\ of\ light.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "bookerly";
+  src: url("/public/Assets/fonts/Bookerly.ttf");
+  font-weight: 400;
+}
+
+
+*{
+  margin: 0;
+  line-height: normal;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+}
+
+
+:root {
+  /* fonts */
+  --font-mulish: Mulish;
+  --font-pacifico: Pacifico;
+  --font-poppins: Poppins;
+  --font-glimmer-of-light: "glimmer of light";
+  --bookerly-reading-desktop: "Bookerly";
+
+  /* font sizes */
+  --font-size-3xl: 3rem;
+  --font-size-base: 1rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-xl: 2rem;
+  --font-size-l: 1.5rem;
+  --font-size-xs: 0.8rem;
+
+  /* Colors */
+  --white: #fffffe;
+  --black: #16161a;
+  --orange: #f96f2e;
+  --yellow: #f7cd61;
+  --green : #17cd92;
+  --text-gray: #556573;
+  --color-mediumslateblue: #435cff;
+  --color-khaki: #ffe68b;
+  /* Gaps */
+  --gap-51xl: 70px;
+  --gap-3xs: 10px;
+  --gap-81xl: 100px;
+  --gap-41xl: 60px;
+  --gap-8xs: 5px;
+  --gap-xl: 20px;
+  --gap-11xl: 30px;
+  --gap-21xl: 40px;
+  --gap-31xl: 50px;
+  --gap-7xl: 26px;
+  --gap-mini: 15px;
+  --gap-mid: 17px;
+  --gap-35xl: 54px;
+  --gap-51xl: 70px;
+
+  /* Paddings */
+  --padding-mini: 15px;
+  --padding-3xl: 50px;
+  --padding-2xl: 40px;
+  --padding-xl: 20px;
+  --padding-8xs: 5px;
+  --padding-smi: 13px;
+  --padding-3xs: 10px;
+  --padding-11xl: 30px;
+  --padding-41xl: 60px;
+  --padding-21xl: 40px;
+  --padding-mini: 15px;
+  --padding-xl: 20px;
+  --padding-2xl: 21px;
+  --padding-31xl: 50px;
+  --padding-8xl: 27px;
+  --padding-40xl: 59px;
+  --padding-6xl: 25px;
+  --padding-6xs: 7px;
+  --padding-13xl: 32px;
+  --padding-81xl: 100px;
+
+  /* border radiuses */
+  --br-81xl: 100px;
+  --br-xs: 8px;
+  --br-base: 16px;
+  --br-7xs: 6px;
+  --br-xs: 12px;
+  --br-base: 16px;
+  --br-81xl: 100px;
+  --br-5xs: 8px;
+  /* Effects */
+  --effect-1: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-1: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  --shadow-11: 10px 20px 50px rgba(0, 0, 0, 0.15);
 }
