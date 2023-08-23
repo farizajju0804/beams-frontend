@@ -15,10 +15,10 @@
   }
   .category {
     border-radius: var(--br-base);
-    background-color: var(--text-gray);
+    background-color: grey;
     display: flex;
     flex-direction: row;
-    padding: var(--padding-6xs) var(--padding-xl);
+    padding: 5px 10px;
     align-items: center;
     justify-content: center;
   }

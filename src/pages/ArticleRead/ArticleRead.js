@@ -161,6 +161,8 @@ const ArticleRead = () => {
         <Quote
           quoteContent="“Biology is the most advanced manufacturing technology on the planet. Cells can be programmed to make everything from food to materials to therapeutics.”"
           personName="Ginkgo Bioworks"
+          bgcolor="#fffffe"
+          color="161616"
   
         />
 

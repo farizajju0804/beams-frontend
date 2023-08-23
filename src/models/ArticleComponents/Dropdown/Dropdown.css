@@ -61,7 +61,7 @@
 
 .ref-link{
     color: var(--text-gray);
-    font-family: var(--bookerly-reading-desktop-italic);
+    font-family: var(--bookerly-reading-desktop);
 }
 
 .dropdown-points li{

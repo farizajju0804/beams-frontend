@@ -219,7 +219,7 @@ export const Signup = () => {
 							onClick={() => {
 								setIspassvis(!ispassvis);
 							}}
-							color={"#435CFF"}
+							color={"#f96f2e"}
 						/>
 					)}
 					{passwordborder && (
@@ -251,8 +251,8 @@ export const Signup = () => {
 
 							{passupper ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
+									<HiCheckCircle color="#f96f2e" />
+									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
 										1 Uppercase
 									</span>
 								</div>

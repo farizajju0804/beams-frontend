@@ -12,15 +12,16 @@
     justify-content: center;
   }
   .application-title{
-    align-self: stretch;
+    /* align-self: stretch; */
     position: relative;
     font-size: var(--font-size-lg);
     line-height: 30px;
-    font-weight: 600;
-    font-family: var(--font-poppins);
+    font-family: var(--bookerly-reading-desktop);
     color: var(--black);
     text-align: center;
     font-size: 20px;
+    background-color: var(--yellow);
+    padding: 3px 10px;
   }
 
  
@@ -40,7 +41,7 @@
     padding: 15px 20px;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 20px;
   }
   .outcome-content,
   .outcome {
@@ -92,7 +93,7 @@
   }
 
   .bold-point{
-    font-family: var(--bookerly-reading-desktop-bold-italic);
+    font-family: var(--bookerly-reading-desktop-bold);
     font-size: 18px;
   }
   .normal-point{

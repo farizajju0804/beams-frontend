@@ -214,9 +214,12 @@
     background-color: transparent;
     border-bottom:1px solid var(--black); ;
     font-family: var(--font-mulish);  
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
+.message{
+    border: 1px solid var(--black);
+}
 .input-field::placeholder{
     color: var(--black);
     font-size: 18px;
@@ -245,6 +248,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 912px) {

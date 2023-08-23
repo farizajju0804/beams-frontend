@@ -17,14 +17,9 @@ export const LoggedinNav = () => {
 
 	return (
 		<div className="loggedinnav">
-			<h1
-				style={{ color: "#435CFF" }}
-				onClick={() => {
+			<img className="logged-in-logo" src="Assets/images/logo.png" alt="" onClick={() => {
 					navigate("/");
-				}}
-			>
-				Innbrieff.
-			</h1>
+				}}></img>
 			<div className="bandacont">
 				<span
 					onClick={() => {

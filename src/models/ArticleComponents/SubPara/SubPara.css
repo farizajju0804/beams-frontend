@@ -43,7 +43,7 @@
     color: var(--color-mediumslateblue);
   }
   .superscript-link{
-    color: var(--black);
+    color: grey;
     text-decoration: none;
     letter-spacing: -1px;
     font-size: 12px;

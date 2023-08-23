@@ -61,22 +61,22 @@ export const Beams = () => {
 	const navigate = useNavigate();
 	const { token, user, firsthightlight, setFirsthightlight } = useAuthContext();
 
-	const fetchdata = async () => {
-		setMicrobeamsload(true);
-		const data = await fetch(`${API}/microbeams`, {
-			headers: {
-				Authorization: `Bearer ${token}`
-			}
-		})
-			.then((res) => res.json())
-			.then((e) => {
-				if (e.error) {
-				} else {
-					setMicrobeams(e.data);
-					setMicrobeamsload(false);
-				}
-			});
-	};
+	// const fetchdata = async () => {
+	// 	setMicrobeamsload(true);
+	// 	const data = await fetch(`${API}/microbeams`, {
+	// 		headers: {
+	// 			Authorization: `Bearer ${token}`
+	// 		}
+	// 	})
+	// 		.then((res) => res.json())
+	// 		.then((e) => {
+	// 			if (e.error) {
+	// 			} else {
+	// 				setMicrobeams(e.data);
+	// 				setMicrobeamsload(false);
+	// 			}
+	// 		});
+	// };
 
 	const fetchdata2 = async () => {
 		setMaxbeamsload(true);
@@ -112,7 +112,6 @@ export const Beams = () => {
 
 	useEffect(() => {
 		setSuggestion([]);
-		fetchdata();
 		fetchdata2();
 	}, [user]);
 

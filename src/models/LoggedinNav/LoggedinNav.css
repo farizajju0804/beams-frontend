@@ -12,6 +12,10 @@
     z-index: 10;
 }
 
+.logged-in-logo{
+    width: 100px;
+}
+
 .searchbar{
     position: relative;
 }
@@ -92,7 +96,7 @@
 
 .bandacont > span{
     font-weight: 600;
-    color: #435CFF;
+    color: var(--orange);
     font-size: 20px;
     cursor: pointer;
 }

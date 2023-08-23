@@ -8,6 +8,7 @@
   text-align: center;
   font-size: var(--font-size-base);
   font-family: var(--bookerly-reading-desktop);
+  width: 100%;
   }
 
 @media screen and (max-width: 912px) {
