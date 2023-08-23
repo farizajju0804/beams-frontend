@@ -8,6 +8,8 @@ import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
 import { Beams } from "./pages/Beams/Beams";
 import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
+import { Footer } from "./models/Footer/Footer"
+import { Newsletter } from "./models/Footer/Newsletter";
 // import Footer from "./models/Footer/Footer";
 import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
 import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
