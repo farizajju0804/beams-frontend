@@ -103,7 +103,7 @@ const articleComponents = [
   <StatisticContainer order={8}
     statisticContent={`BCI’s can be classified into three categories, those that record brain activity, those
     that modulate brain activity, and those that do both, also called bi-directional BCIs
-    or BBCIs<sup><link>11|https://fpf.org/blog/brain-computer-interfaces-data-protection-understanding-the-technology-and-data-flows/</link></sup>.`}
+    or BBCIs<sup><link>12|https://fpf.org/blog/brain-computer-interfaces-data-protection-understanding-the-technology-and-data-flows/</link></sup>.`}
   />,
 
   <SubPara
@@ -111,7 +111,7 @@ const articleComponents = [
     subContent={[
       `When we usher in a new frontier of human augmentation by integrating our
       biological intelligence with digital intelligence, our species might change forever.
-      <strong>We might then evolve from Homo Sapiens to Homo Deus</strong><sup><link>12|https://www.nbcnews.com/mach/technology/godlike-homo-deus-could-replace-humans-tech-evolves-n757971</link></sup>.`,
+      <strong>We might then evolve from Homo Sapiens to Homo Deus</strong><sup><link>13|https://www.nbcnews.com/mach/technology/godlike-homo-deus-could-replace-humans-tech-evolves-n757971</link></sup>.`,
       `This is just the beginning–it’s too soon to predict the endless possibilities of mind-
       machine communication. When a flicker of thought sets the world around us into
       motion, we will need to ensure our thoughts are worth translating.`,
