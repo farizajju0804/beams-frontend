@@ -138,7 +138,7 @@ const articleComponents = [
     machines.`,
     `<strong>Our New Superpower:</strong> Someday we might interact with our devices, homes,
     and cars solely through our thoughts.`,
-    ``,
+    `<strong>Six Powerful BCI Applications</strong>`,
     `<strong>Industry Size:</strong> The BCI market is expected to grow from $2.13 billion in 2022
     to $9.4 billion in 2032.`,
     `<strong>BCI Categories:</strong> There are three categories of BCIs, those that record brain
