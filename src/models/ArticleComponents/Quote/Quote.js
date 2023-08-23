@@ -1,4 +1,6 @@
 import "./Quote.css";
+import { FaQuoteLeft,FaQuoteRight } from "react-icons/fa";
+
 const Quote = ({ quoteContent, personName, bgcolor,color,order }) => {
   const quoteContainerStyle = {
     backgroundColor: bgcolor, 
@@ -18,8 +20,11 @@ const Quote = ({ quoteContent, personName, bgcolor,color,order }) => {
         <div className="person-name">{personName}</div>
       </div>
       <div className="quote-content" style={quoteContainerStyle}>{quoteContent}</div>
-      <img className="quote-left-icon" alt="" src="/Assets/images/quote-left.png" />
-      <img className="quote-right-icon" alt="" src="/Assets/images/quote-right.png" />
+      <FaQuoteLeft color="#161616" className="quote-left-icon"/>
+      <FaQuoteRight color="161616" className="quote-right-icon"/>
+    
+      {/* <img className="quote-left-icon" alt="" src="/Assets/images/quote-left.png" />
+      <img className="quote-right-icon" alt="" src="/Assets/images/quote-right.png" /> */}
     </div>
   );
 };
