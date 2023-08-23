@@ -235,7 +235,7 @@ export const Signup = () => {
 						<div className="passcloudinner">
 							{passlen ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
+									<HiCheckCircle color="#f96f2e" />
 									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
 										8 Characters
 									</span>
@@ -268,7 +268,7 @@ export const Signup = () => {
 						<div className="passcloudinner">
 							{passnum ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
+									<HiCheckCircle color="#f96f2e" />
 									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
 										1 Number
 									</span>
@@ -301,7 +301,7 @@ export const Signup = () => {
 				</div>
 				<div className="loginoptions">
 					<div className="signupremember">
-						<input type="checkbox" id="logincheck" defaultChecked />
+						<input type="checkbox" id="logincheck" className="custom-checkbox" defaultChecked />
 						<label htmlFor="logincheck">
 							You agree to our{" "}
 							<a
@@ -322,6 +322,7 @@ export const Signup = () => {
 								Privacy Policy
 							</a>
 						</label>
+						<span></span>
 					</div>
 				</div>
 				<button
@@ -344,7 +345,7 @@ export const Signup = () => {
 							navigate("/login");
 						}}
 					>
-						Sign In
+						Log In
 					</strong>{" "}
 				</p>
 				<div className="oauths">

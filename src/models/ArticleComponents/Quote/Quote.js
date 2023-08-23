@@ -1,8 +1,9 @@
 import "./Quote.css";
-const Quote = ({ quoteContent, personName, bgcolor,color }) => {
+const Quote = ({ quoteContent, personName, bgcolor,color,order }) => {
   const quoteContainerStyle = {
     backgroundColor: bgcolor, 
-    color: color// Set the background color dynamically
+    color: color,
+    order:order// Set the background color dynamically
   };
   
   

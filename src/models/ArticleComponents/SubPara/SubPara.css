@@ -9,8 +9,7 @@
   .sub-para-img-box-icon {
     align-self: stretch;
     max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
+    height: 420px;
     object-fit: cover;
   }
   
@@ -101,6 +100,11 @@
       line-height: 30px;
     }
 
+    .sub-para-img-box-icon {
+      align-self: stretch;
+      max-width: 100%;
+      height: 180px;
+    }
   
   }
   

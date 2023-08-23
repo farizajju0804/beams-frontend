@@ -21,8 +21,9 @@ const ApplicationBox = ({
     }
   };
 
+
   return (
-    <div className="application-box">
+    <div className="application-box" >
       <div className="application-img-box">
         <img className="application-img-1-1-icon" alt="" src={applicationImg} />
       </div>

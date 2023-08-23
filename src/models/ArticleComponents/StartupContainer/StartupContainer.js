@@ -1,8 +1,11 @@
 import "./StartupContainer.css";
 import Startup from '../Startup/Startup'
-const StartupContainer = ({productCategory,startupContainerTitle,startupContents}) => {
+const StartupContainer = ({productCategory,startupContainerTitle,startupContents,order}) => {
+  const orderstyle = {
+    order : order
+  }
   return (
-    <div className="startups-container">
+    <div className="startups-container" style={orderstyle}>
       <div className="startupcontainertitle">
         {startupContainerTitle}
       </div>

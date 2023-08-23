@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import "./LoggedinNav.css";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { FiLogOut } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+import { IoLibrarySharp } from "react-icons/io5";
 import { useAuthContext } from "../../context/AuthContext";
-import acc1 from "../../assets/acc1.png";
-import acc2 from "../../assets/acc2.png";
-import acc3 from "../../assets/acc3.png";
-import { API_Photo } from "../../constants";
-import { removeToken } from "../../helpers";
 
 export const LoggedinNav = () => {
 	const { user } = useAuthContext();
@@ -17,39 +15,26 @@ export const LoggedinNav = () => {
 
 	return (
 		<div className="loggedinnav">
-			<img className="logged-in-logo" src="Assets/images/logo.png" alt="" onClick={() => {
-					navigate("/");
-				}}></img>
+			<h1
+				style={{ color: "#435CFF" }}
+				onClick={() => {
+					navigate("/beams");
+				}}
+			>
+				Innbrieff.
+			</h1>
 			<div className="bandacont">
-				<span
-					onClick={() => {
-						navigate("/beams");
-					}}
-				>
-					Beams
-				</span>
+				<span>Beams</span>
 				<div
 					className="navaccoutholder"
 					onClick={() => {
 						setDropdown(!dropdown);
 					}}
 				>
-					{user ? (
-						user.Profilepic === null ? (
-							<div className="mockprofileimg">
-								<p>{user.name[0]}</p>
-							</div>
-						) : user.Profilepic === undefined ? (
-							<div className="mockprofileimg">
-								<p>{user.name[0]}</p>
-							</div>
-						) : (
-							<img src={API_Photo + user.Profilepic.url}></img>
-						)
-					) : (
-						<div></div>
-					)}
-
+					<img
+						src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=2000"
+						alt=""
+					/>
 					<span>
 						{user ? (user.name === null ? user.username : user.name) : ""}
 					</span>
@@ -61,14 +46,8 @@ export const LoggedinNav = () => {
 								: "accountdropdown"
 						}
 					>
-						<div
-							className="accountdropdownitems"
-							onClick={() => {
-								navigate("/profile");
-							}}
-						>
-							{/* <CgProfile size={20} /> */}
-							<img src={acc1} alt="" />
+						<div className="accountdropdownitems">
+							<CgProfile size={20} />
 							<span>My Profile</span>
 						</div>
 						<div
@@ -77,9 +56,7 @@ export const LoggedinNav = () => {
 								navigate("/hightlights");
 							}}
 						>
-							{/* <IoLibrarySharp /> */}
-							<img src={acc2} alt="" />
-
+							<IoLibrarySharp />
 							<span>My Library</span>
 						</div>
 						<div
@@ -88,15 +65,8 @@ export const LoggedinNav = () => {
 								navigate("/");
 							}}
 						>
-							{/* <FiLogOut /> */}
-							<img src={acc3} alt="" />
-							<span
-								onClick={() => {
-									removeToken();
-								}}
-							>
-								Log Out
-							</span>
+							<FiLogOut />
+							<span>Log Out</span>
 						</div>
 					</div>
 				</div>

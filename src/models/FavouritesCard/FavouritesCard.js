@@ -14,7 +14,7 @@ import { useAuthContext } from "../../context/AuthContext";
 
 export const FavouritesCard = ({
 	completed,
-	id,
+	key,
 	title,
 	Desc,
 	typeofbeam,
@@ -22,13 +22,8 @@ export const FavouritesCard = ({
 }) => {
 	const navigate = useNavigate();
 
-	console.log(id);
-
-	// console.log(typeofbeam);
-
 	const [dropdown, setDropdown] = useState(false);
 	const { delfav } = useAuthContext();
-	// console.log(id);
 
 	return (
 		<div
@@ -41,18 +36,7 @@ export const FavouritesCard = ({
 				<img src={maxbeammock} alt="" />
 			</div>
 			<div className="maxbeamdata">
-				<h3
-					style={{ cursor: "pointer" }}
-					onClick={() => {
-						if (typeofbeam === "Minibeam") {
-							navigate("/maxbeampage/" + idofbeam);
-						} else {
-							navigate("/beams#" + idofbeam + typeofbeam);
-						}
-					}}
-				>
-					{title}
-				</h3>
+				<h3>{title}</h3>
 				<div
 					style={{
 						width: "100%",
@@ -65,10 +49,10 @@ export const FavouritesCard = ({
 				</div>
 				<button
 					onClick={() => {
-						if (typeofbeam === "Minibeam") {
+						if (typeofbeam === "maxbeam") {
 							navigate("/maxbeampage/" + idofbeam);
 						} else {
-							navigate("/beams#" + idofbeam + typeofbeam);
+							navigate("/minibeams");
 						}
 					}}
 				>
@@ -108,8 +92,7 @@ export const FavouritesCard = ({
 							Name: title,
 							Desc: Desc,
 							idofbeam: `${idofbeam}`,
-							typeofbeam: typeofbeam,
-							id: id
+							typeofbeam: typeofbeam
 						});
 					}}
 				>

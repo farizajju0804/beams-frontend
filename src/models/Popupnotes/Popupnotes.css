@@ -8,41 +8,6 @@
     flex-direction: column;
 }
 
-@media only screen and (max-width:1280px) {
-    .popupnotes{
-        height: 550px;
-    }
-
-    .notes{
-        height: 55% !important;
-    }
-}
-
-@media only screen and (max-width:629px) {
-    .popupnotes{
-        width: 95%;
-        height: 500px;
-    }
-
-    .notes{
-        height: 55% !important;
-        font-size: 16px !important;
-    }
-
-    .Notepopheader span{
-        font-size: 16px !important;
-    }
-    
-    .Notepopheader h2{
-        margin-top: 10px !important;
-        font-size: 24px !important; 
-    }
-
-    .notepopcntrl{
-        margin-top: 10px !important;
-    }
-}
-
 .Notepopheader{
     height: 120px;
     background-color: #F7CD61;
@@ -65,6 +30,10 @@
 
 .notes {
     background-attachment: local;
+    /* background-image:
+        linear-gradient(to right, white 15px, transparent 15px),
+        linear-gradient(to left, white 15px, transparent 15px),
+        repeating-linear-gradient(white, white 22px, #ccc 22px, #ccc 23px, white 22px); */
     line-height: 31px;
     padding: 8px 10px;
     width: 100%;
@@ -104,6 +73,7 @@
     color: white;
     border-radius: 20px;
     background-color: #435CFF;
+
 }
 
 .notepopcntrl{

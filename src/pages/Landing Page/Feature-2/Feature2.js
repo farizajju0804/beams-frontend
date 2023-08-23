@@ -24,9 +24,12 @@ function Feature2() {
                 </div>
          
                 <div className="topic-card">
-                 <img className="topic-img" src="Assets/images/blue-light-topic.jpg" alt=""></img>
-                 <div className="topic-title">Blue Light:<br></br>A Dazzling Discovery
+                <Link to='/articleread1' activeClassName='active'>
+                 <img className="topic-img" src="Assets/images/bci-header.jpg" alt=""></img>
+                 <div className="topic-title">Brain-Computer Interfaces<br></br>The Next Frontier in Human Evolution
                    </div>
+              </Link>
+
                 </div>
                 <div className="topic-card">
                  <img className="topic-img" src="Assets/images/placebo-topic.png" alt=""></img>

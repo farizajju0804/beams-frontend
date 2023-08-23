@@ -1,7 +1,6 @@
 import React from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
 import "./Popupabtus.css";
-import { AiFillCloseCircle } from "react-icons/ai";
 
 export const Popupabtus = ({ handleClose, text }) => {
 	return (
@@ -12,14 +11,6 @@ export const Popupabtus = ({ handleClose, text }) => {
 					e.stopPropagation();
 				}}
 			>
-				<div
-					className="sharemodelcloser"
-					onClick={() => {
-						handleClose();
-					}}
-				>
-					<AiFillCloseCircle />
-				</div>
 				<div className="abtuspopupdata">
 					<p>
 						Malvika Bawri is the Co-Founder and President of Think India. She is

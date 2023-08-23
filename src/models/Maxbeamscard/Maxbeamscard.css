@@ -21,18 +21,6 @@
     margin-Right: 30px;
     margin-top: 40px;
     margin-bottom: 40px;
-    position: relative;
-}
-
-@media only screen and (max-width:600px)
-{
-    .maxbeamcardcontnew{
-        height: 250px;
-        width: 85vw;
-    }
-
-
-    
 }
 
 .maxbeamdata > button{

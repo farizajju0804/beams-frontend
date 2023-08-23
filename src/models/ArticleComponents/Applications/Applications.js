@@ -1,8 +1,11 @@
 import ApplicationBox from "../ApplicationBox/ApplicationBox";
 import "./Applications.css";
-const Applications = ({ applicationHeader, applicationHeaderContent }) => {
+const Applications = ({ applicationHeader, applicationHeaderContent,order }) => {
+  const orderstyle = {
+    order: order
+  }
   return (
-    <div className="applications">
+    <div className="applications" style={order}>
       <div className="application-header-box">
         <b className="application-header">{applicationHeader}</b>
         <div className="application-header-content">

@@ -140,7 +140,7 @@ export const Login = () => {
 							onClick={() => {
 								setIspassvis(!ispassvis);
 							}}
-							color={"#435CFF"}
+							color={"#f96f2e"}
 						/>
 					)}
 				</div>
@@ -173,7 +173,7 @@ export const Login = () => {
 					{isLoading ? (
 						<ClipLoader color="white" size={23}></ClipLoader>
 					) : (
-						"Sign In"
+						"Log In"
 					)}
 				</button>
 				<p className="noaccout">

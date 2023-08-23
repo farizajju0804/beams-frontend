@@ -12,10 +12,6 @@
     z-index: 10;
 }
 
-.logged-in-logo{
-    width: 100px;
-}
-
 .searchbar{
     position: relative;
 }
@@ -96,11 +92,9 @@
 
 .bandacont > span{
     font-weight: 600;
-    color: var(--orange);
+    color: #435CFF;
     font-size: 20px;
-    cursor: pointer;
 }
-
 
 .accountdropdown{
     position: absolute;
@@ -123,17 +117,11 @@
     display: flex;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     padding: 7px;
-    padding-left: 10px;
+    border-radius: 20px;
 
-}
-
-.accountdropdownitems >img {
-    margin-right: 20px;
-    height: 20px;
-    width: auto;
 }
 
 .accountdropdowndisplay{
@@ -142,62 +130,4 @@
 
 .accountdropdownitems:hover{
     background-color: #f3f3f3;
-}
-
-.mockprofileimg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
-    color: white;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: black;
-}
-
-@media only screen and (max-width:1090px)  {
-    .loggedinnav{
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
-
-@media only screen and (max-width:700px)  {
-    .loggedinnav{
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .bandacont{
-        width: 240px;
-        justify-content: flex-end;
-    }
-
-    .navaccoutholder > img{
-        width: 20px;
-        height: 20px;
-    }
-    .loggedinnav > h1 {
-        font-size: 26px;
-    }
-
-    .bandacont > span {
-        display: none;
-        font-size: 16px;
-    }
-
-    .navaccoutholder > span {
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 14px;
-    }
-
-    .navaccoutholder
-    {
-        padding-left: 5px;
-        padding-right: 5px;
-        height: 32px;
-    }
 }

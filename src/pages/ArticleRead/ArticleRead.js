@@ -206,7 +206,7 @@ const ArticleRead = () => {
             one of us. The palette of life is in our hands. What will you create?`,
           ]}
         />
-<div className="dropdown-box">
+
 <Dropdown
   dropdownTitle="INSIGHTS"
   dropdownContent={[
@@ -249,7 +249,6 @@ const ArticleRead = () => {
   dropdownIcon="Assets/images/references.png"
 />
 
-</div>
 
 
 

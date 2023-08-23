@@ -33,6 +33,8 @@ import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
 import LandingPage from './pages/Landing Page/LandingPage'
 import ArticleRead from "./pages/ArticleRead/ArticleRead";
+import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
+
 
 const router = createBrowserRouter([
 	// {
@@ -235,6 +237,17 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<Navbar />
 				<ArticleRead/>
+				<Footer/>
+			</div>
+		)
+	},
+	{
+		path: "/articleread1",
+		element: (
+			<div>
+				<ScrollToTop />
+				<Navbar />
+				<ArticleRead1/>
 				<Footer/>
 			</div>
 		)

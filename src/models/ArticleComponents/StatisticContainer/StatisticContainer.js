@@ -1,5 +1,5 @@
 import "./StatisticContainer.css";
-const StatisticContainer = ({ statisticContent }) => {
+const StatisticContainer = ({ statisticContent,order }) => {
     const processContent = (content) => {
       let formattedContent = content.replace(/<strong>(.*?)<\/strong>/g, '<strong>$1</strong>');
       formattedContent = formattedContent.replace(/<italic>(.*?)<\/italic>/g, '<em>$1</em>');
@@ -27,9 +27,11 @@ const StatisticContainer = ({ statisticContent }) => {
       );
       return <span dangerouslySetInnerHTML={{ __html: formattedContent }} />;
     };
-  
+   const orderstyle = {
+    order: order
+   }
     return (
-      <div className="statistic-container1">
+      <div className="statistic-container1" style={orderstyle}> 
         <div className="statistic1">
           <div className="statistic-title1">
             <img className="statistic-icon1" alt="" src="Assets/images/Statistic-icon.png" />

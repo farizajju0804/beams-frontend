@@ -1,7 +1,10 @@
 import "./StartBox.css";
-const StartBox = ({ startContent }) => {
+const StartBox = ({ startContent,order }) => {
+  const orderstyle ={
+    order:order
+  }
   return (
-    <div className="start-box">
+    <div className="start-box" style={orderstyle}>
       <i className="start-content">{startContent}</i>
     </div>
   );

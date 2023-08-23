@@ -3,11 +3,16 @@ import { Clock } from "iconsax-react";
 const ArticleHeader = ({
   category,
   articleTitle,
-
+  order,
   introContentBold,
   introContentNormal,
-  introMainImage
+  introMainImage,
+  bgcolor,
 }) => {
+  const bgStyle = {
+    backgroundColor: bgcolor,
+    order: order
+  };
   const introBoxStyle = {
     backgroundImage: `url(${introMainImage})`, // Set the background image dynamically
   };
@@ -16,12 +21,12 @@ const ArticleHeader = ({
       const formattedContent = content.replace(
         /<sup><link>(.*?)<\/link><\/sup>/g,
         (_, link) => {
-          const linkParts = link.split('|');
+          const linkParts = link.split("|");
           if (linkParts.length === 2) {
             const [number, url] = linkParts;
             return `<sup><a class="superscript-link" href="${url}" target="_blank" rel="noopener noreferrer">${number}</a></sup>`;
           }
-          return '';
+          return "";
         }
       );
       return <span dangerouslySetInnerHTML={{ __html: formattedContent }} />;
@@ -30,7 +35,7 @@ const ArticleHeader = ({
     }
   };
   return (
-    <div className="article-header">
+    <div className="article-header" style={bgStyle}>
       <div className="article-title">
         <h1 className="the-fascinating-world4">{articleTitle}</h1>
       </div>
@@ -39,12 +44,12 @@ const ArticleHeader = ({
           <div className="science">{category}</div>
         </div>
         <div className="time-read">
-        <Clock size="20" color="#161616" variant="Outline"/>
+          <Clock size="20" color="#161616" variant="Outline" />
           <div className="minute-read">5 minute read</div>
         </div>
       </div>
       <div className="intro-box">
-      <div className="intro-main-image-icon" style={introBoxStyle} />
+        <div className="intro-main-image-icon" style={introBoxStyle} />
         <div className="intro-content-parent">
           <div className="intro-content">
             <b>{introContentBold}</b>

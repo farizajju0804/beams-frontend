@@ -1,9 +1,12 @@
 import React from 'react'
 import {DataCard} from '../DataCard/DataCard'
 import "./DataCardBox.css"
-function DataCardBox() {
+function DataCardBox(order) {
+  const orderstyle = {
+    order : order
+  }
   return (
-    <div className="data-cards-box">
+    <div className="data-cards-box" style={orderstyle}>
        <DataCard
       yearData="In  2021"
       incidentData="828 Million People"

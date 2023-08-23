@@ -12,6 +12,14 @@
     font-family: var(--font-mulish);
 }
 
+
+.custom-checkbox:checked {
+    background-color: blue; /* New border color when checked */
+    accent-color: var(--orange)/* New background color when checked */
+}
+
+
+
 .logincont{
     margin-top: 100px;
     max-width: 480px;

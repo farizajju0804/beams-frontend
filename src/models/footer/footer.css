@@ -1,0 +1,101 @@
+.footer{
+    height: 500px;
+    width: 100%;
+    background-color: #FAFAFA;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fdivder{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(230, 230, 230);
+}
+
+.footeritems{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.footabout{
+    width: 20%;
+}
+
+.footabout img{
+    margin-bottom: 20px;
+}
+
+.footabout p {
+    margin-bottom: 20px;
+
+}
+
+.footitem h3{
+    margin-bottom: 20px;
+}
+.footitem p {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.footitem p:hover {
+    color: blue;
+}
+
+.fabouticonsdiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+@media only screen and (max-width:850px)
+{
+    .footeritems{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .footabout p {
+
+        text-align: center;
+    }
+
+    .footer{
+        height: 800px;
+        width: 100%;
+        background-color: #FAFAFA;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .footabout{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        margin-bottom: 30px;
+    }
+
+    .footitem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footitem > h3{
+        margin-bottom: 0px;
+    }
+}

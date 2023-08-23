@@ -53,3 +53,20 @@
 .rhap_container svg{
     color: var(--orange);
 }
+
+
+
+@media screen and (max-width : 737px) {
+    .rhap_container{
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    .rhap_container svg{
+        color: var(--orange);
+    }
+
+    .rhap_main-controls{
+
+    }
+    
+}
