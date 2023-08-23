@@ -226,25 +226,25 @@ const ArticleRead = () => {
 <Dropdown
   dropdownTitle="References"
   dropdownContent={[
-    "Scientists build DNA from scratch to alter life’s blueprint.|https://www.statnews.com/2017/07/26/scientists-build-dna-scratch-alter-lifes-blueprint",
-    "How Could Microbes Help to Solve Climate Change?|https://www.news-medical.net/life-sciences/How-Could-Microbes-Help-to-Solve-Climate-Change.aspx",
-    "Scientists build DNA from scratch to alter life’s blueprint.|https://www.statnews.com/2017/07/26/scientists-build-dna-scratch-alter-lifes-blueprint",
-    "Synthetic Biology Moves into the Realm of the Unnatural.|https://news.berkeley.edu/2021/10/14/synthetic-biology-moves-into-the-realm-of-the-unnatural/",
-    "Methods and Mechanisms for Genetic Manipulation of Plants, Animals, and Microorganisms.|https://www.ncbi.nlm.nih.gov/books/NBK215771/",
-    "Cell factories for insulin production.|https://microbialcellfactories.biomedcentral.com/articles/10.1186/s12934-014-0141-0",
-    "Synthetic biology and opportunities within agricultural crops.|https://onlinelibrary.wiley.com/doi/full/10.1002/sae2.12014",
-    "Synthetic biology: How it can help the environment.|https://news.climate.columbia.edu/2019/08/14/synthetic-biology-help-environment/",
-    "Utilizing Plant Synthetic Biology to Improve Human Health and Wellness.|https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8421571/",
-    "ARPA-E Energy.|https://arpa-e.energy.gov/technologies/projects/turning-bacteria-biofuel",
-    "Biofuels evolution perspectives.|https://www.enerdata.net/publications/executive-briefing/biofuels-market-dynamics.html",
-    "Worldwide Prevalence and Burden of Functional Gastrointestinal Disorders.|https://pubmed.ncbi.nlm.nih.gov/32294476/",
-    "Antibody Essentials Part 3: How Antibody Technologies Evolved.|https://blog.cellsignal.com/antibody-essentials-part-3-how-antibody-technologies-evolved",
-    "A systematic rapid evidence assessment of late diagnosis.|https://eppi.ioe.ac.uk/cms/Default.aspx?tabid=3367",
-    "The Environmental Impact Of Leather.|https://www.somewhatgreener.com/articles/animal-rights/the-environmental-impact-of-leather/",
-    "The Environment’s New Clothes: Biodegradable Textiles Grown from Live Organisms.|https://www.scientificamerican.com/article/the-environments-new-clothes-biodegradable-textiles-grown-from-live-organisms/",
-    "Plant-based meat for a growing world.|https://gfi.org/resource/environmental-impact-of-meat-vs-plant-based-meat/",
-    "Current and emerging opportunities in biological medium-based computing and digital data storage.|https://onlinelibrary.wiley.com/doi/full/10.1002/nano.202100275",
-    "DNA: The Ultimate Data Storage Solution.|https://www.scientificamerican.com/article/dna-the-ultimate-data-storage-solution/"
+    "<link>Scientists build DNA from scratch to alter life’s blueprint.|https://www.statnews.com/2017/07/26/scientists-build-dna-scratch-alter-lifes-blueprint</link>",
+    "<link>How Could Microbes Help to Solve Climate Change?|https://www.news-medical.net/life-sciences/How-Could-Microbes-Help-to-Solve-Climate-Change.aspx</link>",
+    "<link>Scientists build DNA from scratch to alter life’s blueprint.|https://www.statnews.com/2017/07/26/scientists-build-dna-scratch-alter-lifes-blueprint</link>",
+    "<link>Synthetic Biology Moves into the Realm of the Unnatural.|https://news.berkeley.edu/2021/10/14/synthetic-biology-moves-into-the-realm-of-the-unnatural/</link>",
+    "<link>Methods and Mechanisms for Genetic Manipulation of Plants, Animals, and Microorganisms.|https://www.ncbi.nlm.nih.gov/books/NBK215771/</link>",
+    "<link>Cell factories for insulin production.|https://microbialcellfactories.biomedcentral.com/articles/10.1186/s12934-014-0141-0</link>",
+    "<link>Synthetic biology and opportunities within agricultural crops.|https://onlinelibrary.wiley.com/doi/full/10.1002/sae2.12014</link>",
+    "<link>Synthetic biology: How it can help the environment.|https://news.climate.columbia.edu/2019/08/14/synthetic-biology-help-environment/</link>",
+    "<link>Utilizing Plant Synthetic Biology to Improve Human Health and Wellness.|https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8421571/</link>",
+    "<link>ARPA-E Energy.|https://arpa-e.energy.gov/technologies/projects/turning-bacteria-biofuel</link>",
+    "<link>Biofuels evolution perspectives.|https://www.enerdata.net/publications/executive-briefing/biofuels-market-dynamics.html</link>",
+    "<link>Worldwide Prevalence and Burden of Functional Gastrointestinal Disorders.|https://pubmed.ncbi.nlm.nih.gov/32294476/</link>",
+    "<link>Antibody Essentials Part 3: How Antibody Technologies Evolved.|https://blog.cellsignal.com/antibody-essentials-part-3-how-antibody-technologies-evolved</link>",
+    "<link>A systematic rapid evidence assessment of late diagnosis.|https://eppi.ioe.ac.uk/cms/Default.aspx?tabid=3367</link>",
+    "<link>The Environmental Impact Of Leather.|https://www.somewhatgreener.com/articles/animal-rights/the-environmental-impact-of-leather/</link>",
+    "<link>The Environment’s New Clothes: Biodegradable Textiles Grown from Live Organisms.|https://www.scientificamerican.com/article/the-environments-new-clothes-biodegradable-textiles-grown-from-live-organisms/</link>",
+    "<link>Plant-based meat for a growing world.|https://gfi.org/resource/environmental-impact-of-meat-vs-plant-based-meat/</link>",
+    "<link>Current and emerging opportunities in biological medium-based computing and digital data storage.|https://onlinelibrary.wiley.com/doi/full/10.1002/nano.202100275</link>",
+    "<link>DNA: The Ultimate Data Storage Solution.|https://www.scientificamerican.com/article/dna-the-ultimate-data-storage-solution/</link>"
   ]}
   dropdownIcon="Assets/images/references.png"
 />

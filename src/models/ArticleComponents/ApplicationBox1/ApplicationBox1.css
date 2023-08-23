@@ -41,12 +41,12 @@
     gap: 5px;
 
   }
-  .outcome-content,
-  .outcome {
+  .outcome-content1,
+  .outcome1 {
     align-self: stretch;
     position: relative;
   }
-  .outcome {
+  .outcome1 {
     line-height: 13.33px;
     font-weight: 600;
     background-color: var(--white);
@@ -57,21 +57,21 @@
     padding: 5px;
 
   }
-  .outcome-content {
+  .outcome-content1 {
     line-height: 25px;
     font-family: var(--bookerly-reading-desktop);
   }
 
-  .outcome-content p{
+  .outcome-content1 p{
     line-height: 25px;
   }
   .application-box1,
-  .outcome-box {
+  .outcome-box1 {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .outcome-box {
+  .outcome-box1 {
     background-color: var(--green);
     padding: var(--padding-mini) var(--padding-3xs);
     justify-content: center;

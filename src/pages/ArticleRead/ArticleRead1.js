@@ -167,8 +167,33 @@ const articleComponents = [
   dropdownIcon="Assets/images/insights.png"
   order={10}
 
-/>
+/>,
+<Dropdown
+  dropdownTitle="References"
+  dropdownContent={[
+    `<link>When Thinking is Doing: Responsibility for BCI-Mediated Action|https://www.tandfonline.com/doi/full/10.1080/21507740.2019.1704918</link>`,
+    `<link>Brain–computer interface|https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface</link>`,
+    `<link>Paralysed Man Feeds Himself with Help of Implants|https://blackrockneurotech.com/insights/paralysed-man-feeds-himself-with-help-of-implants/</link>`,
+    `<link>Modern prosthetics go beyond artificial limbs—and into the human brain|https://qz.com/2141720/modern-prosthetics-go-beyond-bionic-limbs-and-into-the-brain</link>`,
+    `<link>Augmented Humanity: The Man Machine|https://www.avnet.com/wps/portal/silica/resources/article/augmented-humanity-the-man-machine/</link>`,
+    `<link>Augmented Humanity: The Man Machine|https://www.avnet.com/wps/portal/silica/resources/article/augmented-humanity-the-man-machine/</link>`,
+    `<link>Cognitive and Affective Brain–Computer Interfaces for Improving Learning Strategies|https://ieeexplore.ieee.org/document/9547287</link>`,
+    `<link>Brain-computer interfaces could allow soldiers to control weapons with their thoughts and turn off their fear|https://theconversation.com/brain-computer-interfaces-could-allow-soldiers-to-control-weapons-with-their-thoughts-and-turn-off-their-fear-but-the-ethics-of-neurotechnology-lags-behind-the-science-194017</link>`,
+    `<link>Video Games Controlled by Thoughts|https://www.bbvaopenmind.com/en/technology/innovation/video-games-controlled-by-thoughts/</link>`,
+    `<link>The Ethical Implications of Brain-Computer Interfaces|https://originstamp.com/blog/the-ethical-implications-of-brain-computer-interfaces/#:~:text=Ethical%20Concerns%20Regarding%20Privacy%20and%20Data%20Security,-As%20with%20any&amp;text=BCIs%20collect%20sensitive%20information%20directly,will%20be%20used%20and%20protected.</link>`,
+    `<link>Brain Computer Interface Market Brain Computer Interface Market by Component|https://www.alliedmarketresearch.com/brain-computer-interfaces-market#:~:text=Brain%20Computer%20Interface%20Market%20Statistics,13.9%25%20from%202021%20to%202030.</link>`,
+    `<link>BRAIN-COMPUTER INTERFACES & DATA PROTECTION: UNDERSTANDING THE TECHNOLOGY AND DATA FLOWS|https://fpf.org/blog/brain-computer-interfaces-data-protection-understanding-the-technology-and-data-flows/</link>`,
+    `<link>Godlike 'Homo Deus' Could Replace Humans as Tech Evolves|https://www.nbcnews.com/mach/technology/godlike-homo-deus-could-replace-humans-tech-evolves-n757971</link>`
+  
+    
 
+
+
+    
+  ]}
+  dropdownIcon="Assets/images/references.png"
+  order={11}
+/>
 
 
 

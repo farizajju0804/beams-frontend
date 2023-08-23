@@ -56,9 +56,9 @@ const ApplicationBox1 = ({
           </div>
         </div>
       </div>
-      <div className="outcome-box">
-        <div className="outcome">{`Startup  `}</div>
-        <div className="outcome-content">{processContent(outcomeContent)}</div>
+      <div className="outcome-box1">
+        <div className="outcome1">{`Startup  `}</div>
+        <div className="outcome-content1">{processContent(outcomeContent)}</div>
       </div>
     </div>
   );

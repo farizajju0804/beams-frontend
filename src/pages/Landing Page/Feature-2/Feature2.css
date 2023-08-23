@@ -59,7 +59,7 @@
 }
 
 .topic-card{
-    width: 200px;
+    width: 220px;
     background-color: var(--white);
     box-shadow: var(--effect-1);
     border-radius: var(--br-xs);
@@ -157,7 +157,6 @@
 
     .topic-card{
         width: 60%;
-        height:auto;
         box-shadow: var(--effect-1);
         border-radius: var(--br-xs);
         display: flex;
