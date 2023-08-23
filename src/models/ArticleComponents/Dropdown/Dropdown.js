@@ -23,7 +23,8 @@ function Dropdown({ dropdownTitle, dropdownContent, dropdownIcon, order }) {
             return `<a class="ref-link" href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
           }
           return '';
-        });
+        })
+        .replace(/<br>/g, '<br/>');
 
       return <li key={index} dangerouslySetInnerHTML={{ __html: formattedPoint }} />;
     });
