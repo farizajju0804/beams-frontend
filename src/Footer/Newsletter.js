@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState } from 'react';
-
+import "./Footer.css"
 function Newsletter() {
     const [mail, setMail] = useState('');
     const handleChange = event => {
         setMail(event.target.value);
       };
   return (
+    <div className='newsletter'>
+    
     <div className='newsletter-container'>
     <div className='yellow-bg'>
         </div>
@@ -20,6 +22,8 @@ function Newsletter() {
          <button className="footer-btn" type="submit">Subscribe</button>
     </div>
    
+    </div>
+      
     </div>
   )
 }
