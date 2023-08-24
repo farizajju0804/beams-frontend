@@ -17,7 +17,7 @@ function Feature2() {
 
               <div className="topic-card">
                  <img className="topic-img" src="Assets/images/Synthetic-bio-article.png" alt=""></img>
-                 <div className="topic-title"><Link to='/articleread1' activeClassName='active'>The Fascinating World Of<br></br>Synthetic Biology</Link>
+                 <div className="topic-title"><Link to='/articleread' activeClassName='active'>The Fascinating World Of<br></br>Synthetic Biology</Link>
                     </div>
                 </div>
          
@@ -26,7 +26,6 @@ function Feature2() {
                  <img className="topic-img" src="Assets/images/bci-header-1.jpg" alt=""></img>
                  <div className="topic-title"><Link to='/articleread1' activeClassName='active'>Brain-Computer<br></br>Interfaces</Link>
                    </div>
-              {/* </Link> */}
 
                 </div>
                 <div className="topic-card">

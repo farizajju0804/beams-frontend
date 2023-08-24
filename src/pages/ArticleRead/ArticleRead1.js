@@ -1,7 +1,6 @@
 import ArticleHeader from "../../models/ArticleComponents/ArticleHeader/ArticleHeader";
 import SubPara from "../../models/ArticleComponents/SubPara/SubPara";
 import StatisticContainer from "../../models/ArticleComponents/StatisticContainer/StatisticContainer";
-import DataCardBox from "../../models/ArticleComponents/DataCardBox/DataCardBox";
 import Applications1 from "../../models/ArticleComponents/Applications1/Applications1";
 import Quote from "../../models/ArticleComponents/Quote/Quote";
 import Dropdown from "../../models/ArticleComponents/Dropdown/Dropdown"

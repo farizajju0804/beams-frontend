@@ -1,6 +1,6 @@
 import ApplicationBox from "../ApplicationBox/ApplicationBox";
 import "./Applications.css";
-const Applications = ({ applicationHeader, applicationHeaderContent,order }) => {
+const Applications = ({ applicationHeader, applicationHeaderContent,applicationBoxes,order }) => {
   const orderstyle = {
     order: order
   }
@@ -13,17 +13,7 @@ const Applications = ({ applicationHeader, applicationHeaderContent,order }) => 
         </div>
       </div>
       <div className="application-box-container">
-      <ApplicationBox
-          applicationImg="Assets/images/application-img-1.png"
-          applicationtitle="Energizing The World"
-          outcomeTitle= "outcome"
-          outcomeContent="Getting closer to sustainable energy."
-          applicationPoints={[
-            '<strong>Sustainable Biofuels:</strong> Algae and bacteria that can produce everything from ethanol and biodiesel to jet fuel. They offer a promising solution to reduce our dependence on fossil fuels and combat climate change.',
-            '<strong>Bio-based chemicals:</strong> Organisms that generate industrial chemicals with less energy and fewer resources.'
-          ]}   
-          textAlign="center"  
-      />
+      {/* 
 
       <ApplicationBox
           applicationImg="Assets/images/application-img-2.png"
@@ -60,8 +50,10 @@ const Applications = ({ applicationHeader, applicationHeaderContent,order }) => 
             '<strong>Precision Agriculture:</strong> Optimizing crop yields to reduce the use of synthetic pesticides.'
           ]}      
           textAlign="center" 
-      />
-
+      /> */}
+           {applicationBoxes.map((boxProps, index) => (
+          <ApplicationBox key={index} {...boxProps} />
+        ))}
         
           </div>
         </div>
