@@ -1,30 +1,33 @@
 .termsandconditions{
-    padding-top: 130px;
+    padding-top: 80px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--font-mulish);
 }
 
 .innertermsandconditions{
     width: 800px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 
 .headingterms{
     text-align: center;
-    font-size: 50px;
-    margin-bottom: 90px;
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: var(--font-poppins);
 }
 
 .innertermsandconditions  h3{
     margin-top: 40px;
-    margin-bottom: 40px;
-    font-size: 24px;
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-family: var(--font-poppins);
 }
 
 .innertermsandconditions  p{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
 }
 
@@ -33,12 +36,19 @@
 }
 
 .innertermsandconditions  li{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
 }
 
 @media only screen and (max-width:850px) {
     .innertermsandconditions{
         width: 90%;
+    }
+    .headingterms{
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+        line-height: 40px;
+        font-family: var(--font-poppins);
     }
 }

@@ -32,7 +32,7 @@ export const PrivacyPolicies = () => {
 			<div className="innertermsandconditions">
 				<h1 className="headingterms">We care about your privacy</h1>
 				<p>
-					At Innbrieff, we take your privacy seriously and are committed to
+					At Beams, we take your privacy seriously and are committed to
 					protecting your personal information. This Privacy Policy outlines
 					what personal data we collect, why we collect it, and how we use it to
 					provide you with the best possible experience on our platform.
@@ -40,7 +40,7 @@ export const PrivacyPolicies = () => {
 				<div>
 					<h3>What information do we collect?</h3>
 					<p>
-						Innbrieff may collect the following types of information from you:
+						Beams may collect the following types of information from you:
 					</p>
 					<ul>
 						<li>
@@ -51,7 +51,7 @@ export const PrivacyPolicies = () => {
 							Demographic information such as your age, gender, and location
 						</li>
 						<li>
-							Information about your use of the Innbrieff platform, including
+							Information about your use of the Beams platform, including
 							browsing history and the content you interact with
 						</li>
 					</ul>
@@ -60,20 +60,20 @@ export const PrivacyPolicies = () => {
 					<ul>
 						<li>
 							Provide you with the best possible user experience on the
-							Innbrieff platform
+							Beams platform
 						</li>
 						<li>
 							Customize the content and features we offer to better meet your
 							needs
 						</li>
 						<li>
-							Send you updates and promotions about Innbrieff and its services
+							Send you updates and promotions about Beams and its services
 						</li>
 						<li>Improve our platform and develop new features</li>
 					</ul>
 					<h3>How We Use Your Information ?</h3>
 					<p>
-						Innbrieff will never sell, rent, or share your personal information
+						Beams will never sell, rent, or share your personal information
 						with third parties for their own marketing purposes. The information
 						we collect will only be used for the purposes outlined in this
 						Privacy Policy.
@@ -85,23 +85,16 @@ export const PrivacyPolicies = () => {
 						disclosure, alteration, or destruction. However, please keep in mind
 						that no method of data storage or transmission is 100% secure.
 					</p>
-					<h3>Changes to This Privacy Policy</h3>
-					<p>
-						Pharetra morbi libero id aliquam elit massa integer tellus. Quis
-						felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit
-						dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac
-						pellentesque ac.
-					</p>
 					<h3>What are your privacy rights?</h3>
 					<p>
-						Innbrieff may update this Privacy Policy from time to time to
+						Beams may update this Privacy Policy from time to time to
 						reflect changes in our practices or regulations. If we make any
 						material changes to this Privacy Policy, we will notify you by email
-						or by displaying a prominent notice on the Innbrieff platform
+						or by displaying a prominent notice on the Beams platform
 					</p>
 					<h3>How can you contact us about this policy?</h3>
 					<p>
-						If you have any questions or concerns about Innbrieff's Privacy
+						If you have any questions or concerns about Beams's Privacy
 						Policy or the information we collect, please contact us. We will be
 						happy to assist you
 					</p>
