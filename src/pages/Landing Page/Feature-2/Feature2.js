@@ -16,19 +16,19 @@ function Feature2() {
             <div className="topics-container">
 
               <div className="topic-card">
-              <Link to='/articleread' activeClassName='active'>
+              {/* <Link to='/articleread' activeClassName='active'> */}
                  <img className="topic-img" src="Assets/images/Synthetic-bio-article.png" alt=""></img>
-                 <div className="topic-title">The Fascinating World of
-                     Synthetic Biology</div>
-              </Link>
+                 <div className="topic-title">The Fascinating World <br/>
+                    Of Synthetic Biology</div>
+              {/* </Link> */}
                 </div>
          
                 <div className="topic-card">
-                <Link to='/articleread1' activeClassName='active'>
+                {/* <Link to='/articleread1' activeClassName='active'> */}
                  <img className="topic-img" src="Assets/images/bci-header.jpg" alt=""></img>
-                 <div className="topic-title">Brain-Computer Interfaces<br></br>The Next Frontier in Human Evolution
+                 <div className="topic-title">Brain-Computer<br></br>Interfaces
                    </div>
-              </Link>
+              {/* </Link> */}
 
                 </div>
                 <div className="topic-card">
