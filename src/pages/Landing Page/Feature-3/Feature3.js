@@ -25,7 +25,8 @@ const Feature3 = () => {
 
   const handleMockupClick = (mockup) => {
     setSelectedMockup(mockup);
-  }
+    console.log(mockup)
+  };
 
   return (
     <div className="bg">
@@ -33,30 +34,17 @@ const Feature3 = () => {
       <div className="container-3">
       <Featuretitle number='03' title="listen to Captivating Content "/>
       <div className="mobile-mockup">
-            {mockups.map((mockup) => (
-              <img
-                key={mockup.id}
-                className="mockup"
-                style={{
-                  transform:
-                    selectedMockup === mockup ? "translateY(-20px)" : "none",
-                  boxShadow:
-                    selectedMockup === mockup
-                      ? "0px 10px 20px rgba(0, 0, 0, 0.1)"
-                      : "none",
-                }}
+  {mockups.map((mockup) => (
+    <img
+      key={mockup.id}
+      className={`mockup ${selectedMockup === mockup ? "dance" : ""}`}
+      src={mockup.src}
+      alt=""
+      onClick={() => handleMockupClick(mockup)}
+    />
+  ))}
+</div>
 
-                src={mockup.src}
-                alt=""
-                onClick={() => handleMockupClick(mockup)}
-              />
-            ))}
-          </div>
-        {/* <img
-          className="audio-player"
-          alt=""
-          src="Assets/images/Audio-player.png"
-        /> */}
         <AudioPlayer
     src={selectedMockup ? selectedMockup.audioSrc : ""}
     onPlay={e => console.log("onPlay")}

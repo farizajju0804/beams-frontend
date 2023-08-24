@@ -46,8 +46,8 @@
 
 .rhap_container{
     border-radius: 20px;
-    width: 80% !important;
-    margin-bottom: 20px !important;
+    width: 90% !important;
+    margin: 0 auto  !important;
 }
 
 .rhap_container svg{
