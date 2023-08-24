@@ -64,6 +64,7 @@
     display: flex;
     flex-direction: column;
     gap: 0px;
+    width: 200px;
 }
 
 .topic-img{
@@ -81,7 +82,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    padding: 4px 5px;
+    padding: 8px 5px;
 
     height: 30%;
 }
@@ -152,7 +153,7 @@
     } */
 
     .topic-card{
-    width: 80%;
+    width: 180;
         box-shadow: var(--effect-1);
         border-radius: var(--br-xs);
         display: flex;
@@ -161,14 +162,14 @@
     
     }
     
-    .topic-img{
+    /* .topic-img{
         width: 100%;
         height: 65%;
-    }
+    } */
     
     .topic-title{
         text-align: center;
-        width: 100%;
+        /* width: 100%; */
         height: auto;
         font-family: var(--font-mulish);
         font-size: 20px;
@@ -176,7 +177,6 @@
         align-items: center;
         justify-content: center;
     }
-
 }
 
 @media screen and (max-width: 767px){
@@ -185,10 +185,10 @@
         gap: 50px;
     }
     
-    .topicimg{
+    /* .topicimg{
         width: 50%;
     }
-   
+    */
     
     .topic-title{
         font-size: 12px;
