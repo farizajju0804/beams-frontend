@@ -147,12 +147,12 @@
         justify-content: center;
     }
     
-    .topicimg1{
+    /* .topicimg1{
         width: 50%;
-    }
+    } */
 
     .topic-card{
-        width: 60%;
+    width: 80%;
         box-shadow: var(--effect-1);
         border-radius: var(--br-xs);
         display: flex;
