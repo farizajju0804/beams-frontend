@@ -86,12 +86,11 @@
     justify-content: center;
     font-weight: 500;
     padding: 4px 5px;
-    text-decoration: none;
+
     height: 30%;
 }
 
 .topic-card a{
-    text-decoration: none;
     color: var(--black);
 }
 

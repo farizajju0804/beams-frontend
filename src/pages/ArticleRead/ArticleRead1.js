@@ -15,8 +15,7 @@ const articleComponents = [
     articleTitle="Brain-Computer Interfaces: The Next Frontier in Human Evolution"
     introContentBold="Can you visualize a world where our brain can activate digital devices solely with our thoughts?"
     introContentNormal="Where ​we can trigger actions in the physical world by simply thinking about the action<sup><link>1|https://www.tandfonline.com/doi/full/10.1080/21507740.2019.1704918</link></sup>. It’s real, yet beyond our wildest imagination. Stay with us!"
-    introMainImage="Assets/images/sub-img-bci-1.jpg"
-    bgcolor="#17cd92"
+    introMainImage="Assets/images/bci-header-1.jpg"
     order={1}
   />,
 
@@ -25,9 +24,9 @@ const articleComponents = [
     subParaImg="Assets/images/bci-header.jpg"
     subContent={[
       `Welcome to the world of Brain-Computer Interfaces (BCIs), a
-      technology born from the synthesis of neuroscience and technology. <strong>Think of this
-      technology as a magical bridge that connects our brains and machines.</strong>`,
-      `Our brains are abuzz with neurons that transmit messages as electrical patterns.
+      technology born from the synthesis of neuroscience and technology.`,
+      `<strong>Think of this technology as a magical bridge that connects our brains and machines.</strong>
+      Our brains are abuzz with neurons that transmit messages as electrical patterns.
       BCIs intercept these electrical patterns and use AI and algorithms to ​convert these
       patterns into commands for digital devices<sup><link>2|https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface</link></sup>. <strong>In a BCI world, our thoughts won’t
       just lead to action; our thoughts will become the action!</strong> More on this later.`,
@@ -52,7 +51,8 @@ const articleComponents = [
       `Meet your new superpower- it’s called a BCI. Ever dreamed of
       controlling the world with a mere thought? <strong>Picture this, no hands and no voice
       needed; you can just use your thoughts to turn on lights, navigate your
-      car, or send texts.</strong> This isn’t sci-fi. This is the next evolution of human potential.`
+      car, or send texts.</strong>`, 
+      `This isn’t sci-fi. This is the next evolution of human potential.`
     ]}
     order={4}
     
@@ -64,6 +64,7 @@ const articleComponents = [
   />,
 <SubPara
     subtitle="A CRITICAL NEED FOR ETHICAL SOLUTIONS"
+    subParaImg="Assets/images/sub-img-bci-3.jpg"
     subContent={[
       `The rapid growth and transformative potential of BCIs cannot be underestimated.
       They promise a future where direct brain-to-device communication could reshape
@@ -108,6 +109,7 @@ const articleComponents = [
 
   <SubPara
     subtitle="READY TO EVOLVE INTO A NEW SPECIES?"
+    subParaImg="Assets/images/sub-img-bci-4.jpg"
     subContent={[
       `When we usher in a new frontier of human augmentation by integrating our
       biological intelligence with digital intelligence, our species might change forever.
@@ -139,12 +141,12 @@ const articleComponents = [
     `<strong>Our New Superpower:</strong> Someday we might interact with our devices, homes,
     and cars solely through our thoughts.`,
     `<strong>Six Powerful BCI Applications</strong><br>
-    &#8226;  <italic>Revolutionizing Communication:</italic> BCIs could make language redundant providing a transformative solution for those with communication impairments.<br>
-    &#8226;  <italic>Augmented Humanity:</italic> By turning prosthetics into true extensions of our bodies, they could enhance our physical and intellectual capabilities.<br>
-    &#8226;  <italic>Restoring Health:</italic>They can control prosthetic limbs as naturally as biological ones, a boon for neurologically and physically challenged people.<br>
-    &#8226;  <italic>Personalized Education:</italic> Customized learning experiences based on an individual's cognitive state could become the norm.<br>
-    &#8226;  <italic>Military and Defense:</italic> Real-time cognitive performance feedback through BCIs could enhance the capabilities of soldiers and pilots.<br>
-    &#8226;  <italic>Neuro-Gaming:</italic> Video gaming could become an immersive and responsive experience that adapts to players&#39; mental states in real-time.<br>
+    4.1  <italic>Revolutionizing Communication:</italic> BCIs could make language redundant providing a transformative solution for those with communication impairments.<br><br>
+    4.2  <italic>Augmented Humanity:</italic> By turning prosthetics into true extensions of our bodies, they could enhance our physical and intellectual capabilities.<br><br>
+    4.3  <italic>Restoring Health:</italic>They can control prosthetic limbs as naturally as biological ones, a boon for neurologically and physically challenged people.<br><br>
+    4.4  <italic>Personalized Education:</italic> Customized learning experiences based on an individual's cognitive state could become the norm.<br><br>
+    4.5  <italic>Military and Defense:</italic> Real-time cognitive performance feedback through BCIs could enhance the capabilities of soldiers and pilots.<br><br>
+    4.6  <italic>Neuro-Gaming:</italic> Video gaming could become an immersive and responsive experience that adapts to players&#39; mental states in real-time.<br>
 
 
     `,

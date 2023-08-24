@@ -47,15 +47,20 @@
   .outcome {
     align-self: stretch;
     position: relative;
+
   }
   .outcome {
-    line-height: 13.33px;
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 18px;
   }
   .outcome-content {
     line-height: 25px;
     font-family: var(--bookerly-reading-desktop);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
   .application-box,
   .outcome-box {
@@ -68,12 +73,17 @@
     background-color: var(--yellow);
     padding: var(--padding-mini) var(--padding-3xs);
     justify-content: center;
-    gap: var(--gap-3xs);
+    gap: 5px;
     text-align: center;
     font-size: var(--font-size-base);
     color: var(--black);
     font-family: var(--font-poppins);
   }
+
+  .superscript-link1{
+    color: black;
+  }
+
   .application-box {
     width: 420px;
     overflow: hidden;
@@ -90,6 +100,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .application-points p,.outcome-content p{
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .bold-point{
@@ -111,5 +126,10 @@
       align-self: stretch;
       width: auto;
     }
+    .application-points p,.outcome-content p{
+      font-size: 16px;
+      line-height: 28px;
+    }
+  
   }
   
