@@ -10,6 +10,31 @@ import Dropdown from "../../models/ArticleComponents/Dropdown/Dropdown";
 import React from "react";
 import "./ArticleRead.css";
 const ArticleRead = () => {
+  const dataCards = [
+    {
+      yearData: "In  2021",
+      incidentData: "828 Million People",
+      verbData: "SUFFERED FROM HUNGER.",
+      linkData: "https://www.who.int/news/item/06-07-2022-un-report--global-hunger-numbers-rose-to-as-many-as-828-million-in-2021",
+      organization: "United Nations",
+    },
+    {
+      yearData: "In  2022",
+      incidentData: "THE FIRST TRUE ENERGY CRISIS",
+      verbData: "OCCURRED.",
+      linkData: "https://www.iea.org/reports/world-energy-outlook-2022/the-global-energy-crisis",
+      organization: "International Energy Association",
+      backgroundColor: "#FFFFFE",
+      textColor: "#161616",
+    },
+    {
+      yearData: "Between 2030-2052",
+      incidentData: "A 1.5°C INCREASE in temperatures likely",
+      verbData: "by current estimates.",
+      linkData: "https://www.ipcc.ch/sr15/chapter/spm/",
+      organization: "Intergovernmental Panel On Climate Change",
+    },
+  ];
   const startupContents1 = [
     {
       startupContent:
@@ -99,6 +124,8 @@ const ArticleRead = () => {
     },
   ];
 
+  
+
   const articleComponents = [
     <ArticleHeader
       category="Science"
@@ -106,6 +133,7 @@ const ArticleRead = () => {
       introContentBold="Do you know our lives are about to be transformed forever?"
       introContentNormal="Unknown to most of us, scientists are silently rewriting the blueprint of our lives and re-sculpting our DNA<sup><link>1|https://www.statnews.com/2017/07/26/scientists-build-dna-scratch-alter-lifes-blueprint/</link></sup>. Intrigued? Stay with us."
       introMainImage="Assets/images/intro-main-image-synthetic-bio.png"
+      order={1}
     />,
 
     <SubPara
@@ -121,6 +149,7 @@ const ArticleRead = () => {
       methane 24/7<sup><link>2|https://www.news-medical.net/life-sciences/How-Could-Microbes-Help-to-Solve-Climate-Change.aspx</link></sup>. This is not a plot from a Stephen King novel. This is slowly
       becoming a reality, and it heralds <strong>a new epoch in human history.</strong>`,
       ]}
+      order={2}
     />,
     <SubPara
       subtitle="The Dawn Of Synthetic Biology"
@@ -134,11 +163,13 @@ const ArticleRead = () => {
       <strong>create DNA programs to create new life-forms.</strong>`,
         `Synthetic biology will disrupt trillion-dollar industries.`,
       ]}
+      order={3}
     />,
 
     <StatisticContainer
       statisticContent={`Did you know the synthetic biology market is expected to grow over
 6x, from $10.4 billion in 2022 to $63.8 billion by 2030<sup><link>4|https://news.berkeley.edu/2021/10/14/synthetic-biology-moves-into-the-realm-of-the-unnatural/</link></sup>?`}
+order={4}
     />,
 
     <SubPara
@@ -154,9 +185,11 @@ const ArticleRead = () => {
       energy.</strong> Synthetic Biology is an emerging area of science with transformative
       potential to enhance our future.`,
       ]}
+      order={5}
     />,
 
-    <StartBox startContent="Let’s take a voyage to the future and see what a ‘synthetic biology’ world might look like." />,
+    <StartBox startContent="Let’s take a voyage to the future and see what a ‘synthetic biology’ world might look like." 
+    order={6}/>,
 
     <SubPara
       subtitle="ENGINEERING A BETTER TOMORROW"
@@ -172,15 +205,17 @@ const ArticleRead = () => {
         `The future is about harnessing synthetic biology to solve global problems and
       sustain our world. <italic>To understand the significance of the problems confronting us, let’s look at data.</italic>`,
       ]}
+      order={7}
     />,
 
-    <DataCardBox />,
+    <DataCardBox dataCards={dataCards} order={8}/>,
     <SubPara
       subContent={[
         `Synthetic Biology can enable revolutionary solutions for these global issues. Can
       you imagine an abundance of crops that yield higher nutrition and alleviate hunger<sup><link>9|https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8421571/</link></sup>? How about cures for diseases like sickle cell anemia, once deemed
       untreatable? And modified bacteria that produce sustainable energy, like biofuels<sup><link>10|https://arpa-e.energy.gov/technologies/projects/turning-bacteria-biofuel</link></sup>? <strong>Synthetic organisms could make scarcity and ecological decay relics of our past.</strong>`,
       ]}
+      order={9}
     />,
 
     <SubPara
@@ -192,11 +227,13 @@ const ArticleRead = () => {
       can barely dream of today. We’re penning the narrative of life itself, instead of
       Mother Nature doing so. <strong>Mother Nature has retired!</strong>`,
       ]}
+      order={10}
     />,
 
     <StartupContainer
       productCategory="Healthcare Products"
       startupContainerTitle="Top Synthetic Biology Startups"
+      order={11}
       startupContents={startupContents1}
     />,
 
@@ -205,25 +242,29 @@ const ArticleRead = () => {
       personName="Ginkgo Bioworks"
       bgcolor="#fffffe"
       color="161616"
+      order={12}
     />,
 
     <StartupContainer
       productCategory="Consumer Products"
       startupContainerTitle="Top Synthetic Biology Startups"
       startupContents={startupContents2}
+      order={13}
     />,
 
     <StatisticContainer
       statisticContent={`
     Did you know by 2030, about 10% of global pharmaceutical products might be
-    made using synthetic biology? 
+    made using synthetic biology?
 `}
+order={14}
     />,
 
     <Applications
       applicationHeader="Synthetic Biology’s Hidden Potential"
       applicationHeaderContent="Explore these innovative solutions to humanity’s biggest challenges."
-      applicationBoxes={applicationBoxes} // Pass the array here
+      applicationBoxes={applicationBoxes}
+      order={15} // Pass the array here
     />,
 
     <SubPara
@@ -238,6 +279,7 @@ const ArticleRead = () => {
       language of zeroes and ones that computers understand into the four-letter code
       biology understands.”`,
       ]}
+      order={16}
     />,
 
     <SubPara
@@ -247,6 +289,7 @@ const ArticleRead = () => {
       us a precious inheritance: the blueprint of life itself. A wonderful life awaits each
       one of us. The palette of life is in our hands. What will you create?`,
       ]}
+      order={17}
     />,
 
     <Dropdown
@@ -264,6 +307,7 @@ const ArticleRead = () => {
         "End of Organ Shortage resulting from lab-made tissues and organs that will revolutionize treatment protocols.",
       ]}
       dropdownIcon="Assets/images/insights.png"
+      order={18}
     />,
     <Dropdown
       dropdownTitle="References"
@@ -289,6 +333,7 @@ const ArticleRead = () => {
         "<link>DNA: The Ultimate Data Storage Solution.|https://www.scientificamerican.com/article/dna-the-ultimate-data-storage-solution/</link>",
       ]}
       dropdownIcon="Assets/images/references.png"
+      order={19}
     />,
   ];
 
