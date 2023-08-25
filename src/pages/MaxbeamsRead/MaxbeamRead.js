@@ -150,14 +150,14 @@ export const MaxbeamRead = () => {
 							handleClose={closenotePopup}
 						></Popupnotes>
 					)}
-					<div className="innernav">
+					{/* <div className="innernav">
 						<span>
-							<span style={{ color: "#435CFF" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
-							<span style={{ color: "#435CFF" }}>Beams</span> &nbsp; &gt; &nbsp;{" "}
-							<span style={{ color: "#435CFF" }}>Mini Beams</span> &nbsp; &gt;
+							<span style={{ color: "#F96f2e" }}>Home</span> &nbsp; &gt; &nbsp;{" "}
+							<span style={{ color: "#f96f2e" }}>Beams</span> &nbsp; &gt; &nbsp;{" "}
+							<span style={{ color: "#f96f2e" }}>Mini Beams</span> &nbsp; &gt;
 							&nbsp; <span>{microbeams.Title}</span>
 						</span>
-					</div>
+					</div> */}
 					<div className="maxbeamsreadheader">
 						<h2>{microbeams.Title}</h2>
 					</div>
