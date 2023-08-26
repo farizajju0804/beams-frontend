@@ -307,7 +307,7 @@ export const Signup = () => {
 							<a
 								href=""
 								onClick={() => {
-									navigate("/termsandcondition");
+									navigate("/terms-of-service");
 								}}
 							>
 								Terms of Service
@@ -316,7 +316,7 @@ export const Signup = () => {
 							<a
 								href=""
 								onClick={() => {
-									navigate("/privacypolicy");
+									navigate("/privacy-policy");
 								}}
 							>
 								Privacy Policy
