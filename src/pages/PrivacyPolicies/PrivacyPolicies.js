@@ -45,14 +45,14 @@ export const PrivacyPolicies = () => {
 					<ul>
 						<li>
 							Contact information such as your name, email address, and phone
-							number
+							number.
 						</li>
 						<li>
-							Demographic information such as your age, gender, and location
+							Demographic information such as your age, gender, and location.
 						</li>
 						<li>
 							Information about your use of the Beams platform, including
-							browsing history and the content you interact with
+							browsing history and the content you interact with.
 						</li>
 					</ul>
 					<h3>Why We Collect Your Information?</h3>
@@ -67,7 +67,7 @@ export const PrivacyPolicies = () => {
 							needs
 						</li>
 						<li>
-							Send you updates and promotions about Beams and its services
+							Send you updates and promotions about Beams and its services.
 						</li>
 						<li>Improve our platform and develop new features</li>
 					</ul>
@@ -90,13 +90,13 @@ export const PrivacyPolicies = () => {
 						Beams may update this Privacy Policy from time to time to
 						reflect changes in our practices or regulations. If we make any
 						material changes to this Privacy Policy, we will notify you by email
-						or by displaying a prominent notice on the Beams platform
+						or by displaying a prominent notice on the Beams platform.
 					</p>
 					<h3>How can you contact us about this policy?</h3>
 					<p>
 						If you have any questions or concerns about Beams's Privacy
 						Policy or the information we collect, please contact us. We will be
-						happy to assist you
+						happy to assist you.
 					</p>
 				</div>
 			</div>

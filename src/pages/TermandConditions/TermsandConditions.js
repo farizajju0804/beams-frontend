@@ -8,7 +8,7 @@ export const Termsandconditions = () => {
 	return (
 		<div className="termsandconditions">
 			<div className="innertermsandconditions">
-				<h1 className="headingterms">Terms and Conditions</h1>
+				<h1 className="headingterms">Terms Of Service</h1>
 				<p>
 					Welcome to Beams, a platform that provides innovative services and
 					features to help you stay ahead of the curve. These Terms of Service
@@ -57,7 +57,7 @@ export const Termsandconditions = () => {
 						your own risk. To the fullest extent permissible by law, Beams
 						disclaims all warranties, express or implied, including but not
 						limited to, implied warranties of merchantability and fitness for a
-						particular purpose
+						particular purpose.
 					</p>
 					<h3>Limitation of Liability</h3>
 					<p>

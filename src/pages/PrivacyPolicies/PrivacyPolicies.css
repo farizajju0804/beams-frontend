@@ -14,21 +14,22 @@
 
 .headingterms{
     text-align: center;
-    font-size: 40px;
-    margin-bottom: 40px;
+    font-size: 32px;
+    margin-bottom: 30px;
     font-family: var(--font-poppins);
 }
 
 .innertermsandconditions  h3{
     margin-top: 40px;
     margin-bottom: 2px;
-    font-size: 20px;
+    font-size: 16px;
     font-family: var(--font-poppins);
+    font-weight: 300;
 }
 
 .innertermsandconditions  p{
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .innertermsandconditions ul{
@@ -36,8 +37,8 @@
 }
 
 .innertermsandconditions  li{
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 @media only screen and (max-width:850px) {
@@ -46,7 +47,7 @@
     }
     .headingterms{
         text-align: center;
-        font-size: 30px;
+        font-size: 24px;
         margin-bottom: 20px;
         line-height: 40px;
         font-family: var(--font-poppins);
