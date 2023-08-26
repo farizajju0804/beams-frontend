@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { useAuthContext } from "../../context/AuthContext";
 import { API } from "../../constants";
 import "./PrivacyPolicies.css";
+import {Link} from 'react-router-dom';
 
 export const PrivacyPolicies = () => {
 	const { token } = useAuthContext();
@@ -95,7 +96,7 @@ export const PrivacyPolicies = () => {
 					<h3>How can you contact us about this policy?</h3>
 					<p>
 						If you have any questions or concerns about Beams's Privacy
-						Policy or the information we collect, please contact us. We will be
+						Policy or the information we collect, <Link to='/contact'>please contact us.</Link> We will be
 						happy to assist you.
 					</p>
 				</div>
