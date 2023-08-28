@@ -7,124 +7,149 @@ import Applications from "../../models/ArticleComponents/Applications/Applicatio
 import Quote from "../../models/ArticleComponents/Quote/Quote";
 import StartupContainer from "../../models/ArticleComponents/StartupContainer/StartupContainer";
 import Dropdown from "../../models/ArticleComponents/Dropdown/Dropdown";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ArticleRead.css";
+import { useParams } from "react-router-dom";
 const ArticleRead = () => {
-  const dataCards = [
-    {
-      yearData: "In  2021",
-      incidentData: "828 Million People",
-      verbData: "SUFFERED FROM HUNGER.",
-      linkData: "https://www.who.int/news/item/06-07-2022-un-report--global-hunger-numbers-rose-to-as-many-as-828-million-in-2021",
-      organization: "United Nations",
-    },
-    {
-      yearData: "In  2022",
-      incidentData: "THE FIRST TRUE ENERGY CRISIS",
-      verbData: "OCCURRED.",
-      linkData: "https://www.iea.org/reports/world-energy-outlook-2022/the-global-energy-crisis",
-      organization: "International Energy Association",
-      backgroundColor: "#FFFFFE",
-      textColor: "#161616",
-    },
-    {
-      yearData: "Between 2030-2052",
-      incidentData: "A 1.5°C INCREASE in temperatures likely",
-      verbData: "by current estimates.",
-      linkData: "https://www.ipcc.ch/sr15/chapter/spm/",
-      organization: "Intergovernmental Panel On Climate Change",
-    },
-  ];
-  const startupContents1 = [
-    {
-      startupContent:
-        "1. <link>Ginkgo Bioworks|https://www.ginkgobioworks.com/</link> makes living medication <strong>“that can sense and respond to symptoms directly in our gut.”</strong>",
-      relevanceContent:
-        "<strong>Over 40%</strong> of people have gastrointestinal diseases affecting quality of their life<sup><link>12|https://pubmed.ncbi.nlm.nih.gov/32294476/</link></sup>.",
-    },
-    {
-      startupContent:
-        "2. <link>Twist Biosciences|https://www.twistbioscience.com/</link> makes synthetic DNA that can speed up antibody discovery <strong>to less than 60 days.</strong>",
-      relevanceContent:
-        "It takes <strong>over a year</strong> to discover antibodies<sup><link>13|https://blog.cellsignal.com/antibody-essentials-part-3-how-antibody-technologies-evolved</link></sup>. Rapid discovery will accelerate cures.",
-    },
-    {
-      startupContent:
-        "3. <link>Mammoth Biosciences|https://mammoth.bio/</link> uses the CRISPR gene editing technology to revolutionize early disease detection and treatment.",
-      relevanceContent:
-        "Millions of lives are lost every year because of late detection of diseases<sup><link>14|https://eppi.ioe.ac.uk/cms/Default.aspx?tabid=3367</link></sup>.",
-    },
-  ];
+  let { id } = useParams();
 
-  const startupContents2 = [
-    {
-      startupContent:
-        "1. <link>Modern Meadow|https://www.modernmeadow.com//</link> uses bacteria to make collagen, which is bundled to make leather hides.",
-      relevanceContent:
-        "The leather industry sacrifices animals, promotes deforestation, and produces methane<sup><link>15|https://www.somewhatgreener.com/articles/animal-rights/the-environmental-impact-of-leather/</link></sup>.",
-    },
-    {
-      startupContent:
-        "2. <link>Bolt Threads|https://boltthreads.com/</link> uses silk yeast to create sustainable and biodegradable textiles.",
-      relevanceContent:
-        "Sustainable and biodegradable textiles are cost-effective and environmentally friendly<sup><link>16|https://www.scientificamerican.com/article/the-environments-new-clothes-biodegradable-textiles-grown-from-live-organisms/</link></sup>.",
-    },
-    {
-      startupContent:
-        "3. <link>Perfect Day|https://perfectday.com/</link> uses microflora to produce cow-free proteins and casein.",
-      relevanceContent:
-        "Cow-free protein will reduce greenhouse gases, protect animals and enable resource efficiency<sup><link>17|https://gfi.org/resource/environmental-impact-of-meat-vs-plant-based-meat/</link></sup>.",
-    },
-  ];
+  const [dataCards, setdataCards] = useState([]);
+  const [applicationBoxes, setapplicationBoxes] = useState([]);
+  const [startupContents1, setstartupContents1] = useState([]);
+  const [startupContents2, setstartupContents2] = useState([]);
 
-  const applicationBoxes = [
-    {
-      applicationImg: "Assets/images/application-img-1.png",
-      applicationtitle: "Energizing The World",
-      outcomeTitle: "outcome",
-      outcomeContent: "Getting closer to sustainable energy.",
-      applicationPoints: [
-        "<strong>Sustainable Biofuels:</strong> Algae and bacteria that can produce everything from ethanol and biodiesel to jet fuel. They offer a promising solution to reduce our dependence on fossil fuels and combat climate change.",
-        "<strong>Bio-based chemicals:</strong> Organisms that generate industrial chemicals with less energy and fewer resources.",
-      ],
-      textAlign: "center",
-    },
-    {
-      applicationImg: "Assets/images/application-img-2.png",
-      applicationtitle: "Enhancing Global Wellness",
-      outcomeTitle: "outcome",
-      outcomeContent: "Increasing wellness & preventing diseases.",
-      applicationPoints: [
-        "<strong>Personalized Medicine:</strong> Novel drugs, vaccines and on-demand medication",
-        "<strong>Gene therapies:</strong> Targeted and personalized gene-editing methods to treat diseases.",
-      ],
-      textAlign: "center",
-    },
-    {
-      applicationImg: "Assets/images/application-img-3.png",
-      applicationtitle: "Alleviating Climate Change",
-      outcomeContent: "Getting closer to carbon neutrality.",
-      outcomeTitle: "outcome",
-      applicationPoints: [
-        "<strong>Plastic Alternatives:</strong> Bio-based and biodegradable plastics.",
-        "<strong>Bioremediation:</strong> Organisms that break down pollutants, capture, and store CO2.",
-      ],
-      textAlign: "center",
-    },
-    {
-      applicationImg: "Assets/images/application-img-4.png",
-      applicationtitle: "Feeding the World",
-      outcomeTitle: "outcome",
-      outcomeContent: "Our passport to food security.",
-      applicationPoints: [
-        '<strong>Food Security:</strong> Crops resistant to pests and climate change and plant-based meat.',
-        '<strong>Precision Agriculture:</strong> Optimizing crop yields to reduce the use of synthetic pesticides.'
-      ],
-      textAlign: "center",
-    },
-  ];
+  const getArticleByID = async (id) => {
+    fetch(`http://localhost:1337/api/article-reads/${id}?populate=*`)
+      .then((res) => res.json())
+      .then((articles) => {
+        console.log(articles.data);
+        if (articles != null) {
+          setdataCards(articles.data?.attributes?.datacard);
+          setapplicationBoxes(articles.data?.attributes?.applicationBoxes);
+          setstartupContents1(articles.data?.attributes?.startupContents1);
+          setstartupContents2(articles.data?.attributes?.startupContents2);
+        }
+      });
+  };
 
-  
+  useEffect(() => {
+    getArticleByID(id);
+  }, []);
+
+  // const dataCards = [
+  //   {
+  //     yearData: "In  2021",
+  //     incidentData: "828 Million People",
+  //     verbData: "SUFFERED FROM HUNGER.",
+  //     linkData:
+  //       "https://www.who.int/news/item/06-07-2022-un-report--global-hunger-numbers-rose-to-as-many-as-828-million-in-2021",
+  //     organization: "United Nations",
+  //   },
+  //   {
+  //     yearData: "In  2022",
+  //     incidentData: "THE FIRST TRUE ENERGY CRISIS",
+  //     verbData: "OCCURRED.",
+  //     linkData: "https://www.iea.org/reports/world-energy-outlook-2022/the-global-energy-crisis",
+  //     organization: "International Energy Association",
+  //     backgroundColor: "#FFFFFE",
+  //     textColor: "#161616",
+  //   },
+  //   {
+  //     yearData: "Between 2030-2052",
+  //     incidentData: "A 1.5°C INCREASE in temperatures likely",
+  //     verbData: "by current estimates.",
+  //     linkData: "https://www.ipcc.ch/sr15/chapter/spm/",
+  //     organization: "Intergovernmental Panel On Climate Change",
+  //   },
+  // ];
+  // const startupContents1 = [
+  //   {
+  //     startupContent:
+  //       "1. <link>Ginkgo Bioworks|https://www.ginkgobioworks.com/</link> makes living medication <strong>“that can sense and respond to symptoms directly in our gut.”</strong>",
+  //     relevanceContent:
+  //       "<strong>Over 40%</strong> of people have gastrointestinal diseases affecting quality of their life<sup><link>12|https://pubmed.ncbi.nlm.nih.gov/32294476/</link></sup>.",
+  //   },
+  //   {
+  //     startupContent:
+  //       "2. <link>Twist Biosciences|https://www.twistbioscience.com/</link> makes synthetic DNA that can speed up antibody discovery <strong>to less than 60 days.</strong>",
+  //     relevanceContent:
+  //       "It takes <strong>over a year</strong> to discover antibodies<sup><link>13|https://blog.cellsignal.com/antibody-essentials-part-3-how-antibody-technologies-evolved</link></sup>. Rapid discovery will accelerate cures.",
+  //   },
+  //   {
+  //     startupContent:
+  //       "3. <link>Mammoth Biosciences|https://mammoth.bio/</link> uses the CRISPR gene editing technology to revolutionize early disease detection and treatment.",
+  //     relevanceContent:
+  //       "Millions of lives are lost every year because of late detection of diseases<sup><link>14|https://eppi.ioe.ac.uk/cms/Default.aspx?tabid=3367</link></sup>.",
+  //   },
+  // ];
+
+  // const startupContents2 = [
+  //   {
+  //     startupContent:
+  //       "1. <link>Modern Meadow|https://www.modernmeadow.com//</link> uses bacteria to make collagen, which is bundled to make leather hides.",
+  //     relevanceContent:
+  //       "The leather industry sacrifices animals, promotes deforestation, and produces methane<sup><link>15|https://www.somewhatgreener.com/articles/animal-rights/the-environmental-impact-of-leather/</link></sup>.",
+  //   },
+  //   {
+  //     startupContent:
+  //       "2. <link>Bolt Threads|https://boltthreads.com/</link> uses silk yeast to create sustainable and biodegradable textiles.",
+  //     relevanceContent:
+  //       "Sustainable and biodegradable textiles are cost-effective and environmentally friendly<sup><link>16|https://www.scientificamerican.com/article/the-environments-new-clothes-biodegradable-textiles-grown-from-live-organisms/</link></sup>.",
+  //   },
+  //   {
+  //     startupContent:
+  //       "3. <link>Perfect Day|https://perfectday.com/</link> uses microflora to produce cow-free proteins and casein.",
+  //     relevanceContent:
+  //       "Cow-free protein will reduce greenhouse gases, protect animals and enable resource efficiency<sup><link>17|https://gfi.org/resource/environmental-impact-of-meat-vs-plant-based-meat/</link></sup>.",
+  //   },
+  // ];
+
+  // const applicationBoxes = [
+  //   {
+  //     applicationImg: "Assets/images/application-img-1.png",
+  //     applicationtitle: "Energizing The World",
+  //     outcomeTitle: "outcome",
+  //     outcomeContent: "Getting closer to sustainable energy.",
+  //     applicationPoints: [
+  //       "<strong>Sustainable Biofuels:</strong> Algae and bacteria that can produce everything from ethanol and biodiesel to jet fuel. They offer a promising solution to reduce our dependence on fossil fuels and combat climate change.",
+  //       "<strong>Bio-based chemicals:</strong> Organisms that generate industrial chemicals with less energy and fewer resources.",
+  //     ],
+  //     textAlign: "center",
+  //   },
+  //   {
+  //     applicationImg: "Assets/images/application-img-2.png",
+  //     applicationtitle: "Enhancing Global Wellness",
+  //     outcomeTitle: "outcome",
+  //     outcomeContent: "Increasing wellness & preventing diseases.",
+  //     applicationPoints: [
+  //       "<strong>Personalized Medicine:</strong> Novel drugs, vaccines and on-demand medication",
+  //       "<strong>Gene therapies:</strong> Targeted and personalized gene-editing methods to treat diseases.",
+  //     ],
+  //     textAlign: "center",
+  //   },
+  //   {
+  //     applicationImg: "Assets/images/application-img-3.png",
+  //     applicationtitle: "Alleviating Climate Change",
+  //     outcomeContent: "Getting closer to carbon neutrality.",
+  //     outcomeTitle: "outcome",
+  //     applicationPoints: [
+  //       "<strong>Plastic Alternatives:</strong> Bio-based and biodegradable plastics.",
+  //       "<strong>Bioremediation:</strong> Organisms that break down pollutants, capture, and store CO2.",
+  //     ],
+  //     textAlign: "center",
+  //   },
+  //   {
+  //     applicationImg: "Assets/images/application-img-4.png",
+  //     applicationtitle: "Feeding the World",
+  //     outcomeTitle: "outcome",
+  //     outcomeContent: "Our passport to food security.",
+  //     applicationPoints: [
+  //       "<strong>Food Security:</strong> Crops resistant to pests and climate change and plant-based meat.",
+  //       "<strong>Precision Agriculture:</strong> Optimizing crop yields to reduce the use of synthetic pesticides.",
+  //     ],
+  //     textAlign: "center",
+  //   },
+  // ];
 
   const articleComponents = [
     <ArticleHeader
@@ -169,7 +194,7 @@ const ArticleRead = () => {
     <StatisticContainer
       statisticContent={`Did you know the synthetic biology market is expected to grow over
 6x, from $10.4 billion in 2022 to $63.8 billion by 2030<sup><link>4|https://news.berkeley.edu/2021/10/14/synthetic-biology-moves-into-the-realm-of-the-unnatural/</link></sup>?`}
-order={4}
+      order={4}
     />,
 
     <SubPara
@@ -188,8 +213,10 @@ order={4}
       order={5}
     />,
 
-    <StartBox startContent="Let’s take a voyage to the future and see what a ‘synthetic biology’ world might look like." 
-    order={6}/>,
+    <StartBox
+      startContent="Let’s take a voyage to the future and see what a ‘synthetic biology’ world might look like."
+      order={6}
+    />,
 
     <SubPara
       subtitle="ENGINEERING A BETTER TOMORROW"
@@ -208,7 +235,7 @@ order={4}
       order={7}
     />,
 
-    <DataCardBox dataCards={dataCards} order={8}/>,
+    <DataCardBox dataCards={dataCards} order={8} />,
     <SubPara
       subContent={[
         `Synthetic Biology can enable revolutionary solutions for these global issues. Can
@@ -257,7 +284,7 @@ order={4}
     Did you know by 2030, about 10% of global pharmaceutical products might be
     made using synthetic biology?
 `}
-order={14}
+      order={14}
     />,
 
     <Applications
@@ -337,9 +364,7 @@ order={14}
     />,
   ];
 
-  const sortedComponents = articleComponents.sort(
-    (comp1, comp2) => comp1.props.order - comp2.props.order
-  );
+  const sortedComponents = articleComponents.sort((comp1, comp2) => comp1.props.order - comp2.props.order);
 
   return (
     <div className="article-read">
