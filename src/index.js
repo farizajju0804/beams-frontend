@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login } from "./pages/Login/Login";
-import {Navbar}  from "./models/navbar/Navbar";
+import { Navbar } from "./models/navbar/Navbar";
 import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
 import { Beams } from "./pages/Beams/Beams";
@@ -31,300 +31,297 @@ import PrivateRoute from "./PrivateRoute";
 import ScrollToTop from "./ScrollToTop";
 import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions";
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
-import LandingPage from './pages/Landing Page/LandingPage'
+import LandingPage from "./pages/Landing Page/LandingPage";
 import ArticleRead from "./pages/ArticleRead/ArticleRead";
 import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
 
-
 const router = createBrowserRouter([
-	// {
-	// 	path: "/",
-	// 	element:
-	// },
-	{
-		path: "/",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar/>
-				<LandingPage/>
-				<Newsletter/>
-				<Footer/>
+  // {
+  // 	path: "/",
+  // 	element:
+  // },
+  {
+    path: "/",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <LandingPage />
+        <Newsletter />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Login />
+      </div>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Signup />
+      </div>
+    ),
+  },
+  {
+    path: "/resetpassword",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Resetpass />
+      </div>
+    ),
+  },
+  {
+    path: "/resetpass",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Resetpass2 />
+      </div>
+    ),
+  },
+  {
+    path: "/beams",
+    element: (
+      <PrivateRoute>
+        <div>
+          <ScrollToTop />
+          <LoggedinNav />
+          <Beams />
+          <Footer />
+        </div>
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/maxbeams",
+    element: (
+      <PrivateRoute>
+        <div>
+          <ScrollToTop />
+          <LoggedinNav />
+          <Maxbeams />
+          <Footer />
+        </div>
+      </PrivateRoute>
+    ),
+  },
 
-			</div>
-		)
-	},
-	{
-		path: "/login",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Login />
-			</div>
-		)
-	},
-	{
-		path: "/signup",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Signup />
-			</div>
-		)
-	},
-	{
-		path: "/resetpassword",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Resetpass />
-			</div>
-		)
-	},
-	{
-		path: "/resetpass",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Resetpass2 />
-			</div>
-		)
-	},
-	{
-		path: "/beams",
-		element: (
-			<PrivateRoute>
-				<div>
-					<ScrollToTop />
-					<LoggedinNav />
-					<Beams />
-					<Footer/>
-				</div>
-			</PrivateRoute>
-		)
-	},
-	{
-		path: "/maxbeams",
-		element: (
-			<PrivateRoute>
-				<div>
-					<ScrollToTop />
-					<LoggedinNav />
-					<Maxbeams />
-					<Footer/>
-				</div>
-			</PrivateRoute>
-		)
-	},
-
-	{
-		path: "/maxbeampage/:id",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Maxbeampage />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/maxbeamsong/:id",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Maxbeamsong />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/aboutus",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Aboutus />
-				<Newsletter/>
-				<Footer />
-			</div>
-		)
-	},
-	{
-		path: "/hightlights",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Library />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/favourites",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Favourites />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/completed",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Completed />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/notes",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Notes />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/api/auth/google/callback",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Redirectionpage />
-			</div>
-		)
-	},
-	{
-		path: "/contact",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Contact />
-				<Newsletter/>
-				<Footer />
-			</div>
-		)
-	},
-	{
-		path: "/emailverification/:email",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Emailverification />
-			</div>
-		)
-	},
-	{
-		path: "/articleread",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<ArticleRead/>
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/articleread1",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<ArticleRead1/>
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/verificationsuccess",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<VerificationSuccess />
-			</div>
-		)
-	},
-	{
-		path: "/resetsuccessful",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<ResetSuccessfull />
-			</div>
-		)
-	},
-	{
-		path: "/maxbeamread/:id",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<MaxbeamRead />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/terms-of-service",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<Termsandconditions />
-				<Footer/>
-			</div>
-		)
-	},
-	{
-		path: "/privacy-policy",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<PrivacyPolicies />
-				<Footer/>
-		
-			</div>
-		)
-	},
-	{
-		path: "/profile",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<UserProfile />
-				<Footer/>
-			</div>
-		)
-	}
+  {
+    path: "/maxbeampage/:id",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <Maxbeampage />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/maxbeamsong/:id",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <Maxbeamsong />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/aboutus",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Aboutus />
+        <Newsletter />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/hightlights",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <Library />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/favourites",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <Favourites />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/completed",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <Completed />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/notes",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <Notes />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/api/auth/google/callback",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Redirectionpage />
+      </div>
+    ),
+  },
+  {
+    path: "/contact",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Contact />
+        <Newsletter />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/emailverification/:email",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Emailverification />
+      </div>
+    ),
+  },
+  {
+    path: "/articleread/:id",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <ArticleRead />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/articleread1",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <ArticleRead1 />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/verificationsuccess",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <VerificationSuccess />
+      </div>
+    ),
+  },
+  {
+    path: "/resetsuccessful",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <ResetSuccessfull />
+      </div>
+    ),
+  },
+  {
+    path: "/maxbeamread/:id",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <MaxbeamRead />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/terms-of-service",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Termsandconditions />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/privacy-policy",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <PrivacyPolicies />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <div>
+        <ScrollToTop />
+        <LoggedinNav />
+        <UserProfile />
+        <Footer />
+      </div>
+    ),
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-	<React.StrictMode>
-		<AuthProvider>
-			<RouterProvider router={router} />
-		</AuthProvider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
 );
