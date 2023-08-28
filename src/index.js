@@ -6,7 +6,7 @@ import { Login } from "./pages/Login/Login";
 import {Navbar}  from "./models/navbar/Navbar";
 import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
-import { Beams } from "./pages/Beams/Beams";
+import Beams from "./pages/Beams1/Beams";
 import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
 import { Newsletter } from "./Footer/Newsletter";
 import { Footer } from "./Footer/Footer";
@@ -34,6 +34,7 @@ import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
 import LandingPage from './pages/Landing Page/LandingPage'
 import ArticleRead from "./pages/ArticleRead/ArticleRead";
 import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
+import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
 
 
 const router = createBrowserRouter([
@@ -313,6 +314,17 @@ const router = createBrowserRouter([
 				<ScrollToTop />
 				<LoggedinNav />
 				<UserProfile />
+				<Footer/>
+			</div>
+		)
+	},
+	{
+		path: "/article-description",
+		element: (
+			<div>
+				<ScrollToTop />
+				<LoggedinNav />
+				<ArticleDescription />
 				<Footer/>
 			</div>
 		)

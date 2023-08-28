@@ -123,4 +123,70 @@
   --effect-1: 4px 4px 15px rgba(0, 0, 0, 0.1);
   --shadow-1: 0px 4px 24px rgba(0, 0, 0, 0.1);
   --shadow-11: 10px 20px 50px rgba(0, 0, 0, 0.15);
+
+
+
+
+
+
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-sm: 14px;
+  --font-size-5xl: 24px;
+  --bookerly-reading-desktop-size: 20px;
+  --font-size-xs: 12px;
+  --font-size-29xl: 48px;
+  --font-size-9xl: 28px;
+  --font-size-13xl: 32px;
+  --font-size-37xl: 56px;
+  --font-size-lgi-2: 19.2px;
+
+
+
+  /* Gaps */
+  --gap-11xl: 30px;
+  --gap-3xs: 10px;
+  --gap-mini: 15px;
+  --gap-8xs: 5px;
+  --gap-81xl: 100px;
+  --gap-41xl: 60px;
+  --gap-xl: 20px;
+  --gap-21xl: 40px;
+  --gap-31xl: 50px;
+  --gap-7xl: 26px;
+  --gap-35xl: 54px;
+  --gap-51xl: 70px;
+
+  /* Paddings */
+  --padding-41xl: 60px;
+  --padding-xl: 20px;
+  --padding-11xl: 30px;
+  --padding-21xl: 40px;
+  --padding-8xs: 5px;
+  --padding-mini: 15px;
+  --padding-3xs: 10px;
+  --padding-smi: 13px;
+  --padding-2xl: 21px;
+  --padding-31xl: 50px;
+  --padding-8xl: 27px;
+  --padding-40xl: 59px;
+  --padding-6xl: 25px;
+  --padding-6xs: 7px;
+  --padding-81xl: 100px;
+  --padding-13xl: 32px;
+
+  /* border radiuses */
+  --br-11xl: 30px;
+  --br-7xs: 6px;
+  --br-xs: 12px;
+  --br-base: 16px;
+  --br-81xl: 100px;
+  --br-5xs: 8px;
+
+  /* Effects */
+  --effect-1: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-1: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  --shadow-11: 10px 20px 50px rgba(0, 0, 0, 0.15);
 }

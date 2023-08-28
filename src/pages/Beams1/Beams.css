@@ -1,0 +1,44 @@
+.beams-header-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--yellow);
+    margin-top: -10vh;
+    padding: 10% 5%;
+    text-align: center;
+}
+.beams-header-container h1{
+    font-size: 64px;
+}
+
+
+.beams{
+    width: 100%;
+    background-color: var(--white);
+}
+@media screen and (max-width: 912px) {
+    .beams-header-container h1{
+        font-size: 40px;
+        line-height: 40px;
+        margin-top: 20px;
+    }
+    .beams-header-container{
+        padding: 20% 5%;
+    }
+
+    
+}
+@media screen and (max-width: 767px) {
+    .beams-header-container h1{
+        font-size: 24px;
+        line-height: 40px;
+        margin-top: 20px;
+    }
+    .beams-header-container{
+        padding: 20% 5%;
+    }
+
+    
+}
