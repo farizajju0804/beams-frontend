@@ -34,10 +34,10 @@ function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryCo
                     
                 </div>
             </div>
-            <div className="read-btn1">
+            {/* <div className="read-btn1">
                 <img className="vector1-icon" alt="" src="Assets/images/book.svg" />
                 <div className="read-btn1-text">Read</div>
-              </div>
+              </div> */}
         </div>
     </div>
   )

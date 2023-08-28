@@ -1,6 +1,7 @@
 .low-card{
     display: flex;
     gap: 30px;
+    cursor: pointer;
 }
 
 .low-img{
