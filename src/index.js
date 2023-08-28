@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login } from "./pages/Login/Login";
-import {Navbar}  from "./models/navbar/Navbar";
+import { Navbar } from "./models/navbar/Navbar";
 import { Resetpass } from "./pages/ResetPass/Resetpass";
 import { Signup } from "./pages/SignUp/Signup";
 import Beams from "./pages/Beams1/Beams";
@@ -31,30 +31,95 @@ import PrivateRoute from "./PrivateRoute";
 import ScrollToTop from "./ScrollToTop";
 import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions";
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
-import LandingPage from './pages/Landing Page/LandingPage'
+import LandingPage from "./pages/Landing Page/LandingPage";
 import ArticleRead from "./pages/ArticleRead/ArticleRead";
 import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
 import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
 
-
 const router = createBrowserRouter([
-	// {
-	// 	path: "/",
-	// 	element:
-	// },
-	{
-		path: "/",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar/>
-				<LandingPage/>
-				<Newsletter/>
-				<Footer/>
+  // {
+  // 	path: "/",
+  // 	element:
+  // },
+  {
+    path: "/",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <LandingPage />
+        <Newsletter />
+        <Footer />
+      </div>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Login />
+      </div>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Signup />
+      </div>
+    ),
+  },
+  {
+    path: "/resetpassword",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Resetpass />
+      </div>
+    ),
+  },
+  {
+    path: "/resetpass",
+    element: (
+      <div>
+        <ScrollToTop />
+        <Navbar />
+        <Resetpass2 />
+      </div>
+    ),
+  },
+  {
+    path: "/beams",
+    element: (
+      <PrivateRoute>
+        <div>
+          <ScrollToTop />
+          <LoggedinNav />
+          <Beams />
+          <Footer />
+        </div>
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/maxbeams",
+    element: (
+      <PrivateRoute>
+        <div>
+          <ScrollToTop />
+          <LoggedinNav />
+          <Maxbeams />
+          <Footer />
+        </div>
+      </PrivateRoute>
+    ),
+  },
 
-			</div>
-		)
-	},
 	{
 		path: "/login",
 		element: (
@@ -334,9 +399,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-	<React.StrictMode>
-		<AuthProvider>
-			<RouterProvider router={router} />
-		</AuthProvider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
 );
