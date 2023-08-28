@@ -297,18 +297,18 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/articleread",
+		path: "/articleread1",
 		element: (
 			<div>
 				<ScrollToTop />
 				<Navbar />
-				<ArticleRead/>
+				<ArticleRead1/>
 				<Footer/>
 			</div>
 		)
 	},
 	{
-		path: "/articleread1",
+		path: "/articleread/:id",
 		element: (
 			<div>
 				<ScrollToTop />

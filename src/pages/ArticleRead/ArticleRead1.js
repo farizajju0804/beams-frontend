@@ -109,13 +109,9 @@ const articleComponents = [
     subtitle="BRAIN-COMPUTER INTERFACES"
     subParaImg="Assets/images/bci-header.jpg"
     subContent={[
-      `Welcome to the world of Brain-Computer Interfaces (BCIs), a
-      technology born from the synthesis of neuroscience and technology.`,
-      `<strong>Think of this technology as a magical bridge that connects our brains and machines.</strong>
-      Our brains are abuzz with neurons that transmit messages as electrical patterns.
-      BCIs intercept these electrical patterns and use AI and algorithms to ​convert these
-      patterns into commands for digital devices<sup><link>2|https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface</link></sup>. <strong>In a BCI world, our thoughts won’t
-      just lead to action; our thoughts will become the action!</strong> More on this later.`,
+      "Welcome to the world of Brain-Computer Interfaces (BCIs), a technology born from the synthesis of neuroscience and technology.",
+      "<strong>Think of this technology as a magical bridge that connects our brains and machines.</strong>",
+      "Our brains are abuzz with neurons that transmit messages as electrical patterns. BCIs intercept these electrical patterns and use AI and algorithms to ​convert these patterns into commands for digital devices<sup><link>2|https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface</link></sup>. <strong>In a BCI world, our thoughts won’t just lead to action; our thoughts will become the action!</strong> More on this later."
     
     ]}
     order={2}

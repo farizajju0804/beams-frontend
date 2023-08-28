@@ -1,0 +1,120 @@
+.low-card{
+    display: flex;
+    gap: 30px;
+}
+
+.low-img{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.low-img img{
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 10px solid var(--white);
+    box-shadow: var(--effect-1);
+}
+
+.low-card-content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.low-title{
+    font-family: var(--font-poppins);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.low-desc{
+    font-size: 16px;
+    color: #667085;
+    font-family: var(--font-mulish);
+}
+
+.low-info{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.beam-category{
+    font-size: 16px;
+    color: var(--black);
+    font-family: var(--font-mulish);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 100px;
+}
+
+.beam-time{
+    font-size: 16px;
+    font-family: var(--font-mulish);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.read-btn1{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* justify-content: ce; */
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 100px;
+    width: 130px;
+    justify-content: center;
+    padding: 8px 10px;
+}
+
+@media screen and (max-width:912px){
+     .low-title{
+        font-size: 24px;
+     }
+     .low-card-content{
+        gap: 10px;
+     }
+     .low-img{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:767px){
+    .low-box{
+        font-size: 20px;
+    }
+    .low-card{
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+    .low-img,.low-card-content{
+        width: 100%;
+    }
+    .low-info{
+        justify-content: center;
+    }
+    .low-title{
+        font-size: 20px;
+    }
+    .low-info{
+        margin-top: 10px;
+    }
+    .read-btn1{
+        width: 100%;
+        margin-top: 20px;
+        padding:10px ;
+    }
+   
+}
