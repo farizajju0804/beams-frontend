@@ -92,7 +92,7 @@
 
 @media screen and (max-width:767px){
     .low-box{
-        font-size: 20px;
+        font-size: 18px;
     }
     .low-desc{
         display: none;
@@ -106,19 +106,36 @@
     .low-img,.low-card-content{
         width: 100%;
     }
+    .low-img img{
+        width: 90%;
+    }
     .low-info{
         justify-content: center;
     }
     .low-title{
         font-size: 20px;
+        text-align: center;
     }
     .low-info{
         margin-top: 10px;
+        justify-content: center;
+        gap: 25px;
+        align-items: center;
+        margin: 0 auto;
     }
     .read-btn1{
         width: 100%;
         margin-top: 20px;
         padding:10px ;
     }
+    .beam-category{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .beam-time{
+        font-size: 14px;
+        gap: 3px;
+    }
+    
    
 }
