@@ -94,6 +94,9 @@
     .low-box{
         font-size: 20px;
     }
+    .low-desc{
+        display: none;
+    }
     .low-card{
         flex-direction: column;
         gap: 15px;
