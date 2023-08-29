@@ -94,7 +94,7 @@ const ArticleRead = () => {
   };
 
   useEffect(() => {
-    getArticleByID(1);
+    getArticleByID(id);
   }, []);
 
  
