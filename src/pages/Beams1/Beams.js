@@ -1,6 +1,7 @@
 import React from 'react'
 import './Beams.css'
 import LowCard from '../../models/LowCard/LowCard'
+import TrendingCard from '../../models/TrendingCard/TrendingCard'
 function Beams() {
   return (
     <div className='beams-section'>
@@ -27,6 +28,40 @@ function Beams() {
             <div className='trending-box'>
                     Trending Beams
                 </div>
+              <div className='trending-content-container'>
+                <TrendingCard
+                trendingCardImg="Assets/images/bci-trending-img.png"
+                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
+                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
+                trendingCardCategory="Technology"
+                trendingCardCategoryBgColor="#EEF4FF"
+                trendingCardCategoryColor="#3538CD"
+                />
+                <TrendingCard
+                trendingCardImg="Assets/images/bci-trending-img.png"
+                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
+                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
+                trendingCardCategory="Technology"
+                trendingCardCategoryBgColor="#EEF4FF"
+                trendingCardCategoryColor="#3538CD"
+                />
+                <TrendingCard
+                trendingCardImg="Assets/images/bci-trending-img.png"
+                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
+                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
+                trendingCardCategory="Technology"
+                trendingCardCategoryBgColor="#EEF4FF"
+                trendingCardCategoryColor="#3538CD"
+                />
+                <TrendingCard
+                trendingCardImg="Assets/images/bci-trending-img.png"
+                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
+                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
+                trendingCardCategory="Technology"
+                trendingCardCategoryBgColor="#EEF4FF"
+                trendingCardCategoryColor="#3538CD"
+                />
+              </div>
             </div>
        </div>
 
