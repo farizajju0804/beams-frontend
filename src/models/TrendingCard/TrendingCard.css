@@ -38,12 +38,40 @@
     padding: 10px;
     border-radius: 100px;
     font-family: var(--font-mulish);
+    font-weight: 500;
 }
 
 @media screen and (max-width:912px) {
     .trending-card{
-        width: 30%;
+        width: 40%;
         justify-content: space-evenly;
     }
+    .trending-card-title{
+        font-size: 16px;
+        padding: 0 5px;
+    }
     
+}
+
+@media screen and (max-width:767px){
+    .trending-content-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .trending-container{
+        padding: 20px 20px 0;
+    }
+    .trending-card{
+        width: 80%;
+    }
+    .trending-box{
+        font-size: 18px;
+    }
+    .trending-card-title{
+        font-size: 16px;
+    }
+    .trending-category{
+        font-size: 12px;
+        padding: 5px 10px;
+    }
 }

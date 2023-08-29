@@ -32,35 +32,26 @@ function Beams() {
                 <TrendingCard
                 trendingCardImg="Assets/images/bci-trending-img.png"
                 trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
-                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
                 trendingCardCategory="Technology"
                 trendingCardCategoryBgColor="#EEF4FF"
                 trendingCardCategoryColor="#3538CD"
                 />
                 <TrendingCard
-                trendingCardImg="Assets/images/bci-trending-img.png"
-                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
-                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
-                trendingCardCategory="Technology"
-                trendingCardCategoryBgColor="#EEF4FF"
-                trendingCardCategoryColor="#3538CD"
+                trendingCardImg="Assets/images/lang-trending-img.png"
+                trendingCardTitle= "The Top 6 Benefits of Learning a Language"
+                trendingCardCategory="Learning"
+                trendingCardCategoryBgColor="#F0F9FF"
+                trendingCardCategoryColor="#026AA2"
                 />
                 <TrendingCard
-                trendingCardImg="Assets/images/bci-trending-img.png"
-                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
-                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
-                trendingCardCategory="Technology"
-                trendingCardCategoryBgColor="#EEF4FF"
-                trendingCardCategoryColor="#3538CD"
+                trendingCardImg="Assets/images/placebo-trending-img.png"
+                trendingCardTitle= "The Magic of Belief: The Placebo Effect"
+                trendingCardCategory="Medicine"
+                trendingCardCategoryBgColor="#FFF6F5"
+                trendingCardCategoryColor="#FB9046"
                 />
-                <TrendingCard
-                trendingCardImg="Assets/images/bci-trending-img.png"
-                trendingCardTitle= "Brain-Computer Interfaces: The Next Frontier in Human Evolution"
-                trendingCardDescription="Lorem ipsum dolor sit amet consectetur. Tempus consectetur tortor ut quam at semper dui placerat."
-                trendingCardCategory="Technology"
-                trendingCardCategoryBgColor="#EEF4FF"
-                trendingCardCategoryColor="#3538CD"
-                />
+        
+              
               </div>
             </div>
        </div>

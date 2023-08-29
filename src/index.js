@@ -296,24 +296,24 @@ const router = createBrowserRouter([
 			</div>
 		)
 	},
-	{
-		path: "/articleread1",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<ArticleRead1/>
-				<Footer/>
-			</div>
-		)
-	},
+	// {
+	// 	path: "/articleread1",
+	// 	element: (
+	// 		<div>
+	// 			<ScrollToTop />
+	// 			<Navbar />
+	// 			<ArticleRead1/>
+	// 			<Footer/>
+	// 		</div>
+	// 	)
+	// },
 	{
 		path: "/articleread/:id",
 		element: (
 			<div>
 				<ScrollToTop />
 				<Navbar />
-				<ArticleRead1/>
+				<ArticleRead/>
 				<Footer/>
 			</div>
 		)

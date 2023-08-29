@@ -60,7 +60,7 @@ const ArticleRead = () => {
               productCategory={sc.productCategory}
               startupContainerTitle={sc.startupContainerTitle}
               startupContents={sc.startupContents}
-              order={13}
+              order={sc.order}
             />
           );
         });

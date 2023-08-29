@@ -24,6 +24,13 @@
   src: url("/public/Assets/fonts/Bookerly\ Bold\ Italic.ttf");
   font-weight: 400;
 }
+@font-face {
+  font-family: "steva";
+  src: url("/public/Assets/fonts/steva.ttf");
+  font-weight: 400;
+}
+
+
 
 
 *{
@@ -44,6 +51,7 @@
   --bookerly-reading-desktop: "Bookerly";
   --bookerly-reading-desktop-italic: "Bookerly-Italic";
   --bookerly-reading-desktop-bold-italic: "Bookerly-Bold-Italic";
+  --font-steva: "steva";
 
   /* font sizes */
   --font-size-3xl: 3rem;
