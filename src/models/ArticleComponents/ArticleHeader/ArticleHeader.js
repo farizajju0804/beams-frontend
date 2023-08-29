@@ -9,26 +9,24 @@ const ArticleHeader = ({
   introMainImage,
   bgcolor,
 }) => {
+  console.log(introMainImage);
   const bgStyle = {
     backgroundColor: bgcolor,
-    order: order
+    order: order,
   };
   const introBoxStyle = {
     backgroundImage: `url(${introMainImage})`, // Set the background image dynamically
   };
   const processIntroContent = (content) => {
     if (typeof content === "string") {
-      const formattedContent = content.replace(
-        /<sup><link>(.*?)<\/link><\/sup>/g,
-        (_, link) => {
-          const linkParts = link.split("|");
-          if (linkParts.length === 2) {
-            const [number, url] = linkParts;
-            return `<sup><a class="superscript-link" href="${url}" target="_blank" rel="noopener noreferrer">${number}</a></sup>`;
-          }
-          return "";
+      const formattedContent = content.replace(/<sup><link>(.*?)<\/link><\/sup>/g, (_, link) => {
+        const linkParts = link.split("|");
+        if (linkParts.length === 2) {
+          const [number, url] = linkParts;
+          return `<sup><a class="superscript-link" href="${url}" target="_blank" rel="noopener noreferrer">${number}</a></sup>`;
         }
-      );
+        return "";
+      });
       return <span dangerouslySetInnerHTML={{ __html: formattedContent }} />;
     } else {
       return content;
