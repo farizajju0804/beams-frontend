@@ -39,3 +39,11 @@
     border-radius: 100px;
     font-family: var(--font-mulish);
 }
+
+@media screen and (max-width:912px) {
+    .trending-card{
+        width: 30%;
+        justify-content: space-evenly;
+    }
+    
+}
