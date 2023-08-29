@@ -24,7 +24,9 @@ function Beams() {
             </div>
            
             <div className='trending-container'>
-                
+            <div className='trending-box'>
+                    Trending Beams
+                </div>
             </div>
        </div>
 

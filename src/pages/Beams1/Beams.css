@@ -27,7 +27,7 @@
     padding: 70px 0;
 }
 
-.low-box{
+.low-box,.trending-box{
     font-family: var(--font-poppins);
     font-size: 24px;
     display: flex;
@@ -36,7 +36,11 @@
     border-bottom: 1.5px solid var(--orange);
 }
 
-
+.trnding-container{
+    display: flex;
+    flex-direction: column;
+    padding: 70px 0;
+}
 .beams-hero{
     width: 25%;
     margin-bottom: -20%;
