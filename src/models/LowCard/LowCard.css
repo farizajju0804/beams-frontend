@@ -113,7 +113,7 @@
         justify-content: center;
     }
     .low-title{
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
     }
     .low-info{
@@ -129,11 +129,11 @@
         padding:10px ;
     }
     .beam-category{
-        padding: 5px 10px;
-        font-size: 14px;
+        padding: 5px;
+        font-size: 12px;
     }
     .beam-time{
-        font-size: 14px;
+        font-size: 12px;
         gap: 3px;
     }
     
