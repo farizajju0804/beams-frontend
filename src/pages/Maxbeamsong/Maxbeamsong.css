@@ -1,32 +1,35 @@
-.mttop{
-    margin-top: 100px;
-}
 
 .Maxbeamsong{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px;
+    padding: 30px;
     background-color: #FAFAFA;
     
 }
 
 .songcard{
     width: 450px;
-    height: 600px;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 30px;
+}
+
+.songcard img{
+    width: 100%;
+    height: 230px;
 }
 
 .songcard span{
-    margin: 20px;
-    font-size: 30px;
+    font-size: 24px;
+    font-family: var(--font-poppins);
+    text-align: center;
 }
 
 .scardbanner{
@@ -54,9 +57,16 @@
     color: var(--orange);
 }
 
+.rhap_main{
+    gap: 15px;
+}
+
+.rhap_main-controls{
+    margin-right: 30px;
+}
 
 
-@media screen and (max-width : 737px) {
+@media screen and (max-width : 767px) {
     .rhap_container{
         width: 100% !important;
         margin-bottom: 20px !important;
@@ -64,6 +74,26 @@
     .rhap_container svg{
         color: var(--orange);
     }
+    .songcard img{
+        width: 100%;
+        height: 150px;
+    }
+    
+    .songcard span{
+        font-size: 16px;
+        font-family: var(--font-poppins);
+        text-align: center;
+    }
+
+    .songcard{
+        padding: 15px;
+    }
+    .rhap_main-controls{
+        margin-right: 0px;
+    }
+    
+
+
 
     
     

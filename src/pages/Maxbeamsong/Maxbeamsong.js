@@ -40,7 +40,7 @@ export const Maxbeamsong = () => {
 	}, []);
 
 	return (
-		<div className="Maxbeamsong mttop">
+		<div className="Maxbeamsong">
 			{!audio ? (
 				<BeatLoader />
 			) : (
