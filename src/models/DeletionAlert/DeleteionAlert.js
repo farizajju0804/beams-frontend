@@ -1,50 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BackdropWelcome } from "../Backdrop/BackdropWelcome";
 import welcomeimg from "../../assets/welcomeimg.png";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./DeletionAlert.css";
 import { useAuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 export const DeleteionAlert = ({ handleClose, delfullnote }) => {
-	const { updateFirstUser } = useAuthContext();
+  const { updateFirstUser } = useContext(AuthContext);
 
-	return (
-		<BackdropWelcome handleClose={handleClose}>
-			<div className="DeletionAlert">
-				<div
-					className="sharemodelcloser"
-					onClick={() => {
-						handleClose();
-					}}
-				>
-					<AiFillCloseCircle />
-				</div>
+  return (
+    <BackdropWelcome handleClose={handleClose}>
+      <div className="DeletionAlert">
+        <div
+          className="sharemodelcloser"
+          onClick={() => {
+            handleClose();
+          }}
+        >
+          <AiFillCloseCircle />
+        </div>
 
-				<h3>Deletion Alert!</h3>
-				<p>
-					Once you delete this note you won't be able to retrieve it. Are you
-					sure you want to delete it?
-				</p>
-				<div className="delalbtnscont">
-					<span
-						className="delalbtns delalcancel"
-						onClick={() => {
-							handleClose();
-						}}
-					>
-						Cancel
-					</span>
-					<span
-						className="delalbtns delaldel"
-						onClick={() => {
-							delfullnote();
-							handleClose();
-						}}
-					>
-						Delete
-					</span>
-				</div>
-			</div>
-		</BackdropWelcome>
-	);
+        <h3>Deletion Alert!</h3>
+        <p>Once you delete this note you won't be able to retrieve it. Are you sure you want to delete it?</p>
+        <div className="delalbtnscont">
+          <span
+            className="delalbtns delalcancel"
+            onClick={() => {
+              handleClose();
+            }}
+          >
+            Cancel
+          </span>
+          <span
+            className="delalbtns delaldel"
+            onClick={() => {
+              delfullnote();
+              handleClose();
+            }}
+          >
+            Delete
+          </span>
+        </div>
+      </div>
+    </BackdropWelcome>
+  );
 };
