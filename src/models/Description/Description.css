@@ -103,9 +103,10 @@
   }
   .time-info {
     flex-direction: row;
-    font-size: var(--font-size-base);
+    font-size: 14px;
     color: var(--black);
     font-family: var(--font-mulish);
+    gap: 5px;
   }
   .read-cta {
     flex-direction: column;
@@ -161,11 +162,11 @@
       height: 350px;
     }
     .read-btn-text{
-      font-size: 16px;
+      font-size: 14px;
     }
     .headset-icon, .vector1-icon{
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     }
     .favourite-icon{
       width: 40px;
@@ -195,6 +196,7 @@
     }
     .article-cta-box{
       justify-content: center;
+      gap: 50px;
     }
     .article-description-content-co {
       align-items: flex-start;
@@ -204,7 +206,8 @@
       padding: 20px 10px;
     }
     .read-btn{
-      gap: 10px;
+      gap: 8px;
+      padding: 5px 12px;
     }
   }
   @media screen and (max-width: 350px) {
