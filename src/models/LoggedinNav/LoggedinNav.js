@@ -70,4 +70,5 @@ export const LoggedinNav = () => {
       </div>
     </div>
   );
+
 };

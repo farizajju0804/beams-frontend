@@ -8,17 +8,21 @@ import { toast } from "react-hot-toast";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-	const [userData, setUserData] = useState();
-	const [isLoading, setIsLoading] = useState(false);
-	const [Favourites, setFavourites] = useState([]);
-	const [favpersist, setFavpersist] = useState([]);
-	const [highlightedText, setHighlightedText] = useState([]);
-	const [hightlightpersist, setHightlightpersist] = useState([]);
-	const [Notes, setNotes] = useState([]);
-	const [notesPersist, setnotesPersist] = useState([]);
-	const [firsthightlight, setFirsthightlight] = useState(false);
 
-	const authToken = getToken();
+
+  const [userData, setUserData] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [Favourites, setFavourites] = useState([]);
+  const [favpersist, setFavpersist] = useState([]);
+  const [highlightedText, setHighlightedText] = useState([]);
+  const [hightlightpersist, setHightlightpersist] = useState([]);
+  const [Notes, setNotes] = useState([]);
+  const [notesPersist, setnotesPersist] = useState([]);
+  const [firsthightlight, setFirsthightlight] = useState(false);
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+
+  const authToken = getToken();
+
 
   //Favourites
 
@@ -288,38 +292,43 @@ const AuthProvider = ({ children }) => {
     }
   }, [authToken]);
 
-	return (
-		<AuthContext.Provider
-			value={{
-				user: userData,
-				setUser: handleUser,
-				isLoading,
-				token: authToken,
-				favourites: Favourites,
-				addfav: addFavourites,
-				delfav: deleteFavourites,
-				notes: Notes,
-				addnotes: AddtoNotes,
-				delfullnote: delnote1,
-				hightlights: highlightedText,
-				setHighlights: addHighlights,
-				delhighlight: delhighlight,
-				changehighs: setHighlightedText,
-				hightlightpersist: hightlightpersist,
-				notesPersist: notesPersist,
-				changeNotes: setNotes,
-				favpersist: favpersist,
-				changefav: setFavourites,
-				updateFirstUser: updateFirstUser,
-				firsthightlight: firsthightlight,
-				setFirsthightlight: setFirsthightlight,
-				updateHighlightfirst: updateHighlightfirst,
-				addnewsletter: addnewsletter
-			}}
-		>
-			{children}
-		</AuthContext.Provider>
-	);
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user: userData,
+        isLoggedIn: isLoggedIn,
+        setisLoggedIn: setisLoggedIn,
+        setUser: handleUser,
+        setUserData: setUserData,
+        isLoading,
+        token: authToken,
+        favourites: Favourites,
+        addfav: addFavourites,
+        delfav: deleteFavourites,
+        notes: Notes,
+        addnotes: AddtoNotes,
+        delfullnote: delnote1,
+        hightlights: highlightedText,
+        setHighlights: addHighlights,
+        delhighlight: delhighlight,
+        changehighs: setHighlightedText,
+        hightlightpersist: hightlightpersist,
+        notesPersist: notesPersist,
+        changeNotes: setNotes,
+        favpersist: favpersist,
+        changefav: setFavourites,
+        updateFirstUser: updateFirstUser,
+        firsthightlight: firsthightlight,
+        setFirsthightlight: setFirsthightlight,
+        updateHighlightfirst: updateHighlightfirst,
+        addnewsletter: addnewsletter,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+
 };
 
 export default AuthProvider;
