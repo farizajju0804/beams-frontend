@@ -1,322 +1,334 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { API, BEARER } from "../constants";
 import { useEffect } from "react";
 import { getToken } from "../helpers";
-import { AuthContext } from "../context/AuthContext";
+// import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-hot-toast";
 
+export const AuthContext = createContext();
+
 const AuthProvider = ({ children }) => {
-	const [userData, setUserData] = useState();
-	const [isLoading, setIsLoading] = useState(false);
-	const [Favourites, setFavourites] = useState([]);
-	const [favpersist, setFavpersist] = useState([]);
-	const [highlightedText, setHighlightedText] = useState([]);
-	const [hightlightpersist, setHightlightpersist] = useState([]);
-	const [Notes, setNotes] = useState([]);
-	const [notesPersist, setnotesPersist] = useState([]);
-	const [firsthightlight, setFirsthightlight] = useState(false);
-	const authToken = getToken();
 
-	//Favourites
 
-	const pushfav = async (item) => {
-		const data = await fetch(`${API}/users/${userData.id}`, {
-			method: "PUT",
-			headers: {
-				Authorization: `Bearer ${authToken}`,
-				"Content-Type": "application/json"
-			},
+  const [userData, setUserData] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [Favourites, setFavourites] = useState([]);
+  const [favpersist, setFavpersist] = useState([]);
+  const [highlightedText, setHighlightedText] = useState([]);
+  const [hightlightpersist, setHightlightpersist] = useState([]);
+  const [Notes, setNotes] = useState([]);
+  const [notesPersist, setnotesPersist] = useState([]);
+  const [firsthightlight, setFirsthightlight] = useState(false);
+  const [isLoggedIn, setisLoggedIn] = useState(false);
 
-			body: JSON.stringify({
-				Favourites: item
-			})
-		})
-			.then((res) => res.json())
-			.then((e) => {
-				console.log(e);
-				// fetchLoggedInUser();
-			});
-	};
+  const authToken = getToken();
 
-	const addFavourites = (item) => {
-		var itemstatus = false;
 
-		Favourites.forEach((fav) => {
-			if (
-				fav.idofbeam === item.idofbeam &&
-				fav.typeofbeam === item.typeofbeam
-			) {
-				itemstatus = true;
-			}
-		});
+  //Favourites
 
-		if (itemstatus === false) {
-			pushfav([...Favourites, item]);
-			setFavourites([...Favourites, item]);
-			toast.success("Beam Added to Favourites");
-		} else {
-			toast.error("Beam Already In Favourites");
-		}
-	};
+  const pushfav = async (item) => {
+    const data = await fetch(`${API}/users/${userData.id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        "Content-Type": "application/json",
+      },
 
-	const deleteFavourites = (item) => {
-		console.log(item);
-		console.log(Favourites);
-		const filteredfavs = Favourites.filter((e) => {
-			return e.id != item.id;
-			// console.log(e.id, item.id);
-		});
+      body: JSON.stringify({
+        Favourites: item,
+      }),
+    })
+      .then((res) => res.json())
+      .then((e) => {
+        console.log(e);
+        // fetchLoggedInUser();
+      });
+  };
 
-		console.log(filteredfavs);
+  const addFavourites = (item) => {
+    var itemstatus = false;
 
-		setFavourites(filteredfavs);
-		pushfav(filteredfavs);
-		toast.success("Beam Removed from Favourites");
-	};
+    Favourites.forEach((fav) => {
+      if (fav.idofbeam === item.idofbeam && fav.typeofbeam === item.typeofbeam) {
+        itemstatus = true;
+      }
+    });
 
-	//Favourites
+    if (itemstatus === false) {
+      pushfav([...Favourites, item]);
+      setFavourites([...Favourites, item]);
+      toast.success("Beam Added to Favourites");
+    } else {
+      toast.error("Beam Already In Favourites");
+    }
+  };
 
-	//Highlights
+  const deleteFavourites = (item) => {
+    console.log(item);
+    console.log(Favourites);
+    const filteredfavs = Favourites.filter((e) => {
+      return e.id != item.id;
+      // console.log(e.id, item.id);
+    });
 
-	const pushHighlights = async (highlightitem) => {
-		const data = await fetch(`${API}/users/${userData.id}`, {
-			method: "PUT",
-			headers: {
-				Authorization: `Bearer ${authToken}`,
-				"Content-Type": "application/json"
-			},
+    console.log(filteredfavs);
 
-			body: JSON.stringify({
-				Highlights: highlightitem
-			})
-		})
-			.then((res) => res.json())
-			.then((e) => {
-				console.log(e);
-			});
-	};
+    setFavourites(filteredfavs);
+    pushfav(filteredfavs);
+    toast.success("Beam Removed from Favourites");
+  };
 
-	const addHighlights = async (highlightitem) => {
-		setHighlightedText([...highlightedText, highlightitem]);
-		var highlightadded = [...highlightedText, highlightitem];
-		pushHighlights(highlightadded);
-		if (userData.firsthighlight) {
-			setFirsthightlight(true);
-		}
-	};
+  //Favourites
 
-	const delhighlight = (id) => {
-		console.log(id);
-		const newhightlights = highlightedText.filter((highlight) => {
-			if (highlight.id === id) {
-				return false;
-			} else {
-				return true;
-			}
-		});
+  //Highlights
 
-		console.log(newhightlights);
+  const pushHighlights = async (highlightitem) => {
+    const data = await fetch(`${API}/users/${userData.id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        "Content-Type": "application/json",
+      },
 
-		setHighlightedText(newhightlights);
-		toast.promise(pushHighlights(newhightlights), {
-			loading: "Deleting Highlight",
-			success: <b>Highlight Deleted</b>,
-			error: <b>Could not delete hightlight.</b>
-		});
-	};
+      body: JSON.stringify({
+        Highlights: highlightitem,
+      }),
+    })
+      .then((res) => res.json())
+      .then((e) => {
+        console.log(e);
+      });
+  };
 
-	//Highlights
+  const addHighlights = async (highlightitem) => {
+    setHighlightedText([...highlightedText, highlightitem]);
+    var highlightadded = [...highlightedText, highlightitem];
+    pushHighlights(highlightadded);
+    if (userData.firsthighlight) {
+      setFirsthightlight(true);
+    }
+  };
 
-	//Notes
+  const delhighlight = (id) => {
+    console.log(id);
+    const newhightlights = highlightedText.filter((highlight) => {
+      if (highlight.id === id) {
+        return false;
+      } else {
+        return true;
+      }
+    });
 
-	const AddtoNotes = (BeamName, BeamId, BeamType, NoteItem) => {
-		const newnote = {
-			BeamName,
-			Beamid: BeamId,
-			Beamtype: BeamType,
-			NoteContent: NoteItem.content,
-			Date: NoteItem.date
-		};
+    console.log(newhightlights);
 
-		setNotes([...Notes, newnote]);
-		toast.promise(pushNotes([...Notes, newnote]), {
-			loading: "Adding Note",
-			success: <b>Note Added</b>,
-			error: <b>Could not delete note.</b>
-		});
-	};
+    setHighlightedText(newhightlights);
+    toast.promise(pushHighlights(newhightlights), {
+      loading: "Deleting Highlight",
+      success: <b>Highlight Deleted</b>,
+      error: <b>Could not delete hightlight.</b>,
+    });
+  };
 
-	const delnote1 = (id) => {
-		const newnote = Notes.filter((note) => {
-			return note.id != id;
-		});
+  //Highlights
 
-		setNotes(newnote);
-		toast.promise(pushNotes(newnote), {
-			loading: "Deleting Note",
-			success: <b>Note Deleted</b>,
-			error: <b>Could not delete note.</b>
-		});
-	};
+  //Notes
 
-	const pushNotes = async (item) => {
-		const data = await fetch(`${API}/users/${userData.id}`, {
-			method: "PUT",
-			headers: {
-				Authorization: `Bearer ${authToken}`,
-				"Content-Type": "application/json"
-			},
+  const AddtoNotes = (BeamName, BeamId, BeamType, NoteItem) => {
+    const newnote = {
+      BeamName,
+      Beamid: BeamId,
+      Beamtype: BeamType,
+      NoteContent: NoteItem.content,
+      Date: NoteItem.date,
+    };
 
-			body: JSON.stringify({
-				Notes: item
-			})
-		})
-			.then((res) => res.json())
-			.then((e) => {});
-	};
+    setNotes([...Notes, newnote]);
+    toast.promise(pushNotes([...Notes, newnote]), {
+      loading: "Adding Note",
+      success: <b>Note Added</b>,
+      error: <b>Could not delete note.</b>,
+    });
+  };
 
-	//Notes
+  const delnote1 = (id) => {
+    const newnote = Notes.filter((note) => {
+      return note.id != id;
+    });
 
-	//firstuser
+    setNotes(newnote);
+    toast.promise(pushNotes(newnote), {
+      loading: "Deleting Note",
+      success: <b>Note Deleted</b>,
+      error: <b>Could not delete note.</b>,
+    });
+  };
 
-	const updateFirstUser = async () => {
-		const data = await fetch(`${API}/users/${userData.id}`, {
-			method: "PUT",
-			headers: {
-				Authorization: `Bearer ${authToken}`,
-				"Content-Type": "application/json"
-			},
+  const pushNotes = async (item) => {
+    const data = await fetch(`${API}/users/${userData.id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        "Content-Type": "application/json",
+      },
 
-			body: JSON.stringify({
-				newuser: false
-			})
-		})
-			.then((res) => res.json())
-			.then((e) => {
-				console.log(e);
-			});
-	};
+      body: JSON.stringify({
+        Notes: item,
+      }),
+    })
+      .then((res) => res.json())
+      .then((e) => {});
+  };
 
-	//firstuser
+  //Notes
 
-	//updatehighlightfirst
-	const updateHighlightfirst = async () => {
-		const data = await fetch(`${API}/users/${userData.id}`, {
-			method: "PUT",
-			headers: {
-				Authorization: `Bearer ${authToken}`,
-				"Content-Type": "application/json"
-			},
+  //firstuser
 
-			body: JSON.stringify({
-				firsthighlight: false
-			})
-		})
-			.then((res) => res.json())
-			.then((e) => {
-				console.log(e);
-			});
-	};
-	//updatehighlightfirst
+  const updateFirstUser = async () => {
+    const data = await fetch(`${API}/users/${userData.id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        "Content-Type": "application/json",
+      },
 
-	//newsletter
-	const addnewsletter = async (email, setNewsletterpopup) => {
-		const value = {
-			data: {
-				email: email
-			}
-		};
+      body: JSON.stringify({
+        newuser: false,
+      }),
+    })
+      .then((res) => res.json())
+      .then((e) => {
+        console.log(e);
+      });
+  };
 
-		const data = await fetch(`${API}/newsletters`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
+  //firstuser
 
-			body: JSON.stringify(value)
-		})
-			.then((res) => res.json())
-			.then((e) => {
-				if (e.data) {
-					setNewsletterpopup(true);
-				}
-				if (e.error.message == "email must be a valid email") {
-					toast.error("email must be a valid email");
-				}
-				if (e.error.message == "This attribute must be unique") {
-					toast.error("Email subscribed Already");
-				}
-			});
-	};
-	//newsletter
+  //updatehighlightfirst
+  const updateHighlightfirst = async () => {
+    const data = await fetch(`${API}/users/${userData.id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+        "Content-Type": "application/json",
+      },
 
-	const fetchLoggedInUser = async (token) => {
-		setIsLoading(true);
-		try {
-			const response = await fetch(`${API}/users/me?populate=*`, {
-				headers: { Authorization: `${BEARER} ${token}` }
-			});
-			const data = await response.json();
-			setUserData(data);
-			console.log(data);
-			setFavourites(data.Favourites);
-			setFavpersist(data.Favourites);
-			setNotes(data.Notes);
-			setnotesPersist(data.Notes);
-			setHighlightedText(data.Highlights);
-			setHightlightpersist(data.Highlights);
-			console.log("datafound");
-		} catch (error) {
-			console.error(error);
-			alert("Error While Getting Logged In User Details");
-		} finally {
-			setIsLoading(false);
-		}
-	};
+      body: JSON.stringify({
+        firsthighlight: false,
+      }),
+    })
+      .then((res) => res.json())
+      .then((e) => {
+        console.log(e);
+      });
+  };
+  //updatehighlightfirst
 
-	const handleUser = (user) => {
-		setUserData(user);
-	};
+  //newsletter
+  const addnewsletter = async (email, setNewsletterpopup) => {
+    const value = {
+      data: {
+        email: email,
+      },
+    };
 
-	useEffect(() => {
-		if (authToken) {
-			fetchLoggedInUser(authToken);
-			return;
-		}
-	}, [authToken]);
+    const data = await fetch(`${API}/newsletters`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
 
-	return (
-		<AuthContext.Provider
-			value={{
-				user: userData,
-				setUser: handleUser,
-				isLoading,
-				token: authToken,
-				favourites: Favourites,
-				addfav: addFavourites,
-				delfav: deleteFavourites,
-				notes: Notes,
-				addnotes: AddtoNotes,
-				delfullnote: delnote1,
-				hightlights: highlightedText,
-				setHighlights: addHighlights,
-				delhighlight: delhighlight,
-				changehighs: setHighlightedText,
-				hightlightpersist: hightlightpersist,
-				notesPersist: notesPersist,
-				changeNotes: setNotes,
-				favpersist: favpersist,
-				changefav: setFavourites,
-				updateFirstUser: updateFirstUser,
-				firsthightlight: firsthightlight,
-				setFirsthightlight: setFirsthightlight,
-				updateHighlightfirst: updateHighlightfirst,
-				addnewsletter: addnewsletter,
-			}}
-		>
-			{children}
-		</AuthContext.Provider>
-	);
+      body: JSON.stringify(value),
+    })
+      .then((res) => res.json())
+      .then((e) => {
+        if (e.data) {
+          setNewsletterpopup(true);
+        }
+        if (e.error.message == "email must be a valid email") {
+          toast.error("email must be a valid email");
+        }
+        if (e.error.message == "This attribute must be unique") {
+          toast.error("Email subscribed Already");
+        }
+      });
+  };
+  //newsletter
+
+  const fetchLoggedInUser = async (token) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${API}/users/me?populate=*`, {
+        headers: { Authorization: `${BEARER} ${token}` },
+      });
+      const data = await response.json();
+      setUserData(data);
+
+      setFavourites(data.Favourites);
+      setFavpersist(data.Favourites);
+      setNotes(data.Notes);
+      setnotesPersist(data.Notes);
+      setHighlightedText(data.Highlights);
+      setHightlightpersist(data.Highlights);
+      console.log("datafound");
+      setisLoggedIn(true);
+    } catch (error) {
+      console.error(error);
+      setisLoggedIn(false);
+      alert("Error While Getting Logged In User Details");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleUser = (user) => {
+    setUserData(user);
+    setisLoggedIn(true);
+  };
+
+  useEffect(() => {
+    if (authToken) {
+      fetchLoggedInUser(authToken);
+      return;
+    }
+  }, [authToken]);
+
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user: userData,
+        isLoggedIn: isLoggedIn,
+        setisLoggedIn: setisLoggedIn,
+        setUser: handleUser,
+        setUserData: setUserData,
+        isLoading,
+        token: authToken,
+        favourites: Favourites,
+        addfav: addFavourites,
+        delfav: deleteFavourites,
+        notes: Notes,
+        addnotes: AddtoNotes,
+        delfullnote: delnote1,
+        hightlights: highlightedText,
+        setHighlights: addHighlights,
+        delhighlight: delhighlight,
+        changehighs: setHighlightedText,
+        hightlightpersist: hightlightpersist,
+        notesPersist: notesPersist,
+        changeNotes: setNotes,
+        favpersist: favpersist,
+        changefav: setFavourites,
+        updateFirstUser: updateFirstUser,
+        firsthightlight: firsthightlight,
+        setFirsthightlight: setFirsthightlight,
+        updateHighlightfirst: updateHighlightfirst,
+        addnewsletter: addnewsletter,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+
 };
 
 export default AuthProvider;
