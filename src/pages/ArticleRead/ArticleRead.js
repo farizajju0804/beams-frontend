@@ -22,11 +22,11 @@ const ArticleRead = () => {
 
   const getArticleByID = async (id) => {
     fetch(
-      `http://localhost:1337/api/article-components/${id}?populate[DataCardBox][populate]=*&populate[StartupContainer][populate]=*&populate[ArticleHeader]=*&populate[SubPara]=*&populate[StatisticContainer]=*&populate[Quote]=*&populate[Applications][populate]=*&populate[Dropdown]=*`
+      `http://localhost:1337/api/article-components/${id}?populate[DataCardBox][populate]=*&populate[StartupContainer][populate]=*&populate[ArticleHeader]=*&populate[SubPara]=*&populate[StatisticContainer]=*&populate[Quote]=*&populate[Applications][populate]=*&populate[Dropdown]=*&populate[StartBox]=*`
     )
       .then((res) => res.json())
       .then((articles) => {
-        // console.log(articles.data.attributes);
+        console.log(articles.data.attributes);
         const articleComponent = [];
 
         const articleData = articles.data.attributes;
@@ -48,6 +48,19 @@ const ArticleRead = () => {
               subParaImg={para.subParaImg}
               subContent={para.subContent}
               order={para.order}
+            />
+          );
+        });
+        articleData.StartBox.map((sb) => {
+          articleComponent.push(<StartBox startContent={sb.startContent} order={sb.ordre} />);
+        });
+        articleData.Applications.map((ap) => {
+          articleComponent.push(
+            <Applications
+              applicationHeader={ap.applicationHeader}
+              applicationHeaderContent={ap.applicationHeaderContent}
+              applicationBoxes={ap.applicationBoxes}
+              order={15} // Pass the array here
             />
           );
         });
@@ -97,7 +110,6 @@ const ArticleRead = () => {
     getArticleByID(1);
   }, []);
 
- 
   // const dataCards = [
   //   {
   //     yearData: "In  2021",
