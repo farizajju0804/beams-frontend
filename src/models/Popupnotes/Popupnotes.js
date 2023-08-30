@@ -40,7 +40,7 @@ export const Popupnotes = ({ handleClose, data }) => {
 				></textarea>
 				<i>Don't let your thoughts disappear, save your note now</i>
 				<div className="notepopcntrl">
-					<span style={{ color: "#435CFF" }}>View Notes</span>
+					<span style={{ color: "#f96f2e" }}>View Notes</span>
 					<div className="popupcannsave">
 						<span
 							onClick={() => {

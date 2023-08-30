@@ -8,6 +8,7 @@ import { toast } from "react-hot-toast";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+
   const [userData, setUserData] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [Favourites, setFavourites] = useState([]);
@@ -324,6 +325,7 @@ const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+
 };
 
 export default AuthProvider;

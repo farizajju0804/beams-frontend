@@ -35,7 +35,7 @@
     background-size: cover;
     object-fit: cover;
     background-position: center;
-    height: 30px;
+    height: 25px;
     widows: 100%;
 }
 
@@ -170,7 +170,7 @@
     }
 }
 
-@media screen and (max-width: 820px){
+@media screen and (max-width: 912px){
     .footer-content{
         flex-direction: column;
         gap: 20px;

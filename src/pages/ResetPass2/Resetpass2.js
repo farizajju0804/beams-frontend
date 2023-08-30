@@ -157,7 +157,7 @@ export const Resetpass2 = () => {
 							onClick={() => {
 								setIspassvis(!ispassvis);
 							}}
-							color={"#435CFF"}
+							color={"#f96f2e"}
 						/>
 					)}
 					{passwordborder && (
@@ -174,7 +174,7 @@ export const Resetpass2 = () => {
 							{passlen ? (
 								<div className="passclouditem">
 									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
+									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
 										8 Characters
 									</span>
 								</div>
@@ -190,7 +190,7 @@ export const Resetpass2 = () => {
 							{passupper ? (
 								<div className="passclouditem">
 									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
+									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
 										1 Uppercase
 									</span>
 								</div>
@@ -207,7 +207,7 @@ export const Resetpass2 = () => {
 							{passnum ? (
 								<div className="passclouditem">
 									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
+									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
 										1 Number
 									</span>
 								</div>
@@ -222,7 +222,7 @@ export const Resetpass2 = () => {
 							{passlower ? (
 								<div className="passclouditem">
 									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#425CFF" }}>
+									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
 										1 Lowercase
 									</span>
 								</div>
