@@ -67,13 +67,16 @@ const ArticleRead = () => {
         articleData.StatisticContainer.map((sc) => {
           articleComponent.push(<StatisticContainer statisticContent={sc.statisticContent} order={sc.order} />);
         });
+        // articleData.StartBox.map((sc) => {
+        //   articleComponent.push(<StartBox startContent={sc.statisticContent} order={sc.order} />);
+        // });
         articleData.StartupContainer.map((sc) => {
           articleComponent.push(
             <StartupContainer
               productCategory={sc.productCategory}
               startupContainerTitle={sc.startupContainerTitle}
               startupContents={sc.startupContents}
-              order={13}
+              order={sc.order}
             />
           );
         });
@@ -107,7 +110,7 @@ const ArticleRead = () => {
   };
 
   useEffect(() => {
-    getArticleByID(1);
+    getArticleByID(id);
   }, []);
 
   // const dataCards = [

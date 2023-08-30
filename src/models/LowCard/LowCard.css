@@ -1,0 +1,143 @@
+.low-card{
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.low-img{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.low-img img{
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+    border-radius: 12px;
+}
+
+.low-card-content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.low-title{
+    font-family: var(--font-poppins);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.low-desc{
+    font-size: 16px;
+    color: #667085;
+    font-family: var(--font-mulish);
+}
+
+.low-info{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.beam-category{
+    font-size: 14px;
+    color: var(--black);
+    font-family: var(--font-mulish);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 100px;
+}
+
+.beam-time{
+    font-size: 14px;
+    font-family: var(--font-mulish);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.read-btn1{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* justify-content: ce; */
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 100px;
+    width: 130px;
+    justify-content: center;
+    padding: 8px 10px;
+}
+
+@media screen and (max-width:912px){
+     .low-title{
+        font-size: 24px;
+     }
+     .low-card-content{
+        gap: 10px;
+     }
+     .low-img{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:767px){
+    .low-box{
+        font-size: 18px;
+    }
+    .low-desc{
+        display: none;
+    }
+    .low-card{
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+    .low-img,.low-card-content{
+        width: 100%;
+        align-items: center;
+    }
+    .low-img img{
+        width: 80%;
+    }
+    .low-info{
+        justify-content: center;
+    }
+    .low-title{
+        font-size: 16px;
+        text-align: center;
+        width: 80%;
+        justify-content: center;
+        padding: 0 5%;
+    }
+    .low-info{
+        margin-top: 10px;
+        justify-content: center;
+        gap: 25px;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .read-btn1{
+        width: 100%;
+        margin-top: 20px;
+        padding:10px ;
+    }
+    .beam-category{
+        padding: 5px;
+        font-size: 12px;
+    }
+    .beam-time{
+        font-size: 12px;
+        gap: 3px;
+    }
+    
+   
+}
