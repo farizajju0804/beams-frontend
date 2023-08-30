@@ -3,6 +3,7 @@ import './Beams.css'
 import LowCard from '../../models/LowCard/LowCard'
 import TrendingCard from '../../models/TrendingCard/TrendingCard'
 import { useState } from 'react'
+
 function Beams() {
   const [launch,setLaunch]=useState(null)
   const [trending,setTrending]=useState([])
@@ -22,7 +23,7 @@ function Beams() {
         <h1>Ignite Your Success with Beams</h1>
                 {/* <img className='beams-hero' src="Assets/images/beams-hero.png" alt=""/> */}
        </div>
-       <div className='beams-content-container'>
+       <div className='beams-content-container' >
             <div className='low-container'>
                 <div className='low-box'>
                     Launch Of The Week

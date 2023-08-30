@@ -1,11 +1,15 @@
 import "./Description.css";
 import React, { useState,useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
+
 const Description = ({
   articleDescriptionImg,
   articleDescriptionTitle,
   artilceDescriptionText,
   time,
 }) => {
+  const navigate=useNavigate()
+
   const [isMobile, setIsMobile] = useState(false);
 
   const updateIsMobile = () => {
@@ -26,7 +30,7 @@ const Description = ({
   }, []);
   const imageHeight = isMobile ? "200px" : "500px";
   return (
-    <div className="article-description" >
+    <div className="article-description" onClick={()=>navigate("/maxbeamsong")}>
       <div className="article-description-image" style={{ height: imageHeight }}>
         <img
           className="article-desciption-img-icon"

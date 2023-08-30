@@ -199,7 +199,7 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/maxbeamsong/:id",
+		path: "/maxbeamsong",
 		element: (
 			<div>
 				<ScrollToTop />
