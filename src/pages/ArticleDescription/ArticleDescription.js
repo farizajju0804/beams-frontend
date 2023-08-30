@@ -1,14 +1,25 @@
 import React from 'react'
 import Description from '../../models/Description/Description'
+import { useState,useEffect } from 'react'
 function ArticleDescription() {
-  return (
-    <Description 
-     articleDescriptionImg = 'Assets/images/article-description-image-1.png'
-     articleDescriptionTitle = "The Fascinating World Of Synthetic Biology"
-     artilceDescriptionText="Lorem ipsum dolor sit amet consectetur. Amet purus gravida id neque nam praesent duis posuere. Erat nullam mauris ac lorem commodo pellentesque placerat eu ut. Orci malesuada ut scelerisque sit. Sed eu pretium ut ultricies purus in diam cum. Integer et ornare fringilla nunc."
-     time = "7 min"
-    />
-  )
+  const [desc,setDesc]=useState(null)
+  useEffect(()=>{
+    fetch("http://localhost:1337/api/descriptions?populate=*").then((res) => res.json())
+    .then((desc)=>{
+      const id=desc.data.findIndex((desc)=>desc.attributes.articleId===localStorage.getItem("article"))
+      setDesc(desc.data[id].attributes)
+    }
+    )
+  },[])
+  return <>
+    {
+      desc?<Description 
+      {...desc}
+     />:
+     <p>loading</p>
+    }
+    
+    </>
 }
 
 export default ArticleDescription

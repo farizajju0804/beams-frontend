@@ -1,7 +1,10 @@
 import React from 'react'
 import './LowCard.css'
 import { Clock } from 'iconsax-react'
-function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryColor}) { 
+import { useEffect,useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
+function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryColor,articleId}) { 
+  const auth=useContext(AuthContext)
   const categoryStyle = {
     backgroundColor: categoryBgColor,
     color: categoryColor
@@ -9,10 +12,15 @@ function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryCo
   const timeStyle ={
     color : categoryColor
   }
+
+  // useEffect(()=>{
+  //   console.log(auth.article)
+  // },[auth])
+  
   return (
-    <div className='low-card'>
+    <div className='low-card'  onClick={()=>localStorage.setItem("article",articleId)}>
         <div className='low-img'>
-            <img src={lowImg} alt=""/>
+            <img src={"http://localhost:1337"+lowImg.data.attributes.url} alt="article-img"/>
         </div>
         <div className='low-card-content'>
             <div className='low-title'>

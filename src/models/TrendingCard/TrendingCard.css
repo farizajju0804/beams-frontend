@@ -39,6 +39,7 @@
     border-radius: 100px;
     font-family: var(--font-mulish);
     font-weight: 500;
+    font-size: 14px;
 }
 
 @media screen and (max-width:912px) {

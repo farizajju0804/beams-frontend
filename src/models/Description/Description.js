@@ -31,7 +31,7 @@ const Description = ({
         <img
           className="article-desciption-img-icon"
           alt=""
-          src={articleDescriptionImg}
+          src={"http://localhost:1337"+articleDescriptionImg.data.attributes.url}
           
         />
         <div className="favourite-icon">

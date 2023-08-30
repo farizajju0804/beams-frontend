@@ -44,7 +44,7 @@
 }
 
 .beam-category{
-    font-size: 16px;
+    font-size: 14px;
     color: var(--black);
     font-family: var(--font-mulish);
     display: flex;
@@ -55,7 +55,7 @@
 }
 
 .beam-time{
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-mulish);
     display: flex;
     align-items: center;

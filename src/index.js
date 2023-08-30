@@ -133,7 +133,7 @@ const router = createBrowserRouter([
 	{
 		path: "/signup",
 		element: (
-			<div>
+			<div>   
 				<ScrollToTop />
 				<Navbar />
 				<Signup />

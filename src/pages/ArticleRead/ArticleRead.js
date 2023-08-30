@@ -54,6 +54,9 @@ const ArticleRead = () => {
         articleData.StatisticContainer.map((sc) => {
           articleComponent.push(<StatisticContainer statisticContent={sc.statisticContent} order={sc.order} />);
         });
+        // articleData.StartBox.map((sc) => {
+        //   articleComponent.push(<StartBox startContent={sc.statisticContent} order={sc.order} />);
+        // });
         articleData.StartupContainer.map((sc) => {
           articleComponent.push(
             <StartupContainer

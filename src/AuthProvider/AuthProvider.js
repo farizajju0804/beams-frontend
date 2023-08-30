@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
 	const [Notes, setNotes] = useState([]);
 	const [notesPersist, setnotesPersist] = useState([]);
 	const [firsthightlight, setFirsthightlight] = useState(false);
-
+	const [article,setArticle]=useState("sample")
 	const authToken = getToken();
 
 	//Favourites
@@ -312,7 +312,9 @@ const AuthProvider = ({ children }) => {
 				firsthightlight: firsthightlight,
 				setFirsthightlight: setFirsthightlight,
 				updateHighlightfirst: updateHighlightfirst,
-				addnewsletter: addnewsletter
+				addnewsletter: addnewsletter,
+				article:article,
+				setArticleId:(article)=>console.log(article)
 			}}
 		>
 			{children}

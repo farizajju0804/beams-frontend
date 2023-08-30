@@ -6,7 +6,7 @@
     font-size: 32px;
     background-color: var(--yellow);
     margin-top: -10vh;
-    padding: 10% 5%;
+    padding: 5%;
     text-align: center;
     flex-direction: column;
 }
@@ -28,7 +28,7 @@
 .beams-content-container{
     display: flex;
     flex-direction: column;
-    padding-top: 70px;
+    padding-top: 20px;
     gap: 30px;
 }
 
