@@ -11,7 +11,7 @@ export const Maxbeamsong = () => {
 	const { token } = useAuthContext();
 	const [microbeams, setMicrobeams] = useState({});
 	const [microbeamsload, setMicrobeamsload] = useState(false);
-	const { id } = useParams();
+	const { id:Aid } = useParams();
 	const [audio,setAudio]=useState(null)
 	const fetchdata = async () => {
 		setMicrobeamsload(true);
@@ -28,7 +28,7 @@ export const Maxbeamsong = () => {
 		// 	});
         fetch("http://localhost:1337/api/audio-players?populate=*").then((res) => res.json())
 		.then((audio)=>{
-			 const id=audio.data.findIndex((audio)=>audio.attributes.articleId===localStorage.getItem("article"))
+			 const id=audio.data.findIndex((audio)=>audio.attributes.articleId===Aid)
 			 console.log(audio.data[id].attributes)
 			 setAudio(audio.data[id].attributes)
 		})

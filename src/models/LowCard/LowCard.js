@@ -3,10 +3,9 @@ import './LowCard.css'
 import { Clock } from 'iconsax-react'
 import { useEffect,useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryColor,articleId}) { 
   const navigate=useNavigate()
-
   const auth=useContext(AuthContext)
   const categoryStyle = {
     backgroundColor: categoryBgColor,
@@ -21,8 +20,8 @@ function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryCo
   // },[auth])
   
   return (
-    <div className='low-card'  onClick={()=>{localStorage.setItem("article",articleId)
-      navigate("/article-description")
+    <div className='low-card'  onClick={()=>{
+      navigate(`/article-description/${articleId}`)
     }}>
         <div className='low-img'>
             <img src={"http://localhost:1337"+lowImg.data.attributes.url} alt="article-img"/>

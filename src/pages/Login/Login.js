@@ -29,11 +29,7 @@ export const Login = () => {
 
   const { user, setUser, token, isLoggedIn } = useContext(AuthContext);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/beams", { replace: true });
-    }
-  }, [isLoggedIn]);
+    
 
   console.log(isLoggedIn);
   const logIn = async () => {
@@ -56,12 +52,15 @@ export const Login = () => {
         throw data?.error;
       } else {
         if (rememberme) {
+          console.log(data.jwt)
           setToken(data.jwt);
         }
+        console.log(data.user)
+        sessionStorage.setItem("uid",data.user.id)
         setUser(data.user);
 
         toast.success(`Welcome back ${data.user.username}!`);
-        navigate("/beams", { replace: true });
+        navigate(`/beams/${data.user.id}`, { replace: true });
       }
     } catch (error) {
       if (error.message === "Invalid identifier or password") {
@@ -176,6 +175,7 @@ export const Login = () => {
         <button
           className="loginsignbtn"
           onClick={() => {
+            
             signIn();
           }}
         >

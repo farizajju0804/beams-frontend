@@ -1,5 +1,5 @@
 import "./StatisticContainer.css";
-const StatisticContainer = ({ statisticContent,order }) => {
+const StatisticContainer = ({ statImg,statisticContent,order }) => {
     const processContent = (content) => {
       let formattedContent = content.replace(/<strong>(.*?)<\/strong>/g, '<strong>$1</strong>');
       formattedContent = formattedContent.replace(/<italic>(.*?)<\/italic>/g, '<em>$1</em>');
@@ -34,7 +34,7 @@ const StatisticContainer = ({ statisticContent,order }) => {
       <div className="statistic-container1" style={orderstyle}> 
         <div className="statistic1">
           <div className="statistic-title1">
-            <img className="statistic-icon1" alt="" src="Assets/images/Statistic-icon.png" />
+            <img className="statistic-icon1" alt="stat" src={statImg} />
             <div className="statistic-title-text1">STATISTIC</div>
           </div>
           <div className="statistic-content1">

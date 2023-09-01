@@ -15,7 +15,7 @@ export const Maxbeampage = () => {
 	const [microbeams, setMicrobeams] = useState({});
 	const [microbeamsload, setMicrobeamsload] = useState(false);
 	const { id } = useParams();
-
+   
 	const fetchdata = async () => {
 		setMicrobeamsload(true);
 		const data = await fetch(`${API}/minibeams/${id}`, {

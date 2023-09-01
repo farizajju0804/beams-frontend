@@ -9,6 +9,7 @@
     /* position: absolute;
     top: 0px; */
     z-index: 10;
+
 }
 
 .searchbar{
@@ -50,6 +51,7 @@
 }
 .logged-logo{
     width: 10%;
+    cursor: pointer;
 }
 .loggedinnav > h1
 {
@@ -78,6 +80,9 @@
     border-radius: 50%;
 }
 
+.looged-logo{
+    width: 20%;
+}
 .navaccoutholder > span{
     margin-left: 20px;
     margin-right: 20px;

@@ -1,6 +1,6 @@
 import "./Description.css";
 import React, { useState,useEffect } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 
 const Description = ({
   articleDescriptionImg,
@@ -9,7 +9,7 @@ const Description = ({
   time,
 }) => {
   const navigate=useNavigate()
-
+  const {id}=useParams()
   const [isMobile, setIsMobile] = useState(false);
 
   const updateIsMobile = () => {
@@ -30,7 +30,7 @@ const Description = ({
   }, []);
   const imageHeight = isMobile ? "200px" : "500px";
   return (
-    <div className="article-description" onClick={()=>navigate("/maxbeamsong")}>
+    <div className="article-description" >
       <div className="article-description-image" style={{ height: imageHeight }}>
         <img
           className="article-desciption-img-icon"
@@ -53,30 +53,30 @@ const Description = ({
             </div>
           </div>
           <div className="article-cta-box">
-            <div className="read-cta">
+            <div className="read-cta" onClick={()=>navigate(`/articleread/${id}`)}>
               <div className="read-btn">
-                <img className="vector1-icon" alt="" src="Assets/images/book.svg" />
+                <img className="vector1-icon" alt="" src="http://localhost:3000/Assets/images/book.svg" />
                 <div className="read-btn-text">Read</div>
               </div>
               <div className="time-info">
                 <img
                   className="vuesaxbulkclock-icon"
                   alt=""
-                  src="Assets/images/clock.svg"
+                  src="http://localhost:3000/Assets/images/clock.svg"
                 />
                 <div className="time">5 min</div>
               </div>
             </div>
-            <div className="read-cta">
-              <div className="read-btn">
-                <img className="headset-icon" alt="" src="Assets/images/headset.svg" />
+            <div className="read-cta" >
+              <div className="read-btn" onClick={()=>navigate(`/maxbeamsong/${id}`)}>
+                <img className="headset-icon" alt="" src="http://localhost:3000/Assets/images/headset.svg" />
                 <div className="read-btn-text">Listen</div>
               </div>
               <div className="time-info">
                 <img
                   className="vuesaxbulkclock-icon"
                   alt=""
-                  src="Assets/images/clock.svg"
+                  src="http://localhost:3000/Assets/images/clock.svg"
                 />
                 <div className="time">{time}</div>
               </div>

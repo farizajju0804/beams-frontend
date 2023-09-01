@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import "./ArticleRead.css";
 import { useParams } from "react-router-dom";
 const ArticleRead = () => {
-  let { id } = useParams();
+  let { id:Aid } = useParams();
 
   const [dataCards, setdataCards] = useState([]);
   const [articleData, setarticleData] = useState({});
@@ -22,14 +22,16 @@ const ArticleRead = () => {
 
   const getArticleByID = async (id) => {
     fetch(
-      `http://localhost:1337/api/article-components/${id}?populate[DataCardBox][populate]=*&populate[StartupContainer][populate]=*&populate[ArticleHeader]=*&populate[SubPara]=*&populate[StatisticContainer]=*&populate[Quote]=*&populate[Applications][populate]=*&populate[Dropdown]=*&populate[StartBox]=*`
+      `http://localhost:1337/api/article-components/?populate[DataCardBox][populate]=*&populate[StartupContainer][populate]=*&populate[ArticleHeader]=*&populate[SubPara]=*&populate[StatisticContainer]=*&populate[Quote]=*&populate[Applications][populate]=*&populate[Dropdown]=*&populate[StartBox]=*`
     )
       .then((res) => res.json())
       .then((articles) => {
-        console.log(articles.data.attributes);
+        const index=articles.data.findIndex((el)=>el.attributes.articleId===Aid)
+
         const articleComponent = [];
 
-        const articleData = articles.data.attributes;
+        const articleData = articles.data[index].attributes;
+        console.log(articleData)
         // console.log(articleData);
         articleComponent.push(
           <ArticleHeader
@@ -52,7 +54,7 @@ const ArticleRead = () => {
           );
         });
         articleData.StartBox.map((sb) => {
-          articleComponent.push(<StartBox startContent={sb.startContent} order={sb.ordre} />);
+          articleComponent.push(<StartBox startContent={sb.startContent} order={sb.order} />);
         });
         articleData.Applications.map((ap) => {
           articleComponent.push(
@@ -60,12 +62,12 @@ const ArticleRead = () => {
               applicationHeader={ap.applicationHeader}
               applicationHeaderContent={ap.applicationHeaderContent}
               applicationBoxes={ap.applicationBoxes}
-              order={15} // Pass the array here
+              order={ap.order} // Pass the array here
             />
           );
         });
         articleData.StatisticContainer.map((sc) => {
-          articleComponent.push(<StatisticContainer statisticContent={sc.statisticContent} order={sc.order} />);
+          articleComponent.push(<StatisticContainer statisticContent={sc.statisticContent} order={sc.order} statImg={sc.statImg}/>);
         });
         // articleData.StartBox.map((sc) => {
         //   articleComponent.push(<StartBox startContent={sc.statisticContent} order={sc.order} />);
@@ -110,7 +112,7 @@ const ArticleRead = () => {
   };
 
   useEffect(() => {
-    getArticleByID(id);
+    getArticleByID(Aid);
   }, []);
 
   // const dataCards = [

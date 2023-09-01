@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./UserProfile.css";
 import userProfileimg from "../../assets/userprofile.png";
 import { useAuthContext } from "../../context/AuthContext";
@@ -7,21 +7,40 @@ import "react-phone-input-2/lib/style.css";
 import { API } from "../../constants";
 import { Toaster, toast } from "react-hot-toast";
 import { RxImage } from "react-icons/rx";
-import { useNavigate } from "react-router-dom";
-
+import { json, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useParams } from "react-router-dom";
 export const UserProfile = () => {
+	const auth=useContext(AuthContext)
 	const navigate = useNavigate();
-	const { user, token } = useAuthContext();
+	const token=localStorage.getItem("authToken")
+	const [user, setUser]  = useState();
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState();
 	const [image, setImage] = useState(null);
-
+	const [img,setImg]=useState(null)
+	const {id}=useParams()
+	
 	useEffect(() => {
+		console.log(id)
+		fetch(`http://localhost:1337/api/users/${id}?populate=*`)
+		.then((res)=>res.json())
+		.then((res)=>{
+			console.log("user",res)
+			setUser(res)})
 		if (user) {
 			setName(user.name);
 			setPhone(user.Phone);
 		}
-	}, [user]);
+	}, []);
+
+	const updateUserContext=()=>{
+		fetch(`http://localhost:1337/api/users/${id}?populate=*`)
+		.then((res)=>res.json())
+		.then((res)=>{
+			console.log(res)
+			auth.setUserData(res)})
+	}
 
 	const uploadPhoto = async (file) => {
 		const formdata = new FormData();
@@ -41,12 +60,13 @@ export const UserProfile = () => {
 		})
 			.then((res) => res.json())
 			.then((e) => {
-				console.log(e);
+				console.log("response",e);
 			});
 	};
 
 	const updateProfile = async () => {
-		const data = await fetch(`${API}/users/${user.id}`, {
+		console.log("update")
+		await fetch(`${API}/users/${user.id}`, {
 			method: "PUT",
 			headers: {
 				Authorization: `Bearer ${token}`,
@@ -60,6 +80,10 @@ export const UserProfile = () => {
 		})
 			.then((res) => res.json())
 			.then((e) => {
+				updateUserContext()
+				if(img){
+			    uploadPhoto(img)
+				}
 				console.log(e);
 			});
 	};
@@ -103,7 +127,7 @@ export const UserProfile = () => {
 						<label For="files">
 							{image === null ? (
 								<div>
-									{user.Profilepic ? (
+									{auth.user?.Profilepic  ? (
 										<div
 											style={{
 												display: "flex",
@@ -113,7 +137,7 @@ export const UserProfile = () => {
 											}}
 										>
 											<img
-												src={`https://orca-app-oxt3w.ondigitalocean.app${user.Profilepic.url}`}
+												src={`http://localhost:1337${auth.user.Profilepic.url}`}
 												alt=""
 											/>
 											<div className="proftag">
@@ -165,12 +189,14 @@ export const UserProfile = () => {
 							name="files"
 							multiple={false}
 							onChange={(e) => {
+								setImg((e.target.files[0]))
 								setImage(URL.createObjectURL(e.target.files[0]));
 							}}
 						/>
 						<div className="profitems">
 							<label htmlFor="">Full Name</label>
 							<input
+							    required
 								type="text"
 								value={name}
 								onChange={(e) => {

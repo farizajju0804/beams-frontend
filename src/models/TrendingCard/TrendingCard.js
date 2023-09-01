@@ -9,8 +9,8 @@ function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription
         color: trendingCardCategoryColor
       }
   return (
-    <div className='trending-card' onClick={()=>{localStorage.setItem("article",articleId)
-    navigate("/article-description")
+    <div className='trending-card' onClick={()=>{
+    navigate(`/article-description/${articleId}`)
     }}>
         <div className='trending-card-img'>
             <img src={"http://localhost:1337"+trendingCardImg.data.attributes.url} alt=""/>

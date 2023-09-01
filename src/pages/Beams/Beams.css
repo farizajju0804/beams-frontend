@@ -394,9 +394,6 @@
     scrollbar-width: none;  /* Firefox */
   }
 
-  .mover{
-  
-}
 
 @media only screen and (max-width:1178px) {
     .sliderarrows{
@@ -474,7 +471,6 @@
 .searchpageleftoptions{
     display: flex;
     width: 500px;
-
     justify-content: space-between;
 }
 

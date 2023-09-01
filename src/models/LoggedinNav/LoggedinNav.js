@@ -8,25 +8,28 @@ import { IoLibrarySharp } from "react-icons/io5";
 import { useAuthContext } from "../../context/AuthContext";
 import { removeToken } from "../../helpers";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 export const LoggedinNav = () => {
   const { user, setUserData, isLoggedIn, setisLoggedIn } = useContext(AuthContext);
-  console.log(user);
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
-
+  const {id}=useParams()
+  useEffect(()=>{
+    console.log(id)
+  })
   return (
     <div className="loggedinnav">
-      <h1
-        style={{ color: "#435CFF" }}
+      <img className="logged-logo"
+      src="http://localhost:3000/Assets/images/logo.png" alt=""
         onClick={() => {
-          navigate("/beams");
+          navigate("/");
         }}
-      >
-        Innbrieff.
-      </h1>
+        
+      />
+      
       <div className="bandacont">
-        <span>Beams</span>
+        {/* <span>Beams</span> */}
         <div
           className="navaccoutholder"
           onClick={() => {
@@ -40,7 +43,7 @@ export const LoggedinNav = () => {
           <span>{user ? (user.name === null ? user.username : user.name) : ""}</span>
           <BsChevronDown />
           <div className={dropdown ? "accountdropdown accountdropdowndisplay" : "accountdropdown"}>
-            <div className="accountdropdownitems">
+            <div className="accountdropdownitems" onClick={()=>navigate(`/profile/${id}`)}>
               <CgProfile size={20} />
               <span>My Profile</span>
             </div>
@@ -56,10 +59,11 @@ export const LoggedinNav = () => {
             <div
               className="accountdropdownitems"
               onClick={() => {
-                navigate("/");
+                sessionStorage.removeItem("uid")
                 removeToken();
                 setUserData(null);
                 setisLoggedIn(false);
+                navigate("/");
               }}
             >
               <FiLogOut />

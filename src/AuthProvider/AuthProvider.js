@@ -262,7 +262,7 @@ const AuthProvider = ({ children }) => {
       });
       const data = await response.json();
       setUserData(data);
-
+      console.log(data)
       setFavourites(data.Favourites);
       setFavpersist(data.Favourites);
       setNotes(data.Notes);
@@ -274,7 +274,7 @@ const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
       setisLoggedIn(false);
-      alert("Error While Getting Logged In User Details");
+      // alert("Error While Getting Logged In User Details");
     } finally {
       setIsLoading(false);
     }
