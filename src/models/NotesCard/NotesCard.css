@@ -1,7 +1,7 @@
 .favouritesnewcardpage{
     display: flex;
     align-items: flex-start;
-    margin:20px
+    margin: 10px 0;
 }
 
 .favouritesnewcardpage > input{
@@ -11,23 +11,29 @@
 }
 
 .favnewinnercont{
-    width: 400px;
-    max-height: 200px;
+    width: 100%;
     border: 2px solid #F7CD61;
     border-radius: 20px;
     padding: 10px;
+    padding-right: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.favnewinnercont > p{
-    margin-bottom: 20px;
-    font-size: 20px;
+.note-content > p{
+    width: 300px;
+    font-size: 16px;
     line-height: 30px;
-    width: 400px;
-    overflow: hidden;
+    
 }
+.note-content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
 
 .favnewinnercontdat{
     margin-top: 10px;
@@ -42,7 +48,6 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    height: 100px;
     width: 150px;
     background-color: white;
     padding: 15px;

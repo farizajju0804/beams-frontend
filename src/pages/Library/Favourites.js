@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState,useContext, useEffect } from "react";
 import libcompleted from "../../assets/libcompleted.png";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
@@ -13,19 +13,42 @@ import { Toaster } from "react-hot-toast";
 import "./Library.css";
 import Favouritescard2 from "../../models/Favouritescard2/Favouritescard2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import TrendingCard from "../../models/TrendingCard/TrendingCard";
 export const Favourites = () => {
 	const navigate = useNavigate();
-	const { favourites, favpersist, changefav } = useContext(AuthContext);
+	const { favourites, favpersist, changefav,user } = useContext(AuthContext);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
 	const indexoflast = currentPage * postsperpage;
 	const indexoffirst = indexoflast - postsperpage;
 	const [sortop, setSortop] = useState(2);
-
+	const [favouriteData,setFavouriteData]=useState([])
 	console.log(favourites);
-
+	useEffect(()=>{
+		fetch(`http://localhost:1337/api/users/${user.id}?populate=*`).then((res) => res.json())
+        .then((data)=>{
+          	const userFavs=data.Favourites.map((el)=>el.articleId)
+			fetch(`http://localhost:1337/api/descriptions?populate=*`).then((res) => res.json())
+			.then((res)=>{
+				console.log("favs",res.data.filter((article)=>userFavs.includes(article.attributes.articleId)))
+				const favouriteCards=res.data.filter((article)=>userFavs.includes(article.attributes.articleId))
+				.map((el)=>{
+					return {
+						img:el.attributes.articleDescriptionImg,
+						title:el.attributes.articleDescriptionTitle,
+						desc:el.attributes.artilceDescriptionText,
+						idofbeam:el.attributes.articleId
+					}
+				}
+					)
+					setFavouriteData(favouriteCards)
+			})
+		  })
+	},[favourites])
 	return (
-		<div className="LibraryPage">
+		<>
+		{
+			favouriteData?<div className="LibraryPage">
 			<Toaster />
 			<div className="libraryoption">
 				<div
@@ -35,7 +58,7 @@ export const Favourites = () => {
 					}}
 				>
 					<img src={libfav} className="lbopic" />
-					<span style={{ color: "#435CFF" }}>Favourites</span>
+					<span style={{ color: "#f96f2e" }}>Favourites</span>
 				</div>
 				<div
 					className="libraryopitem"
@@ -46,7 +69,7 @@ export const Favourites = () => {
 					<img src={libnotes} className="lbopic" />
 					<span>Notes </span>
 				</div>
-				<div
+				{/* <div
 					className="libraryopitem"
 					onClick={() => {
 						navigate("/hightlights");
@@ -54,10 +77,10 @@ export const Favourites = () => {
 				>
 					<img src={libhighlight} className="lbopic" />
 					<span>Highlights</span>
-				</div>
+				</div> */}
 			</div>
 			<div className="opandfildivider"></div>
-			<div className="filteroption">
+			{/* <div className="filteroption">
 				<div className="libraryopitem">
 					{" "}
 					<select
@@ -105,104 +128,20 @@ export const Favourites = () => {
 					</select>
 					<FiChevronDown className="arrowselectposition" />
 				</div>
-			</div>
+			</div> */}
 			{favourites.length != 0 ? (
 				<div className="gridwrapper">
-					{sortop == 2 && (
 						<div className="highlightdata fwrap">
-							{favourites
+							{favouriteData
 								.map((e) => {
-									if (e.typeofbeam === "Minibeam") {
 										return (
 											<FavouritesCard
-												completed={false}
-												id={e.id}
-												title={e.Name}
-												typeofbeam={e.typeofbeam}
-												Desc={e.Desc}
-												idofbeam={e.idofbeam}
+												{...e}
 											></FavouritesCard>
 										);
-									} else {
-										return (
-											<Favouritescard2
-												completed={false}
-												id={e.id}
-												title={e.Name}
-												typeofbeam={e.typeofbeam}
-												Desc={e.Desc}
-												idofbeam={e.idofbeam}
-											></Favouritescard2>
-										);
-									}
 								})
-								.slice(indexoffirst, indexoflast)}
+							}
 						</div>
-					)}
-					{sortop == 1 && (
-						<div className="highlightdata fwrap">
-							{favourites
-								.sort((a, b) => {
-									const nameA = a.Name.toUpperCase(); // ignore upper and lowercase
-									const nameB = b.Name.toUpperCase(); // ignore upper and lowercase
-									if (nameA > nameB) {
-										return -1;
-									}
-									if (nameA < nameB) {
-										return 1;
-									}
-
-									return 0;
-								})
-								.map((e) => {
-									return (
-										<div>
-											<FavouritesCard
-												completed={false}
-												id={e.id}
-												title={e.Name}
-												typeofbeam={e.typeofbeam}
-												Desc={e.Desc}
-												idofbeam={e.idofbeam}
-											></FavouritesCard>
-										</div>
-									);
-								})
-								.slice(indexoffirst, indexoflast)}
-						</div>
-					)}
-					{sortop == 0 && (
-						<div className="highlightdata fwrap">
-							{favourites
-								.sort((a, b) => {
-									const nameA = a.Name.toUpperCase(); // ignore upper and lowercase
-									const nameB = b.Name.toUpperCase(); // ignore upper and lowercase
-									if (nameA < nameB) {
-										return -1;
-									}
-									if (nameA > nameB) {
-										return 1;
-									}
-
-									return 0;
-								})
-								.map((e) => {
-									return (
-										<div>
-											<FavouritesCard
-												completed={false}
-												id={e.id}
-												title={e.Name}
-												typeofbeam={e.typeofbeam}
-												Desc={e.Desc}
-												idofbeam={e.idofbeam}
-											></FavouritesCard>
-										</div>
-									);
-								})
-								.slice(indexoffirst, indexoflast)}
-						</div>
-					)}
 				</div>
 			) : (
 				<div
@@ -218,7 +157,7 @@ export const Favourites = () => {
 				>
 					<img src={nofav} alt="" />
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
-						You haven't added any Microbeams to your favorites yet.
+						You haven't added any Beams to your favorites yet.
 					</h2>
 					<p style={{ marginTop: "20px" }}>
 						Your favorites folder is lonely. Be nice to it.
@@ -234,6 +173,10 @@ export const Favourites = () => {
 					}}
 				/>
 			</div>
-		</div>
+		</div>:
+		<p>loading</p>
+		}
+		
+		</>
 	);
 };

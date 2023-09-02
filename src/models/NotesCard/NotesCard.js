@@ -5,30 +5,38 @@ import { MdDeleteForever } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { DeleteionAlert } from "../DeletionAlert/DeleteionAlert";
-export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
+import { useNavigate } from "react-router-dom";
+export const NotesCard = ({ date, NoteContent, noteitemid, beamid,BeamName,name }) => {
 	const [openpopup, setOpenpopup] = useState(false);
 	const { delfullnote } = useContext(AuthContext);
 	const [deletionpopup, setDeletionpopup] = useState(false);
+	const navigate=useNavigate()
+	
 	return (
-		<div className="favouritesnewcardpage">
+		<div className="favouritesnewcardpage" onClick={()=>navigate(`/articleread/${beamid}`)}>
 			{deletionpopup && (
 				<DeleteionAlert
 					delfullnote={() => {
 						delfullnote(noteitemid);
 					}}
-					handleClose={() => {
+					handleClose={() => {  
 						setDeletionpopup(false);
 					}}
 				/>
 			)}
-			<input type="checkbox" />
+			{/* <input type="checkbox" /> */}
 			<div
 				className="favnewinnercont"
 				onClick={() => {
 					setOpenpopup(false);
 				}}
 			>
+
+				<div className="note-content">
+				<p>{BeamName}</p>
 				<p>{NoteContent}</p>
+				</div>
+				
 				<div className="favnewinnercontdat">
 					<span>{date}</span>
 

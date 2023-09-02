@@ -43,6 +43,7 @@
     justify-content: flex-start;
     position: relative;
     background-position: top;
+    margin-top: 10vh;
   }
   .article-description-title {
     align-self: stretch;
@@ -208,6 +209,10 @@
     .read-btn{
       gap: 8px;
       padding: 5px 12px;
+    }
+    .article-description-image {
+     
+      margin-top: 8vh;
     }
   }
   @media screen and (max-width: 350px) {

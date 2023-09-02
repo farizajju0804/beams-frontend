@@ -1,7 +1,8 @@
 import "./Description.css";
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import { useNavigate,useParams } from 'react-router-dom'
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast, Toaster } from "react-hot-toast";
 const Description = ({
   articleDescriptionImg,
   articleDescriptionTitle,
@@ -11,11 +12,13 @@ const Description = ({
   const navigate=useNavigate()
   const {id}=useParams()
   const [isMobile, setIsMobile] = useState(false);
-
+  const {addfav}=useContext(AuthContext)
   const updateIsMobile = () => {
     setIsMobile(window.innerWidth <= 767); // Adjust the width threshold as needed
   };
-
+  const favoritesHandler=()=>{
+    addfav({articleId:id})
+  }
   useEffect(() => {
   
     updateIsMobile();
@@ -30,6 +33,8 @@ const Description = ({
   }, []);
   const imageHeight = isMobile ? "200px" : "500px";
   return (
+    <>
+          <Toaster></Toaster>
     <div className="article-description" >
       <div className="article-description-image" style={{ height: imageHeight }}>
         <img
@@ -38,8 +43,8 @@ const Description = ({
           src={"http://localhost:1337"+articleDescriptionImg.data.attributes.url}
           
         />
-        <div className="favourite-icon">
-          <img className="heart-icon" alt="" src="Assets/images/heart.svg" />
+        <div className="favourite-icon" onClick={favoritesHandler}>
+          <img className="heart-icon" alt="" src="http://localhost:3000/Assets/images/heart.svg" />
         </div>
       </div>
       <div className="article-description-content-co">
@@ -85,6 +90,8 @@ const Description = ({
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 

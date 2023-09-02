@@ -52,6 +52,7 @@ export const Notesitem = ({ open, title, beamid, beamtype, noteitem }) => {
 					{noteitem.map((item) => {
 						return (
 							<NotesCard
+							    name="nasim"
 								date={item.Date}
 								NoteContent={item.NoteContent}
 								noteitemid={item.id}

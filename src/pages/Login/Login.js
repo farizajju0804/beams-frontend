@@ -60,7 +60,7 @@ export const Login = () => {
         setUser(data.user);
 
         toast.success(`Welcome back ${data.user.username}!`);
-        navigate(`/beams/${data.user.id}`, { replace: true });
+        navigate(`/beams`, { replace: true });
       }
     } catch (error) {
       if (error.message === "Invalid identifier or password") {

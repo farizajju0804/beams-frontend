@@ -13,29 +13,27 @@ import { useParams } from "react-router-dom";
 export const UserProfile = () => {
 	const auth=useContext(AuthContext)
 	const navigate = useNavigate();
-	const token=localStorage.getItem("authToken")
-	const [user, setUser]  = useState();
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState();
 	const [image, setImage] = useState(null);
 	const [img,setImg]=useState(null)
 	const {id}=useParams()
-	
+	const { user, token } = useContext(AuthContext);
 	useEffect(() => {
-		console.log(id)
-		fetch(`http://localhost:1337/api/users/${id}?populate=*`)
-		.then((res)=>res.json())
-		.then((res)=>{
-			console.log("user",res)
-			setUser(res)})
+		console.log(auth)
+		// fetch(`http://localhost:1337/api/users/${id}?populate=*`)
+		// .then((res)=>res.json())
+		// .then((res)=>{
+		// 	console.log("user",res)
+		// 	setUser(res)})
 		if (user) {
 			setName(user.name);
 			setPhone(user.Phone);
 		}
-	}, []);
+	}, [auth]);
 
 	const updateUserContext=()=>{
-		fetch(`http://localhost:1337/api/users/${id}?populate=*`)
+		fetch(`http://localhost:1337/api/users/${user.id}?populate=*`)
 		.then((res)=>res.json())
 		.then((res)=>{
 			console.log(res)

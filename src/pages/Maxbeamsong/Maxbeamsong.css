@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 30px;
-    background-color: #FAFAFA;
+    background-color: var(--white);
     
 }
 
@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    margin-top: 10vh;
 }
 
 .songcard img{

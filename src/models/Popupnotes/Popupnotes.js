@@ -5,10 +5,14 @@ import { Backdrop } from "../Backdrop/Backdrop";
 import "./Popupnotes.css";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 export const Popupnotes = ({ handleClose, data }) => {
 	const [notedata, setNotedata] = useState("");
 	const { addnotes } = useContext(AuthContext);
 	const navigate=useNavigate()
+	useEffect(()=>{
+		console.log(data)
+	})
 	const getDate = () => {
 		var today = new Date();
 		var dd = String(today.getDate()).padStart(2, "0");

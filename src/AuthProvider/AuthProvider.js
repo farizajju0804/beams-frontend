@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
       },
 
       body: JSON.stringify({
-        Favourites: item,
+        Favourites:item, 
       }),
     })
       .then((res) => res.json())
@@ -46,16 +46,17 @@ const AuthProvider = ({ children }) => {
   };
 
   const addFavourites = (item) => {
+    console.log(item)
     var itemstatus = false;
 
     Favourites.forEach((fav) => {
-      if (fav.idofbeam === item.idofbeam && fav.typeofbeam === item.typeofbeam) {
+      if (fav.articleId === item.articleId) {
         itemstatus = true;
       }
     });
 
     if (itemstatus === false) {
-      pushfav([...Favourites, item]);
+      pushfav([...Favourites,item]);
       setFavourites([...Favourites, item]);
       toast.success("Beam Added to Favourites");
     } else {
@@ -67,7 +68,7 @@ const AuthProvider = ({ children }) => {
     console.log(item);
     console.log(Favourites);
     const filteredfavs = Favourites.filter((e) => {
-      return e.id != item.id;
+      return e.articleId != item.articleId;
       // console.log(e.id, item.id);
     });
 
@@ -134,6 +135,7 @@ const AuthProvider = ({ children }) => {
   //Notes
 
   const AddtoNotes = (BeamName, BeamId, NoteItem) => {
+    console.log(BeamId)
     const newnote = {
       BeamName,
       Beamid: BeamId,
@@ -263,6 +265,7 @@ const AuthProvider = ({ children }) => {
       setUserData(data);
       console.log(data)
       setFavourites(data.Favourites);
+      console.log(data.Favourites)
       setFavpersist(data.Favourites);
       setNotes(data.Notes);
       setnotesPersist(data.Notes);

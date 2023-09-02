@@ -58,9 +58,9 @@ export const Notes = () => {
 					}}
 				>
 					<img src={libnotes} className="lbopic" />
-					<span style={{ color: "#435CFF" }}>Notes </span>
+					<span style={{ color: "#f96f2e" }}>Notes </span>
 				</div>
-				<div
+				{/* <div
 					className="libraryopitem"
 					onClick={() => {
 						navigate("/hightlights");
@@ -68,7 +68,7 @@ export const Notes = () => {
 				>
 					<img src={libhighlight} className="lbopic" />
 					<span>Highlights</span>
-				</div>
+				</div> */}
 			</div>
 			<div className="opandfildivider"></div>
 			{/* <div className="filteroption">
@@ -141,12 +141,13 @@ export const Notes = () => {
 										return 0;
 									})
 									.map((item) => {
+										console.log(item)
 										return (
 											<NotesCard
 												date={item.Date}
 												NoteContent={item.NoteContent}
 												noteitemid={item.id}
-												beamid={item.beamid}
+												beamid={item.Beamid}
 												BeamName={item.BeamName}
 												readmore={opennotePopup}
 											></NotesCard>
@@ -191,10 +192,11 @@ export const Notes = () => {
 									.map((item) => {
 										return (
 											<NotesCard
+											    
 												date={item.Date}
 												NoteContent={item.NoteContent}
 												noteitemid={item.id}
-												beamid={item.beamid}
+												beamid={item.Beamid}
 												BeamName={item.BeamName}
 												readmore={opennotePopup}
 											></NotesCard>

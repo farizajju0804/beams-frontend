@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import "./LoggedinNav.css";
 import { BsChevronDown } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { FiLogOut } from "react-icons/fi";
-import { CgProfile } from "react-icons/cg";
-import { IoLibrarySharp } from "react-icons/io5";
+import {FcHome} from "react-icons/fc";
+import acc1 from "../../assets/acc1.png";
+import acc2 from "../../assets/acc2.png";
+import acc3 from "../../assets/acc3.png";
 import { useAuthContext } from "../../context/AuthContext";
 import { removeToken } from "../../helpers";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -16,14 +17,15 @@ export const LoggedinNav = () => {
   const navigate = useNavigate();
   const {id}=useParams()
   useEffect(()=>{
-    console.log(id)
+    console.log(user)
   })
-  return (
+  return <>{
+    user.Profilepic?.url? 
     <div className="loggedinnav">
       <img className="logged-logo"
       src="http://localhost:3000/Assets/images/logo.png" alt=""
         onClick={() => {
-          navigate("/beams");
+          navigate("/beams"); 
         }}
         
       />
@@ -37,23 +39,32 @@ export const LoggedinNav = () => {
           }}
         >
           <img
-            src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=2000"
+            src={`http://localhost:1337${user.Profilepic.url}`}
             alt=""
           />
           <span>{user ? (user.name === null ? user.username : user.name) : ""}</span>
           <BsChevronDown />
           <div className={dropdown ? "accountdropdown accountdropdowndisplay" : "accountdropdown"}>
-            <div className="accountdropdownitems" onClick={()=>navigate(`/profile/${id}`)}>
-              <CgProfile size={20} />
+          <div
+              className="accountdropdownitems"
+              onClick={() => {
+                navigate("/beams");
+              }}
+            >
+              <FcHome/>
+              <span>My Home</span>
+            </div>
+            <div className="accountdropdownitems" onClick={()=>navigate(`/profile`)}>
+            <img src={acc1} alt="" />
               <span>My Profile</span>
             </div>
             <div
               className="accountdropdownitems"
               onClick={() => {
-                navigate("/hightlights");
+                navigate("/favourites");
               }}
             >
-              <IoLibrarySharp />
+              <img src={acc2} alt="" />
               <span>My Library</span>
             </div>
             <div
@@ -66,13 +77,16 @@ export const LoggedinNav = () => {
                 navigate("/");
               }}
             >
-              <FiLogOut />
+              <img src={acc3} alt="" />
               <span>Log Out</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+    :
+    <p>Loading</p>
+            }
+    </>
 
 };

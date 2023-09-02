@@ -94,7 +94,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/beams/:id",
+    path: "/beams",
     element: (
       <PrivateRoute>
         <div>
@@ -384,7 +384,7 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/profile/:id",
+		path: "/profile",
 		element: (
 			<div>
 				<ScrollToTop />

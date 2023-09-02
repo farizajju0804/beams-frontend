@@ -242,6 +242,10 @@
         font-size: 12px;
         margin-left: 5px;
     }
+    .logincont h2{
+        font-size: 30px;
+    }
+    
 }
 
 .verificationbox{
