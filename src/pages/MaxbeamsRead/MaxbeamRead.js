@@ -24,13 +24,15 @@ export const MaxbeamRead = () => {
 	const [y, setY] = useState(0);
 	const [displayPopUp, setDisplayPopUp] = useState(false);
 	const [selectedText, setSelectedText] = useState("");
-	const { id } = useParams();
 	const [fontSize, setfontSize] = useState(20);
 	const [lineHeight, setlineHeight] = useState();
 	const [settingPopup, setSettingPopup] = useState(false);
 	const [notesPopup, setNotesPopup] = useState(false);
 	const [notepopupdata, setNotepopupdata] = useState({});
 	const type = "Minibeam";
+
+	const { id } = useParams();
+	
 
 	const handleMouseUp = (e) => {
 		var selectedtext = window.getSelection().toString().trim();
@@ -47,6 +49,7 @@ export const MaxbeamRead = () => {
 			console.log(`${window.getSelection().toString().trim()}`);
 		}
 	};
+
 
 	const fetchdata = async () => {
 		setMicrobeamsload(true);

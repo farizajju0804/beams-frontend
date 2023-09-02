@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./NotesCard.css";
 import { MdDeleteForever } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
-import { useAuthContext } from "../../context/AuthContext";
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { DeleteionAlert } from "../DeletionAlert/DeleteionAlert";
 export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
 	const [openpopup, setOpenpopup] = useState(false);
-	const { delfullnote } = useAuthContext();
-
+	const { delfullnote } = useContext(AuthContext);
+	const [deletionpopup, setDeletionpopup] = useState(false);
 	return (
 		<div className="favouritesnewcardpage">
+			{deletionpopup && (
+				<DeleteionAlert
+					delfullnote={() => {
+						delfullnote(noteitemid);
+					}}
+					handleClose={() => {
+						setDeletionpopup(false);
+					}}
+				/>
+			)}
 			<input type="checkbox" />
 			<div
 				className="favnewinnercont"
@@ -34,14 +44,14 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid }) => {
 					/>
 					{openpopup && (
 						<div className="notescardoptions">
-							<div className="notescardoptionsinner">
+							{/* <div className="notescardoptionsinner">
 								<AiFillEdit color="#435CFF" size={20} />
 								<span>Edit</span>
-							</div>
+							</div> */}
 							<div
 								className="notescardoptionsinner"
 								onClick={() => {
-									delfullnote(noteitemid);
+									setDeletionpopup(true);
 								}}
 							>
 								<MdDeleteForever color="red" size={20} />

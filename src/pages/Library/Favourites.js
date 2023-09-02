@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import libcompleted from "../../assets/libcompleted.png";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
@@ -12,10 +12,10 @@ import Pagination from "@mui/material/Pagination";
 import { Toaster } from "react-hot-toast";
 import "./Library.css";
 import Favouritescard2 from "../../models/Favouritescard2/Favouritescard2";
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 export const Favourites = () => {
 	const navigate = useNavigate();
-	const { favourites, favpersist, changefav } = useAuthContext();
+	const { favourites, favpersist, changefav } = useContext(AuthContext);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
 	const indexoflast = currentPage * postsperpage;

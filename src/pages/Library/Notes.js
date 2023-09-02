@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
 import libhighlight from "../../assets/libhighlights.png";
@@ -11,7 +11,7 @@ import { PopUpShowMore } from "../../models/PopupShowMore/PopupShowMore";
 import nohighlights from "../../assets/nohighlights.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 export const Notes = () => {
 	const closenotePopup = () => setNotesPopup(false);
 	const opennotePopup = (data) => {
@@ -24,7 +24,7 @@ export const Notes = () => {
 	const [notepopupdata, setNotepopupdata] = useState({});
 
 	const navigate = useNavigate();
-	const { notes, changeNotes, notesPersist } = useAuthContext();
+	const { notes, changeNotes, notesPersist } = useContext(AuthContext);
 	console.log(notes);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
@@ -71,7 +71,7 @@ export const Notes = () => {
 				</div>
 			</div>
 			<div className="opandfildivider"></div>
-			<div className="filteroption">
+			{/* <div className="filteroption">
 				<div className="libraryopitem">
 					{" "}
 					<select
@@ -121,7 +121,7 @@ export const Notes = () => {
 					</select>
 					<FiChevronDown className="arrowselectposition" />
 				</div>
-			</div>
+			</div> */}
 			{notes.length != 0 ? (
 				<div>
 					<div className="gridwrapper">

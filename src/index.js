@@ -323,7 +323,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<Navbar />
+				<LoggedinNav />
 				<ArticleRead/>
 				<Footer/>
 			</div>

@@ -133,11 +133,10 @@ const AuthProvider = ({ children }) => {
 
   //Notes
 
-  const AddtoNotes = (BeamName, BeamId, BeamType, NoteItem) => {
+  const AddtoNotes = (BeamName, BeamId, NoteItem) => {
     const newnote = {
       BeamName,
       Beamid: BeamId,
-      Beamtype: BeamType,
       NoteContent: NoteItem.content,
       Date: NoteItem.date,
     };

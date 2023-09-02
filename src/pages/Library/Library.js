@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import libcompleted from "../../assets/libcompleted.png";
 import libfav from "../../assets/libfav.png";
@@ -10,12 +10,11 @@ import { Toaster } from "react-hot-toast";
 import nohighlights from "../../assets/nohighlights.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
-
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 export const Library = () => {
 	const navigate = useNavigate();
 	const { hightlights, delhighlight, changehighs, hightlightpersist } =
-		useAuthContext();
+		useContext(AuthContext);
 
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
@@ -27,6 +26,7 @@ export const Library = () => {
 	console.log(hightlightpersist);
 
 	useEffect(() => {
+		console.log("high:",hightlights)
 		console.log(sortop, title);
 	}, [sortop, title]);
 
@@ -67,7 +67,7 @@ export const Library = () => {
 				</div>
 			</div>
 			<div className="opandfildivider"></div>
-			<div className="filteroption">
+			{/* <div className="filteroption">
 				<div className="libraryopitem">
 					{" "}
 					<select
@@ -114,7 +114,7 @@ export const Library = () => {
 					</select>
 					<FiChevronDown className="arrowselectposition" />
 				</div>
-			</div>
+			</div> */}
 			{hightlights.length != 0 ? (
 				<div>
 					{sortop == 2 && (

@@ -6,6 +6,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     display: flex;
     flex-direction: column;
+    font-family: var(--font-poppins);
 }
 
 .Notepopheader{
@@ -25,7 +26,8 @@
 
 .Notepopheader h2{
     margin-top: 10px;
-    font-size: 32px;
+    font-size: 24px;
+    text-align: center;
 }
 
 .notes {
@@ -48,6 +50,7 @@
 
 .popupnotes i{
     margin-left: 40px;
+    font-family: var(--font-mulish);
     
 }
 
@@ -66,13 +69,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 14px;
+    gap: 30px;
 }
 
 .notespopupsavebtn{
     padding: 10px 30px 10px 30px;
     color: white;
     border-radius: 20px;
-    background-color: #435CFF;
+    background-color: var(--orange);
 
 }
 

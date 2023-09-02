@@ -23,7 +23,7 @@ export const LoggedinNav = () => {
       <img className="logged-logo"
       src="http://localhost:3000/Assets/images/logo.png" alt=""
         onClick={() => {
-          navigate("/");
+          navigate("/beams");
         }}
         
       />

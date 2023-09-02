@@ -20,7 +20,7 @@
   .article-read {
     width: 70%;
     flex-direction: column;
-    padding: 4rem var(--padding-3xs) var(--padding-41xl);
+    padding: 1rem var(--padding-3xs) var(--padding-41xl);
     justify-content: flex-start;
     gap: var(--gap-81xl);
   }

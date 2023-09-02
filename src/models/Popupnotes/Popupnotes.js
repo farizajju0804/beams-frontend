@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { toast } from "react-hot-toast";
 import { useAuthContext } from "../../context/AuthContext";
 import { Backdrop } from "../Backdrop/Backdrop";
 import "./Popupnotes.css";
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 export const Popupnotes = ({ handleClose, data }) => {
 	const [notedata, setNotedata] = useState("");
-
-	const { addnotes } = useAuthContext();
-
+	const { addnotes } = useContext(AuthContext);
+	const navigate=useNavigate()
 	const getDate = () => {
 		var today = new Date();
 		var dd = String(today.getDate()).padStart(2, "0");
@@ -27,7 +27,6 @@ export const Popupnotes = ({ handleClose, data }) => {
 				}}
 			>
 				<div className="Notepopheader">
-					<span>{data.type}</span>
 					<h2>{data.title}</h2>
 					<p className="notespopupdate">{getDate()}</p>
 				</div>
@@ -40,12 +39,10 @@ export const Popupnotes = ({ handleClose, data }) => {
 				></textarea>
 				<i>Don't let your thoughts disappear, save your note now</i>
 				<div className="notepopcntrl">
-					<span style={{ color: "#f96f2e" }}>View Notes</span>
+					<span style={{ color: "#f96f2e" }} onClick={()=>navigate("/notes")}>View Notes</span>
 					<div className="popupcannsave">
 						<span
-							onClick={() => {
-								handleClose();
-							}}
+							onClick={handleClose}
 						>
 							Cancel
 						</span>
@@ -57,7 +54,7 @@ export const Popupnotes = ({ handleClose, data }) => {
 									return;
 								}
 
-								addnotes(data.title, `${data.id}`, data.type, {
+								addnotes(data.title, `${data.id}`, {
 									content: notedata,
 									date: getDate()
 								});

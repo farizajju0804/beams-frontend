@@ -93,7 +93,7 @@ export const UserProfile = () => {
 		formdata.append("ref", "plugin::users-permissions.user");
 		formdata.append("refId", `${user.id}`);
 		formdata.append("field", "Profilepic");
-
+		console.log(formdata)
 		e.preventDefault();
 
 		await fetch(`${API}/upload`, {
@@ -212,7 +212,7 @@ export const UserProfile = () => {
 							<label htmlFor="">Password</label>
 							<input type="text" value="***********" disabled />
 							<p
-								style={{ marginTop: "5px", color: "blue", cursor: "pointer" }}
+								style={{ marginTop: "5px", color: "#f96f2e", cursor: "pointer" }}
 								onClick={() => {
 									navigate("/resetpassword");
 								}}
