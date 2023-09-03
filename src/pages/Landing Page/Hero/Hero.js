@@ -1,5 +1,7 @@
 import "./Hero.css";
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero">
       <div className="content">
@@ -7,8 +9,15 @@ const Hero = () => {
         <h3 className="unleashing-the-light">
           Unleashing the Light of Knowledge!
         </h3>
-        <button className="primary-button1">
-          <div className="btn">Get started</div>
+        <button className="primary-button1" onClick={()=>{
+          if(localStorage.getItem("authToken")){
+            navigate(`/beams`)
+          }
+          else{
+            navigate("/login");
+          }
+        }}>
+          <div className="btn" >Get started</div>
         </button>
       </div>
     </section>

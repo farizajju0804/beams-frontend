@@ -9,6 +9,7 @@
     flex-direction: column;
     gap: 5px;
     padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .maxbeamdata > button{
@@ -81,11 +82,11 @@
 
 @media screen and (max-width:767px) {
     .maxbeamcardcont{
-        width: 200px;
+        width: 80%;
       
     }
     .maxcardimg img{
-        height: 100px;
+        height: 20%;
     }
     .maxbeamdata h3{
         font-size: 16px;

@@ -51,11 +51,12 @@ export const Signup = () => {
       const data = await response;
       console.log(response);
       if (data?.error) {
+        console.log("error")
         throw data?.error;
       } else {
         setUser(data.user);
         toast.success("User registered!!!");
-        navigate(`/emailverification/${data.user.email}`, { replace: true });
+        navigate(`/emailverification/${email}`, { replace: true });
       }
     } catch (error) {
       toast.error(error?.message ?? "Something went wrong!");
@@ -229,49 +230,49 @@ export const Signup = () => {
             <div className="passcloudinner">
               {passlen ? (
                 <div className="passclouditem">
-                  <HiCheckCircle color="#f96f2e" />
-                  <span style={{ marginLeft: "2px", color: "#425CFF" }}>8 Characters</span>
+                  <HiCheckCircle color="#17cd92" />
+                  <span style={{ marginLeft: "2px", color: "#17cd92" }}>8 Characters</span>
                 </div>
               ) : (
                 <div className="passclouditem">
-                  <HiXCircle color="#FF2626" />
-                  <span style={{ marginLeft: "2px", color: "#FF2626" }}>8 Characters</span>
+                  <HiXCircle color="#161616" />
+                  <span style={{ marginLeft: "2px", color: "#161616" }}>8 Characters</span>
                 </div>
               )}
 
               {passupper ? (
                 <div className="passclouditem">
-                  <HiCheckCircle color="#f96f2e" />
-                  <span style={{ marginLeft: "2px", color: "#f96f2e" }}>1 Uppercase</span>
+                  <HiCheckCircle color="#17cd92" />
+                  <span style={{ marginLeft: "2px", color: "#17cd92" }}>1 Uppercase</span>
                 </div>
               ) : (
                 <div className="passclouditem">
-                  <HiXCircle color="#FF2626" />
-                  <span style={{ marginLeft: "2px", color: "#FF2626" }}>1 Uppercase</span>
+                  <HiXCircle color="#161616" />
+                  <span style={{ marginLeft: "2px", color: "#161616" }}>1 Uppercase</span>
                 </div>
               )}
             </div>
             <div className="passcloudinner">
               {passnum ? (
                 <div className="passclouditem">
-                  <HiCheckCircle color="#f96f2e" />
-                  <span style={{ marginLeft: "2px", color: "#425CFF" }}>1 Number</span>
+                  <HiCheckCircle color="#17cd92" />
+                  <span style={{ marginLeft: "2px", color: "#17cd92" }}>1 Number</span>
                 </div>
               ) : (
                 <div className="passclouditem">
-                  <HiXCircle color="#FF2626" />
-                  <span style={{ marginLeft: "2px", color: "#FF2626" }}>1 Number</span>
+                  <HiXCircle color="#161616" />
+                  <span style={{ marginLeft: "2px", color: "#161616" }}>1 Number</span>
                 </div>
               )}
               {passlower ? (
                 <div className="passclouditem">
-                  <HiCheckCircle color="#435CFF" />
-                  <span style={{ marginLeft: "2px", color: "#425CFF" }}>1 Lowercase</span>
+                  <HiCheckCircle color="#17cd92" />
+                  <span style={{ marginLeft: "2px", color: "#17cd92" }}>1 Lowercase</span>
                 </div>
               ) : (
                 <div className="passclouditem">
-                  <HiXCircle color="#FF2626" />
-                  <span style={{ marginLeft: "2px", color: "#FF2626" }}>1 Lowercase</span>
+                  <HiXCircle color="#161616" />
+                  <span style={{ marginLeft: "2px", color: "#161616" }}>1 Lowercase</span>
                 </div>
               )}
             </div>

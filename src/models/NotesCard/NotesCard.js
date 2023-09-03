@@ -13,7 +13,7 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid,BeamName,name 
 	const navigate=useNavigate()
 	
 	return (
-		<div className="favouritesnewcardpage" onClick={()=>navigate(`/articleread/${beamid}`)}>
+		<div className="favouritesnewcardpage" >
 			{deletionpopup && (
 				<DeleteionAlert
 					delfullnote={() => {
@@ -33,7 +33,7 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid,BeamName,name 
 			>
 
 				<div className="note-content">
-				<p>{BeamName}</p>
+				<p className="beamname" onClick={()=>navigate(`/articleread/${beamid}`)}>{BeamName}</p>
 				<p>{NoteContent}</p>
 				</div>
 				

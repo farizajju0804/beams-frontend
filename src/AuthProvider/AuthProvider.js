@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
   const [notesPersist, setnotesPersist] = useState([]);
   const [firsthightlight, setFirsthightlight] = useState(false);
   const [isLoggedIn, setisLoggedIn] = useState(false);
-
+  const [failMsg,setFailMsg]=useState(undefined)
   const authToken = getToken();
 
 
@@ -325,6 +325,8 @@ const AuthProvider = ({ children }) => {
         setFirsthightlight: setFirsthightlight,
         updateHighlightfirst: updateHighlightfirst,
         addnewsletter: addnewsletter,
+        setFailMsg,
+        failMsg
       }}
     >
       {children}

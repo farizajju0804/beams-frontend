@@ -157,10 +157,10 @@ export const Favourites = () => {
 				>
 					<img src={nofav} alt="" />
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
-						You haven't added any Beams to your favorites yet.
+					❤️ Oh no! Your favorites are feeling shy today! ❤️
 					</h2>
 					<p style={{ marginTop: "20px" }}>
-						Your favorites folder is lonely. Be nice to it.
+					They'll be back with more love soon! 💖
 					</p>
 				</div>
 			)}

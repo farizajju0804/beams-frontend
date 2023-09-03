@@ -16,6 +16,9 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useEffect } from "react";
 
 export const Login = () => {
+  useEffect(()=>{
+    if(failMsg) toast.error(failMsg)
+  },[])
   const [ispassvis, setIspassvis] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,12 +30,14 @@ export const Login = () => {
   const [rememberme, setRememberme] = useState(true);
   const navigate = useNavigate();
 
-  const { user, setUser, token, isLoggedIn } = useContext(AuthContext);
+  const { user, setUser, token, isLoggedIn,failMsg,setFailMsg } = useContext(AuthContext);
 
     
 
-  console.log(isLoggedIn);
+  
   const logIn = async () => {
+    
+    console.log("inside login!!")
     setIsLoading(true);
     try {
       const value = {
@@ -99,10 +104,6 @@ export const Login = () => {
   return (
     <div className="loginpage">
       <Toaster
-        containerStyle={{
-          position: "absolute",
-          top: "90px",
-        }}
       />
       <div></div>
       <div className="logincont">
@@ -186,6 +187,7 @@ export const Login = () => {
           <strong
             style={{ cursor: "pointer" }}
             onClick={() => {
+              setFailMsg(undefined)
               navigate("/signup");
             }}
           >

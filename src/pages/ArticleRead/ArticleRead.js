@@ -154,42 +154,42 @@ const ArticleRead = () => {
       });
   };
 
-  const getHighlightedData = () => {
-		if (!hightlights.length) {
-      console.log("no highlights")
-			return;
-		}
-		var items = document.getElementById("readtext");
-		if (!items) {
-      console.log("no items")
-			return;
-		}
-		var ptags = items.getElementsByTagName("span");
-    console.log(ptags)
-		for (let i = 0; i < ptags.length; i++) {
-			hightlights.forEach((element) => {
-				console.log(element.HighlightedText);
-				if (ptags[i].innerText.includes(element.HighlightedText)) {
-					console.log("match");
-					ptags[i].innerHTML = ptags[i].innerHTML.replace(
-						element.HighlightedText,
-						`<span class="hightobjs" style="color:blue">${element.HighlightedText}</span>`
-					);
-				}
-			});
-		}
+  // const getHighlightedData = () => {
+	// 	if (!hightlights.length) {
+  //     console.log("no highlights")
+	// 		return;
+	// 	}
+	// 	var items = document.getElementById("readtext");
+	// 	if (!items) {
+  //     console.log("no items")
+	// 		return;
+	// 	}
+	// 	var ptags = items.getElementsByTagName("span");
+  //   console.log(ptags)
+	// 	for (let i = 0; i < ptags.length; i++) {
+	// 		hightlights.forEach((element) => {
+	// 			console.log(element.HighlightedText);
+	// 			if (ptags[i].innerText.includes(element.HighlightedText)) {
+	// 				console.log("match");
+	// 				ptags[i].innerHTML = ptags[i].innerHTML.replace(
+	// 					element.HighlightedText,
+	// 					`<span class="hightobjs" style="color:blue">${element.HighlightedText}</span>`
+	// 				);
+	// 			}
+	// 		});
+	// 	}
 
-		return items;
-	};
+	// 	return items;
+	// };
 
   useEffect(() => {
     getArticleByID(Aid);
   }, []);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-		getHighlightedData();
-	}, [hightlights]);
+	// 	getHighlightedData();
+	// }, [hightlights]);
 
   const closenotePopup = () => setNotesPopup(false);
 
@@ -198,9 +198,9 @@ const ArticleRead = () => {
   return (
     <>
 
+    
 
-
-{displayPopUp && (
+{/* {displayPopUp && (
 				<div
 					className="highlightop"
 					style={{ left: `${x}px`, top: `${y - 100}px ` }}
@@ -235,8 +235,9 @@ const ArticleRead = () => {
 						<span>Note</span>
 					</div>
 				</div>
-			)}
-<div>
+			)} */}
+
+  
 {notesPopup && (
 						<Popupnotes
 							data={notepopupdata}
@@ -251,12 +252,21 @@ const ArticleRead = () => {
     >
       
       <div className="article-content-container" >
+      <div
+						className="highlightopinner"
+						onClick={() => {
+							opennotePopup();
+						}}
+            style={{position:"fixed",bottom:"5rem",right:"-10rem"}}
+					>
+						<GrNotes size={22} />
+						<span>Note</span>
+					</div>
       <Toaster></Toaster>
         {sortedComponents.map((component, index) => (
           <React.Fragment key={index}>{component}</React.Fragment>
         ))}
       </div>
-    </div>
     </div>
     </>
     

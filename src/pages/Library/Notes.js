@@ -221,10 +221,10 @@ export const Notes = () => {
 				>
 					<img src={nohighlights} alt="" />
 					<h2 style={{ marginTop: "30px", fontSize: "30px" }}>
-						You haven't added any highlights yet.
+					Your notes are on a coffee break! ☕️
 					</h2>
 					<p style={{ marginTop: "20px" }}>
-						Make highlights the highlight of your day.
+					They'll be back, and when they return, they'll bring you a dose of inspiration! 🌟
 					</p>
 				</div>
 			)}

@@ -62,8 +62,8 @@ export const Navbar = () => {
 						className="spanpadding"
 						onClick={() => {
 							setSidenav(false);
-							if(sessionStorage.getItem("uid")){
-								navigate(`beams/${sessionStorage.getItem("uid")}`)
+							if(localStorage.getItem("authToken")){
+								navigate(`/beams`)
 							}
 							else{
 								navigate("/login");

@@ -5,7 +5,25 @@ import { useState, useEffect } from 'react';
 
 function Contactus() {
     const [isMobileViewport, setIsMobileViewport] = useState(window.innerWidth <= 912);
-  
+    const [form,setForm]=useState({name:"",email:"",message:""})
+    const changeHandler=(event)=>{
+      setForm({...form,[event.target.id]:event.target.value})
+    }
+    const submitHandler=(e)=>{
+      e.preventDefault()
+
+      fetch(`https://smtp-server-2b9c.onrender.com/send-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to:"ajmal@beams.world",
+          subject:"test email",
+          text:`name:${form.name} email:${form.email} message:${form.message}`
+        }),
+      }).then((res)=>res.json()).then((res)=>console.log(res.message))
+    }
     useEffect(() => {
       const handleResize = () => {
         setIsMobileViewport(window.innerWidth <= 912);
@@ -62,13 +80,13 @@ function Contactus() {
                 <h1>Have a Query? <br/>Message Us</h1>
             </div>
             <div className='contact-form'>
-              <form action='submit'>
+              <form action='submit' onSubmit={submitHandler}>
                 <div className='form-row-1'>
-                <input className="input-field" type="name" name="" value="" placeholder='Your Name'/>
-                <input className="input-field" type="mail" name="" value="" placeholder='E-mail'/>
+                <input className="input-field" id="name" type="name" name=""  placeholder='Your Name' onChange={changeHandler}/>
+                <input className="input-field" id="email" type="mail" name=""  placeholder='E-mail' onChange={changeHandler}/>
                 </div>
                 <div className='form-row-3'>
-                <textarea className="input-field message" type="textarea" rows="5" cols="40" name="" value="" placeholder='Message'/>
+                <textarea className="input-field message" id="message" type="textarea" rows="5" cols="40" name=""  placeholder='Message' onChange={changeHandler}/>
                 </div>
                 <div className='form-row-4'>
                   <button className="form-btn" type="submit">Send Message</button>

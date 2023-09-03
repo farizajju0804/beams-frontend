@@ -209,14 +209,14 @@ export const UserProfile = () => {
 						<div className="profitems">
 							<label htmlFor="">Password</label>
 							<input type="text" value="***********" disabled />
-							<p
+							{/* <p
 								style={{ marginTop: "5px", color: "#f96f2e", cursor: "pointer" }}
 								onClick={() => {
 									navigate("/resetpassword");
 								}}
 							>
 								Change Password{" "}
-							</p>
+							</p> */}
 						</div>
 						<div className="profitems">
 							{window.innerWidth <= 450 ? (

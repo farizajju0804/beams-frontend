@@ -8,9 +8,11 @@ import Hero from './Hero/Hero';
 import IntroducingBeams from './IntroducingBeams/IntroducingBeams'
 import Testimonial from './Testimonial/Testimonial';
 import Benefits from './Benefits/Benefits';
-
+import { Toaster } from 'react-hot-toast';
 function LandingPage() {
   return (
+    <>
+    <Toaster/>
     <div>
     <Hero />
     <Doyouknow />
@@ -22,6 +24,7 @@ function LandingPage() {
     <Benefits/>
     <Testimonial/>
     </div>
+    </>
   )
 }
 

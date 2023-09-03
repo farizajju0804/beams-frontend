@@ -20,12 +20,12 @@ export const LoggedinNav = () => {
     console.log(user)
   })
   return <>{
-    user.Profilepic?.url? 
+    user? 
     <div className="loggedinnav">
       <img className="logged-logo"
       src="http://localhost:3000/Assets/images/logo.png" alt=""
         onClick={() => {
-          navigate("/beams"); 
+          navigate("/"); 
         }}
         
       />
@@ -38,10 +38,14 @@ export const LoggedinNav = () => {
             setDropdown(!dropdown);
           }}
         >
-          <img
+          {
+            user.Profilepic?.url ? <img
             src={`http://localhost:1337${user.Profilepic.url}`}
             alt=""
-          />
+          />:
+          <p>{user.email.charAt(0).toUpperCase()}</p>
+          }
+          
           <span>{user ? (user.name === null ? user.username : user.name) : ""}</span>
           <BsChevronDown />
           <div className={dropdown ? "accountdropdown accountdropdowndisplay" : "accountdropdown"}>

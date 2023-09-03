@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
   const { user, isLoggedIn } = useContext(AuthContext);
   console.log(isLoggedIn);
 
-  if (isLoggedIn) {
+  if (localStorage.getItem("authToken")) {
     return children;
   } else {
     return <Navigate to="/login"></Navigate>;
