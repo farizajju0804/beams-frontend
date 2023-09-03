@@ -19,7 +19,24 @@
   .article-content-container{
     margin-top: 8vh;
   }
+  .highlightopinner{
+    position:fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    background-color: var(--white);
+    /* padding: 2%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50%;
+    box-shadow: var(--effect-1);
+    gap: 9px;
 
+  }
   .article-content-container,
   .article-read {
     width: 70%;

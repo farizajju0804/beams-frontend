@@ -7,6 +7,7 @@ import Applications from "../../models/ArticleComponents/Applications/Applicatio
 import Quote from "../../models/ArticleComponents/Quote/Quote";
 import StartupContainer from "../../models/ArticleComponents/StartupContainer/StartupContainer";
 import Dropdown from "../../models/ArticleComponents/Dropdown/Dropdown";
+import { BsPencilSquare } from "react-icons/bs";
 import React, { useEffect, useState } from "react";
 import "./ArticleRead.css";
 import { useParams } from "react-router-dom";
@@ -257,9 +258,8 @@ const ArticleRead = () => {
 						onClick={() => {
 							opennotePopup();
 						}}
-            style={{position:"fixed",bottom:"5rem",right:"-10rem"}}
 					>
-						<GrNotes size={22} />
+						<BsPencilSquare size={20} />
 						<span>Note</span>
 					</div>
       <Toaster></Toaster>
