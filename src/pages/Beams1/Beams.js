@@ -3,17 +3,17 @@ import './Beams.css'
 import LowCard from '../../models/LowCard/LowCard'
 import TrendingCard from '../../models/TrendingCard/TrendingCard'
 import { useState } from 'react'
-
+import { API } from '../../constants'
 function Beams() {
   const [launch,setLaunch]=useState(null)
   const [trending,setTrending]=useState([])
   useEffect(()=>{
-        fetch("http://localhost:1337/api/launch-of-the-weeks?populate=*").then((res) => res.json())
+        fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
         .then((launch)=>{
           console.log(launch.data[0].attributes)
           setLaunch(launch.data[0].attributes)})
 
-          fetch("http://localhost:1337/api/trending-cards?populate=*").then((res) => res.json())
+          fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
           .then((trending)=>{
             setTrending(trending.data)})
   },[])
@@ -24,7 +24,7 @@ function Beams() {
                 {/* <img className='beams-hero' src="Assets/images/beams-hero.png" alt=""/> */}
        </div>
        <div className='beams-content-container' >
-            <div className='low-container'>
+            {/* <div className='low-container'>
                 <div className='low-box'>
                     Launch Of The Week
                 </div>
@@ -36,7 +36,7 @@ function Beams() {
                   <p>loading..</p>
                 }
                 
-            </div>
+            </div> */}
            
             <div className='trending-container'>
             <div className='trending-box'>

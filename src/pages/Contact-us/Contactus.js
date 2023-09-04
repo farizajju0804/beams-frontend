@@ -2,6 +2,7 @@ import React from 'react'
 import './Contactus.css'
 import { Location, Sms} from 'iconsax-react';
 import { useState, useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 function Contactus() {
     const [isMobileViewport, setIsMobileViewport] = useState(window.innerWidth <= 912);
@@ -18,8 +19,8 @@ function Contactus() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          to:"ajmal@beams.world",
-          subject:"test email",
+          to:"ajfariz13@gmail.com",
+          subject:"Contact Form Response",
           text:`name:${form.name} email:${form.email} message:${form.message}`
         }),
       }).then((res)=>res.json()).then((res)=>console.log(res.message))
@@ -65,7 +66,7 @@ function Contactus() {
                   </div>
                   <div className='mail-us-container'>
                   {/* <h1 className='info-title'>MAIL US</h1> */}
-                  <p>info@beams.com</p>
+                  <p>info@beams.world</p>
                   </div>
                 </div>
                 
@@ -75,6 +76,7 @@ function Contactus() {
             </div>
             
         </div>
+        <Toaster/>
           <div className='contact-form-container'>
             <div className='contact-form-title'>
                 <h1>Have a Query? <br/>Message Us</h1>

@@ -7,6 +7,7 @@ import AudioPlayer from "react-h5-audio-player";
 import { BeatLoader } from "react-spinners";
 import "react-h5-audio-player/lib/styles.css";
 import { API } from "../../constants";
+import { API_Photo } from "../../constants";
 export const Maxbeamsong = () => {
 	const { token } = useAuthContext();
 	const [microbeams, setMicrobeams] = useState({});
@@ -26,7 +27,7 @@ export const Maxbeamsong = () => {
 		// 		setMicrobeams(e.data.attributes);
 		// 		setMicrobeamsload(false);
 		// 	});
-        fetch("http://localhost:1337/api/audio-players?populate=*").then((res) => res.json())
+        fetch(`${API}/audio-players?populate=*`).then((res) => res.json())
 		.then((audio)=>{
 			 const id=audio.data.findIndex((audio)=>audio.attributes.articleId===Aid)
 			 console.log(audio.data[id].attributes)
@@ -45,9 +46,9 @@ export const Maxbeamsong = () => {
 				<BeatLoader />
 			) : (
 				<div className="songcard">
-					<img src={"http://localhost:1337"+audio.audioImage.data.attributes.url} alt="" className="scardbanner" />
+					<img src={API_Photo +audio.audioImage.data.attributes.url} alt="" className="scardbanner" />
 					<span>{audio.title}</span>
-					<AudioPlayer src={"http://localhost:1337"+audio.audioUrl.data.attributes.url} style={{ color: "blue" }} />
+					<AudioPlayer src={API_Photo+audio.audioUrl.data.attributes.url} style={{ color: "blue" }} />
 				</div>
 			)}
 		</div>

@@ -67,6 +67,10 @@
     gap: 40px;
 }
 
+
+.form-btn{
+    cursor: pointer;
+}
 .visit-us-container, .mail-us-container{
     display: flex;
     flex-direction: column;

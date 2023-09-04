@@ -4,7 +4,7 @@ import userProfileimg from "../../assets/userprofile.png";
 import { useAuthContext } from "../../context/AuthContext";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { API } from "../../constants";
+import { API,API_Photo } from "../../constants";
 import { Toaster, toast } from "react-hot-toast";
 import { RxImage } from "react-icons/rx";
 import { json, useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ export const UserProfile = () => {
 	}, [auth]);
 
 	const updateUserContext=()=>{
-		fetch(`http://localhost:1337/api/users/${user.id}?populate=*`)
+		fetch(`${API}/users/${user.id}?populate=*`)
 		.then((res)=>res.json())
 		.then((res)=>{
 			console.log(res)
@@ -135,7 +135,7 @@ export const UserProfile = () => {
 											}}
 										>
 											<img
-												src={`http://localhost:1337${auth.user.Profilepic.url}`}
+												src={`${API_Photo}${auth.user.Profilepic.url}`}
 												alt=""
 											/>
 											<div className="proftag">

@@ -1,6 +1,7 @@
 import React from 'react'
 import './TrendingCard.css'
 import { useNavigate } from 'react-router-dom'
+import { API_Photo } from '../../constants'
 function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription,trendingCardCategory,trendingCardCategoryColor,trendingCardCategoryBgColor,articleId}) {
     const navigate=useNavigate()
 
@@ -13,7 +14,7 @@ function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription
     navigate(`/article-description/${articleId}`)
     }}>
         <div className='trending-card-img'>
-            <img src={"http://localhost:1337"+trendingCardImg.data.attributes.url} alt=""/>
+            <img src={API_Photo+trendingCardImg.data.attributes.url} alt=""/>
         </div>
         <div className='trending-card-title'>
             {trendingCardTitle}

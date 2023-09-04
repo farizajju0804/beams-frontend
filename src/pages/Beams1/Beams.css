@@ -23,7 +23,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 
 .beams-content-container{
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding:60px;
+    padding: 20px 60px;
     padding-bottom: 20px;
     /* padding: 70px 0; */
     width: 100%;
@@ -91,7 +91,7 @@
     .beams-header-container h1{
         font-size: 24px;
         line-height: 40px;
-        margin-top:30%;
+        margin-top:35%;
     }
     .beams-content-container{
         padding-top:5px;

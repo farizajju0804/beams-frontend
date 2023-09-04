@@ -5,10 +5,11 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="content">
-        <h1 className="beams">Your GPS For The Future</h1>
+        <h1 className="beams">The GPS For Your Future</h1>
         <h3 className="unleashing-the-light">
-          Unleashing the Light of Knowledge!
+        Built For Learners. Leaders. Legends.
         </h3>
+        <p>Short and powerful insights into the forces reshaping our world.</p>
         <button className="primary-button1" onClick={()=>{
           if(localStorage.getItem("authToken")){
             navigate(`/beams`)

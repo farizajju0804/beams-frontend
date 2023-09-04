@@ -173,15 +173,15 @@ export const Resetpass2 = () => {
 						<div className="passcloudinner">
 							{passlen ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
+									<HiCheckCircle color="#17cd92" />
+									<span style={{ marginLeft: "2px", color: "#17cd92" }}>
 										8 Characters
 									</span>
 								</div>
 							) : (
 								<div className="passclouditem">
-									<HiXCircle color="#FF2626" />
-									<span style={{ marginLeft: "2px", color: "#FF2626" }}>
+									<HiXCircle color="#161616" />
+									<span style={{ marginLeft: "2px", color: "#161616" }}>
 										8 Characters
 									</span>
 								</div>
@@ -189,15 +189,15 @@ export const Resetpass2 = () => {
 
 							{passupper ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
+									<HiCheckCircle color="#17cd92" />
+									<span style={{ marginLeft: "2px", color: "#17cd92" }}>
 										1 Uppercase
 									</span>
 								</div>
 							) : (
 								<div className="passclouditem">
-									<HiXCircle color="#FF2626" />
-									<span style={{ marginLeft: "2px", color: "#FF2626" }}>
+									<HiXCircle color="#161616" />
+									<span style={{ marginLeft: "2px", color: "#161616" }}>
 										1 Uppercase
 									</span>
 								</div>
@@ -206,30 +206,30 @@ export const Resetpass2 = () => {
 						<div className="passcloudinner">
 							{passnum ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
+									<HiCheckCircle color="#17cd92" />
+									<span style={{ marginLeft: "2px", color: "#17cd92" }}>
 										1 Number
 									</span>
 								</div>
 							) : (
 								<div className="passclouditem">
-									<HiXCircle color="#FF2626" />
-									<span style={{ marginLeft: "2px", color: "#FF2626" }}>
+									<HiXCircle color="#161616" />
+									<span style={{ marginLeft: "2px", color: "#161616" }}>
 										1 Number
 									</span>
 								</div>
 							)}
 							{passlower ? (
 								<div className="passclouditem">
-									<HiCheckCircle color="#435CFF" />
-									<span style={{ marginLeft: "2px", color: "#f96f2e" }}>
+									<HiCheckCircle color="#17cd92" />
+									<span style={{ marginLeft: "2px", color: "#17cd92" }}>
 										1 Lowercase
 									</span>
 								</div>
 							) : (
 								<div className="passclouditem">
-									<HiXCircle color="#FF2626" />
-									<span style={{ marginLeft: "2px", color: "#FF2626" }}>
+									<HiXCircle color="#161616" />
+									<span style={{ marginLeft: "2px", color: "#161616" }}>
 										1 Lowercase
 									</span>
 								</div>

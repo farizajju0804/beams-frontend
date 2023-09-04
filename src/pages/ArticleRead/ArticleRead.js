@@ -18,6 +18,7 @@ import { GrNotes } from "react-icons/gr";
 import { toast, Toaster } from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 import { Popupnotes } from "../../models/Popupnotes/Popupnotes";
+import { API } from "../../constants";
 
 const ArticleRead = () => {
   let { id:Aid } = useParams();
@@ -65,7 +66,7 @@ const ArticleRead = () => {
 	};
   const getArticleByID = async (id) => {
     fetch(
-      `http://localhost:1337/api/article-components/?populate[DataCardBox][populate]=*&populate[StartupContainer][populate]=*&populate[ArticleHeader]=*&populate[SubPara]=*&populate[StatisticContainer]=*&populate[Quote]=*&populate[Applications][populate]=*&populate[Dropdown]=*&populate[StartBox]=*`
+      `${API}/article-components/?populate[DataCardBox][populate]=*&populate[StartupContainer][populate]=*&populate[ArticleHeader]=*&populate[SubPara]=*&populate[StatisticContainer]=*&populate[Quote]=*&populate[Applications][populate]=*&populate[Dropdown]=*&populate[StartBox]=*`
     )
       .then((res) => res.json())
       .then((articles) => {

@@ -3,6 +3,7 @@ import React, { useState,useEffect,useContext } from "react";
 import { useNavigate,useParams } from 'react-router-dom'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast, Toaster } from "react-hot-toast";
+import { API, API_Photo } from "../../constants";
 const Description = ({
   articleDescriptionImg,
   articleDescriptionTitle,
@@ -40,7 +41,7 @@ const Description = ({
         <img
           className="article-desciption-img-icon"
           alt=""
-          src={"http://localhost:1337"+articleDescriptionImg.data.attributes.url}
+          src={API_Photo+articleDescriptionImg.data.attributes.url}
           
         />
         <div className="favourite-icon" onClick={favoritesHandler}>
