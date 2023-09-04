@@ -10,6 +10,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import { removeToken } from "../../helpers";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useParams } from "react-router-dom";
+import { API_Photo } from "../../constants";
 import { useEffect } from "react";
 export const LoggedinNav = () => {
   const { user, setUserData, isLoggedIn, setisLoggedIn } = useContext(AuthContext);
@@ -40,7 +41,7 @@ export const LoggedinNav = () => {
         >
           {
             user.Profilepic?.url ? <img
-            src={`http://localhost:1337${user.Profilepic.url}`}
+            src={API_Photo + user.Profilepic.url}
             alt=""
           />:
           <p>{user.email.charAt(0).toUpperCase()}</p>

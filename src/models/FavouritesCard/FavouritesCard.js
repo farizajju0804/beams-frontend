@@ -8,6 +8,7 @@ import { AiOutlineCloseCircle, AiOutlineShareAlt, AiFillHeart } from "react-icon
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useAuthContext } from "../../context/AuthContext";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { API_Photo } from "../../constants";
 
 export const FavouritesCard = ({ completed, key, title, Desc, typeofbeam, idofbeam,img }) => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export const FavouritesCard = ({ completed, key, title, Desc, typeofbeam, idofbe
       }}
     >
       <div className="maxcardimg">
-      <img src={"http://localhost:1337"+img.data.attributes.url} alt=""/>
+      <img src={API_Photo+img.data.attributes.url} alt=""/>
       </div>
       <div className="maxbeamdata">
         <h3>{title}</h3>

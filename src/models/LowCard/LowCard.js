@@ -4,6 +4,7 @@ import { Clock } from 'iconsax-react'
 import { useEffect,useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useNavigate, useParams } from 'react-router-dom';
+import { API_Photo } from '../../constants'
 function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryColor,articleId}) { 
   const navigate=useNavigate()
   const auth=useContext(AuthContext)
@@ -24,7 +25,7 @@ function LowCard({lowImg,lowTitle,lowDesc,lowCategory,categoryBgColor,categoryCo
       navigate(`/article-description/${articleId}`)
     }}>
         <div className='low-img'>
-            <img src={"http://localhost:1337"+lowImg.data.attributes.url} alt="article-img"/>
+            <img src={API_Photo+lowImg.data.attributes.url} alt="article-img"/>
         </div>
         <div className='low-card-content'>
             <div className='low-title'>

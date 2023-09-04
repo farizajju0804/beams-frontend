@@ -26,7 +26,7 @@ export const Redirectionpage = () => {
 				}
 			);
 
-			const res1=await axios.get("http://localhost:1337/api/users")
+			const res1=await axios.get(`${API}/users`)
 
 		    const existingUsers=res1.data.map((el)=>el.email)
 			const data = await response.json();
@@ -36,7 +36,7 @@ export const Redirectionpage = () => {
 				console.log("if")
 				setFailMsg("you are signed up using your email")
 				console.log(data.user.id)
-				await axios.delete(`http://localhost:1337/api/users/${data.user.id}`)
+				await axios.delete(`${API}/users/${data.user.id}`)
 				navigate("/login")
 			}
 			else{

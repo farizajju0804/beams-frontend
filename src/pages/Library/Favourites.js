@@ -14,6 +14,7 @@ import "./Library.css";
 import Favouritescard2 from "../../models/Favouritescard2/Favouritescard2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import TrendingCard from "../../models/TrendingCard/TrendingCard";
+import { API } from "../../constants";
 export const Favourites = () => {
 	const navigate = useNavigate();
 	const { favourites, favpersist, changefav,user } = useContext(AuthContext);
@@ -25,10 +26,10 @@ export const Favourites = () => {
 	const [favouriteData,setFavouriteData]=useState([])
 	console.log(favourites);
 	useEffect(()=>{
-		fetch(`http://localhost:1337/api/users/${user.id}?populate=*`).then((res) => res.json())
+		fetch(`${API}/users/${user.id}?populate=*`).then((res) => res.json())
         .then((data)=>{
           	const userFavs=data.Favourites.map((el)=>el.articleId)
-			fetch(`http://localhost:1337/api/descriptions?populate=*`).then((res) => res.json())
+			fetch(`${API}/descriptions?populate=*`).then((res) => res.json())
 			.then((res)=>{
 				console.log("favs",res.data.filter((article)=>userFavs.includes(article.attributes.articleId)))
 				const favouriteCards=res.data.filter((article)=>userFavs.includes(article.attributes.articleId))
