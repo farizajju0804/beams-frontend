@@ -199,13 +199,13 @@ export const Login = () => {
           <strong style={{ margin: "10px" }}>or</strong>
           <strong>-- Login using --</strong>
         </div>
-        <div className="oauths">
+        {/* <div className="oauths">
           <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
           </a>
-          {/* <img src={facebooklogo} alt="" />
-          <img src={applelogo} alt="" /> */}
-        </div>
+          <img src={facebooklogo} alt="" />
+          <img src={applelogo} alt="" />
+        </div> */}
       </div>
       <img src={loginimg} alt="" className="loginimgpos" />
     </div>
