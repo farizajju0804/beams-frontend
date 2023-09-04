@@ -1,6 +1,8 @@
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 const Hero = () => {
+  const [cookies,setCookie]=useCookies(["loggedIn"])
   const navigate = useNavigate();
   return (
     <section className="hero">
@@ -11,7 +13,7 @@ const Hero = () => {
         </h3>
         <p>Short and powerful insights into the forces reshaping our world.</p>
         <button className="primary-button1" onClick={()=>{
-          if(localStorage.getItem("authToken")){
+          if(cookies.loggedIn){
             navigate(`/beams`)
           }
           else{

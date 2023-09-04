@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import "../Login/Login.css";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { AiFillEye } from "react-icons/ai";
@@ -30,7 +30,11 @@ export const Signup = () => {
 
   const navigate = useNavigate();
 
-  const { setUser } = useContext(AuthContext);
+  const { setUser,auth,setAuth } = useContext(AuthContext);
+
+  useEffect(()=>{
+      sessionStorage.setItem("login",false)
+  },[])
 
   const signUpcall = async () => {
     setIsLoading(true);

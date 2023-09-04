@@ -2,11 +2,19 @@ import React, { useEffect } from 'react'
 import './Beams.css'
 import LowCard from '../../models/LowCard/LowCard'
 import TrendingCard from '../../models/TrendingCard/TrendingCard'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import { API } from '../../constants'
+import { AuthContext } from '../../AuthProvider/AuthProvider'
 function Beams() {
+  const {user}=useContext(AuthContext)
+  console.log(user)
   const [launch,setLaunch]=useState(null)
-  const [trending,setTrending]=useState([])
+  const [trending,setTrending]=useState()
+  const serverDate = new Date(sessionStorage.getItem("createdAt"));
+  const currentDate = new Date(); 
+  const timeDifference = currentDate - serverDate;
+  const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
+  const showContents=Math.floor((10/4)) 
   useEffect(()=>{
         fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
         .then((launch)=>{
@@ -15,10 +23,23 @@ function Beams() {
 
           fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
           .then((trending)=>{
-            setTrending(trending.data)})
+            console.log("set..")
+            
+            const mapData=trending.data.map((el,index)=>{
+                if (index<showContents || index===0) return {...el.attributes,show:true}
+                else return {...el.attributes,show:false}
+            })
+            console.log(mapData)
+            setTrending(mapData)
+            
+          })
+
+        
   },[])
+  
+  
   return (
-    <div className='beams-section'>
+    <div className='beams-section' >
         <div className='beams-header-container'>
         <h1>Ignite Your Success with Beams</h1>
                 {/* <img className='beams-hero' src="Assets/images/beams-hero.png" alt=""/> */}
@@ -44,9 +65,9 @@ function Beams() {
                 </div>
               <div className='trending-content-container'>
                 {
-                    trending.length?
+                    trending?
                     trending.map((trending)=><TrendingCard
-                    {...trending.attributes}
+                    {...trending}
                     />)
                     :
                     <p>loading...</p>

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./navbar.css";
 import logo from "../../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
-
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 export const Navbar = () => {
 	const [sidenav, setSidenav] = useState(false);
 
 	const navigate = useNavigate();
-
+	const {auth,setAuth}=useContext(AuthContext)
 	return (
 		<nav className="navbar">
 			<img className="logo"

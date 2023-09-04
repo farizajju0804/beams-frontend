@@ -55,6 +55,10 @@
     
 }
 
+.hide{
+    opacity: 0.5;
+}
+
 @media screen and (max-width:767px){
     .trending-content-container{
         flex-direction: column;

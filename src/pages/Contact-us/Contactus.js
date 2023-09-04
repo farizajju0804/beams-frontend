@@ -2,7 +2,7 @@ import React from 'react'
 import './Contactus.css'
 import { Location, Sms} from 'iconsax-react';
 import { useState, useEffect } from 'react';
-import { Toaster } from 'react-hot-toast';
+import { Toaster,toast } from 'react-hot-toast';
 
 function Contactus() {
     const [isMobileViewport, setIsMobileViewport] = useState(window.innerWidth <= 912);
@@ -23,7 +23,7 @@ function Contactus() {
           subject:"Contact Form Response",
           text:`name:${form.name} email:${form.email} message:${form.message}`
         }),
-      }).then((res)=>res.json()).then((res)=>console.log(res.message))
+      }).then((res)=>res.json()).then((res)=>toast.success("email sent successfully!"))
     }
     useEffect(() => {
       const handleResize = () => {
@@ -38,6 +38,7 @@ function Contactus() {
 
   return (
     <section className='contact-us'>
+      <Toaster/>
         <div className='contact-info-container'>
              <div className='contact-info-img-box'>
               <img className="contact-img" src="Assets/images/contact-img.png" alt=""/>
@@ -76,7 +77,6 @@ function Contactus() {
             </div>
             
         </div>
-        <Toaster/>
           <div className='contact-form-container'>
             <div className='contact-form-title'>
                 <h1>Have a Query? <br/>Message Us</h1>

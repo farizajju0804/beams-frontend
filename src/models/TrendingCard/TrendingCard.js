@@ -2,7 +2,7 @@ import React from 'react'
 import './TrendingCard.css'
 import { useNavigate } from 'react-router-dom'
 import { API_Photo } from '../../constants'
-function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription,trendingCardCategory,trendingCardCategoryColor,trendingCardCategoryBgColor,articleId}) {
+function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription,trendingCardCategory,trendingCardCategoryColor,trendingCardCategoryBgColor,articleId,show}) {
     const navigate=useNavigate()
 
     const categoryStyle = {
@@ -10,8 +10,9 @@ function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription
         color: trendingCardCategoryColor
       }
   return (
-    <div className='trending-card' onClick={()=>{
-    navigate(`/article-description/${articleId}`)
+    <div className={`trending-card ${!show && "hide"}`} onClick={()=>{
+    if(show)  navigate(`/article-description/${articleId}`)
+
     }}>
         <div className='trending-card-img'>
             <img src={API_Photo+trendingCardImg.data.attributes.url} alt=""/>

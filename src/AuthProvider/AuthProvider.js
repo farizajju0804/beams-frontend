@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import { getToken } from "../helpers";
 // import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-hot-toast";
-
+import { useCookies } from "react-cookie";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
 
-
+  const [auth,setAuth]=useState()
   const [userData, setUserData] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [Favourites, setFavourites] = useState([]);
@@ -22,8 +22,8 @@ const AuthProvider = ({ children }) => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [failMsg,setFailMsg]=useState(undefined)
   const authToken = getToken();
-
-
+  const [cookies,setCookie]=useCookies(['loggedIn'])
+  
   //Favourites
 
   const pushfav = async (item) => {
@@ -263,6 +263,10 @@ const AuthProvider = ({ children }) => {
       });
       const data = await response.json();
       setUserData(data);
+      const expirationTime = new Date();
+      expirationTime.setSeconds(expirationTime.getMinutes+1800);
+      setCookie("loggedIn","true",{expires:expirationTime})
+      sessionStorage.setItem("createdAt",data.createdAt)
       console.log(data)
       setFavourites(data.Favourites);
       console.log(data.Favourites)
@@ -326,7 +330,9 @@ const AuthProvider = ({ children }) => {
         updateHighlightfirst: updateHighlightfirst,
         addnewsletter: addnewsletter,
         setFailMsg,
-        failMsg
+        failMsg,
+        auth,
+        setAuth
       }}
     >
       {children}

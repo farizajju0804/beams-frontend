@@ -14,6 +14,8 @@ export const Redirectionpage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const id_token = searchParams.get("id_token");
 	const access_token = searchParams.get("access_token");
+	
+	
 	const signUpcall = async () => {
 		try {
 			const response = await fetch(
@@ -25,22 +27,35 @@ export const Redirectionpage = () => {
 					}
 				}
 			);
+			const data = await response.json();
+
+			if(!eval(sessionStorage.getItem("login"))){
 
 			const res1=await axios.get(`${API}/users`)
-
 		    const existingUsers=res1.data.map((el)=>el.email)
-			const data = await response.json();
-			console.log(existingUsers)
-			console.log(data)
 			if(existingUsers.includes(data.user.email)){
 				console.log("if")
 				setFailMsg("you are signed up using your email")
 				console.log(data.user.id)
 				await axios.delete(`${API}/users/${data.user.id}`)
 				navigate("/login")
+				return
 			}
 			else{
-				console.log("else")
+				if (data?.error) {
+					throw data?.error;
+				} else {
+					console.log(data.user)
+					setToken(data.jwt);
+					setUser(data.user);
+					console.log("here")
+					navigate("/beams", { replace: true });
+					return
+				}
+			}
+			
+		}
+			
 				if (data?.error) {
 					throw data?.error;
 				} else {
@@ -50,7 +65,7 @@ export const Redirectionpage = () => {
 					console.log("here")
 					navigate("/beams", { replace: true });
 				}
-			}
+			
 			
 		} catch (error) {
 			console.log(error)

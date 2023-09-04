@@ -12,11 +12,13 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useParams } from "react-router-dom";
 import { API_Photo } from "../../constants";
 import { useEffect } from "react";
+import { useCookies } from "react-cookie";
 export const LoggedinNav = () => {
   const { user, setUserData, isLoggedIn, setisLoggedIn } = useContext(AuthContext);
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
   const {id}=useParams()
+  const [cookies, setCookie, removeCookie] = useCookies(['myCookieName']);
   useEffect(()=>{
     console.log(user)
   })
@@ -76,6 +78,7 @@ export const LoggedinNav = () => {
               className="accountdropdownitems"
               onClick={() => {
                 sessionStorage.removeItem("uid")
+                removeCookie("loggedIn")
                 removeToken();
                 setUserData(null);
                 setisLoggedIn(false);

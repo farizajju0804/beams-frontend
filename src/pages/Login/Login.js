@@ -16,9 +16,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useEffect } from "react";
 
 export const Login = () => {
-  useEffect(()=>{
-    if(failMsg) toast.error(failMsg)
-  },[])
+  
   const [ispassvis, setIspassvis] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,10 +28,13 @@ export const Login = () => {
   const [rememberme, setRememberme] = useState(true);
   const navigate = useNavigate();
 
-  const { user, setUser, token, isLoggedIn,failMsg,setFailMsg } = useContext(AuthContext);
+  const { user, setUser, token, isLoggedIn,failMsg,setFailMsg,auth,setAuth } = useContext(AuthContext);
 
     
-
+  useEffect(()=>{
+    sessionStorage.setItem("login",true)
+    if(failMsg) toast.error(failMsg)
+  },[])
   
   const logIn = async () => {
     
@@ -202,8 +203,8 @@ export const Login = () => {
           <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
           </a>
-          <img src={facebooklogo} alt="" />
-          <img src={applelogo} alt="" />
+          {/* <img src={facebooklogo} alt="" />
+          <img src={applelogo} alt="" /> */}
         </div>
       </div>
       <img src={loginimg} alt="" className="loginimgpos" />

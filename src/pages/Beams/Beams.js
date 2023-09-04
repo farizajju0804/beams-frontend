@@ -39,7 +39,7 @@ export const Beams = () => {
   const location = useLocation();
 
   const closesharemodel = () => setSharemodelstaus(false);
-
+ 
   const opensharemodel = (url) => {
     setSharemodelurl(url);
     setSharemodelstaus(true);
@@ -61,7 +61,8 @@ export const Beams = () => {
   };
   const navigate = useNavigate();
   const { token, user, firsthightlight, setFirsthightlight } = useContext(AuthContext);
-  console.log(user);
+
+  
 
   // const fetchdata = async () => {
   // 	setMicrobeamsload(true);
