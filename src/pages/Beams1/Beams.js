@@ -14,7 +14,7 @@ function Beams() {
   const currentDate = new Date(); 
   const timeDifference = currentDate - serverDate;
   const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
-  const showContents=Math.floor((10/4)) 
+  const showContents=Math.floor((daysDifference/4)) 
   useEffect(()=>{
         fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
         .then((launch)=>{
