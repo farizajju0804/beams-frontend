@@ -155,17 +155,7 @@ export const Login = () => {
           )}
         </div>
         <div className="loginoptions">
-          <div className="loginremember">
-            {/* <input
-							type="checkbox"
-							onChange={(e) => {
-								setRememberme(e.target.checked);
-							}}
-							id="logincheck"
-							defaultChecked
-						/> */}
-            {/* <label htmlFor="logincheck">Remember Me</label> */}
-          </div>
+         
           <span
             onClick={() => {
               navigate("/resetpassword");
@@ -195,10 +185,10 @@ export const Login = () => {
             Sign Up
           </strong>{" "}
         </p>
-        <div className="orloginwith">
+        {/* <div className="orloginwith">
           <strong style={{ margin: "10px" }}>or</strong>
           <strong>-- Login using --</strong>
-        </div>
+        </div> */}
         {/* <div className="oauths">
           <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />

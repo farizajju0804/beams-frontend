@@ -19,12 +19,14 @@ export const VerificationSuccess = () => {
             alt=""
             style={{
               width: "150px",
-              marginBottom: "20px",
-              marginTop: "20px",
+              marginBottom: "10px",
+              marginTop: "10px",
             }}
           />
           <div className="verificationbox">
-            <h3>Welcome to the future, innovator!</h3>
+            <h3 style={{
+              textAlign: "center"
+            }} >Welcome to the future, innovator!</h3>
             <p>Your email has been verified, let's unlock new frontiers together.</p>
             <p>Login now and explore the endless possibilities</p>
           </div>

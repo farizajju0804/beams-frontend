@@ -26,7 +26,7 @@
     /* min-width: 90%; */
     width: 80%;
     min-height: 570px;
-    max-height: 620px;
+    /* max-height: 620px; */
     /* height: 70vh; */
     background-color: white;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
@@ -87,7 +87,7 @@
 
 .loginoptions{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-top: 0px;
     margin-bottom: 20px;
@@ -128,7 +128,7 @@
     margin-bottom: 20px;
     background-color: var(--orange);
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
     font-family: var(--font-poppins);
 }
@@ -228,6 +228,11 @@
         padding: 30px 30px 30px 30px;
         width: 90%;
     }
+    .loginsignbtn{
+        padding: 14px 20px;
+        font-size: 20px;
+        
+    }
 
     .loginitem label {
         margin-top: 10px;
@@ -245,6 +250,12 @@
     }
     .logincont h2{
         font-size: 30px;
+    }
+    .passcloud{
+        position: absolute;
+        bottom: -100px;
+        left: -20px;
+      
     }
     
 }

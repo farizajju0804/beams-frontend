@@ -252,7 +252,7 @@
 @media only screen and (max-width:1193px)
 {
     .libraryoption{
-        width: 70%;
+        width: 100%;
     }
 
 }
@@ -294,7 +294,7 @@
 }
 
 
-@media only screen and (max-width:628px) {
+@media only screen and (max-width:767px) {
     .nodatadiv > img{
         width: 270px;
         height: auto;
@@ -310,6 +310,11 @@
         font-size: 16px !important;
         padding: 30px;
 
+    }
+    @media screen and (max-width:767px){
+        .LibraryPage{
+            padding: 20px 10px;
+        }
     }
 }
 

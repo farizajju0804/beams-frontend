@@ -137,6 +137,9 @@ export const Notes = () => {
 			{notes.length ? (
 				<div>
 					<div className="gridwrapper">
+						<div className="highlightdata fwrap">
+							
+					
 						{/* {sortop == 1 && (
 							<div className="highlightdata fwrap">
 								{noteData
@@ -231,6 +234,7 @@ export const Notes = () => {
 								);
 							})
 						}
+							</div>
 					</div>
 				</div>
 			) : (

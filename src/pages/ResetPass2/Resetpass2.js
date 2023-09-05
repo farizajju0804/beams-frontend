@@ -256,7 +256,7 @@ export const Resetpass2 = () => {
 					}}
 				>
 					{isLoading ? (
-						<ClipLoader color="white" size={23}></ClipLoader>
+						<ClipLoader color="white" size={20}></ClipLoader>
 					) : (
 						"Change Password"
 					)}

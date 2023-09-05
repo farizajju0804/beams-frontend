@@ -12,7 +12,7 @@
 }
 
 .DeletionAlert{
-    width: 400px;
+    width: 30%;
     height: 200px;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -53,4 +53,13 @@
     outline: none;
     border-color: #FF0000;
     color: white;
+}
+
+@media screen and (max-width:912px){
+    .DeletionAlert{
+        width: 80%;
+        gap: 10px;
+        padding: 10px;
+}
+
 }
