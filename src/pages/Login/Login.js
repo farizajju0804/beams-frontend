@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import loginimg from "../../assets/loginimg.png";
 import { API } from "../../constants";
-import { setToken } from "../../helpers";
+import { SetToken } from "../../helpers";
 import { useAuthContext } from "../../context/AuthContext";
 import ClipLoader from "react-spinners/ClipLoader";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -59,7 +59,7 @@ export const Login = () => {
       } else {
         if (rememberme) {
           console.log(data.jwt)
-          setToken(data.jwt);
+          SetToken(data.jwt);
         }
         console.log(data.user)
         sessionStorage.setItem("uid",data.user.id)

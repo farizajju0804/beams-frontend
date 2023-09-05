@@ -5,21 +5,27 @@ import TrendingCard from '../../models/TrendingCard/TrendingCard'
 import { useState,useContext } from 'react'
 import { API } from '../../constants'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
+// import { useCookies } from 'react-cookie'
 function Beams() {
   const {user}=useContext(AuthContext)
-  console.log("user",user)
+  // const [cookies,setCookie]=useCookies(['login'])
   const [launch,setLaunch]=useState(null)
   const [trending,setTrending]=useState()
   
   useEffect(()=>{  
-
+    if(user){
+      const expirationTime = new Date();
+      expirationTime.setSeconds(expirationTime.getSeconds+10);
+      console.log(new Date())
+      
         fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
         .then((launch)=>{
           console.log(launch.data[0].attributes)
           setLaunch(launch.data[0].attributes)})
 
           fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
-          .then((trending)=>{
+          .then((trending)=>{ 
+            
             const serverDate = new Date(user.createdAt);
             const currentDate = new Date(); 
             const timeDifference = currentDate - serverDate;
@@ -35,13 +41,15 @@ function Beams() {
             setTrending(mapData)
             
           })
-
+        }
         
-  },[])
+  },[user])
   
   
   return (
     <div className='beams-section' >
+          {user?
+        <div>
         <div className='beams-header-container'>
         <h1>Ignite Your Success with Beams</h1>
                 {/* <img className='beams-hero' src="Assets/images/beams-hero.png" alt=""/> */}
@@ -85,6 +93,9 @@ function Beams() {
     <div>
         
     </div>
+    </div>:
+    <p>user loading</p>
+    }
     
     </div>
     

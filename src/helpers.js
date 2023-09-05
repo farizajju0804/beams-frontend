@@ -9,7 +9,7 @@ export const getToken = () => {
 	}
 };
 
-export const setToken = (token) => {
+export const SetToken = (token) => {
 	if (token) {
 		localStorage.setItem(AUTH_TOKEN, token);
 	}

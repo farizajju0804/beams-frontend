@@ -4,11 +4,12 @@ import { useEffect } from "react";
 import { getToken } from "../helpers";
 // import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-hot-toast";
-import { useCookies } from "react-cookie";
+import { Cookies } from 'react-cookie'
+
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-
+  const cookies=new Cookies()
   const [auth,setAuth]=useState()
   const [userData, setUserData] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -22,7 +23,6 @@ const AuthProvider = ({ children }) => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [failMsg,setFailMsg]=useState(undefined)
   const authToken = getToken();
-  const [cookies,setCookie]=useCookies(['loggedIn'])
   
   //Favourites
 
@@ -142,12 +142,12 @@ const AuthProvider = ({ children }) => {
       NoteContent: NoteItem.content,
       Date: NoteItem.date,
     };
-
-    setNotes([...Notes, newnote]);
+      setNotes([...Notes, newnote]);
+      console.log(Notes)
     toast.promise(pushNotes([...Notes, newnote]), {
       loading: "Adding Note",
       success: <b>Note Added</b>,
-      error: <b>Could not delete note.</b>,
+      error: <b>Could not add note.</b>,
     });
   };
 
@@ -265,10 +265,8 @@ const AuthProvider = ({ children }) => {
       const data = await response.json();
       console.log(data)
       setUserData(data);
-      const expirationTime = new Date();
-      expirationTime.setSeconds(expirationTime.getMinutes+1800);
-      setCookie("loggedIn","true",{expires:expirationTime})
-      localStorage.setItem("createdAt",data.createdAt)
+      cookies.set('loggedIn',"true", {path: '/', expires: new Date(Date.now()+30 * 60 * 1000)})
+
       console.log(data)
       setFavourites(data.Favourites);
       console.log(data.Favourites)

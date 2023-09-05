@@ -4,7 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./redirectionpage.css";
-import { setToken } from "../../helpers";
+import { SetToken } from "../../helpers";
 import axios from "axios";
 export const Redirectionpage = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +46,7 @@ export const Redirectionpage = () => {
 					throw data?.error;
 				} else {
 					console.log(data.user)
-					setToken(data.jwt);
+					SetToken(data.jwt);
 					setUser(data.user);
 					console.log("here")
 					navigate("/beams", { replace: true });
@@ -60,10 +60,10 @@ export const Redirectionpage = () => {
 					throw data?.error;
 				} else {
 					console.log(data.user)
-					setToken(data.jwt);
+					SetToken(data.jwt);
 					setUser(data.user);
 					console.log("here")
-					navigate("/beams", { replace: true });
+					navigate("/beams", { replace: true });	
 				}
 			
 			

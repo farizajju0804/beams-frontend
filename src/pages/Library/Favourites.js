@@ -26,6 +26,7 @@ export const Favourites = () => {
 	const [favouriteData,setFavouriteData]=useState([])
 	console.log(favourites);
 	useEffect(()=>{
+		if(user){
 		fetch(`${API}/users/${user.id}?populate=*`).then((res) => res.json())
         .then((data)=>{
           	const userFavs=data.Favourites.map((el)=>el.articleId)
@@ -45,7 +46,8 @@ export const Favourites = () => {
 					setFavouriteData(favouriteCards)
 			})
 		  })
-	},[favourites])
+		}
+	},[user])
 	return (
 		<>
 		{

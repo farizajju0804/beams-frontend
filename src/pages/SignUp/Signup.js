@@ -52,15 +52,15 @@ export const Signup = () => {
         }),
       });
 
-      const data = await response;
-      console.log(response);
+      const data = await response.json();
+      console.log(data);
       if (data?.error) {
         console.log("error")
         throw data?.error;
       } else {
         setUser(data.user);
         toast.success("User registered!!!");
-        navigate(`/emailverification/${email}`, { replace: true });
+        navigate(`/emailverification/${email}`, { replace: true });     
       }
     } catch (error) {
       toast.error(error?.message ?? "Something went wrong!");
@@ -157,10 +157,6 @@ export const Signup = () => {
     <div className="loginpage">
       <div>
         <Toaster
-          containerStyle={{
-            position: "absolute",
-            top: "90px",
-          }}
         />
       </div>
       <div className="logincont">

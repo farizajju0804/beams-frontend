@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import libfav from "../../assets/libfav.png";
 import libnotes from "../../assets/libnotes.png";
 import libhighlight from "../../assets/libhighlights.png";
@@ -12,7 +12,10 @@ import nohighlights from "../../assets/nohighlights.png";
 import { FiChevronDown } from "react-icons/fi";
 import Pagination from "@mui/material/Pagination";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { API } from "../../constants";
 export const Notes = () => {
+	const [noteData,setNoteData]=useState([])
+	
 	const closenotePopup = () => setNotesPopup(false);
 	const opennotePopup = (data) => {
 		setNotepopupdata(data);
@@ -24,13 +27,22 @@ export const Notes = () => {
 	const [notepopupdata, setNotepopupdata] = useState({});
 
 	const navigate = useNavigate();
-	const { notes, changeNotes, notesPersist } = useContext(AuthContext);
+	const { notes, changeNotes, notesPersist,user } = useContext(AuthContext);
 	console.log(notes);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
 	const indexoflast = currentPage * postsperpage;
 	const indexoffirst = indexoflast - postsperpage;
-
+	useEffect(()=>{
+		if(user){
+		fetch(`${API}/users/${user.id}?populate=*`).then((res) => res.json())
+        .then((data)=>{
+				// setNoteData(data.Notes)
+				changeNotes(data.Notes)
+				console.log(data.Notes)
+		  })
+		}
+	},[user])
 	return (
 		<div className="LibraryPage">
 			<Toaster />
@@ -122,12 +134,12 @@ export const Notes = () => {
 					<FiChevronDown className="arrowselectposition" />
 				</div>
 			</div> */}
-			{notes.length != 0 ? (
+			{notes.length ? (
 				<div>
 					<div className="gridwrapper">
-						{sortop == 1 && (
+						{/* {sortop == 1 && (
 							<div className="highlightdata fwrap">
-								{notes
+								{noteData
 									.sort((a, b) => {
 										const nameA = a.BeamName.toUpperCase(); // ignore upper and lowercase
 										const nameB = b.BeamName.toUpperCase(); // ignore upper and lowercase
@@ -155,10 +167,10 @@ export const Notes = () => {
 									})
 									.slice(indexoffirst, indexoflast)}
 							</div>
-						)}
-						{sortop == 0 && (
+						)} */}
+						{/* {sortop == 0 && (
 							<div className="highlightdata fwrap">
-								{notes
+								{noteData
 									.sort((a, b) => {
 										const nameA = a.BeamName.toUpperCase(); // ignore upper and lowercase
 										const nameB = b.BeamName.toUpperCase(); // ignore upper and lowercase
@@ -185,10 +197,10 @@ export const Notes = () => {
 									})
 									.slice(indexoffirst, indexoflast)}
 							</div>
-						)}
-						{sortop == 2 && (
+						)} */}
+						{/* {sortop == 2 && (
 							<div className="highlightdata fwrap">
-								{notes
+								{noteData
 									.map((item) => {
 										return (
 											<NotesCard
@@ -204,7 +216,21 @@ export const Notes = () => {
 									})
 									.slice(indexoffirst, indexoflast)}
 							</div>
-						)}
+						)} */}
+						{
+							notes.map((item) => {
+								return (
+									<NotesCard
+										date={item.Date}
+										NoteContent={item.NoteContent}
+										noteitemid={item.id}
+										beamid={item.beamid}
+										BeamName={item.BeamName}
+										readmore={opennotePopup}
+									></NotesCard>
+								);
+							})
+						}
 					</div>
 				</div>
 			) : (

@@ -9,10 +9,6 @@ export const VerificationSuccess = () => {
     <div className="loginpage">
       <div>
         <Toaster
-          containerStyle={{
-            position: "absolute",
-            top: "90px",
-          }}
         />
       </div>
       <div className="logincont">
