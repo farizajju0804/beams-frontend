@@ -7,15 +7,12 @@ import { API } from '../../constants'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 function Beams() {
   const {user}=useContext(AuthContext)
-  console.log(user)
+  console.log("user",user)
   const [launch,setLaunch]=useState(null)
   const [trending,setTrending]=useState()
-  const serverDate = new Date(sessionStorage.getItem("createdAt"));
-  const currentDate = new Date(); 
-  const timeDifference = currentDate - serverDate;
-  const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
-  const showContents=Math.floor((daysDifference/4)) 
-  useEffect(()=>{
+  
+  useEffect(()=>{  
+
         fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
         .then((launch)=>{
           console.log(launch.data[0].attributes)
@@ -23,6 +20,11 @@ function Beams() {
 
           fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
           .then((trending)=>{
+            const serverDate = new Date(user.createdAt);
+            const currentDate = new Date(); 
+            const timeDifference = currentDate - serverDate;
+            const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
+            const showContents=Math.floor((daysDifference/3)) 
             console.log("set..")
             
             const mapData=trending.data.map((el,index)=>{

@@ -256,17 +256,19 @@ const AuthProvider = ({ children }) => {
   //newsletter
 
   const fetchLoggedInUser = async (token) => {
+    console.log("inside fetchLogin")
     setIsLoading(true);
     try {
       const response = await fetch(`${API}/users/me?populate=*`, {
         headers: { Authorization: `${BEARER} ${token}` },
       });
       const data = await response.json();
+      console.log(data)
       setUserData(data);
       const expirationTime = new Date();
       expirationTime.setSeconds(expirationTime.getMinutes+1800);
       setCookie("loggedIn","true",{expires:expirationTime})
-      sessionStorage.setItem("createdAt",data.createdAt)
+      localStorage.setItem("createdAt",data.createdAt)
       console.log(data)
       setFavourites(data.Favourites);
       console.log(data.Favourites)
