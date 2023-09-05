@@ -45,6 +45,13 @@
     margin-bottom: 20px;
 }
 
+.loginoption{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
 .loginitem{
     display: flex;
     flex-direction: column;

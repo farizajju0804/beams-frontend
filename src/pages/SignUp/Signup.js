@@ -278,7 +278,7 @@ export const Signup = () => {
             </div>
           </div>
         </div>
-        <div className="loginoptions">
+        <div className="loginoption">
           <div className="signupremember">
             <input type="checkbox" id="logincheck" className="custom-checkbox" defaultChecked />
             <label htmlFor="logincheck">
