@@ -26,7 +26,7 @@ export const LoggedinNav = () => {
     user? 
     <div className="loggedinnav">
       <img className="logged-logo"
-      src="http://localhost:3000/Assets/images/logo.png" alt=""
+      src="https://beams-frontend.vercel.app/Assets/images/logo.png" alt=""
         onClick={() => {
           navigate("/"); 
         }}
