@@ -77,7 +77,7 @@ function TrendingCard({
             <img
               className='heart-icon'
               alt=''
-              src='/Assets/images/heart.svg'
+              src='https://www.beams.world/Assets/images/heart.svg'
               onClick={favoritesHandler}
               style={{ fill: showFav ? 'red' : 'none' ,}}
             />
