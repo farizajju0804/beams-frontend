@@ -1,5 +1,5 @@
 .trending-card{
-    width: 1%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -24,12 +24,18 @@
     opacity: 0.5;
 }
 
+/* Add this CSS to your TrendingCard.css file */
+
+  
 #favHeart:hover ~ #heartImg{
     opacity: 0.5;
 }
 .trending-card-wrapper{
     position: relative;
     width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #hoverElement:hover ~ #favHeart{
@@ -45,6 +51,20 @@
     align-items: center;
     justify-content: center;
 }
+
+.favourite-icon1 {
+    position: absolute;
+    top: 5%; 
+    right: 5%;/* Adjust the position as needed * /* Adjust the position as needed */
+    z-index: 999;
+    width: 50px;
+    height:50px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Adjust the z-index to ensure it's above other content */
+  }
 
 .trending-card-desc{
     font-family: var(--font-mulish);
@@ -98,6 +118,13 @@
     .trending-card{
         width: 80%;
     }
+    .favourite-icon1 {
+        position: absolute;
+        top: 3%; 
+        right: 13%;
+        width: 40px;
+        height: 40px;
+      }
     .trending-box{
         font-size: 18px;
     }
@@ -108,4 +135,10 @@
         font-size: 12px;
         padding: 5px 10px;
     }
+    .trending-card-wrapper{
+        position: relative;
+        width: 100%;
+    }
 }
+
+   

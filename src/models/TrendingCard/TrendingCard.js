@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './TrendingCard.css';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -40,20 +40,33 @@ function TrendingCard({
     navigate(`/article-description/${articleId}`);
   };
 
-  const handleCardHover = () => {
-    setShowFav(true);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      // Get the viewport width
+      const viewportWidth = window.innerWidth;
 
-  const handleCardLeave = () => {
-    setShowFav(false);
-  };
+      // Conditionally set showFav based on viewport width
+      setShowFav(viewportWidth <= 768); // Show on small screens, hide on larger screens
+    };
+
+    // Add a resize event listener to check viewport width on window resize
+    window.addEventListener('resize', handleResize);
+
+    // Call the handleResize function initially to set the initial state
+    handleResize();
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div
       className='trending-card-wrapper'
       onClick={navigateToDescription}
-      onMouseEnter={handleCardHover}
-      onMouseLeave={handleCardLeave}
+      onMouseEnter={() => setShowFav(true)} // Show on hover for large screens
+      onMouseLeave={() => setShowFav(false)} // Hide on mouse leave for large screens
     >
       <div className={`trending-card`}>
         <div className='trending-card-img'>
@@ -72,18 +85,18 @@ function TrendingCard({
         <div className='trending-category' style={categoryStyle}>
           {trendingCardCategory}
         </div>
-        {showFav && (
-          <div className='favourite-icon'  style={{ position: "absolute", top: "10px", width:"50px",height:"50px" }}>
-            <img
-              className='heart-icon'
-              alt=''
-              src='https://www.beams.world/Assets/images/heart.svg'
-              onClick={favoritesHandler}
-              style={{ fill: showFav ? 'red' : 'none' ,}}
-            />
-          </div>
-        )}
       </div>
+      {showFav && (
+        <div className='favourite-icon1'>
+          <img
+            className='heart-icon'
+            alt=''
+            src='/Assets/images/heart.svg'
+            onClick={favoritesHandler}
+            style={{ fill: showFav ? 'red' : 'none' }}
+          />
+        </div>
+      )}
     </div>
   );
 }
