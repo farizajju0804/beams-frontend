@@ -5,8 +5,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Cookies, useCookies } from "react-cookie";
 export const Navbar = () => {
 	const [sidenav, setSidenav] = useState(false);
+	const [cookies,setCookie]=useCookies(["loggedIn"])
 
 	const navigate = useNavigate();
 	const {auth,setAuth}=useContext(AuthContext)
@@ -25,7 +27,7 @@ export const Navbar = () => {
 				onClick={() => {
 					setSidenav(!sidenav);
 				}}
-			>
+			> 
 				<GiHamburgerMenu color="white" size={20} />
 			</div>
 			<div className={sidenav ? "sidenav" : "sidenav disnone"}>
@@ -62,7 +64,7 @@ export const Navbar = () => {
 						className="spanpadding"
 						onClick={() => {
 							setSidenav(false);
-							if(localStorage.getItem("authToken")){
+							if(cookies.loggedIn){
 								navigate(`/beams`)
 							}
 							else{
@@ -70,7 +72,7 @@ export const Navbar = () => {
 							}
 						}}
 					>
-						Login
+						{cookies.loggedIn?"My Account":"Log In"}
 					</span>
 					<span
 						onClick={() => {

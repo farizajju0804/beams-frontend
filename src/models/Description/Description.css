@@ -169,6 +169,13 @@
     width: 13px;
     height: 13px;
     }
+
+    .favourite-icon-card{
+      width: 40px;
+      height: 40px;
+      right: 10%;
+    }
+
     .favourite-icon{
       width: 40px;
       height: 40px;

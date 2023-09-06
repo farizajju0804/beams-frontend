@@ -45,7 +45,7 @@ const Description = ({
           
         />
         <div className="favourite-icon" onClick={favoritesHandler}>
-          <img className="heart-icon" alt="" src="https://beams-frontend.vercel.app/Assets/images/heart.svg" />
+          <img className="heart-icon" alt="" src="https://www.beams.world/Assets/images/heart.svg" />
         </div>
       </div>
       <div className="article-description-content-co">
@@ -61,28 +61,28 @@ const Description = ({
           <div className="article-cta-box">
             <div className="read-cta" onClick={()=>navigate(`/articleread/${id}`)}>
               <div className="read-btn">
-                <img className="vector1-icon" alt="" src="https://beams-frontend.vercel.app/Assets/images/book.svg" />
+                <img className="vector1-icon" alt="" src="https://www.beams.world/Assets/images/book.svg" />
                 <div className="read-btn-text">Read</div>
               </div>
               <div className="time-info">
                 <img
                   className="vuesaxbulkclock-icon"
                   alt=""
-                  src="https://beams-frontend.vercel.app/Assets/images/clock.svg"
+                  src="https://www.beams.world/Assets/images/clock.svg"
                 />
                 <div className="time">5 min</div>
               </div>
             </div>
             <div className="read-cta" >
               <div className="read-btn" onClick={()=>navigate(`/maxbeamsong/${id}`)}>
-                <img className="headset-icon" alt="" src="https://beams-frontend.vercel.app/Assets/images/headset.svg" />
+                <img className="headset-icon" alt="" src="https://www.beams.world/Assets/images/headset.svg" />
                 <div className="read-btn-text">Listen</div>
               </div>
               <div className="time-info">
                 <img
                   className="vuesaxbulkclock-icon"
                   alt=""
-                  src="https://beams-frontend.vercel.app/Assets/images/clock.svg"
+                  src="https://www.beams.world/Assets/images/clock.svg"
                 />
                 <div className="time">{time}</div>
               </div>

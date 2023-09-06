@@ -27,11 +27,12 @@ export const Signup = () => {
   const [passupper, setPassupper] = useState(false);
   const [passlower, setPasslower] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [checked,setChecked]=useState(true)
   const navigate = useNavigate();
 
   const { setUser,auth,setAuth } = useContext(AuthContext);
 
+  
   useEffect(()=>{
       sessionStorage.setItem("login",false)
   },[])
@@ -102,6 +103,13 @@ export const Signup = () => {
       toast.error("Check Password");
       return;
     }
+
+    if(!checked){
+      toast.error("Please agree to our terms and conditions")
+      return
+    }
+
+
 
     signUpcall();
   };
@@ -280,7 +288,7 @@ export const Signup = () => {
         </div>
         <div className="loginoption">
           <div className="signupremember">
-            <input type="checkbox" id="logincheck" className="custom-checkbox" defaultChecked />
+            <input type="checkbox" id="logincheck" className="custom-checkbox" defaultChecked onClick={()=>setChecked((prev)=>!prev)} />
             <label htmlFor="logincheck">
               You agree to our{" "}
               <a

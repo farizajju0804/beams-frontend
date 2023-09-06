@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import { API_Photo } from "../../constants";
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
+import { RxImage } from "react-icons/rx";
 export const LoggedinNav = () => {
   const { user, setUserData, isLoggedIn, setisLoggedIn } = useContext(AuthContext);
   const [dropdown, setDropdown] = useState(false);
@@ -26,7 +27,7 @@ export const LoggedinNav = () => {
     user? 
     <div className="loggedinnav">
       <img className="logged-logo"
-      src="https://beams-frontend.vercel.app/Assets/images/logo.png" alt=""
+      src="https://www.beams.world/Assets/images/logo.png" alt=""
         onClick={() => {
           navigate("/"); 
         }}
@@ -46,7 +47,12 @@ export const LoggedinNav = () => {
             src={API_Photo + user.Profilepic.url}
             alt=""
           />:
-          <p>{user.email.charAt(0).toUpperCase()}</p>
+          <img
+						src={
+						"https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"
+						}
+						alt=""
+						/>
           }
           
           <span>{user ? (user.name === null ? user.username : user.name) : ""}</span>

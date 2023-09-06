@@ -227,7 +227,7 @@ export const Notes = () => {
 										date={item.Date}
 										NoteContent={item.NoteContent}
 										noteitemid={item.id}
-										beamid={item.beamid}
+										beamid={item.Beamid}
 										BeamName={item.BeamName}
 										readmore={opennotePopup}
 									></NotesCard>

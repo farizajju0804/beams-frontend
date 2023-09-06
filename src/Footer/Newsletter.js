@@ -23,7 +23,21 @@ function Newsletter() {
         return
       }
       else{
-        toast.success("Subscibed successfully")
+          const res1=await fetch(`https://plankton-app-tafca.ondigitalocean.app/send-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to:mail,
+          subject:"test email",
+          text:`you just subscribed!!!`
+        }),
+      }).then(async(res)=>{toast.success("email sent successfully")
+            const jsonData=await res.json()
+            console.log(jsonData)
+            setMail('')
+    })
 
         const res2=await  axios.post(`${API}/newsletters`,{data:{email:mail}})
           .then((res)=>console.log(res))

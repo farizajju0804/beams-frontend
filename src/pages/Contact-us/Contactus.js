@@ -3,27 +3,32 @@ import './Contactus.css'
 import { Location, Sms} from 'iconsax-react';
 import { useState, useEffect } from 'react';
 import { Toaster,toast } from 'react-hot-toast';
-
+import { ClipLoader } from 'react-spinners';
 function Contactus() {
     const [isMobileViewport, setIsMobileViewport] = useState(window.innerWidth <= 912);
     const [form,setForm]=useState({name:"",email:"",message:""})
+    const [loading,setLoading]=useState(false)
     const changeHandler=(event)=>{
       setForm({...form,[event.target.id]:event.target.value})
     }
     const submitHandler=(e)=>{
-      e.preventDefault()
-
+      e.preventDefault()  
+      setLoading(true)
       fetch(`https://plankton-app-tafca.ondigitalocean.app/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          to:"mbawri@gmail.com",
+          to:"mohamednasim3108@gmail.com",
           subject:"Contact Form Response",
           text:`name:${form.name} email:${form.email} message:${form.message}`
         }),
-      }).then((res)=>res.json()).then((res)=>toast.success("email sent successfully!"))
+      }).then((res)=>res.json()).then((res)=>{
+        console.log(res)
+        toast.success("email sent successfully!")
+        setLoading(false)
+      })
     }
     useEffect(() => {
       const handleResize = () => {
@@ -91,7 +96,8 @@ function Contactus() {
                 <textarea className="input-field message" id="message" type="textarea" rows="5" cols="40" name=""  placeholder='Message' onChange={changeHandler}/>
                 </div>
                 <div className='form-row-4'>
-                  <button className="form-btn" type="submit">Send Message</button>
+                  <button className="form-btn" type="submit">{loading ? <ClipLoader color="white" size={23}></ClipLoader> : "Send Message"}
+</button>
                 </div>
                 
               </form>

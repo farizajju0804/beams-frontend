@@ -11,6 +11,25 @@
     width: 100%;
 }
 
+#favHeart{
+    display: none;
+}
+
+#heartImg{
+    transition:all 300ms ease-in-out
+}
+
+#heartImg:hover{
+    opacity: 0.5;
+}
+
+#favHeart:hover ~ #heartImg{
+    opacity: 0.5;
+}
+
+#hoverElement:hover ~ #favHeart{
+    display: flex; /* Change the text color to red when element1 is hovered */
+  }
 .trending-card-title{
     font-family: var(--font-poppins);
     font-size: 20px;
