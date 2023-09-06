@@ -23,17 +23,7 @@ function Newsletter() {
         return
       }
       else{
-          const res1=await fetch(`https://smtp-server-2b9c.onrender.com/send-email`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          to:mail,
-          subject:"test email",
-          text:`you just subscribed!!!`
-        }),
-      }).then((res)=>toast.success("email sent successfully"))
+        toast.success("Subscibed successfully")
 
         const res2=await  axios.post(`${API}/newsletters`,{data:{email:mail}})
           .then((res)=>console.log(res))

@@ -261,7 +261,7 @@ const ArticleRead = () => {
 						}}
 					>
 						<BsPencilSquare size={20} />
-						<span>Note</span>
+						{/* <span>Note</span> */}
 					</div>
       <Toaster></Toaster>
         {sortedComponents.map((component, index) => (

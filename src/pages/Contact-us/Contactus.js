@@ -13,7 +13,7 @@ function Contactus() {
     const submitHandler=(e)=>{
       e.preventDefault()
 
-      fetch(`https://smtp-server-2b9c.onrender.com/send-email`, {
+      fetch(`https://plankton-app-tafca.ondigitalocean.app/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
