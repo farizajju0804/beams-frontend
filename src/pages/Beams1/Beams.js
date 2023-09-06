@@ -4,6 +4,7 @@ import LowCard from '../../models/LowCard/LowCard'
 import TrendingCard from '../../models/TrendingCard/TrendingCard'
 import { useState,useContext } from 'react'
 import { API } from '../../constants'
+import { toast, Toaster } from "react-hot-toast";
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 // import { useCookies } from 'react-cookie'
 function Beams() {
@@ -54,6 +55,7 @@ function Beams() {
   
   return (
     <div className='beams-section' >
+       <Toaster></Toaster>
       
           {user?
         <div>

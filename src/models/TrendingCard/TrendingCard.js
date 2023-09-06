@@ -1,48 +1,91 @@
-import React, { useState } from 'react'
-import './TrendingCard.css'
-import { useNavigate } from 'react-router-dom'
-import { API_Photo } from '../../constants'
-import "../../models/Description/Description.css"
-function TrendingCard({trendingCardImg,trendingCardTitle,trendingCardDescription,trendingCardCategory,trendingCardCategoryColor,trendingCardCategoryBgColor,articleId,show,altTitle}) {
-    const navigate=useNavigate()
-    const [showFav,setShowFav]=useState(false)
-    const categoryStyle = {
-        backgroundColor: trendingCardCategoryBgColor,
-        color: trendingCardCategoryColor
-      }
-      console.log(altTitle)
-  return (
-    <>
-    
-    <div className={`trending-card `} id="parent" onClick={(e)=>{
-    if(show)   console.log(e.target.id)
+import React, { useState, useContext } from 'react';
+import './TrendingCard.css';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { API, API_Photo } from '../../constants';
+import '../../models/Description/Description.css';
 
-    }}
-    
+function TrendingCard({
+  trendingCardImg,
+  trendingCardTitle,
+  trendingCardDescription,
+  trendingCardCategory,
+  trendingCardCategoryColor,
+  trendingCardCategoryBgColor,
+  articleId,
+  show,
+  altTitle,
+}) {
+  const navigate = useNavigate();
+  const { addfav } = useContext(AuthContext);
+
+  const [showFav, setShowFav] = useState(false);
+
+  const categoryStyle = {
+    backgroundColor: trendingCardCategoryBgColor,
+    color: trendingCardCategoryColor,
+  };
+
+  const favoritesHandler = (event) => {
+    event.stopPropagation();
+
+    // Toggle the favorite status in the local state
+    setShowFav(!showFav);
+
+    // Send a request to add/remove the article from favorites
+    addfav({ articleId });
+  };
+
+  const navigateToDescription = () => {
+    navigate(`/article-description/${articleId}`);
+  };
+
+  const handleCardHover = () => {
+    setShowFav(true);
+  };
+
+  const handleCardLeave = () => {
+    setShowFav(false);
+  };
+
+  return (
+    <div
+      className='trending-card-wrapper'
+      onClick={navigateToDescription}
+      onMouseEnter={handleCardHover}
+      onMouseLeave={handleCardLeave}
     >
-    
-            
-    <div className="favourite-icon"  style={{top:"10px",width:"3rem",height:"3rem"}}>
-            <img className="heart-icon"   alt="" src="https://www.beams.world/Assets/images/heart.svg" />
-          </div>
-        
-        <div className='trending-card-img' id="hoverElement" style={{opacity:showFav?"o.5":"1",transition:"all 300ms ease-in-out"}} >
-        
-            <img id="heartImg" src={API_Photo+trendingCardImg.data.attributes.url}  alt=""/>
+      <div className={`trending-card`}>
+        <div className='trending-card-img'>
+          <img
+            id='heartImg'
+            src={API_Photo + trendingCardImg.data.attributes.url}
+            alt=''
+          />
         </div>
         <div className='trending-card-title'>
-            {show?trendingCardTitle:altTitle}
+          {show ? trendingCardTitle : altTitle}
         </div>
         <div className='trending-card-desc'>
-            {show?trendingCardDescription:altTitle}
+          {show ? trendingCardDescription : altTitle}
         </div>
         <div className='trending-category' style={categoryStyle}>
-            {trendingCardCategory}
+          {trendingCardCategory}
         </div>
+        {showFav && (
+          <div className='favourite-icon'  style={{ position: "absolute", top: "10px", width:"50px",height:"50px" }}>
+            <img
+              className='heart-icon'
+              alt=''
+              src='/Assets/images/heart.svg'
+              onClick={favoritesHandler}
+              style={{ fill: showFav ? 'red' : 'none' ,}}
+            />
+          </div>
+        )}
+      </div>
     </div>
-
-    </>
-  )
+  );
 }
 
-export default TrendingCard
+export default TrendingCard;
