@@ -25,13 +25,13 @@ function Feature1() {
                   </div>
                   <div className="topic-box">
                     <img className="topic-bubble" alt="topicimg" src="Assets/images/Senolytics-img.png" />
-                    <div className="topic">SENOLYTICS</div>
+                    <div className="topic">METAMATERIALS</div>
                   </div>
                   </div>
                   <div className="topic-row">
                 <div className="topic-box">
                     <img className="topic-bubble" alt="topicimg" src="Assets/images/CRISPR-img.png" />
-                    <div className="topic">CRISPR</div>
+                    <div className="topic">BCI</div>
                   </div>
                   </div>
                  
