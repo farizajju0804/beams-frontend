@@ -20,7 +20,7 @@ function Contactus() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          to:"mohamednasim3108@gmail.com",
+          to:"mbawri@gmail.com",
           subject:"Contact Form Response",
           text:`name:${form.name} email:${form.email} message:${form.message}`
         }),
