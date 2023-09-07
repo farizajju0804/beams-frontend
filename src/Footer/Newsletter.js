@@ -20,6 +20,7 @@ function Newsletter() {
       const resdata=res.data.data.map((el)=>el.attributes.email)
       if(resdata.includes(mail)){
         toast.error("email already exists")
+        setMail('')
         return
       }
       else{
