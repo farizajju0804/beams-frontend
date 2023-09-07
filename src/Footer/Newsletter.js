@@ -32,7 +32,7 @@ function Newsletter() {
         body: JSON.stringify({
           to:mail,
           subject:"Beams-Newsletter",
-          text:`you just subscribed!!!`
+          text:`You just subscribed!!!`
         }),
       }).then(async(res)=>{toast.success("Subscribed successfully")
             const jsonData=await res.json()
