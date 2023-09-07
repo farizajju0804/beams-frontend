@@ -37,7 +37,9 @@ function TrendingCard({
   };
 
   const navigateToDescription = () => {
-    navigate(`/article-description/${articleId}`);
+    if (show) {
+      navigate(`/article-description/${articleId}`);
+    }
   };
 
   useEffect(() => {
@@ -45,8 +47,8 @@ function TrendingCard({
       // Get the viewport width
       const viewportWidth = window.innerWidth;
 
-      // Conditionally set showFav based on viewport width
-      setShowFav(viewportWidth <= 768); // Show on small screens, hide on larger screens
+      // Conditionally set showFav based on viewport width and show prop
+      setShowFav(viewportWidth <= 768 && show); // Show on small screens with show state
     };
 
     // Add a resize event listener to check viewport width on window resize
@@ -59,16 +61,16 @@ function TrendingCard({
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [show]); // Added `show` as a dependency to handle changes
 
   return (
     <div
-      className='trending-card-wrapper'
+      className={`trending-card-wrapper`}
       onClick={navigateToDescription}
       onMouseEnter={() => setShowFav(true)} // Show on hover for large screens
       onMouseLeave={() => setShowFav(false)} // Hide on mouse leave for large screens
     >
-      <div className={`trending-card`}>
+      <div className={` ${!show ? 'hidden-card' : 'trending-card'}`}>
         <div className='trending-card-img'>
           <img
             id='heartImg'
@@ -76,7 +78,7 @@ function TrendingCard({
             alt=''
           />
         </div>
-        <div className='trending-card-title'>
+        <div className={` ${!show ? 'hidden-title' : 'trending-card-title'}`}>
           {show ? trendingCardTitle : altTitle}
         </div>
         <div className='trending-card-desc'>
@@ -86,7 +88,7 @@ function TrendingCard({
           {trendingCardCategory}
         </div>
       </div>
-      {showFav && (
+      {show && showFav && (
         <div className='favourite-icon1'>
           <img
             className='heart-icon'

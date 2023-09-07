@@ -111,4 +111,8 @@
         gap: 0px;
     }
     
+.trending-content-container{
+    gap: 50px;
+}
+    
 }
