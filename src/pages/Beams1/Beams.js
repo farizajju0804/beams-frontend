@@ -32,13 +32,14 @@ function Beams() {
             const timeDifference = currentDate - serverDate;
             const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
             const showContents=Math.floor((daysDifference/3)) 
-            
+            console.log(daysDifference)
+            console.log(timeDifference)
             const mapData=trending.data.map((el,index)=>{
                if(user.role.name==="admin") return {...el.attributes,show:true}
                 if (index<=showContents || index===0) return {...el.attributes,show:true}
-                else return {...el.attributes,show:false}
+                else return {...el.attributes,show:false,remainingTime:Math.floor(((index*259200000)-timeDifference)/(3600*1000))}
             })
-         
+            
             setTrending(mapData)
             
           })
@@ -80,6 +81,7 @@ function Beams() {
                 {
                     trending?
                     trending.map((trending)=><TrendingCard
+                    toast={(msg)=>toast.error(msg)}
                     {...trending}
                     />)
                     :

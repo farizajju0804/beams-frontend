@@ -58,10 +58,6 @@ export const Resetpass = () => {
 		<div className="loginpage">
 			<div>
 				<Toaster
-					containerStyle={{
-						position: "absolute",
-						top: "90px"
-					}}
 				/>
 			</div>
 			<div className="logincont">

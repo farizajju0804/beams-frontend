@@ -15,6 +15,8 @@ function TrendingCard({
   articleId,
   show,
   altTitle,
+  toast,
+  remainingTime
 }) {
   const navigate = useNavigate();
   const { addfav } = useContext(AuthContext);
@@ -39,6 +41,9 @@ function TrendingCard({
   const navigateToDescription = () => {
     if (show) {
       navigate(`/article-description/${articleId}`);
+    }
+    else{
+      toast(`Come back after ${remainingTime} hrs to unlock this beam`)
     }
   };
 
@@ -74,7 +79,7 @@ function TrendingCard({
         <div className='trending-card-img'>
           <img
             id='heartImg'
-            src={API_Photo + trendingCardImg.data.attributes.url}
+            src={show? API_Photo + trendingCardImg.data.attributes.url : 'Assets/images/gift-bg.svg'}
             alt=''
           />
         </div>
