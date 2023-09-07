@@ -35,7 +35,7 @@ function Beams() {
             console.log(timeDifference)
             const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
             console.log(daysDifference)
-            const showContents=Math.floor((daysDifference/2)) 
+            const showContents=Math.floor((daysDifference/3)) 
             console.log(showContents)
             console.log("set..")
             
