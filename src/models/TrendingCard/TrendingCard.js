@@ -79,7 +79,7 @@ function TrendingCard({
         <div className='trending-card-img'>
           <img
             id='heartImg'
-            src={show? API_Photo + trendingCardImg.data.attributes.url : 'Assets/images/gift-bg.svg'}
+            src={show? API_Photo + trendingCardImg.data.attributes.url : 'Assets/images/gift.png'}
             alt=''
           />
         </div>
