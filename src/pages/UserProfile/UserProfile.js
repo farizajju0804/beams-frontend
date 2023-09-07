@@ -36,7 +36,6 @@ export const UserProfile = () => {
 		fetch(`${API}/users/${user.id}?populate=*`)
 		.then((res)=>res.json())
 		.then((res)=>{
-			console.log(res)
 			auth.setUserData(res)})
 	}
 
@@ -45,7 +44,6 @@ export const UserProfile = () => {
 		formdata.append("files", file);
 		formdata.append("ref", "plugin::users-permissions.user");
 		formdata.append("refid", `${token}`);
-		console.log(file[0]);
 
 		const data = await fetch(`${API}/upload`, {
 			method: "POST",
@@ -58,12 +56,10 @@ export const UserProfile = () => {
 		})
 			.then((res) => res.json())
 			.then((e) => {
-				console.log("response",e);
 			});
 	};
 
 	const updateProfile = async () => {
-		console.log("update")
 		await fetch(`${API}/users/${user.id}`, {
 			method: "PUT",
 			headers: {
@@ -82,7 +78,6 @@ export const UserProfile = () => {
 				if(img){
 			    uploadPhoto(img)
 				}
-				console.log(e);
 			});
 	};
 
@@ -91,7 +86,6 @@ export const UserProfile = () => {
 		formdata.append("ref", "plugin::users-permissions.user");
 		formdata.append("refId", `${user.id}`);
 		formdata.append("field", "Profilepic");
-		console.log(formdata)
 		e.preventDefault();
 
 		await fetch(`${API}/upload`, {
@@ -233,7 +227,6 @@ export const UserProfile = () => {
 									style={{ marginTop: "40px" }}
 									value={phone}
 									onChange={(phone) => {
-										console.log(phone);
 										setPhone(phone);
 									}}
 								/>
@@ -254,7 +247,6 @@ export const UserProfile = () => {
 									style={{ marginTop: "40px" }}
 									value={phone}
 									onChange={(phone) => {
-										console.log(phone);
 										setPhone(phone);
 									}}
 								/>

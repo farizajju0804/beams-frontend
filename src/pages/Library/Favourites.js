@@ -24,7 +24,7 @@ export const Favourites = () => {
 	const indexoffirst = indexoflast - postsperpage;
 	const [sortop, setSortop] = useState(2);
 	const [favouriteData,setFavouriteData]=useState([])
-	console.log(favourites);
+
 	useEffect(()=>{
 		if(user){
 		fetch(`${API}/users/${user.id}?populate=*`).then((res) => res.json())
@@ -32,7 +32,7 @@ export const Favourites = () => {
           	const userFavs=data.Favourites.map((el)=>el.articleId)
 			fetch(`${API}/descriptions?populate=*`).then((res) => res.json())
 			.then((res)=>{
-				console.log("favs",res.data.filter((article)=>userFavs.includes(article.attributes.articleId)))
+				// console.log("favs",res.data.filter((article)=>userFavs.includes(article.attributes.articleId)))
 				const favouriteCards=res.data.filter((article)=>userFavs.includes(article.attributes.articleId))
 				.map((el)=>{
 					return {

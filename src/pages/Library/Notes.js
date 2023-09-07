@@ -28,7 +28,7 @@ export const Notes = () => {
 
 	const navigate = useNavigate();
 	const { notes, changeNotes, notesPersist,user } = useContext(AuthContext);
-	console.log(notes);
+
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
 	const indexoflast = currentPage * postsperpage;

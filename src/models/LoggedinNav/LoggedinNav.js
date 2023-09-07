@@ -22,7 +22,7 @@ export const LoggedinNav = () => {
   const dropdownRef = useRef(null); // Define a ref
 
   useEffect(() => {
-    console.log(user);
+  
 
     // Add event listener to close dropdown when clicking outside
     function handleClickOutside(event) {

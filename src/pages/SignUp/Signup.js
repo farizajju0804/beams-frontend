@@ -54,9 +54,9 @@ export const Signup = () => {
       });
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       if (data?.error) {
-        console.log("error")
+        // console.log("error")
         throw data?.error;
       } else {
         setUser(data.user);

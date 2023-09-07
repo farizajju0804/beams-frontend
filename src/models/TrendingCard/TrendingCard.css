@@ -13,7 +13,7 @@
     border-radius: 12px;
 }
 
-#favHeart{
+/* #favHeart{
     display: none;
 }
 
@@ -30,12 +30,12 @@
   
 #favHeart:hover ~ #heartImg{
     opacity: 0.5;
-}
+} */
 .trending-card-wrapper{
     position: relative;
-    width: 25%;
+    width: 85%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -90,7 +90,7 @@
 
 @media screen and (max-width:912px) {
     .trending-card,.hidden-card{
-        width: 40%;
+        width: 100%;
         justify-content: space-evenly;
     }
     .trending-card-title{
@@ -133,7 +133,7 @@
         padding: 20px 20px 0;
     }
     .trending-card,.hidden-card{
-        width: 80%;
+        width: 100%;
     }
     .favourite-icon1 {
         position: absolute;

@@ -40,13 +40,12 @@ const AuthProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((e) => {
-        console.log(e);
+
         // fetchLoggedInUser();
       });
   };
 
   const addFavourites = (item) => {
-    console.log(item)
     var itemstatus = false;
 
     Favourites.forEach((fav) => {
@@ -65,14 +64,10 @@ const AuthProvider = ({ children }) => {
   };
 
   const deleteFavourites = (item) => {
-    console.log(item);
-    console.log(Favourites);
     const filteredfavs = Favourites.filter((e) => {
       return e.articleId != item.articleId;
       // console.log(e.id, item.id);
     });
-
-    console.log(filteredfavs);
 
     setFavourites(filteredfavs);
     pushfav(filteredfavs);
@@ -97,7 +92,7 @@ const AuthProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((e) => {
-        console.log(e);
+
       });
   };
 
@@ -111,7 +106,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const delhighlight = (id) => {
-    console.log(id);
     const newhightlights = highlightedText.filter((highlight) => {
       if (highlight.id === id) {
         return false;
@@ -120,7 +114,7 @@ const AuthProvider = ({ children }) => {
       }
     });
 
-    console.log(newhightlights);
+  
 
     setHighlightedText(newhightlights);
     toast.promise(pushHighlights(newhightlights), {
@@ -135,7 +129,7 @@ const AuthProvider = ({ children }) => {
   //Notes
 
   const AddtoNotes = (BeamName, BeamId, NoteItem) => {
-    console.log(BeamId)
+  
     const newnote = {
       BeamName,
       Beamid: BeamId,
@@ -143,7 +137,7 @@ const AuthProvider = ({ children }) => {
       Date: NoteItem.date,
     };
       setNotes([...Notes, newnote]);
-      console.log(Notes)
+   
     toast.promise(pushNotes([...Notes, newnote]), {
       loading: "Adding Note",
       success: <b>Note Added</b>,
@@ -198,7 +192,7 @@ const AuthProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((e) => {
-        console.log(e);
+    
       });
   };
 
@@ -219,7 +213,7 @@ const AuthProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((e) => {
-        console.log(e);
+       
       });
   };
   //updatehighlightfirst
@@ -256,25 +250,25 @@ const AuthProvider = ({ children }) => {
   //newsletter
 
   const fetchLoggedInUser = async (token) => {
-    console.log("inside fetchLogin")
+    
     setIsLoading(true);
     try {
       const response = await fetch(`${API}/users/me?populate=*`, {
         headers: { Authorization: `${BEARER} ${token}` },
       });
       const data = await response.json();
-      console.log(data)
+     
       setUserData(data);
       cookies.set('loggedIn',"true", {path: '/', expires: new Date(Date.now()+(30 * 60 * 1000))})
-      console.log(data)
+      
       setFavourites(data.Favourites);
-      console.log(data.Favourites)
+  
       setFavpersist(data.Favourites);
       setNotes(data.Notes);
       setnotesPersist(data.Notes);
       setHighlightedText(data.Highlights);
       setHightlightpersist(data.Highlights);
-      console.log("datafound");
+     
       setisLoggedIn(true);
     } catch (error) {
       console.error(error);

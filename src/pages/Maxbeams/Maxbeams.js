@@ -282,7 +282,7 @@ export const Maxbeams = () => {
 									className="sliderarrows"
 									size={26}
 									onClick={() => {
-										console.log(trendingmicrobeams.length);
+										// console.log(trendingmicrobeams.length);
 										if (scrollercontrol < 560 * (trendingmicrobeams.length - 1))
 											setscrollercontrol(scrollercontrol + 560);
 									}}

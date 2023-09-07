@@ -5,7 +5,6 @@ import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
   const { user, isLoggedIn } = useContext(AuthContext);
-  console.log(isLoggedIn);
 
   if (localStorage.getItem("authToken")) {
     return children;

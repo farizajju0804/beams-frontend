@@ -15,36 +15,30 @@ function Beams() {
   
   useEffect(()=>{  
     if(user){
-      console.log("user",user)
+    
       const expirationTime = new Date();
       expirationTime.setSeconds(expirationTime.getSeconds+10);
       
         fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
         .then((launch)=>{
-          console.log(launch.data[0].attributes)
+          
           setLaunch(launch.data[0].attributes)})
 
           fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
           .then((trending)=>{ 
             
             const serverDate = new Date(user.createdAt);
-            console.log(serverDate)
             const currentDate = new Date(); 
-            console.log(currentDate)
             const timeDifference = currentDate - serverDate;
-            console.log(timeDifference)
             const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
-            console.log(daysDifference)
             const showContents=Math.floor((daysDifference/3)) 
-            console.log(showContents)
-            console.log("set..")
             
             const mapData=trending.data.map((el,index)=>{
                if(user.role.name==="admin") return {...el.attributes,show:true}
                 if (index<=showContents || index===0) return {...el.attributes,show:true}
                 else return {...el.attributes,show:false}
             })
-            console.log(mapData)
+         
             setTrending(mapData)
             
           })

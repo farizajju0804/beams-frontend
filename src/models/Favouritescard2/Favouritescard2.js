@@ -16,7 +16,6 @@ import { MdZoomOutMap } from "react-icons/md";
 function Favouritescard2({ completed, id, title, Desc, typeofbeam, idofbeam }) {
 	const navigate = useNavigate();
 
-	console.log(id);
 	const [dropdown, setDropdown] = useState(false);
 	const { delfav } = useAuthContext();
 	const [displayPopUp, setDisplayPopUp] = useState(false);

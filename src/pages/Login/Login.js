@@ -38,7 +38,7 @@ export const Login = () => {
   
   const logIn = async () => {
     
-    console.log("inside login!!")
+  
     setIsLoading(true);
     try {
       const value = {
@@ -58,10 +58,10 @@ export const Login = () => {
         throw data?.error;
       } else {
         if (rememberme) {
-          console.log(data.jwt)
+        
           SetToken(data.jwt);
         }
-        console.log(data.user)
+      
         sessionStorage.setItem("uid",data.user.id)
         setUser(data.user);
 

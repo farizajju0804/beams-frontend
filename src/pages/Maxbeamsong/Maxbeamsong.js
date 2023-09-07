@@ -30,7 +30,7 @@ export const Maxbeamsong = () => {
         fetch(`${API}/audio-players?populate=*`).then((res) => res.json())
 		.then((audio)=>{
 			 const id=audio.data.findIndex((audio)=>audio.attributes.articleId===Aid)
-			 console.log(audio.data[id].attributes)
+			//  console.log(audio.data[id].attributes)
 			 setAudio(audio.data[id].attributes)
 		})
 

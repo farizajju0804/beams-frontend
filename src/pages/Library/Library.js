@@ -23,11 +23,11 @@ export const Library = () => {
 
 	const [title, setTitle] = useState("");
 
-	console.log(hightlightpersist);
+	// console.log(hightlightpersist);
 
 	useEffect(() => {
-		console.log("high:",hightlights)
-		console.log(sortop, title);
+		// console.log("high:",hightlights)
+		// console.log(sortop, title);
 	}, [sortop, title]);
 
 	const indexoflast = currentPage * postsperpage;

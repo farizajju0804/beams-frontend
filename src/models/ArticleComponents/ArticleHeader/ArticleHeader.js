@@ -9,7 +9,6 @@ const ArticleHeader = ({
   introMainImage,
   bgcolor,
 }) => {
-  console.log(introMainImage);
   const bgStyle = {
     backgroundColor: bgcolor,
     order: order,

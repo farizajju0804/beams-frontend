@@ -52,8 +52,7 @@ const ArticleRead = () => {
 			setSelectedText(window.getSelection().toString().trim());
 			setX(e.pageX);
 			setY(e.pageY);
-			console.log(e.pageX);
-			console.log(e.pageY);
+		
 			setDisplayPopUp(true);
 			console.log(displayPopUp);
 			console.log(e);

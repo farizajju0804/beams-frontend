@@ -36,7 +36,7 @@ function Newsletter() {
         }),
       }).then(async(res)=>{toast.success("Subscribed successfully")
             const jsonData=await res.json()
-            console.log(jsonData)
+        
             setMail('')
     })
 

@@ -11,7 +11,6 @@ export const NotesCard = ({ date, NoteContent, noteitemid, beamid,BeamName,name 
 	const { delfullnote } = useContext(AuthContext);
 	const [deletionpopup, setDeletionpopup] = useState(false);
 	const navigate=useNavigate()
-	console.log({ date, NoteContent, noteitemid, beamid,BeamName,name })
 	return (
 		<div className="favouritesnewcardpage" >
 			{deletionpopup && (
