@@ -91,7 +91,7 @@ function TrendingCard({
       {show && showFav && (
         <div className='favourite-icon1'>
           <img
-            className='heart-icon'
+            className='heart-icon1'
             alt=''
             src='/Assets/images/heart.svg'
             onClick={favoritesHandler}
