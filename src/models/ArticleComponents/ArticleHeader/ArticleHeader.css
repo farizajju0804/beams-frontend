@@ -57,7 +57,7 @@
     overflow: hidden;
     background-size: cover;
     object-fit: cover;
-    background-position: center;
+    background-position: top;
     height: 360px;
   }
   .intro-content {
