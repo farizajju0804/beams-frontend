@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Maxbeamscard.css";
 import maxbeammock from "../../assets/maxbeammock.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { SlNote } from "react-icons/sl";
 import { AiOutlineCloseCircle, AiOutlineShareAlt, AiFillHeart } from "react-icons/ai";

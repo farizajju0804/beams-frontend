@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [failMsg,setFailMsg]=useState(undefined)
   const authToken = getToken();
-  
+  const [articles,setArticles]=useState([])
   //Favourites
 
   const pushfav = async (item) => {
@@ -325,7 +325,9 @@ const AuthProvider = ({ children }) => {
         setFailMsg,
         failMsg,
         auth,
-        setAuth
+        setAuth,
+        articles,
+        setArticles
       }}
     >
       {children}

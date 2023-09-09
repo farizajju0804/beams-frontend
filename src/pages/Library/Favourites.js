@@ -17,7 +17,7 @@ import TrendingCard from "../../models/TrendingCard/TrendingCard";
 import { API } from "../../constants";
 export const Favourites = () => {
 	const navigate = useNavigate();
-	const { favourites, favpersist, changefav,user } = useContext(AuthContext);
+	const { favourites, favpersist, changefav,user,articles,setArticles } = useContext(AuthContext);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsperpage, setPostsperpage] = useState(6);
 	const indexoflast = currentPage * postsperpage;
@@ -27,27 +27,14 @@ export const Favourites = () => {
 
 	useEffect(()=>{
 		if(user){
-		fetch(`${API}/users/${user.id}?populate=*`).then((res) => res.json())
-        .then((data)=>{
-          	const userFavs=data.Favourites.map((el)=>el.articleId)
-			fetch(`${API}/descriptions?populate=*`).then((res) => res.json())
-			.then((res)=>{
-				// console.log("favs",res.data.filter((article)=>userFavs.includes(article.attributes.articleId)))
-				const favouriteCards=res.data.filter((article)=>userFavs.includes(article.attributes.articleId))
-				.map((el)=>{
-					return {
-						img:el.attributes.articleDescriptionImg,
-						title:el.attributes.articleDescriptionTitle,
-						desc:el.attributes.artilceDescriptionText,
-						idofbeam:el.attributes.articleId
-					}
-				}
-					)
-					setFavouriteData(favouriteCards)
-			})
-		  })
+
+		fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
+          .then((trending)=>{ 
+            setArticles(trending.data.map((el)=> { return {img:el.attributes.trendingCardImg,idofbeam:el.attributes.articleId,title:el.attributes.trendingCardTitle}}))
+          })
 		}
 	},[user])
+
 	return (
 		<>
 		{
@@ -132,10 +119,10 @@ export const Favourites = () => {
 					<FiChevronDown className="arrowselectposition" />
 				</div>
 			</div> */}
-			{favourites.length != 0 ? (
+			{favourites.length ? (
 				<div className="gridwrapper">
 						<div className="highlightdata fwrap">
-							{favouriteData
+							{articles.filter((el)=>favourites.map((el)=>el.articleId).includes(el.idofbeam))
 								.map((e) => {
 										return (
 											<FavouritesCard
