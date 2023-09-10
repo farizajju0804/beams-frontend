@@ -1,4 +1,4 @@
-.beamspage{
+/* .beamspage{
     width: 100%;
     background-color: #FAFAFA;
     display: flex;
@@ -22,10 +22,6 @@
 
 }
 
-/* .minibeamsbg{
-    
-    background-image: url("../../assets/microbeamsbannerbg.png");
-} */
 
 .microbeambg{
     
@@ -91,7 +87,7 @@
 
     .minibeams > span{
         margin-right: 25px !important; 
-        /* margin-top: -25px !important; */
+        margin-top: -25px !important;
         color: rgb(112, 112, 112) !important;
     }
 }
@@ -113,18 +109,7 @@
     width: 100%;
 }
 
-/* .minicardssection{
-    max-width: 1400px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-left: 80px;
-    padding-right: 80px;
-    margin-top: 30px;
-    position: relative;
-} */
+
 
 .minicardssection{
     padding-left: 80px;
@@ -135,7 +120,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    /* grid-auto-flow: column; */
+    grid-auto-flow: column;
     justify-items: center;
     align-items: center;  
     justify-content: center;
@@ -157,12 +142,7 @@
 
 }
 
-/* @media only screen and (max-width:528px) {
-    .minicardssection{
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
-    }
-} */
 
 .minibeams > span{
     align-self: flex-end;
@@ -250,7 +230,6 @@
 }
 
 .popupdata{
-    /* background-image: url('../../assets//Popupbg.png'); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -371,7 +350,7 @@
 
 .minicardssectionscroller{
 
-    /* right: 100px; */
+    right: 100px;
     display: flex;
     overflow-x: hidden;
    width: 1120px;
@@ -387,11 +366,10 @@
 .minicardssectionscroller::-webkit-scrollbar {
     display: none;
   }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
+
   .minicardssectionscroller {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
   }
 
 
@@ -402,9 +380,9 @@
 
     .minicardssectionscroller{
 
-        /* right: 100px; */
+        right: 100px;
         display: flex;
-        /* flex-direction: column; */
+        flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: center;
@@ -416,7 +394,7 @@
         display: flex;
         transition: right 0.3s ease;
         width: 100%;
-        /* flex-direction: column; */
+        flex-direction: column;
         flex-wrap: wrap ;
         align-items: center;
         justify-content: center;
@@ -489,13 +467,13 @@
 .suggestionlist{
     width: 261px;
     max-height: 200px;
-    /* height: 200px; */
+    height: 200px;
     background-color: #ffffff;
     position: absolute;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-top: 20px;
     border-radius: 20px;
-    /* padding: 20px; */
+    padding: 20px;
     overflow-y: scroll;
 }
 
@@ -535,4 +513,4 @@
 
 .suggestionlist > p:hover{
     background-color: rgb(246, 246, 246);
-}
+} */
