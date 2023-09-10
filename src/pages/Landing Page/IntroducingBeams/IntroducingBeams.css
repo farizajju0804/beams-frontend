@@ -32,7 +32,7 @@
   justify-content: flex-start;
   font-size: var(--font-size-2xl);
   color: var(--yellow);
-  font-family: var(--font-glimmer-of-light);
+  font-family: var(--font-poppins);
   padding: 5px 20px;
 }
 .beams-content {

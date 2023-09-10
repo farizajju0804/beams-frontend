@@ -20,7 +20,7 @@ function Feature1() {
                   </div>
                   <div className="topic-row2">
                 <div className="topic-box">
-                    <img className="topic-bubble" alt="topicimg" src="Assets/images/Synthetic-bio-Img.png" />
+                    <img className="topic-bubble" alt="topicimg" src="Assets/images/Synthetic-bio-Img.jpg" />
                     <div className="topic">SYNTHETIC <br></br>BIOLOGY</div>
                   </div>
                   <div className="topic-box">
