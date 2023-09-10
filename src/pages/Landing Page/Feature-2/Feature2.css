@@ -70,6 +70,7 @@
 .topic-img{
     width: 200px;
     border-radius: var(--br-xs) var(--br-xs) 0 0;
+    height: 110px;
   }
 
 .topic-title{
