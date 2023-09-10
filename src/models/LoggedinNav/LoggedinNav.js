@@ -46,7 +46,7 @@ export const LoggedinNav = () => {
         <div className="loggedinnav">
           <img
             className="logged-logo"
-            src="https://www.beams.world/Assets/images/logo.png"
+            src="https://www.beams.world/Assets/images/logo.webp"
             alt=""
             onClick={() => {
               navigate("/");

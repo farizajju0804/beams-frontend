@@ -24,7 +24,7 @@ function Newsletter() {
         return
       }
       else{
-          const res1=await fetch(`https://plankton-app-tafca.ondigitalocean.app/send-email`, {
+          const res1=await fetch(`https://stingray-app-pykyj.ondigitalocean.app/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

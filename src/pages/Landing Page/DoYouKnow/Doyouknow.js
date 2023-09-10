@@ -8,7 +8,7 @@ const Doyouknow = () => {
       <div className="people-have-even">
         People have even shorter attention spans than GOLDFISH.
       </div>
-      <img className="Goldfish" src="Assets/images/gold-Fish.webp" alt="Goldfish" />
+      <img className="Goldfish" src="Assets/images/gold-fish.webp" alt="Goldfish" />
     </section>
   );
 };

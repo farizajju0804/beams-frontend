@@ -14,7 +14,7 @@ function Contactus() {
     const submitHandler=(e)=>{
       e.preventDefault()  
       setLoading(true)
-      fetch(`https://plankton-app-tafca.ondigitalocean.app/send-email`, {
+      fetch(`https://stingray-app-pykyj.ondigitalocean.app/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ function Contactus() {
         body: JSON.stringify({
           to:"mbawri@gmail.com",
           subject:"Contact Form Response",
-          text:`name:${form.name} email:${form.email} message:${form.message}`
+          html:`<p>name:${form.name} email:${form.email} message:${form.message}</p>`
         }),
       }).then((res)=>res.json()).then((res)=>{
         console.log(res)

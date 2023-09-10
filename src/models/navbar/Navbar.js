@@ -15,7 +15,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar">
 			<img className="logo"
-				src={logo}
+				src="Assets/images/logo.webp"
 				alt=""
 				onClick={() => {
 					navigate("/");
