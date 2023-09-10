@@ -23,7 +23,7 @@ export const FavouritesCard = ({ completed, key, title, Desc, typeofbeam, idofbe
       }}
     >
       <div className="maxcardimg">
-      <img src={API_Photo+img.data.attributes.url} alt=""/>
+      <img src={img} alt=""/>
       </div>
       <div className="maxbeamdata">
         <h3>{title}</h3>
