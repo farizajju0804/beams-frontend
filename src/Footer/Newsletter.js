@@ -2,12 +2,12 @@ import React from 'react'
 import { useState } from 'react';
 import "./Footer.css"
 import { useAuthContext } from "../context/AuthContext";
-import { NewsletterPopUp } from "../models/NewsletterPopUp/NewsletterPopUp";
+// import { NewsletterPopUp } from "../models/NewsletterPopUp/NewsletterPopUp";
 import { Toaster, toast } from "react-hot-toast";
 import { API } from '../constants';
 import axios from 'axios';
 function Newsletter() {
-  const [newsletterpopup, setNewsletterpopup] = useState(false);
+  // const [newsletterpopup, setNewsletterpopup] = useState(false);
 	const [newletter, setNewletter] = useState("");
     const [mail, setMail] = useState('');
     const handleChange = event => {
@@ -32,7 +32,7 @@ function Newsletter() {
         body: JSON.stringify({
           to:mail,
           subject:"Beams-Newsletter",
-          text:`You just subscribed!!!`
+          html:"<p>Thanks for subscribing</p>"
         }),
       }).then(async(res)=>{toast.success("Subscribed successfully")
             const jsonData=await res.json()
@@ -49,13 +49,13 @@ function Newsletter() {
   return (
     <div className='newsletter'>
       <Toaster/>
-      {newsletterpopup && (
+      {/* {newsletterpopup && (
 				<NewsletterPopUp
 					handleClose={() => {
 						setNewsletterpopup(false);
 					}}
 				/>
-			)}
+			)} */}
     
     <div className='newsletter-container'>
     <div className='yellow-bg'>

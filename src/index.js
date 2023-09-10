@@ -10,13 +10,13 @@ import Beams from "./pages/Beams1/Beams";
 import { LoggedinNav } from "./models/LoggedinNav/LoggedinNav";
 import { Newsletter } from "./Footer/Newsletter";
 import { Footer } from "./Footer/Footer";
-import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
-import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
+// import { Maxbeams } from "./pages/Maxbeams/Maxbeams";
+// import { Maxbeampage } from "./pages/Maxbeampage/Maxbeampage";
 import { Maxbeamsong } from "./pages/Maxbeamsong/Maxbeamsong";
 import Aboutus from "./pages/About-us/About";
-import { Library } from "./pages/Library/Library";
+// import { Library } from "./pages/Library/Library";
 import { Favourites } from "./pages/Library/Favourites";
-import { Completed } from "./pages/Library/Completed";
+// import { Completed } from "./pages/Library/Completed";
 import { Notes } from "./pages/Library/Notes";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import { Redirectionpage } from "./pages/Redirectionpage/Redirectionpage";
@@ -25,7 +25,7 @@ import { Emailverification } from "./pages/Emailverification/Emailverification";
 import { Resetpass2 } from "./pages/ResetPass2/Resetpass2";
 import { VerificationSuccess } from "./pages/Login/VerificationSuccess";
 import { ResetSuccessfull } from "./pages/ResetPass2/ResetSuccessfull";
-import { MaxbeamRead } from "./pages/MaxbeamsRead/MaxbeamRead";
+// import { MaxbeamRead } from "./pages/MaxbeamsRead/MaxbeamRead";
 import { UserProfile } from "./pages/UserProfile/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import ScrollToTop from "./ScrollToTop";
@@ -33,7 +33,7 @@ import { Termsandconditions } from "./pages/TermandConditions/TermsandConditions
 import { PrivacyPolicies } from "./pages/PrivacyPolicies/PrivacyPolicies";
 import LandingPage from "./pages/Landing Page/LandingPage";
 import ArticleRead from "./pages/ArticleRead/ArticleRead";
-import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
+// import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
 import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
 
 const router = createBrowserRouter([
@@ -106,19 +106,19 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
   },
-  {
-    path: "/maxbeams",
-    element: (
-      <PrivateRoute>
-        <div>
-          <ScrollToTop />
-          <LoggedinNav />
-          <Maxbeams />
-          <Footer />
-        </div>
-      </PrivateRoute>
-    ),
-  },
+//   {
+//     path: "/maxbeams",
+//     element: (
+//       <PrivateRoute>
+//         <div>
+//           <ScrollToTop />
+//           <LoggedinNav />
+//           <Maxbeams />
+//           <Footer />
+//         </div>
+//       </PrivateRoute>
+//     ),
+//   },
 
 	{
 		path: "/login",
@@ -173,31 +173,31 @@ const router = createBrowserRouter([
 			
 		)
 	},
-	{
-		path: "/maxbeams",
-		element: (
-			<PrivateRoute>
-				<div>
-					<ScrollToTop />
-					<LoggedinNav />
-					<Maxbeams />
-					<Footer/>
-				</div>
-			</PrivateRoute>
-		)
-	},
+	// {
+	// 	path: "/maxbeams",
+	// 	element: (
+	// 		<PrivateRoute>
+	// 			<div>
+	// 				<ScrollToTop />
+	// 				<LoggedinNav />
+	// 				<Maxbeams />
+	// 				<Footer/>
+	// 			</div>
+	// 		</PrivateRoute>
+	// 	)
+	// },
 
-	{
-		path: "/maxbeampage/:id",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Maxbeampage />
-				<Footer/>
-			</div>
-		)
-	},
+	// {
+	// 	path: "/maxbeampage/:id",
+	// 	element: (
+	// 		<div>
+	// 			<ScrollToTop />
+	// 			<LoggedinNav />
+	// 			<Maxbeampage />
+	// 			<Footer/>
+	// 		</div>
+	// 	)
+	// },
 	{
 		path: "/maxbeamsong/:id",
 		element: (
@@ -221,17 +221,17 @@ const router = createBrowserRouter([
 			</div>
 		)
 	},
-	{
-		path: "/hightlights",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Library />
-				<Footer/>
-			</div>
-		)
-	},
+	// {
+	// 	path: "/hightlights",
+	// 	element: (
+	// 		<div>
+	// 			<ScrollToTop />
+	// 			<LoggedinNav />
+	// 			<Library />
+	// 			<Footer/>
+	// 		</div>
+	// 	)
+	// },
 	{
 		path: "/favourites",
 		element: (
@@ -243,17 +243,17 @@ const router = createBrowserRouter([
 			</div>
 		)
 	},
-	{
-		path: "/completed",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<Completed />
-				<Footer/>
-			</div>
-		)
-	},
+	// {
+	// 	path: "/completed",
+	// 	element: (
+	// 		<div>
+	// 			<ScrollToTop />
+	// 			<LoggedinNav />
+	// 			<Completed />
+	// 			<Footer/>
+	// 		</div>
+	// 	)
+	// },
 	{
 		path: "/notes",
 		element: (
@@ -307,17 +307,17 @@ const router = createBrowserRouter([
 	// 		</div>
 	// 	)
 	// },
-	{
-		path: "/articleread1/",
-		element: (
-			<div>
-				<ScrollToTop />
-				<Navbar />
-				<ArticleRead1/>
-				<Footer/>
-			</div>
-		)
-	},
+	// {
+	// 	path: "/articleread1/",
+	// 	element: (
+	// 		<div>
+	// 			<ScrollToTop />
+	// 			<Navbar />
+	// 			<ArticleRead1/>
+	// 			<Footer/>
+	// 		</div>
+	// 	)
+	// },
 	{
 		path: "/articleread/:id",
 		element: (
@@ -349,17 +349,17 @@ const router = createBrowserRouter([
 			</div>
 		)
 	},
-	{
-		path: "/maxbeamread/:id",
-		element: (
-			<div>
-				<ScrollToTop />
-				<LoggedinNav />
-				<MaxbeamRead />
-				<Footer/>
-			</div>
-		)
-	},
+	// {
+	// 	path: "/maxbeamread/:id",
+	// 	element: (
+	// 		<div>
+	// 			<ScrollToTop />
+	// 			<LoggedinNav />
+	// 			<MaxbeamRead />
+	// 			<Footer/>
+	// 		</div>
+	// 	)
+	// },
 	{
 		path: "/terms-of-service",
 		element: (

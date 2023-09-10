@@ -78,8 +78,10 @@ function Beams() {
                     Trending Beams
                 </div>
               <div className='trending-content-container'>
+              {console.log(trending)}
                 {
                     trending?
+                    
                     trending.map((trending)=><TrendingCard
                     toast={(msg)=>toast.error(msg)}
                     {...trending}
