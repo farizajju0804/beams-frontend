@@ -162,8 +162,8 @@
 
 @media screen and (max-width: 767px){
     .topic-bubble{
-        width: 5rem;
-        height: 5rem;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
     }
 }
