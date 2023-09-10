@@ -46,9 +46,9 @@ export const Maxbeamsong = () => {
 				<BeatLoader />
 			) : (
 				<div className="songcard">
-					<img src={API_Photo +audio.audioImage.data.attributes.url} alt="" className="scardbanner" />
+					<img src={audio.audioImage} alt="" className="scardbanner" />
 					<span>{audio.title}</span>
-					<AudioPlayer src={API_Photo+audio.audioUrl.data.attributes.url} style={{ color: "blue" }} />
+					<AudioPlayer src={audio.audioUrl} style={{ color: "blue" }} />
 				</div>
 			)}
 		</div>

@@ -19,10 +19,10 @@ function Beams() {
       const expirationTime = new Date();
       expirationTime.setSeconds(expirationTime.getSeconds+10);
       
-        fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
-        .then((launch)=>{
+        // fetch(`${API}/launch-of-the-weeks?populate=*`).then((res) => res.json())
+        // .then((launch)=>{
           
-          setLaunch(launch.data[0].attributes)})
+        //   setLaunch(launch.data[0].attributes)})
 
           fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
           .then((trending)=>{ 

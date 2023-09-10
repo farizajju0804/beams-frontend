@@ -41,7 +41,7 @@ const Description = ({
         <img
           className="article-desciption-img-icon"
           alt=""
-          src={API_Photo+articleDescriptionImg.data.attributes.url}
+          src={articleDescriptionImg}
           
         />
         <div className="favourite-icon" onClick={favoritesHandler}>
