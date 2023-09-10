@@ -46,7 +46,7 @@ function Contactus() {
       <Toaster/>
         <div className='contact-info-container'>
              <div className='contact-info-img-box'>
-              <img className="contact-img" src="Assets/images/contact-img.png" alt=""/>
+              <img className="contact-img" src="Assets/images/contact-img.webp" alt=""/>
              </div>
             
              <div className='contact-info-content'>

@@ -20,19 +20,19 @@ const Feature3 = () => {
           <Featuretitle number='03' title="listen to Captivating Content "/>
           <div className="mobile-mockup">
             <img
-              src="Assets/images/Blue-light-mockup.png"
+              src="Assets/images/Blue-light-mockup.webp"
               alt=""
               onClick={() => handleImageClick("Assets/sample-audio.mp3", 0)}
               className={`image ${clickedImageIndex === 0 ? "active" : ""}`}
             />
             <img
-              src="Assets/images/Synthetic-bio-mockup.png"
+              src="Assets/images/Synthetic-bio-mockup.webp"
               alt=""
               onClick={() => handleImageClick("Assets/sample-audio-2.mp3", 1)}
               className={`image ${clickedImageIndex === 1 ? "active" : ""}`}
             />
             <img
-              src="Assets/images/Placebo-mockup.png"
+              src="Assets/images/Placebo-mockup.webp"
               alt=""
               onClick={() => handleImageClick("Assets/sample-audio.mp3", 2)}
               className={`image ${clickedImageIndex === 2 ? "active" : ""}`}

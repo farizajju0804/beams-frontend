@@ -17,7 +17,7 @@ function About() {
   
       <div className='team-member'>
         <div className='team-member-img'>
-          <img src="Assets/images/member-img-1.png" alt=""/>
+          <img src="Assets/images/member-img-1.webp" alt=""/>
         </div>
         <div className='member-content'>
           <div className='member-info'>
@@ -36,7 +36,7 @@ function About() {
       </div>
       <div className='team-member'>
         <div className='team-member-img'>
-          <img src="Assets/images/member-img-2.png" alt=""/>
+          <img src="Assets/images/member-img-2.webp" alt=""/>
         </div>
         <div className='member-content'>
           <div className='member-info'>

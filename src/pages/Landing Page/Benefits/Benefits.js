@@ -40,7 +40,7 @@ const Benefits = () => {
           <div className="benefit-img-box">
             <img
               className={`benefit-img benefit-img-${activeBenefit}`}
-              src={`Assets/images/benefit-img${activeBenefit}.png`}
+              src={`Assets/images/benefit-img${activeBenefit}.webp`}
               alt=""
             />
           </div>

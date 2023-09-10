@@ -30,7 +30,7 @@
 .testimonial-img{
     width: 40%;
     height: 100%;
-    background: url(/public/Assets/images/testimonial-img.png);
+    background: url(/public/Assets/images/testimonial-img.webp);
     background-size: cover;
     position: relative;
     margin-right: -20%;

@@ -5,11 +5,11 @@ const IntroducingBeams = () => {
       <div className="image-grp">
         <img className="bulb-img-1-icon"
           alt="Bulb"
-          src="Assets/images/Bulb-Img.png"
+          src="Assets/images/bulb-img.webp"
         />
         <img className="brain-img-1-icon"
           alt="Brain"
-          src="Assets/images/Brain-Img.png"
+          src="Assets/images/brain-img.webp"
         />
       </div>
       <div className="intro-beams-wrapper">

@@ -55,7 +55,7 @@
     height: 100vh;
     overflow: hidden;
     justify-content: center;
-    background-image: url(/public/Assets/images/hero-bg.jpg);
+    background-image: url(/public/Assets/images/hero-bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;

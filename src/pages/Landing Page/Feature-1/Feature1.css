@@ -1,7 +1,7 @@
 .feature-1{
     width: 100%;
     height: 100vh;
-    background: url(/public/Assets/images/Feature-1-bg.png);
+    background: url(/public/Assets/images/Feature-1-bg.webp);
     object-fit: cover;
     display: flex;
     align-items: center;

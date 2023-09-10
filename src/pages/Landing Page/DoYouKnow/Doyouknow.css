@@ -54,7 +54,7 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
-    background-image: url(/public/Assets/images/do-you-know-bg1.png);
+    background-image: url(/public/Assets/images/do-you-know-bg1.webp);
     background-size: cover;
     object-fit: cover;
     background-repeat: no-repeat;

@@ -8,7 +8,7 @@ function Testimonial() {
          <div className="testimonial-img" ></div>
             <div className='testimonial-content'>
                 <div className='content-box'>
-                <img className="rating" src="Assets/images/Rating.png" alt="" />
+                <img className="rating" src="Assets/images/Rating.webp" alt="" />
                 <h1>“Lorem ipsum dolor sit amet consectetur. Sed sit nunc vivamus faucibus enim cursus elit amet.”</h1>
                 <div className='testimonial-name'>
                 <p>Name</p>
