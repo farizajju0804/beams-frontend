@@ -8,7 +8,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 // import { useCookies } from 'react-cookie'
 function Beams() {
-  const {user}=useContext(AuthContext)
+  const {user,setArticles,articles}=useContext(AuthContext)
   // const [cookies,setCookie]=useCookies(['login'])
   const [launch,setLaunch]=useState(null)
   const [trending,setTrending]=useState()
@@ -39,7 +39,7 @@ function Beams() {
                 if (index<=showContents || index===0) return {...el.attributes,show:true}
                 else return {...el.attributes,show:false,remainingTime:Math.floor(((index*259200000)-timeDifference)/(3600*1000))}
             })
-            
+            setArticles(mapData.map((el)=> { return {img:el.trendingCardImg,idofbeam:el.articleId,title:el.trendingCardTitle}}))
             setTrending(mapData)
             
           })
