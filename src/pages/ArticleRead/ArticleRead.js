@@ -45,20 +45,20 @@ const ArticleRead = () => {
   const {id}=useParams()
  
 
-  const handleMouseUp = (e) => {
-		var selectedtext = window.getSelection().toString().trim();
+  // const handleMouseUp = (e) => {
+	// 	var selectedtext = window.getSelection().toString().trim();
 
-		if (selectedtext) {
-			setSelectedText(window.getSelection().toString().trim());
-			setX(e.pageX);
-			setY(e.pageY);
+	// 	if (selectedtext) {
+	// 		setSelectedText(window.getSelection().toString().trim());
+	// 		setX(e.pageX);
+	// 		setY(e.pageY);
 		
-			setDisplayPopUp(true);
-			console.log(displayPopUp);
-			console.log(e);
-			console.log(`${window.getSelection().toString().trim()}`);
-		}
-	};
+	// 		setDisplayPopUp(true);
+	// 		console.log(displayPopUp);
+	// 		console.log(e);
+	// 		console.log(`${window.getSelection().toString().trim()}`);
+	// 	}
+	// };
 
   const opennotePopup = (data) => {
 		setNotesPopup(true);
@@ -74,7 +74,7 @@ const ArticleRead = () => {
         const articleComponent = [];
 
         const articleData = articles.data[index].attributes;
-        console.log(articleData)
+        // console.log(articleData)
         setNotepopupdata({id:Aid,title:articleData.ArticleHeader[0].articleTitle})
         // console.log(articleData);
         articleComponent.push(
@@ -245,7 +245,7 @@ const ArticleRead = () => {
 							handleClose={closenotePopup}
 						></Popupnotes>
 					)}
-<div className="article-read" onMouseUp={handleMouseUp} onMouseDown={() => {
+<div className="article-read" onMouseDown={() => {
       setSelectedText("");
       setDisplayPopUp(false);
       

@@ -26,13 +26,13 @@ function Beams() {
 
           fetch(`${API}/trending-cards?populate=*`).then((res) => res.json())
           .then((trending)=>{ 
-            
+            console.log(trending)
             const serverDate = new Date(user.createdAt);
-            console.log(serverDate)
+            
             const currentDate = new Date(); 
-            console.log(currentDate)
+           
             const timeDifference = currentDate - serverDate;
-            console.log(timeDifference)
+      
             const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
             const showContents=Math.floor((daysDifference/3)) 
     
@@ -42,7 +42,8 @@ function Beams() {
                 else return {...el.attributes,show:false,remainingTime:Math.floor(((index*259200000)-timeDifference)/(3600*1000))}
             })
             setArticles(mapData.map((el)=> { return {img:el.trendingCardImg,idofbeam:el.articleId,title:el.trendingCardTitle}}))
-            setTrending(mapData)
+            console.log(mapData)
+            setTrending(mapData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)))
             
           })
         }
