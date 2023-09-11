@@ -68,6 +68,9 @@
     border: 0.1px solid var(--black);
   }
   
+  .quote-content > span{
+    padding: 0 10px;
+  }
 
   @media screen and (max-width: 540px){
     .quote-person-name {
