@@ -28,8 +28,11 @@ function Beams() {
           .then((trending)=>{ 
             
             const serverDate = new Date(user.createdAt);
+            console.log(serverDate)
             const currentDate = new Date(); 
+            console.log(currentDate)
             const timeDifference = currentDate - serverDate;
+            console.log(timeDifference)
             const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
             const showContents=Math.floor((daysDifference/3)) 
     
