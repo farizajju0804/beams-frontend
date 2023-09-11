@@ -4,6 +4,9 @@
     line-height: 35px;
     font-weight: 200;
   }
+  .superscript-link2{
+    color: var(--white) 0.5;
+  }
   .start-box {
     border-radius: var(--br-7xs);
     background-color: var(--black);
