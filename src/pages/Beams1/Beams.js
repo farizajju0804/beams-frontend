@@ -34,16 +34,16 @@ function Beams() {
             const timeDifference = currentDate - serverDate;
       
             const daysDifference =Math.floor(timeDifference / (1000 * 60 * 60 * 24))
-            const showContents=Math.floor((daysDifference/3)) 
-    
-            const mapData=trending.data.map((el,index)=>{
+            const showContents=Math.floor((daysDifference/7)) 
+            console.log(trending.data)
+            const mapData=trending.data.sort((a, b) => new Date(a.attributes.createdAt) - new Date(b.attributes.createdAt)).map((el,index)=>{
                if(user.role.name==="admin") return {...el.attributes,show:true}
                 if (index<=showContents || index===0) return {...el.attributes,show:true}
                 else return {...el.attributes,show:false,remainingTime:Math.floor(((index*259200000)-timeDifference)/(3600*1000))}
             })
             setArticles(mapData.map((el)=> { return {img:el.trendingCardImg,idofbeam:el.articleId,title:el.trendingCardTitle}}))
             console.log(mapData)
-            setTrending(mapData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)))
+            setTrending(mapData)
             
           })
         }
