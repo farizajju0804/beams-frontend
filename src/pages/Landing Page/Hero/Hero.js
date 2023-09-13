@@ -1,9 +1,13 @@
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { useEffect } from "react";
 const Hero = () => {
   const [cookies,setCookie]=useCookies(["loggedIn"])
   const navigate = useNavigate();
+  useEffect(()=>{
+    sessionStorage.setItem("login",true)
+  },[])
   return (
     <section className="hero">
       <div className="content">

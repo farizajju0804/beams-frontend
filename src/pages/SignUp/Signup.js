@@ -33,9 +33,9 @@ export const Signup = () => {
   const { setUser,auth,setAuth } = useContext(AuthContext);
 
   
-  useEffect(()=>{
-      sessionStorage.setItem("login",false)
-  },[])
+  // useEffect(()=>{
+  //     // sessionStorage.setItem("login",false)
+  // },[])
 
   const signUpcall = async () => {
     setIsLoading(true);
@@ -50,6 +50,7 @@ export const Signup = () => {
           username: email,
           email: email,
           password: password,
+          sso:false
         }),
       });
 
@@ -325,20 +326,21 @@ export const Signup = () => {
           <strong
             style={{ cursor: "pointer" }}
             onClick={() => {
+              sessionStorage.setItem("login",true)
               navigate("/login");
             }}
           >
             Log In
           </strong>{" "}
         </p>
-        {/* <div className="oauths">
+        <div className="oauths">
           <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
           </a>
 
-          <img src={facebooklogo} alt="" />
-          <img src={applelogo} alt="" />
-        </div> */}
+          {/* <img src={facebooklogo} alt="" />
+          <img src={applelogo} alt="" /> */}
+        </div>
       </div>
       <img src={loginimg} alt="" className="loginimgpos" />
     </div>

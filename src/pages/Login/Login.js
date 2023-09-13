@@ -32,9 +32,16 @@ export const Login = () => {
 
     
   useEffect(()=>{
-    sessionStorage.setItem("login",true)
-    if(failMsg) toast.error(failMsg)
-  },[])
+    // sessionStorage.setItem("login",true)
+    console.log(failMsg)
+    if(failMsg){
+      
+      toast.error(failMsg)
+      setTimeout(()=>{
+          setFailMsg(undefined)
+      },3000)
+    } 
+  },[failMsg])
   
   const logIn = async () => {
     
@@ -61,7 +68,7 @@ export const Login = () => {
         
           SetToken(data.jwt);
         }
-      
+        
         sessionStorage.setItem("uid",data.user.id)
         setUser(data.user);
 
@@ -179,23 +186,24 @@ export const Login = () => {
             style={{ cursor: "pointer" }}
             onClick={() => {
               setFailMsg(undefined)
+              sessionStorage.setItem("login",false)
               navigate("/signup");
             }}
           >
             Sign Up
           </strong>{" "}
         </p>
-        {/* <div className="orloginwith">
+        <div className="orloginwith">
           <strong style={{ margin: "10px" }}>or</strong>
           <strong>-- Login using --</strong>
-        </div> */}
-        {/* <div className="oauths">
+        </div>
+        <div className="oauths">
           <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
           </a>
-          <img src={facebooklogo} alt="" />
-          <img src={applelogo} alt="" />
-        </div> */}
+          {/* <img src={facebooklogo} alt="" />
+          <img src={applelogo} alt="" /> */}
+        </div>
       </div>
       <img src={loginimg} alt="" className="loginimgpos" />
     </div>
