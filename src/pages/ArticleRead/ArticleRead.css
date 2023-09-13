@@ -18,6 +18,7 @@
 
   .article-content-container{
     margin-top: 8vh;
+    user-select: none;
   }
   .highlightopinner{
     position:fixed;
@@ -35,6 +36,7 @@
     border-radius: 50%;
     box-shadow: var(--effect-1);
     gap: 9px;
+    cursor: pointer;
 
   }
   .article-content-container,
