@@ -29,12 +29,12 @@ function Feature2() {
 
                 </div>
                 <div className="topic-card">
-                 <img className="topic-img" src="Assets/images/placebo-topic.webp" alt=""></img>
-                 <div className="topic-title">The Magic of Belief:<br></br>The Placebo Effect</div>
+                 <img className="topic-img" src="Assets/images/longevity-topic.webp" alt=""></img>
+                 <div className="topic-title">The Intriguing World Of<br></br>Longevity Science</div>
                 </div>
                 <div className="topic-card">
-                 <img className="topic-img" src="Assets/images/language-topic.webp" alt=""></img>
-                 <div className="topic-title">The Top 6 Benefits of<br></br>Learning a Language</div>
+                 <img className="topic-img" src="Assets/images/materials-topic.webp" alt=""></img>
+                 <div className="topic-title">The Magical Materials<br></br>Redefining Our Future</div>
                 </div>
             </div>
 

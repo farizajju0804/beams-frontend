@@ -31,7 +31,7 @@ function Feature1() {
                   <div className="topic-row">
                 <div className="topic-box">
                     <img className="topic-bubble" alt="topicimg" src="Assets/images/CRISPR-img.webp" />
-                    <div className="topic">BCI</div>
+                    <div className="topic">BRAIN COMPUTER INTERFACES</div>
                   </div>
                   </div>
                  

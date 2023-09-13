@@ -61,19 +61,19 @@
 }
 
 .thumbnail1{
-    background: url(/public/Assets/images/placebo-topic.png);
+    /* background: url(/public/Assets/images/placebo-topic.jpg); */
     background-size: cover;
     object-fit: cover;
     background-position: center;
 }
 
 .thumbnail2{
-    background: url(/public/Assets/images/Synthetic-bio-article.png);
+    /* background: url(/public/Assets/images/Synthetic-bio-article.png); */
     background-size: cover;
     object-fit: cover;
 }
 .thumbnail3{
-    background: url(/public/Assets/images/blue-light-topic.jpg);
+    /* background: url(/public/Assets/images/blue-light-topic.jpg); */
     background-size: cover;
     object-fit: cover;
 }
