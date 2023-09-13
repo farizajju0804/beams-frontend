@@ -39,7 +39,7 @@ function Beams() {
             const mapData=trending.data.sort((a, b) => new Date(a.attributes.createdAt) - new Date(b.attributes.createdAt)).map((el,index)=>{
                if(user.role.name==="admin") return {...el.attributes,show:true}
                 if (index<=showContents || index===0) return {...el.attributes,show:true}
-                else return {...el.attributes,show:false,remainingTime:Math.floor(((index*259200000)-timeDifference)/(3600*1000))}
+                else return {...el.attributes,show:false,remainingTime:Math.floor(((index*604800000)-timeDifference)/(3600*1000))}
             })
             setArticles(mapData.map((el)=> { return {img:el.trendingCardImg,idofbeam:el.articleId,title:el.trendingCardTitle}}))
             console.log(mapData)

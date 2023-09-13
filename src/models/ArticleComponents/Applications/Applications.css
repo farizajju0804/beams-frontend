@@ -23,7 +23,10 @@
     gap: var(--gap-xl);
   }
 
-
+.no-header, .no-content{
+  display: none;
+  padding: 0;
+}
  
   
   .application-box-container {
