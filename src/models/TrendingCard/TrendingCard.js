@@ -43,7 +43,9 @@ function TrendingCard({
       navigate(`/article-description/${articleId}`);
     }
     else{
-      toast(`Come back after ${remainingTime} hrs to unlock this beam`)
+      const days = Math.floor(remainingTime / 24);
+      const remainingHours = remainingTime % 24;
+      toast(`Come back after ${days} days ${remainingHours} hrs to unlock this beam`)
     }
   };
 

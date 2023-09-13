@@ -8,8 +8,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Cookies, useCookies } from "react-cookie";
 export const Navbar = () => {
 	const [sidenav, setSidenav] = useState(false);
-	const [cookies,setCookie]=useCookies(["loggedIn"])
-
+	const cookies=new Cookies();
 	const navigate = useNavigate();
 	const {auth,setAuth}=useContext(AuthContext)
 	return (
