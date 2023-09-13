@@ -198,9 +198,9 @@ export const Login = () => {
           <strong>-- Login using --</strong>
         </div>
         <div className="oauths">
-          <a href={`${API}/connect/google`}>
+          {/* <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
-          </a>
+          </a> */}
           {/* <img src={facebooklogo} alt="" />
           <img src={applelogo} alt="" /> */}
         </div>
