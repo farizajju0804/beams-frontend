@@ -8,7 +8,8 @@ function Footer() {
     <section className='footer'> 
         <div className='footer-content'>
             <div className='logo-footer'>
-            <Link className='logo-dummy' to='/'>Beams-----</Link>
+              <img src="Assets/images/logo.png" alt=""/>
+            {/* <Link className='logo-dummy' to='/'>Beams-----</Link> */}
             </div>
             <div className='about-link'>
             <Link to='/aboutus'>About Us</Link>

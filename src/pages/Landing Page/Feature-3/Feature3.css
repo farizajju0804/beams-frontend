@@ -160,6 +160,7 @@
     .mobile-mockup {
         width: 100%;
         padding: 0;
+        margin: 30px 0;
         height: 40%;
       }
       .audio-player {
@@ -170,10 +171,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 5%;
+        gap: 10px;
         z-index: 0;
-        padding: 2rem 1.4rem;
-        /* margin: 1.2rem; */
+        padding: 2.4rem 1.4rem;
+        margin: 3rem 0;
       }
 
   }
@@ -201,11 +202,11 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 20px;
+        margin: 20px 0;
         height: auto;
       }
       .mobile-mockup img{
-        width: 40%;
+        width: 35%;
         cursor: pointer;
         
       }

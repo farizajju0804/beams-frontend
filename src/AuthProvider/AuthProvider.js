@@ -259,7 +259,7 @@ const AuthProvider = ({ children }) => {
       const data = await response.json();
      
       setUserData(data);
-      cookies.set('loggedIn',"true", {path: '/', expires: new Date(Date.now()+(30 * 60 * 1000))})
+      cookies.set('loggedIn',"true", {path: '/', expires: new Date(Date.now()+(2 * 24 * 60 * 60 * 1000))})
       
       setFavourites(data.Favourites);
   

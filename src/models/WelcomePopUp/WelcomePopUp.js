@@ -12,22 +12,13 @@ export const WelcomePopUp = ({ handleClose }) => {
 	return (
 		<BackdropWelcome handleClose={handleClose}>
 			<div className="welcomepopup">
-				<div
-					className="sharemodelcloser"
-					onClick={() => {
-						handleClose();
-						updateFirstUser();
-						
-					}}
-				>
-					<AiFillCloseCircle />
-				</div>
 				<img src={welcomeimg} alt="" />
-				<h3>Welcome To Innbrieff</h3>
-				<p>
-					Quickly and easily stay informed about the future with our bite-sized
-					insights
-				</p>
+				<h3>Welcome To Beams</h3>
+				{/* <p>
+					Quickly stay informed about the future with our bite-sized
+					insights.
+				</p> */}
+				<p>Every Beam Will Unlocked In 7 Days.</p>
 				<button
 					className="welcomebtn"
 					onClick={() => {
@@ -35,7 +26,7 @@ export const WelcomePopUp = ({ handleClose }) => {
 						updateFirstUser();
 					}}
 				>
-					Let's get started
+					Let's Get Started
 				</button>
 			</div>
 		</BackdropWelcome>

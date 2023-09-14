@@ -39,26 +39,6 @@ export const Navbar = () => {
 					<HiOutlineXMark color="white" size={20} />
 				</div>
 				<div className="sidenavlinks">
-					
-
-					<span
-						onClick={() => {
-							setSidenav(false);
-
-							navigate("/aboutus");
-						}}
-					>
-						About Us
-					</span>
-					<span
-						onClick={() => {
-							setSidenav(false);
-
-							navigate("/contact");
-						}}
-					>
-						Contact Us
-					</span>
 					<span
 						className="spanpadding"
 						onClick={() => {
@@ -81,6 +61,25 @@ export const Navbar = () => {
 						className="spanborder"
 					>
 						Sign Up
+					</span>
+
+					<span
+						onClick={() => {
+							setSidenav(false);
+
+							navigate("/aboutus");
+						}}
+					>
+						About Us
+					</span>
+					<span
+						onClick={() => {
+							setSidenav(false);
+
+							navigate("/contact");
+						}}
+					>
+						Contact Us
 					</span>
 				</div>
 			</div>

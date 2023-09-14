@@ -63,7 +63,7 @@
     .article-content-container {
       gap: var(--gap-41xl);
       width: 100%;
-      padding: 0rem 1rem;
+      padding: 0rem 1.5rem;
       padding-bottom: 1rem;
     }
     

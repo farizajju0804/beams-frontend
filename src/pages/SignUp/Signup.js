@@ -324,19 +324,23 @@ export const Signup = () => {
         <p className="noaccout">
           Have an account?{" "}
           <strong
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", textDecoration:"underline ",textAlign:"center" }}
             onClick={() => {
               sessionStorage.setItem("login",true)
               navigate("/login");
             }}
-          >
-            Log In
+          ><br/>
+            Log In Here
           </strong>{" "}
         </p>
+        <div className="orloginwith">
+          <strong style={{ margin: "10px" }}>or</strong>
+          <strong>Continue With </strong>
+        </div>
         <div className="oauths">
-          {/* <a href={`${API}/connect/google`}>
+          <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
-          </a> */}
+          </a>
 
           {/* <img src={facebooklogo} alt="" />
           <img src={applelogo} alt="" /> */}

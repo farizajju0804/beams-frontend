@@ -1,10 +1,18 @@
 .beams {
     margin: 0;
     align-self: stretch;
-    font-size: 64px;
+    font-size: 72x;
     font-weight: 400;
-    font-family: var(--font-poppins);
+    font-family: var(--font-steva);
 
+  }
+
+  .hero-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .subscribe-now1,
@@ -16,8 +24,8 @@
     margin: 0;
     align-self: stretch;
     font-size: var(--font-size-xl);
-    font-weight: 400;
-    font-family: var(--font-mulish);
+    font-family: var(--font-poppins);
+    font-weight: normal;
   }
   .btn {
     font-family: var(--font-poppins);
@@ -43,11 +51,15 @@
   .content {
     justify-content: flex-start;
     gap: 25px;
+    padding: 0 10px;
   }
 
-  .content p{
+  .hero-content p{
     font-family: var(--font-mulish);
-    font-size: 16px;
+    font-size: 24px;
+    /* font-style: italic; */
+    color: var(--text-gray);
+    padding: 0 30px;
   }
   .hero {
     position: relative;
@@ -62,17 +74,20 @@
     text-align: center;
     font-size: 4rem;
     color: var(--black);
-    font-family: var(--font-glimmer-of-light);
   }
   
   @media screen and (max-width: 600px){
     .unleashing-the-light {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 400;
       
     }
     .beams{
       font-size: 40px;
+    }
+    .hero-content p{
+      /* font-family: var(--font-mulish); */
+      font-size: 18px;
     }
   }
 

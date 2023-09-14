@@ -2,7 +2,7 @@ import "./IntroducingBeams.css";
 const IntroducingBeams = () => {
   return (
     <section className="introducing-beams">
-      <div className="image-grp">
+      {/* <div className="image-grp">
         <img className="bulb-img-1-icon"
           alt="Bulb"
           src="Assets/images/bulb-img.webp"
@@ -11,7 +11,7 @@ const IntroducingBeams = () => {
           alt="Brain"
           src="Assets/images/brain-img.webp"
         />
-      </div>
+      </div> */}
       <div className="intro-beams-wrapper">
       <div className="introducing">Introducing</div>
       <div className="beams-wrapper">

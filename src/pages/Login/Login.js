@@ -181,26 +181,26 @@ export const Login = () => {
           {isLoading ? <ClipLoader color="white" size={23}></ClipLoader> : "Log In"}
         </button>
         <p className="noaccout">
-          No account? &nbsp;{" "}
+          Don't have an account? &nbsp;{" "}
           <strong
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer",textDecoration: "underline" }}
             onClick={() => {
               setFailMsg(undefined)
               sessionStorage.setItem("login",false)
               navigate("/signup");
             }}
-          >
-            Sign Up
+          ><br/>
+            Sign Up Here
           </strong>{" "}
         </p>
         <div className="orloginwith">
           <strong style={{ margin: "10px" }}>or</strong>
-          <strong>-- Login using --</strong>
+          <strong>Continue With </strong>
         </div>
         <div className="oauths">
-          {/* <a href={`${API}/connect/google`}>
+          <a href={`${API}/connect/google`}>
             <img src={googlelogo} alt="" />
-          </a> */}
+          </a>
           {/* <img src={facebooklogo} alt="" />
           <img src={applelogo} alt="" /> */}
         </div>
