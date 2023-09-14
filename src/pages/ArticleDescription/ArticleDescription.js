@@ -3,6 +3,7 @@ import Description from '../../models/Description/Description'
 import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { API } from '../../constants'
+import { BeatLoader } from 'react-spinners'
 function ArticleDescription() {
   const [desc,setDesc]=useState(null)
   const { id:Aid } = useParams();
@@ -19,7 +20,8 @@ function ArticleDescription() {
       desc?<Description 
       {...desc}
      />:
-     <p>loading</p>
+    //  <p>loading</p>
+    <BeatLoader />
     }
     
     </>

@@ -12,6 +12,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useParams } from "react-router-dom";
 import { API_Photo } from "../../constants";
 import { useCookies } from "react-cookie";
+import { BeatLoader } from 'react-spinners'
 
 export const LoggedinNav = () => {
   const { user, setUserData, isLoggedIn, setisLoggedIn } = useContext(AuthContext);
@@ -122,7 +123,8 @@ export const LoggedinNav = () => {
           </div>
         </div>
       ) : (
-        <p>Loading</p>
+        // <p>Loading</p>
+        <BeatLoader/>
       )}
     </>
   );

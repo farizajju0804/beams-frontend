@@ -5,6 +5,7 @@ import TrendingCard from "../../models/TrendingCard/TrendingCard";
 import { useState, useContext } from "react";
 import { API } from "../../constants";
 import { toast, Toaster } from "react-hot-toast";
+import { BeatLoader } from 'react-spinners'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { WelcomePopUp } from "../../models/WelcomePopUp/WelcomePopUp";
 // import { useCookies } from 'react-cookie'
@@ -89,7 +90,8 @@ function Beams() {
                     />
                   ))
                 ) : (
-                  <p>loading...</p>
+                  <BeatLoader/>
+
                 )}
               </div>
             </div>
@@ -98,7 +100,7 @@ function Beams() {
           <div></div>
         </div>
       ) : (
-        <p>user loading</p>
+        <BeatLoader/>
       )}
     </div>
   );
