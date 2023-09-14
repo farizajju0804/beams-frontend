@@ -4,6 +4,7 @@ import { useNavigate,useParams } from 'react-router-dom'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast, Toaster } from "react-hot-toast";
 import { API, API_Photo } from "../../constants";
+import { Heart } from "iconsax-react";
 const Description = ({
   articleDescriptionImg,
   articleDescriptionTitle,
@@ -14,11 +15,14 @@ const Description = ({
   const {id}=useParams()
   const [isMobile, setIsMobile] = useState(false);
   const {addfav}=useContext(AuthContext)
+  const [isFavorited, setIsFavorited] = useState(false);
+  const heartColor = isFavorited ? "red" : "#161616";
   const updateIsMobile = () => {
     setIsMobile(window.innerWidth <= 767); // Adjust the width threshold as needed
   };
   const favoritesHandler=()=>{
     addfav({articleId:id})
+    setIsFavorited(true);
   }
   useEffect(() => {
   
@@ -45,7 +49,8 @@ const Description = ({
           
         />
         <div className="favourite-icon" onClick={favoritesHandler}>
-          <img className="heart-icon" alt="" src="https://www.beams.world/Assets/images/heart.svg" />
+        <Heart size="25"  color={heartColor} variant="Bold"/>
+          {/* <img className="heart-icon" alt="" src="https://www.beams.world/Assets/images/heart.svg" /> */}
         </div>
       </div>
       <div className="article-description-content-co">
