@@ -102,7 +102,7 @@
   }
   .article-header {
     align-self: stretch;
-    background-color: var(--yellow);
+    background-color: #ffe68b;
     display: flex;
     flex-direction: column;
     padding: 15px 0 ;
