@@ -1,9 +1,11 @@
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
+// import { useCookies } from "react-cookie";
 import { useEffect } from "react";
+import {Cookies} from "react-cookie";
 const Hero = () => {
-  const [cookies,setCookie]=useCookies(["loggedIn"])
+  const cookies=new Cookies();
+  // const [cookies,setCookie]=useCookies(["loggedIn"])
   const navigate = useNavigate();
   useEffect(()=>{
     sessionStorage.setItem("login",true)
@@ -21,7 +23,7 @@ const Hero = () => {
         
         
         <button className="primary-button1" onClick={()=>{
-          if(cookies.loggedIn){
+          if(cookies.get("loggedIn")){
             navigate(`/beams`)
           }
           else{

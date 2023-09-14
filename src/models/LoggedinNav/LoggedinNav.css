@@ -140,8 +140,12 @@
     display: flex;
 }
 
-.accountdropdownitems:hover{
+.accountdropdownitems:hover,.sidelink:hover{
     background-color: #f3f3f3;
+}
+
+.sidenavlinks .sidelink{
+    padding: 7px;
 }
 
 .mockprofileimg{

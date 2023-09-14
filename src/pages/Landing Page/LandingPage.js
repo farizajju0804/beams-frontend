@@ -19,7 +19,7 @@ function LandingPage() {
   return (
     <>
     				
-    {cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />} 
+    
     <Toaster/>
     <div>
     <Hero />

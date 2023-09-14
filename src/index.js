@@ -48,6 +48,7 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
+		<Navbar />
         <LandingPage />
         <Newsletter />
         <Footer />
@@ -100,7 +101,7 @@ const router = createBrowserRouter([
       <PrivateRoute>
         <div>
           <ScrollToTop />
-          <LoggedinNav />
+		<Navbar />
           <Beams />
           <Footer />
         </div>
@@ -167,7 +168,8 @@ const router = createBrowserRouter([
 		
 				<div>
 					<ScrollToTop />
-					<LoggedinNav />
+					<Navbar />
+
 					<Beams />
 					<Footer/>
 				</div>
@@ -204,7 +206,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<LoggedinNav />
+				<Navbar />
 				<Maxbeamsong />
 				<Footer/>
 			</div>
@@ -215,7 +217,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
+				<Navbar />
 				<Aboutus />
 				<Newsletter/>
 				<Footer />
@@ -238,7 +240,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<LoggedinNav />
+				<Navbar />
 				<Favourites />
 				<Footer/>
 			</div>
@@ -260,7 +262,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<LoggedinNav />
+				<Navbar />
 				<Notes />
 				<Footer/>
 			</div>
@@ -280,7 +282,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
+				<Navbar />
 				<Contact />
 				<Newsletter/>
 				<Footer />
@@ -324,7 +326,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<LoggedinNav />
+				<Navbar />
 				<ArticleRead/>
 				<Footer/>
 			</div>
@@ -366,7 +368,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
+				<Navbar />
 				<Termsandconditions />
 				<Footer/>
 			</div>
@@ -377,7 +379,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
+				<Navbar />
 				<PrivacyPolicies />
 				<Footer/>
 		
@@ -389,7 +391,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<LoggedinNav />
+				<Navbar />
 				<UserProfile />
 				<Footer/>
 			</div>
@@ -400,7 +402,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<LoggedinNav />
+				<Navbar />
 				<ArticleDescription />
 				<Footer/>
 			</div>

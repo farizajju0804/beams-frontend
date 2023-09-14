@@ -128,7 +128,7 @@ function TrendingCard({
       </div>
       {show && showFav && (
         <div className='favourite-icon1'>
-        <Heart size="20" onClick={favoritesHandler} color={heartColor} variant="Bold"/>
+        <Heart size="15" onClick={favoritesHandler} color={heartColor} variant="Bold"/>
           
         </div>
       )}
