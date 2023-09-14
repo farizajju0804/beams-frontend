@@ -54,7 +54,7 @@ function Beams() {
               }}
             />
           )}
-      <Toaster></Toaster>
+      {/* <Toaster></Toaster> */}
 
       {user ? (
         <div>

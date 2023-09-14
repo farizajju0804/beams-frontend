@@ -35,7 +35,9 @@ import LandingPage from "./pages/Landing Page/LandingPage";
 import ArticleRead from "./pages/ArticleRead/ArticleRead";
 // import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
 import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
+import { Cookies } from "react-cookie";
 
+const cookies=new Cookies();
 const router = createBrowserRouter([
   // {
   // 	path: "/",
@@ -46,7 +48,6 @@ const router = createBrowserRouter([
     element: (
       <div>
         <ScrollToTop />
-        <Navbar />
         <LandingPage />
         <Newsletter />
         <Footer />
@@ -214,7 +215,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<Navbar />
+				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
 				<Aboutus />
 				<Newsletter/>
 				<Footer />
@@ -279,7 +280,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<Navbar />
+				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
 				<Contact />
 				<Newsletter/>
 				<Footer />
@@ -365,7 +366,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<Navbar />
+				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
 				<Termsandconditions />
 				<Footer/>
 			</div>
@@ -376,7 +377,7 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<ScrollToTop />
-				<Navbar />
+				{cookies.get("loggedIn")?<LoggedinNav/>:<Navbar />}
 				<PrivacyPolicies />
 				<Footer/>
 		

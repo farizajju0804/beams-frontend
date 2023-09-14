@@ -1,8 +1,11 @@
 import React from 'react'
 import "./About.css"
 import {Link} from 'react-router-dom'
+import { LoggedinNav } from '../../models/LoggedinNav/LoggedinNav'
+import { Navbar } from '../../models/navbar/Navbar'
 function About() {
   return (
+    <>
     <div>
       
    {/* <Navbar/> */}
@@ -56,6 +59,7 @@ function About() {
      </div>
     </section>
     </div>
+    </>
   )
 }
 
