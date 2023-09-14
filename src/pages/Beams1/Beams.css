@@ -5,8 +5,8 @@
     justify-content: center;
     font-size: 32px;
     background-color: var(--yellow);
-    margin-top: -10vh;
-    padding: 5%;
+    /* margin-top: -10vh; */
+    padding: 40px;
     text-align: center;
     flex-direction: column;
 }
@@ -14,7 +14,7 @@
     font-size: 56px;
     font-family: var(--font-steva);
     font-weight: normal;
-    margin-top: 5%;
+    margin-top: 15px;
 }
 
 .beams-section{
@@ -75,10 +75,10 @@
     .beams-header-container h1{
         font-size: 40px;
         line-height: 40px;
-        margin-top: 18%;
+        margin-top: 50px;
     }
     .beams-header-container{
-        padding: 15% 5%;
+        padding: 50px;
     }
     .beams-hero{
         width: 30%;
@@ -98,7 +98,7 @@
     .beams-header-container h1{
         font-size: 24px;
         line-height: 40px;
-        margin-top:35%;
+        margin-top:40px;
     }
     .trending-content-container{
         padding-top: 30px;
@@ -108,10 +108,10 @@
         grid-template-columns: repeat(1, 1fr)
     }
     .beams-content-container{
-        padding-top:5px;
+        padding-top: 10px;
     }
     .beams-header-container{
-        padding: 8%;
+        padding: 30px 15px;
     }
     .low-container{
             padding: 20px;

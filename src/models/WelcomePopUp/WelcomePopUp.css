@@ -15,7 +15,7 @@
 .welcomepopup{
     padding: 25px;
     width: 40%;
-    height: 60vh;
+    /* height: 60vh; */
     /* height: 500px; */
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -27,6 +27,7 @@
     text-align: center;
     border-radius: 20px;
     margin: auto;
+    z-index: 1000;
     /* position: absolute;
     top: 25%;
     left: 25%; */
@@ -54,7 +55,7 @@
     
 }
 
-@media only screen and (max-width:538px)
+@media only screen and (max-width:912px)
 
 {
     .welcomepopup > img{
@@ -74,6 +75,5 @@
     }
     .welcomepopup{
         width: 80%;
-        height: 40vh;
     }
 }

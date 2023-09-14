@@ -140,7 +140,7 @@ export const Redirectionpage = () => {
 
 	return (
 		<div className="Redirectionpage">
-			<h1 style={{ marginBottom: "30px", fontSize: "50px", color: "#f96f2e" }}>
+			<h1 style={{ marginBottom: "30px", fontSize: "48px", color: "#f96f2e" }}>
 				Login Successfull
 			</h1>
 			<ClipLoader color="" />
