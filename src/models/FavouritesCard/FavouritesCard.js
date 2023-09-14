@@ -75,7 +75,7 @@ export const FavouritesCard = ({ completed, key, title, Desc, typeofbeam, idofbe
           onClick={() => {
             delfav({
               articleId:idofbeam
-            })
+            },true)
           }}
         >
         <RiDeleteBin5Fill size={20} style={{ cursor: "pointer" }} color={"red"} />

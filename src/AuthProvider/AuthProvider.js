@@ -57,13 +57,13 @@ const AuthProvider = ({ children }) => {
     if (itemstatus === false) {
       pushfav([...Favourites,item]);
       setFavourites([...Favourites, item]);
-      toast.success("Beam Added to Favourites");
+      // toast.success("Beam Added to Favourites");
     } else {
-      toast.error("Beam Already In Favourites");
+      // toast.error("Beam Already In Favourites");
     }
   };
 
-  const deleteFavourites = (item) => {
+  const deleteFavourites = (item,showToast=false) => {
     const filteredfavs = Favourites.filter((e) => {
       return e.articleId != item.articleId;
       // console.log(e.id, item.id);
@@ -71,6 +71,7 @@ const AuthProvider = ({ children }) => {
 
     setFavourites(filteredfavs);
     pushfav(filteredfavs);
+    if(showToast)
     toast.success("Beam Removed from Favourites");
   };
 
