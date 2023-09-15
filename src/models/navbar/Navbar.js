@@ -19,7 +19,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar">
 			<img className="logo"
-				src="Assets/images/logo.webp"
+				src="https://www.beams.world/Assets/images/logo1.webp"
 				alt=""
 				onClick={() => {
 					navigate("/");

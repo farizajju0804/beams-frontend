@@ -1,9 +1,9 @@
 .beams {
     margin: 0;
     align-self: stretch;
-    font-size: 72x;
+    font-size: 72px;
     font-weight: 400;
-    font-family: var(--font-steva);
+    font-family: var(--bookerly-reading-desktop);
 
   }
 
@@ -54,10 +54,10 @@
     padding: 0 10px;
   }
 
-  .hero-content p{
+  .content p{
     font-family: var(--font-mulish);
     font-size: 24px;
-    /* font-style: italic; */
+    font-style: italic;
     color: var(--text-gray);
     padding: 0 30px;
   }
@@ -85,7 +85,7 @@
     .beams{
       font-size: 40px;
     }
-    .hero-content p{
+    .content p{
       /* font-family: var(--font-mulish); */
       font-size: 18px;
     }

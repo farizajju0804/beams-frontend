@@ -13,13 +13,11 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="content">
-        <h1 className="beams">The GPS For Your Future</h1>
-        <div className="hero-content">
+        <h1 className="beams">The GPS <br/>For Your Future</h1>
         <h3 className="unleashing-the-light">
-        Built For Learners. Leaders. Legends.
+        Built For <br/>Learners. Leaders. Legends.
         </h3>
-        <p>Short and powerful insights into the forces reshaping our world.</p>
-        </div>
+        <p>Short and powerful insights into <br/>the forces reshaping our world.</p>
         
         
         <button className="primary-button1" onClick={()=>{
