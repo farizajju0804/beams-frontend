@@ -9,7 +9,7 @@ const Applications = ({ applicationHeader, applicationHeaderContent, application
   // Define CSS classes conditionally based on content presence
   const headerClasses = applicationHeader ? "application-header" : "no-header";
   const contentClasses = applicationHeaderContent ? "application-header-content" : "no-content";
-  const contentClass = applicationHeaderContent ? "application-box-container" : "no-content";
+  const contentClass = applicationHeaderContent && applicationHeader ? "application-box-container" : "no-padding";
 
   return (
     <div className="applications" style={orderstyle}>
@@ -19,7 +19,7 @@ const Applications = ({ applicationHeader, applicationHeaderContent, application
           {applicationHeaderContent}
         </div>
       </div>
-      <div className="application-box-container">
+      <div className={`application-box-container ${contentClass}`}>
         {applicationBoxes.map((boxProps, index) => (
           <ApplicationBox key={index} {...boxProps} />
         ))}

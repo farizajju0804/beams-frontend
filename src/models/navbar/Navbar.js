@@ -46,24 +46,7 @@ export const Navbar = () => {
 				{!cookies.get("loggedIn")?
 				<div className="sidenavlinks">
 
-					<span
-						onClick={() => {
-							setSidenav(false);
-
-							navigate("/aboutus");
-						}}
-					>
-						About Us
-					</span>
-					<span
-						onClick={() => {
-							setSidenav(false);
-
-							navigate("/contact");
-						}}
-					>
-						Contact Us
-					</span>
+					
 					<span
 						className="spanpadding"
 						onClick={() => {
@@ -87,11 +70,32 @@ export const Navbar = () => {
 					>
 						Sign Up
 					</span>
+					<span
+						onClick={() => {
+							setSidenav(false);
+
+							navigate("/aboutus");
+						}}
+					>
+						About Us
+					</span>
+					<span
+						onClick={() => {
+							setSidenav(false);
+
+							navigate("/contact");
+						}}
+					>
+						Contact Us
+					</span>
 				</div>
 				:
 				<div className="sidenavlinks">
-                
-                <div
+					
+                <div className="my-account">
+				<span>My Account</span>
+				<div>
+				<div
                   className="accountdropdownitems"
                   onClick={() => {
 					setSidenav(false);
@@ -117,6 +121,10 @@ export const Navbar = () => {
                   <img src={acc2} alt="" />
                   <span>My Library</span>
                 </div>
+				</div>
+				
+				</div>
+                
                 {/* <div
                   className="accountdropdownitems"
                   onClick={() => {
@@ -159,13 +167,15 @@ export const Navbar = () => {
                     removeToken();
                     setUserData(null);
                     setisLoggedIn(false);
-                    navigate("/");
+                    navigate("/login");
 						}}
 					>
 						{"Log Out"}
 					</span>
               </div>
 				}
+					
+
 			</div>
 		</nav>
 	);

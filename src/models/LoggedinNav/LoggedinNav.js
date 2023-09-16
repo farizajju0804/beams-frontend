@@ -112,7 +112,7 @@ export const LoggedinNav = () => {
                     removeToken();
                     setUserData(null);
                     setisLoggedIn(false);
-                    navigate("/");
+                    navigate("/login");
                   }}
                 >
                   <img src={acc3} alt="" />

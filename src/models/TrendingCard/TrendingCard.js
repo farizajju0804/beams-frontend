@@ -7,6 +7,7 @@ import '../../models/Description/Description.css';
 import { Heart } from 'iconsax-react';
 import axios from 'axios';
 import { Cookies } from "react-cookie";
+import { Toaster,toast } from 'react-hot-toast';
 
 function TrendingCard({
   trendingCardImg,
@@ -55,7 +56,10 @@ function TrendingCard({
     else{
       const days = Math.floor(remainingTime / 24);
       const remainingHours = remainingTime % 24;
-      toast(`Come back after ${days} days ${remainingHours} hrs to unlock this beam`)
+      const hoursText = remainingHours === 1 ? 'hour' : 'hours';
+      const daysText = days === 1 ? 'day' : 'days';
+
+      toast(`Come back after ${days} ${daysText} ${remainingHours} ${hoursText} to unlock this beam`)
     }
   };
 
@@ -102,6 +106,7 @@ function TrendingCard({
   }, [show]); // Added `show` as a dependency to handle changes
 
   return (
+    
     <div
       className={`trending-card-wrapper`}
       onClick={navigateToDescription}

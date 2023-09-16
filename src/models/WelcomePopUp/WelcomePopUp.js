@@ -18,7 +18,7 @@ export const WelcomePopUp = ({ handleClose }) => {
 					Quickly stay informed about the future with our bite-sized
 					insights.
 				</p> */}
-				<p>Every Beam Will Unlocked In 7 Days.</p>
+				<p>A New Beam Will Be Unlocked Every 7 Days.</p>
 				<button
 					className="welcomebtn"
 					onClick={() => {
