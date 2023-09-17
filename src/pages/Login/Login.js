@@ -33,6 +33,7 @@ export const Login = () => {
     
   useEffect(()=>{
     // sessionStorage.setItem("login",true)
+    console.log(user)
     if(failMsg){
       
       toast.error(failMsg)

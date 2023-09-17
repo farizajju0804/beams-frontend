@@ -15,7 +15,7 @@ export const Navbar = () => {
 	const [sidenav, setSidenav] = useState(false);
 	const cookies=new Cookies();
 	const navigate = useNavigate();
-	const {auth,setAuth,setUserData,setisLoggedIn}=useContext(AuthContext)
+	const {auth,setAuth,setUserData,setisLoggedIn,user}=useContext(AuthContext)
 	return (
 		<nav className="navbar">
 			<img className="logo"
@@ -43,7 +43,7 @@ export const Navbar = () => {
 				>
 					<HiOutlineXMark color="white" size={20} />
 				</div>
-				{!cookies.get("loggedIn")?
+				{!user?
 				<div className="sidenavlinks">
 
 					
