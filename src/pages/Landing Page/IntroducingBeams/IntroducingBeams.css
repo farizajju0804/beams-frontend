@@ -39,6 +39,7 @@
   color: var(--black);
   font-family: var(--font-steva);
   padding: 5px 20px;
+  font-weight: 500;
 }
 .beams-content {
   position: relative;
@@ -78,7 +79,7 @@
 @media screen and (max-width: 600px) {
     .beams-content {
         font-size: 16px;
-        line-height: 20px;
+        line-height: 25px;
         text-align: left;
       }
 
@@ -102,6 +103,8 @@
   }
   .introducing-beams{
     gap: 50px;
+    height: auto;
+    padding: 2rem 0;
    /* background: radial-gradient(60% 40%at 50% 28%, #f7cd61, #fffffe 47.45%); */
 
 

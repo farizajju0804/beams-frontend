@@ -62,6 +62,13 @@
     font-size: 26px;
 }
 
+.other-links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
 .my-account{
  display: flex;
  flex-direction: column;

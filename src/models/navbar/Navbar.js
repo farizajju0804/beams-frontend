@@ -124,22 +124,7 @@ export const Navbar = () => {
 				</div>
 				
 				</div>
-                
-                {/* <div
-                  className="accountdropdownitems"
-                  onClick={() => {
-					setSidenav(false);
-                    sessionStorage.removeItem("uid");
-                    cookies.remove("loggedIn");
-                    removeToken();
-                    setUserData(null);
-                    setisLoggedIn(false);
-                    navigate("/");
-                  }}
-                >
-                  <img src={acc3} alt="" />
-                  <span>Log Out</span>
-                </div> */}
+				<div className="other-links">
 				<span style={{cursor:"pointer",marginTop:"10px"}} className="sidelink"
 						onClick={() => {
 							setSidenav(false);
@@ -172,6 +157,24 @@ export const Navbar = () => {
 					>
 						{"Log Out"}
 					</span>
+				</div>
+                
+                {/* <div
+                  className="accountdropdownitems"
+                  onClick={() => {
+					setSidenav(false);
+                    sessionStorage.removeItem("uid");
+                    cookies.remove("loggedIn");
+                    removeToken();
+                    setUserData(null);
+                    setisLoggedIn(false);
+                    navigate("/");
+                  }}
+                >
+                  <img src={acc3} alt="" />
+                  <span>Log Out</span>
+                </div> */}
+				
               </div>
 				}
 					

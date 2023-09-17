@@ -83,6 +83,9 @@
     .beams{
       font-size: 40px;
     }
+    .content{
+      gap: 40px;
+    }
     .content p{
       /* font-family: var(--font-mulish); */
       font-size: 24px;
