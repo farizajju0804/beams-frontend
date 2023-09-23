@@ -15,6 +15,7 @@ export const Navbar = () => {
 	const [sidenav, setSidenav] = useState(false);
 	const cookies=new Cookies();
 	const navigate = useNavigate();
+	
 	const {auth,setAuth,setUserData,setisLoggedIn,user}=useContext(AuthContext)
 	return (
 		<nav className="navbar">
@@ -95,6 +96,9 @@ export const Navbar = () => {
                 <div className="my-account">
 				<span>My Account</span>
 				<div>
+				
+				{user.role?.name==="admin" ?
+				<>
 				<div
                   className="accountdropdownitems"
                   onClick={() => {
@@ -102,9 +106,44 @@ export const Navbar = () => {
                     navigate("/beams");
                   }}
                 >
-                  <FcHome />
-                  <span>My Home</span>
+                  {/* <FcHome /> */}
+                  <span>Beams Articles</span>
                 </div>
+				<div
+				className="accountdropdownitems"
+				onClick={() => {
+				  setSidenav(false);
+				  navigate("/beams-slideshows");
+				}}
+			  >
+				{/* <FcHome /> */}
+			  
+				<span>Beams Slideshows</span>
+			  </div>
+			  <div
+				className="accountdropdownitems"
+				onClick={() => {
+				  setSidenav(false);
+				  navigate("/beams-doyouknows");
+				}}
+			  >
+				{/* <FcHome /> */}
+				<span>Beams Do You Knows</span>
+			  </div>
+			  </>: 
+			  <div
+			  className="accountdropdownitems"
+			  onClick={() => {
+				setSidenav(false);
+				navigate("/beams");
+			  }}
+			>
+			  <FcHome />
+			  <span>Beams</span>
+			</div>
+			  }
+				
+				
                 <div className="accountdropdownitems" onClick={() =>{ 
 					setSidenav(false);
 					navigate(`/profile`)}}>

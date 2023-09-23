@@ -36,6 +36,8 @@ import ArticleRead from "./pages/ArticleRead/ArticleRead";
 // import ArticleRead1 from "./pages/ArticleRead/ArticleRead1";
 import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
 import { Cookies } from "react-cookie";
+import Slideshows from "./pages/Slideshows/Slideshows";
+import ViewSlideshow from "./pages/View-Slideshow/Viewslideshow";
 
 const cookies=new Cookies();
 const router = createBrowserRouter([
@@ -171,6 +173,46 @@ const router = createBrowserRouter([
 					<Navbar />
 
 					<Beams />
+					<Footer/>
+				</div>
+			
+		)
+	},
+	{
+		path: "/beams-slideshows",
+		element: (
+		
+				<div>
+					<ScrollToTop />
+					<Navbar />
+					<Slideshows/>
+					<Footer/>
+				</div>
+			
+		)
+	},
+	{
+		path: "/view-slideshow",
+		element: (
+		
+				<div>
+					<ScrollToTop />
+					<Navbar />
+					<ViewSlideshow/>
+					<Footer/>
+				</div>
+			
+		)
+	},
+	{
+		path: "/beams-doyouknows",
+		element: (
+		
+				<div>
+					<ScrollToTop />
+					<Navbar />
+
+					{/* <Beams /> */}
 					<Footer/>
 				</div>
 			
