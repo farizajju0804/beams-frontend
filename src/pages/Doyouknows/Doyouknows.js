@@ -30,7 +30,7 @@ function Doyouknows() {
   return (
     <div className="beams-section">
       <div>
-        <div className="beams-header-container1">
+        <div className="beams-header-container2">
           <h1>Ignite Your Success with Beams</h1>
         </div>
         <div className="beams-content-container">

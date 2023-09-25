@@ -1,4 +1,4 @@
-.beams-header-container1{
+.beams-header-container2{
     width: 100%;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
     background-size: cover;
     object-fit: cover;
 }
-.beams-header-container1 h1{
+.beams-header-container2 h1{
     font-size: 56px;
     font-family: var(--font-steva);
     font-weight: normal;
@@ -75,12 +75,12 @@
   flex-direction: column;
 }
 @media screen and (max-width: 912px) {
-    .beams-header-container1 h1{
+    .beams-header-container2 h1{
         font-size: 40px;
         line-height: 40px;
         margin-top: 50px;
     }
-    .beams-header-container1{
+    .beams-header-container2{
         padding: 50px;
     }
     .beams-hero{
@@ -98,7 +98,7 @@
     
 }
 @media screen and (max-width: 767px) {
-    .beams-header-container1 h1{
+    .beams-header-container2 h1{
         font-size: 24px;
         line-height: 40px;
         margin-top:40px;
@@ -113,7 +113,7 @@
     .beams-content-container{
         padding-top: 10px;
     }
-    .beams-header-container1{
+    .beams-header-container2{
         padding: 30px 15px;
     }
     .low-container{

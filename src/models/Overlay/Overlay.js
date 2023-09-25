@@ -1,8 +1,7 @@
-// Overlay.js
-
 import React, { useState } from 'react';
 import './Overlay.css';
 import { CloseCircle } from 'iconsax-react';
+
 function Overlay({ question, options, correctAnswer, onClose }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -24,17 +23,20 @@ function Overlay({ question, options, correctAnswer, onClose }) {
             <div
               key={index}
               className={`option ${selectedOption === option ? 'selected' : ''}`}
-              onClick={() => handleOptionClick(option)}
+              onClick={(e) => {
+                e.stopPropagation(); // This line stops the event from propagating further
+                handleOptionClick(option);
+              }}
             >
               {option}
             </div>
           ))}
         </div>
         {selectedOption !== null && (
-  <div className={`feedback ${isCorrect ? 'correct' : 'wrong'}`}>
-    {isCorrect ? 'Correct!' : `Wrong! The correct answer is: ${correctAnswer}`}
-  </div>
-)}
+          <div className={`feedback ${isCorrect ? 'correct' : 'wrong'}`}>
+            {isCorrect ? 'Correct!' : `Wrong! The correct answer is: ${correctAnswer}`}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -68,15 +68,17 @@ function Doyouknowcard({
         <div className='trending-category' style={categoryStyle}>
           {doyouknowCardCategory}
         </div>
-        {showOverlay && (
-        <Overlay
+        
+        
+      </div>
+      {showOverlay && (
+      <Overlay
           question={question}
           options={options}
           correctAnswer={correctAnswer}
           onClose={closeOverlay}
         />
       )}
-      </div>
     </div>
   );
 }
