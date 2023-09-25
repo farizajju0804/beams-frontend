@@ -27,12 +27,12 @@ function Slideshows() {
   return (
     <div className="beams-section">
       <div>
-        <div className="beams-header-container">
+        <div className="beams-header-container1">
           <h1>Ignite Your Success with Beams</h1>
         </div>
         <div className="beams-content-container">
           <div className="trending-container">
-            <div className="trending-box">Trending Beams Slideshows</div>
+            <div className="trending-box">Beams Slideshows</div>
             <div className="trending-content-container">
               {slideshowData.map((data, index) => (
                 <Slideshowcard

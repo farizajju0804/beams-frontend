@@ -4,11 +4,11 @@
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    background: url(/public/Assets/images/slideshowheader.webp);
-    padding: 40px;
+    background: url(/public/Assets/images/doyouknowheader.webp);
+    padding: 60px 40px;
     text-align: center;
     flex-direction: column;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     object-fit: cover;
 }

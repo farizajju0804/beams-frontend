@@ -38,6 +38,7 @@ import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
 import { Cookies } from "react-cookie";
 import Slideshows from "./pages/Slideshows/Slideshows";
 import ViewSlideshow from "./pages/View-Slideshow/Viewslideshow";
+import Doyouknows from "./pages/Doyouknows/Doyouknows"
 
 const cookies=new Cookies();
 const router = createBrowserRouter([
@@ -186,6 +187,19 @@ const router = createBrowserRouter([
 					<ScrollToTop />
 					<Navbar />
 					<Slideshows/>
+					<Footer/>
+				</div>
+			
+		)
+	},
+	{
+		path: "/beams-doyouknows",
+		element: (
+		
+				<div>
+					<ScrollToTop />
+					<Navbar />
+					<Doyouknows/>
 					<Footer/>
 				</div>
 			

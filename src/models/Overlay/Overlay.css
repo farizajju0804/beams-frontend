@@ -1,0 +1,91 @@
+/* Overlay.css */
+
+.overlay-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .overlay-content {
+    background: #fff;
+    padding: 20px;
+    width: 80vw;
+    margin: auto;
+    overflow: auto;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+
+  .question{
+    font-family: var(--font-poppins);
+    font-size: 32px;
+  }
+  
+
+  .overlay-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+  }
+
+  .options{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: var(--font-mulish);
+  }
+  
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option {
+    padding: 10px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .option.selected {
+    background-color: #eee;
+  }
+  
+  .feedback {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .feedback.correct {
+    color: green;
+  }
+  
+  .feedback.wrong {
+    color: red;
+  }
+
+  @media screen and (max-width: 767px){
+    .question{
+        font-family: var(--font-poppins);
+        font-size: 24px;
+      }
+      
+    
+  }
