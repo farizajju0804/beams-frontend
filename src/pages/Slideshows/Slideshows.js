@@ -12,6 +12,7 @@ function Slideshows() {
       categoryBgColor: "#F0F9FF",
       img: "Assets/images/bci-application-slideshow.webp",
       slideshowUrl: "https://www.canva.com/design/DAFvRjy70Z8/view?embed"
+      // slideshowUrl:"Assets/pptdemo.pptx"
     },
     {
         category: "Magical Materials",
