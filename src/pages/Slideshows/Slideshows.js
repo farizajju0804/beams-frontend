@@ -11,7 +11,7 @@ function Slideshows() {
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
       img: "Assets/images/bci-application-slideshow.webp",
-      slideshowUrl: "https://www.canva.com/design/DAFvRjy70Z8/view?embed"
+      // slideshowUrl: "https://www.canva.com/design/DAFvRjy70Z8/view?embed"
       // slideshowUrl:"Assets/pptdemo.pptx"
     },
     {
@@ -20,7 +20,7 @@ function Slideshows() {
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/materials-application-slideshow.webp",
-        slideshowUrl: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
+        // slideshowUrl: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
       },
     
   ];
@@ -43,7 +43,7 @@ function Slideshows() {
                   slideshowcardCategoryColor={data.categoryColor}
                   slideshowcardCategoryBgColor={data.categoryBgColor}
                   slideshowCardImg={data.img}
-                  slideshowUrl={data.slideshowUrl}
+                  // slideshowUrl={data.slideshowUrl}
                 />
               ))}
             </div>

@@ -32,7 +32,7 @@ function Slideshowcard({
   };
 
   const navigateToSlideshow = () => {
-    navigate('/view-slideshow', { state: { slideshowUrl } });
+    navigate('/view-slideshow');
 
    
     }
