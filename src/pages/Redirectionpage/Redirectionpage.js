@@ -47,7 +47,7 @@ export const Redirectionpage = () => {
 							SetToken(data.jwt);
 							setUser(data.user);
 							console.log("here")
-							navigate("/beams", { replace: true });
+							navigate("/beams-slideshows", { replace: true });
 							return
 						}
 		}

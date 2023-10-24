@@ -38,7 +38,8 @@ import ArticleDescription from "./pages/ArticleDescription/ArticleDescription";
 import { Cookies } from "react-cookie";
 import Slideshows from "./pages/Slideshows/Slideshows";
 import ViewSlideshow from "./pages/View-Slideshow/Viewslideshow";
-import Doyouknows from "./pages/Doyouknows/Doyouknows"
+import Stories from "./pages/Stories/Stories"
+import Viewstory from "./pages/View-Story/Viewstory";
 
 const cookies=new Cookies();
 const router = createBrowserRouter([
@@ -193,13 +194,13 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/beams-doyouknows",
+		path: "/beams-storyland",
 		element: (
 		
 				<div>
 					<ScrollToTop />
 					<Navbar />
-					<Doyouknows/>
+					<Stories/>
 					<Footer/>
 				</div>
 			
@@ -219,19 +220,19 @@ const router = createBrowserRouter([
 		)
 	},
 	{
-		path: "/beams-doyouknows",
+		path: "/view-story",
 		element: (
 		
 				<div>
 					<ScrollToTop />
 					<Navbar />
-
-					{/* <Beams /> */}
+					<Viewstory/>
 					<Footer/>
 				</div>
 			
 		)
 	},
+	
 	// {
 	// 	path: "/maxbeams",
 	// 	element: (

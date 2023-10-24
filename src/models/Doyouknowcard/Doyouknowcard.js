@@ -16,22 +16,21 @@ function Doyouknowcard({
   doyouknowCardCategory,
   doyouknowcardCategoryColor,
   doyouknowcardCategoryBgColor,
+  url,
   question,
   options,
   correctAnswer
 }) 
 
 
-{
-  const [showOverlay, setShowOverlay] = useState(false);
 
-  const openquestion = () => {
-    setShowOverlay(true);
-  }
 
-  const closeOverlay = () => {
-    setShowOverlay(false);
+ {
+  const navigateToStory = () => {
+    navigate('/view-story', { state: { url } });
+  
   }
+ 
   const cookies=new Cookies()
   const navigate = useNavigate();
   const { addfav,delfav,favourites } = useContext(AuthContext);
@@ -51,7 +50,7 @@ function Doyouknowcard({
   return (
     
     <div
-      className={`trending-card-wrapper`} onClick={openquestion}
+      className={`trending-card-wrapper`} onClick={navigateToStory} 
     >
       <div className='trending-card'>
         <div className='trending-card-img'>
@@ -71,14 +70,14 @@ function Doyouknowcard({
         
         
       </div>
-      {showOverlay && (
+      {/* {showOverlay && (
       <Overlay
           question={question}
           options={options}
           correctAnswer={correctAnswer}
           onClose={closeOverlay}
         />
-      )}
+      )} */}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import "./Doyouknows.css";
+import "./Stories.css";
 import Doyouknowcard from "../../models/Doyouknowcard/Doyouknowcard";
 
-function Doyouknows() {
+function Stories() {
   const doyouKnowData = [
     {
       category: "BCI",
@@ -10,9 +10,8 @@ function Doyouknows() {
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
       img: "Assets/images/bci-application-slideshow.webp",
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Madrid"],
-     correctAnswer : "Paris"
+      url: "https://online.fliphtml5.com/vryvr/rqil/"
+
     },
     {
         category: "Magical Materials",
@@ -20,9 +19,7 @@ function Doyouknows() {
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/materials-application-slideshow.webp",
-        question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Madrid"],
-     correctAnswer : "Paris"
+        url: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
       },
     
   ];
@@ -35,7 +32,7 @@ function Doyouknows() {
         </div>
         <div className="beams-content-container">
           <div className="trending-container">
-            <div className="trending-box">Beams Doyouknows</div>
+            <div className="trending-box">Beams Storyland</div>
             <div className="trending-content-container">
               {doyouKnowData.map((data, index) => (
                 <Doyouknowcard
@@ -48,6 +45,7 @@ function Doyouknows() {
                   question={data.question}
                   correctAnswer={data.correctAnswer}
                   options={data.options}
+                  url = {data.url}
                 />
               ))}
             </div>
@@ -58,4 +56,4 @@ function Doyouknows() {
   );
 }
 
-export default Doyouknows;
+export default Stories;

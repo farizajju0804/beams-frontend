@@ -22,7 +22,7 @@ const Hero = () => {
         
         <button className="primary-button1" onClick={()=>{
           if(cookies.get("loggedIn")){
-            navigate(`/beams`)
+            navigate(`/beams-slideshows`)
           }
           else{
             navigate("/signup");

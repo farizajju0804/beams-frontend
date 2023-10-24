@@ -10,9 +10,8 @@ function Slideshows() {
       title: "5 Mind-Blowing Applications Of Brain Computer Interfaces",
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
-      img: "Assets/images/bci-application-slideshow.webp",
-      // slideshowUrl: "https://www.canva.com/design/DAFvRjy70Z8/view?embed"
-      // slideshowUrl:"Assets/pptdemo.pptx"
+      img: "Assets/images/bci-application-slideshow.webp",  
+      slideshowUrl: "https://www.canva.com/design/DAFwdNhsXrI/view?embed"
     },
     {
         category: "Magical Materials",
@@ -20,7 +19,7 @@ function Slideshows() {
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/materials-application-slideshow.webp",
-        // slideshowUrl: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
+        slideshowUrl: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
       },
     
   ];
@@ -33,7 +32,7 @@ function Slideshows() {
         </div>
         <div className="beams-content-container">
           <div className="trending-container">
-            <div className="trending-box">Beams Slideshows</div>
+            <div className="trending-box">Beams Curiosityland</div>
             <div className="trending-content-container">
               {slideshowData.map((data, index) => (
                 <Slideshowcard
@@ -43,7 +42,7 @@ function Slideshows() {
                   slideshowcardCategoryColor={data.categoryColor}
                   slideshowcardCategoryBgColor={data.categoryBgColor}
                   slideshowCardImg={data.img}
-                  // slideshowUrl={data.slideshowUrl}
+                  slideshowUrl={data.slideshowUrl}
                 />
               ))}
             </div>

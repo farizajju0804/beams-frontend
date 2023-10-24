@@ -73,7 +73,7 @@ export const Login = () => {
         setUser(data.user);
 
         toast.success(`Welcome back ${data.user.username}!`);
-        navigate(`/beams`, { replace: true });
+        navigate(`/beams-slideshows`, { replace: true });
       }
     } catch (error) {
       if (error.message === "Invalid identifier or password") {

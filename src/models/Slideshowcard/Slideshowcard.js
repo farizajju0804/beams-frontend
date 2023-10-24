@@ -32,10 +32,12 @@ function Slideshowcard({
   };
 
   const navigateToSlideshow = () => {
-    navigate('/view-slideshow');
+    navigate('/view-slideshow', { state: { slideshowUrl } });
 
    
     }
+
+
 
 
   return (
