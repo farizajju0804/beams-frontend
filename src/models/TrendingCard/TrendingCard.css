@@ -137,7 +137,7 @@
         padding: 20px 20px 0;
     }
     .trending-card,.hidden-card{
-        width: 80%;
+        width: 100%;
     }
     .favourite-icon1 {
         position: absolute;
