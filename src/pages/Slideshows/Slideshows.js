@@ -7,19 +7,20 @@ function Slideshows() {
   const slideshowData = [
     {
       category: "BCI",
-      title: "5 Mind-Blowing Applications Of Brain Computer Interfaces",
+      title: "6 Magical Benefits Of A Super Long-Life",
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
-      img: "Assets/images/bci-application-slideshow.webp",  
-      slideshowUrl: "https://www.canva.com/design/DAFwdNhsXrI/view?embed"
+      img: "Assets/images/thumbnail-1.webp",  
+      slideshowUrl: "https://online.fliphtml5.com/vryvr/gvet/"
+      
     },
     {
         category: "Magical Materials",
-        title: "5 Materials You Didn't Know Existed",
+        title: "Six Magical Materials You Haven't Heard Of",
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
-        img: "Assets/images/materials-application-slideshow.webp",
-        slideshowUrl: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
+        img: "Assets/images/thumbnail-2.webp",
+        slideshowUrl: "https://online.fliphtml5.com/vryvr/aacv/"
       },
     
   ];

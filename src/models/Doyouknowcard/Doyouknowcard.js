@@ -64,9 +64,9 @@ function Doyouknowcard({
           {doyouknowCardTitle}
         </div>
         
-        <div className='trending-category' style={categoryStyle}>
+        {/* <div className='trending-category' style={categoryStyle}>
           {doyouknowCardCategory}
-        </div>
+        </div> */}
         
         
       </div>

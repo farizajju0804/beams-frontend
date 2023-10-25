@@ -76,10 +76,16 @@
  gap: 10px;
  align-items: center;
  justify-content: center;
- background-color: var(--white);
+ background-color: var(--black);
  box-shadow: var(--effect-1);
  padding: 10px;
  border-radius: 12px;
+ color: var(--white);
+ cursor: not-allowed;
+}
+
+.my-account span {
+    cursor: not-allowed;
 }
 .sidenav{
     position: fixed;

@@ -6,20 +6,20 @@ function Stories() {
   const doyouKnowData = [
     {
       category: "BCI",
-      title: "5 Mind-Blowing",
+      title: "The Amazing World of Magical Materials",
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
-      img: "Assets/images/bci-application-slideshow.webp",
-      url: "https://online.fliphtml5.com/vryvr/rqil/"
+      img: "Assets/images/thumbnail-1-storyland.webp",
+      url: "https://online.fliphtml5.com/vryvr/ryqu/"
 
     },
     {
         category: "Magical Materials",
-        title: "5 Materials",
+        title: "The Fascinating World Of Magical Biology",
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
-        img: "Assets/images/materials-application-slideshow.webp",
-        url: "https://www.canva.com/design/DAFvRwho7uY/view?embed"
+        img: "Assets/images/thumbnail-2-storyland.webp",
+        url: "https://online.fliphtml5.com/vryvr/wdss/"
       },
     
   ];

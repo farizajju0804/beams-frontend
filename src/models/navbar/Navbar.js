@@ -132,10 +132,10 @@ export const Navbar = () => {
                   navigate(`/profile`);
                 }}
               >
-                <img src={acc1} alt="" />
+                {/* <img src={acc1} alt="" /> */}
                 <span>My Profile</span>
               </div>
-              <div
+              {/* <div
                 className="accountdropdownitems"
                 onClick={() => {
                   setSidenav(false);
@@ -144,7 +144,7 @@ export const Navbar = () => {
               >
                 <img src={acc2} alt="" />
                 <span>My Library</span>
-              </div>
+              </div> */}
             </div>
 
             <div className="other-links">

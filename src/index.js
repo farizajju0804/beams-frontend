@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         <ScrollToTop />
 		<Navbar />
         <LandingPage />
-        <Newsletter />
+        {/* <Newsletter /> */}
         <Footer />
       </div>
     ),

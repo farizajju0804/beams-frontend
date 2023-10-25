@@ -23,14 +23,14 @@ function LandingPage() {
     <Toaster/>
     <div>
     <Hero />
-    <Doyouknow />
+    {/* <Doyouknow />
     <IntroducingBeams />
     <Feature1/>
     <Feature2/>
     <Feature3/>
-    {/* <Feature4 /> */}
+    <Feature4 />
     <Benefits/>
-    <Testimonial/>
+    <Testimonial/> */}
     </div>
     </>
   )

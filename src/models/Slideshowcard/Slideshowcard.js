@@ -57,9 +57,9 @@ function Slideshowcard({
           {slideshowCardTitle}
         </div>
         
-        <div className='trending-category' style={categoryStyle}>
+        {/* <div className='trending-category' style={categoryStyle}>
           {slideshowCardCategory}
-        </div>
+        </div> */}
       </div>
     </div>
   );
