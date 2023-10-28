@@ -40,6 +40,8 @@ import Slideshows from "./pages/Slideshows/Slideshows";
 import ViewSlideshow from "./pages/View-Slideshow/Viewslideshow";
 import Stories from "./pages/Stories/Stories"
 import Viewstory from "./pages/View-Story/Viewstory";
+import Viewdoyouknow from "./pages/View-Doyouknow/Viewdoyouknow";
+import Doyouknows from "./pages/Doyouknows/Doyouknows";
 
 const cookies=new Cookies();
 const router = createBrowserRouter([
@@ -194,6 +196,19 @@ const router = createBrowserRouter([
 		)
 	},
 	{
+		path: "/beams-wonderland",
+		element: (
+		
+				<div>
+					<ScrollToTop />
+					<Navbar />
+					<Doyouknows/>
+					<Footer/>
+				</div>
+			
+		)
+	},
+	{
 		path: "/beams-storyland",
 		element: (
 		
@@ -214,6 +229,19 @@ const router = createBrowserRouter([
 					<ScrollToTop />
 					<Navbar />
 					<ViewSlideshow/>
+					<Footer/>
+				</div>
+			
+		)
+	},
+	{
+		path: "/view-doyouknow",
+		element: (
+		
+				<div>
+					<ScrollToTop />
+					<Navbar />
+					<Viewdoyouknow/>
 					<Footer/>
 				</div>
 			

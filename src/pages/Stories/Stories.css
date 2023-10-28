@@ -13,13 +13,15 @@
     object-fit: cover;
 }
 .beams-header-container2 h1{
-    font-size: 56px;
+    font-size: 48px;
     font-family: var(--font-steva);
     font-weight: normal;
     margin-top: 15px;
     color: var(--black);
     background-color: var(--white);
     padding: 0 10px;
+    margin: 10px 0;
+    box-shadow: var(--effect-1);
 }
 
 .beams-section{
@@ -81,6 +83,7 @@
     .beams-header-container2 h1{
         font-size: 40px;
         line-height: 40px;
+        margin: 0;
         margin-top: 50px;
     }
     .beams-header-container2{
@@ -104,7 +107,7 @@
     .beams-header-container2 h1{
         font-size: 24px;
         line-height: 30px;
-        margin:20px;
+        margin: 0;
         margin-top: 30px;
        
     }

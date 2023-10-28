@@ -1,19 +1,18 @@
-.beams-header-container1{
+.beams-header-container3{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    background: url(/public/Assets/images/curiousityland-bg.webp);
+    background: url(/public/Assets/images/wonderland-bg.webp);
     padding: 40px;
     text-align: center;
     flex-direction: column;
     background-position: top;
     background-size: cover;
     object-fit: cover;
-    
 }
-.beams-header-container1 h1{
+.beams-header-container3 h1{
     font-size: 48px;
     font-family: var(--font-steva);
     font-weight: normal;
@@ -22,8 +21,8 @@
     color: var(--black);
     background-color: var(--white);
     padding: 0 10px;
-    margin: 30px 0;
     box-shadow: var(--effect-1);
+    margin: 30px 0;
 }
 
 .beams-section{
@@ -81,14 +80,13 @@
   flex-direction: column;
 }
 @media screen and (max-width: 912px) {
-    .beams-header-container1 h1{
+    .beams-header-container3 h1{
         font-size: 40px;
         line-height: 40px;
         margin: 0;
         margin-top: 50px;
-       
     }
-    .beams-header-container1{
+    .beams-header-container3{
         padding: 50px;
     }
     .beams-hero{
@@ -106,12 +104,11 @@
     
 }
 @media screen and (max-width: 767px) {
-    .beams-header-container1 h1{
+    .beams-header-container3 h1{
         font-size: 24px;
         line-height: 30px;
         margin: 0;
-        margin-top: 30px;
-        
+        margin-top: 35px;
     }
     .trending-content-container{
         padding-top: 30px;
@@ -123,7 +120,7 @@
     .beams-content-container{
         padding-top: 10px;
     }
-    .beams-header-container1{
+    .beams-header-container3{
         padding: 30px 15px;
     }
     .low-container{

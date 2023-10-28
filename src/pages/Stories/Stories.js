@@ -1,9 +1,9 @@
 import React from "react";
 import "./Stories.css";
-import Doyouknowcard from "../../models/Doyouknowcard/Doyouknowcard";
+import Storycard from "../../models/Storycard/Storycard";
 
 function Stories() {
-  const doyouKnowData = [
+  const storyData = [
     {
       category: "BCI",
       title: "The Amazing World of Magical Materials",
@@ -34,17 +34,14 @@ function Stories() {
           <div className="trending-container">
             <div className="trending-box">Beams Storyland</div>
             <div className="trending-content-container">
-              {doyouKnowData.map((data, index) => (
-                <Doyouknowcard
+              {storyData.map((data, index) => (
+                <Storycard
                   key={index}
-                  doyouknowCardCategory={data.category}
-                  doyouknowCardTitle={data.title}
-                  doyouknowcardCategoryColor={data.categoryColor}
-                  doyouknowcardCategoryBgColor={data.categoryBgColor}
-                  doyouknowCardImg={data.img}
-                  question={data.question}
-                  correctAnswer={data.correctAnswer}
-                  options={data.options}
+                  StoryCardCategory={data.category}
+                  StoryCardTitle={data.title}
+                  StoryCardCategoryColor={data.categoryColor}
+                  StoryCardCategoryBgColor={data.categoryBgColor}
+                  StoryCardImg={data.img}
                   url = {data.url}
                 />
               ))}

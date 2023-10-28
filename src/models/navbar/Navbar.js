@@ -124,6 +124,15 @@ export const Navbar = () => {
               >
                 <span>Beams Storyland</span>
               </div>
+              <div
+                className="accountdropdownitems"
+                onClick={() => {
+                  setSidenav(false);
+                  navigate("/beams-wonderland");
+                }}
+              >
+                <span>Beams Wonderland</span>
+              </div>
 
               <div
                 className="accountdropdownitems"
