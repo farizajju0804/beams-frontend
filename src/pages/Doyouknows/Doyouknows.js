@@ -11,16 +11,16 @@ function Doyouknows() {
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
       img: "Assets/images/thumbnail-wonder-1.webp",  
-      slideshowUrl: "https://www.canva.com/design/DAFwxCZEoNE/view?embed"
+      slideshowUrl: "https://beams.outgrow.us/653e1e2fd8432a770d10daae"
       
     },
     {
         category: "Magical Materials",
-        title: "Brainwave Buddy",
+        title: "Magical Biology",
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
-        img: "Assets/images/thumbnail-wonder-2.webp",
-        slideshowUrl: "https://www.canva.com/design/DAFxt36gpjQ/view?embed"
+        img: "Assets/images/thumbnail-wonder-2-.webp",
+        slideshowUrl: "https://beams.outgrow.us/653e3c3da7aab93023cf429d"
       },
     
   ];
