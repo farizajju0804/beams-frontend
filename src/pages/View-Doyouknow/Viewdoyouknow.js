@@ -23,7 +23,7 @@ function Viewdoyouknow() {
       </div> */}
       {/* <iframe title="Magical Materials" className="no-margin canva-embed" src={url}
        allow="camera *;"></iframe> */}
-       <iframe className='canva-embed' src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fa4349vha7EZ1Dt7WESZ8St%2FBeams-Wonderland%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-20%26viewport%3D379%252C235%252C0.17%26t%3DJqei4vIb80CC7f1p-1%26scaling%3Dscale-down%26starting-point-node-id%3D1%253A20%26mode%3Ddesign" allowfullscreen></iframe>
+       <iframe className='canva-embed' src={url} allowfullscreen></iframe>
      </div>
   );
 }
