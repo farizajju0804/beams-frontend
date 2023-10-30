@@ -19,7 +19,7 @@ function Stories() {
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/thumbnail-2-storyland.webp",
-        url: "https://online.fliphtml5.com/vryvr/wdss/"
+        url: "https://online.fliphtml5.com/vryvr/gwhy/"
       },
     
   ];
