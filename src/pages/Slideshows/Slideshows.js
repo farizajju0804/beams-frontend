@@ -16,7 +16,7 @@ function Slideshows() {
     },
     {
         category: "Magical Materials",
-        title: "Six Magical Materials You Haven't Heard Of",
+        title: "6 Magical Materials You Haven't Heard Of",
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/thumbnail-2.webp",
