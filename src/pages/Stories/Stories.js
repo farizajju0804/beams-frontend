@@ -10,8 +10,9 @@ function Stories() {
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
       img: "Assets/images/thumbnail-1-storyland.webp",
-      // url: "https://online.fliphtml5.com/zptoc/kjjp/"
-      url: "http://storyland.beams.world/books/kjjp/"
+      url: "https://online.fliphtml5.com/zptoc/kjjp/"
+
+      // url: "http://storyland.beams.world/books/kjjp/"
 
     },
     {
@@ -20,7 +21,7 @@ function Stories() {
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/thumbnail-2-storyland.webp",
-        url: "https://online.fliphtml5.com/vryvr/gwhy/"
+        url: "https://online.fliphtml5.com/zptoc/emwm/"
       },
     
   ];

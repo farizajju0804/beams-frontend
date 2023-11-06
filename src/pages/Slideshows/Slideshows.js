@@ -11,7 +11,7 @@ function Slideshows() {
       categoryColor: "#026AA2",
       categoryBgColor: "#F0F9FF",
       img: "Assets/images/thumbnail-1.webp",  
-      slideshowUrl: "https://online.fliphtml5.com/vryvr/gvet/"
+      slideshowUrl: "https://online.fliphtml5.com/zptoc/dpsg/"
       
     },
     {
@@ -20,7 +20,7 @@ function Slideshows() {
         categoryColor: "#FB9046",
         categoryBgColor: "#FFF6F5",
         img: "Assets/images/thumbnail-2.webp",
-        slideshowUrl: "https://online.fliphtml5.com/vryvr/aacv/"
+        slideshowUrl: "https://online.fliphtml5.com/zptoc/xgcf/"
       },
     
   ];
