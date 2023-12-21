@@ -131,6 +131,7 @@ const router = createBrowserRouter([
 	{
 		path: "/login",
 		element: (
+			
 			<div>
 				<ScrollToTop />
 				<Navbar />
@@ -171,92 +172,98 @@ const router = createBrowserRouter([
 	{
 		path: "/beams",
 		element: (
-		
+			<PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
-
 					<Beams />
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
 	{
 		path: "/beams-slideshows",
 		element: (
-		
+		     <PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
 					<Slideshows/>
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
 	{
 		path: "/beams-wonderland",
 		element: (
-		
+		<PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
 					<Doyouknows/>
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
 	{
 		path: "/beams-storyland",
 		element: (
-		
+		<PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
 					<Stories/>
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
 	{
 		path: "/view-slideshow",
 		element: (
-		
+			<PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
 					<ViewSlideshow/>
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
 	{
 		path: "/view-doyouknow",
 		element: (
-		
+			<PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
 					<Viewdoyouknow/>
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
 	{
 		path: "/view-story",
 		element: (
-		
+		<PrivateRoute>
 				<div>
 					<ScrollToTop />
 					<Navbar />
 					<Viewstory/>
 					<Footer/>
 				</div>
+			</PrivateRoute>
 			
 		)
 	},
@@ -289,12 +296,14 @@ const router = createBrowserRouter([
 	{
 		path: "/maxbeamsong/:id",
 		element: (
+			<PrivateRoute>
 			<div>
 				<ScrollToTop />
 				<Navbar />
 				<Maxbeamsong />
 				<Footer/>
 			</div>
+			</PrivateRoute>
 		)
 	},
 	{
@@ -323,12 +332,14 @@ const router = createBrowserRouter([
 	{
 		path: "/favourites",
 		element: (
+			<PrivateRoute>
 			<div>
 				<ScrollToTop />
 				<Navbar />
 				<Favourites />
 				<Footer/>
 			</div>
+			</PrivateRoute>
 		)
 	},
 	// {
@@ -345,12 +356,14 @@ const router = createBrowserRouter([
 	{
 		path: "/notes",
 		element: (
+			<PrivateRoute>
 			<div>
 				<ScrollToTop />
 				<Navbar />
 				<Notes />
 				<Footer/>
 			</div>
+			</PrivateRoute>
 		)
 	},
 	{
@@ -409,12 +422,14 @@ const router = createBrowserRouter([
 	{
 		path: "/articleread/:id",
 		element: (
+			<PrivateRoute>
 			<div>
 				<ScrollToTop />
 				<Navbar />
 				<ArticleRead/>
 				<Footer/>
 			</div>
+			</PrivateRoute>
 		)
 	},
 	{
@@ -485,12 +500,14 @@ const router = createBrowserRouter([
 	{
 		path: "/article-description/:id",
 		element: (
+			<PrivateRoute>
 			<div>
 				<ScrollToTop />
 				<Navbar />
 				<ArticleDescription />
 				<Footer/>
 			</div>
+			</PrivateRoute>
 		)
 	}
 ]);
